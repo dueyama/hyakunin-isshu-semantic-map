@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">高次元単位球面の2次元射影</title>
+  <desc id="desc">3次元球面の射影では円盤が見えるが、1536次元のランダム点では2次元射影の点が中心付近に集中しやすいことを示す模式図。</desc>
+  <defs>
+    <radialGradient id="sphere" cx="38%" cy="30%" r="64%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="52%" stop-color="#dbe8ee"/>
+      <stop offset="100%" stop-color="#8aa5b0"/>
+    </radialGradient>
+    <radialGradient id="disk" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#263c61" stop-opacity="0.22"/>
+      <stop offset="42%" stop-color="#526b55" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#9a3f2f" stop-opacity="0.03"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#202124" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .bg { fill: #fbfaf6; }
+      .panel { fill: #fffefa; stroke: #d7d0c2; stroke-width: 1.5; filter: url(#softShadow); }
+      .title { fill: #263c61; font: 700 26px sans-serif; letter-spacing: 0; }
+      .subtitle { fill: #5d6066; font: 500 15px sans-serif; }
+      .label { fill: #263c61; font: 700 18px sans-serif; }
+      .small { fill: #5f625e; font: 500 14px sans-serif; }
+      .tiny { fill: #74706a; font: 500 12px sans-serif; }
+      .axis { stroke: #8f938d; stroke-width: 1.2; }
+      .arrow { stroke: #526b55; stroke-width: 4; fill: none; marker-end: url(#arrowHead); }
+      .dotA { fill: #263c61; opacity: 0.72; }
+      .dotB { fill: #9a3f2f; opacity: 0.74; }
+      .dotC { fill: #526b55; opacity: 0.72; }
+      .ring { fill: none; stroke: #9a3f2f; stroke-width: 2.5; stroke-dasharray: 7 7; opacity: 0.9; }
+      .callout { fill: #f4f3ee; stroke: #d7d0c2; stroke-width: 1; }
+      .formula { fill: #4b2447; font: 700 18px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+    <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#526b55"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1280" height="760"/>
+  <text class="title" x="64" y="58">高次元の「半径1」は、2次元ではどう見えるか</text>
+  <text class="subtitle" x="64" y="86">3次元の直感は正しい。ただし1536次元では、点の濃さが中心付近へ強く寄る。</text>
+  <rect class="panel" x="56" y="126" width="350" height="500" rx="8"/>
+  <rect class="panel" x="465" y="126" width="350" height="500" rx="8"/>
+  <rect class="panel" x="874" y="126" width="350" height="500" rx="8"/>
+  <text class="label" x="88" y="170">1. 3次元球面</text>
+  <text class="small" x="88" y="198">十分多くの点を置く</text>
+  <circle cx="231" cy="348" r="124" fill="url(#sphere)" stroke="#6f8790" stroke-width="2"/>
+  <ellipse cx="231" cy="348" rx="124" ry="38" fill="none" stroke="#526b55" stroke-width="2" opacity="0.65"/>
+  <path d="M107 348 C150 318 312 318 355 348" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+  <g opacity="0.82">
+    <circle class="dotA" cx="174" cy="278" r="4"/><circle class="dotB" cx="247" cy="247" r="4"/>
+    <circle class="dotC" cx="296" cy="303" r="4"/><circle class="dotA" cx="196" cy="385" r="4"/>
+    <circle class="dotB" cx="276" cy="409" r="4"/><circle class="dotC" cx="143" cy="337" r="4"/>
+    <circle class="dotA" cx="333" cy="361" r="4"/><circle class="dotB" cx="226" cy="326" r="4"/>
+    <circle class="dotC" cx="247" cy="450" r="4"/><circle class="dotA" cx="185" cy="438" r="4"/>
+    <circle class="dotB" cx="309" cy="438" r="4"/><circle class="dotC" cx="124" cy="387" r="4"/>
+  </g>
+  <path class="arrow" d="M231 494 L231 552"/>
+  <text class="small" x="92" y="592">正面へ射影すると、円の中が埋まる。</text>
+  <text class="label" x="497" y="170">2. 2次元の影</text>
+  <text class="small" x="497" y="198">取りうる範囲は半径1の円盤</text>
+  <circle cx="640" cy="348" r="136" fill="url(#disk)" stroke="#d7d0c2" stroke-width="2"/>
+  <line class="axis" x1="488" y1="348" x2="792" y2="348"/>
+  <line class="axis" x1="640" y1="196" x2="640" y2="500"/>
+  <circle cx="640" cy="348" r="136" fill="none" stroke="#9a3f2f" stroke-width="2"/>
+  <text class="tiny" x="766" y="337">r = 1</text>
+  <g opacity="0.8">
+    <circle class="dotA" cx="590" cy="294" r="4"/><circle class="dotB" cx="681" cy="276" r="4"/>
+    <circle class="dotC" cx="721" cy="354" r="4"/><circle class="dotA" cx="575" cy="390" r="4"/>
+    <circle class="dotB" cx="655" cy="429" r="4"/><circle class="dotC" cx="532" cy="342" r="4"/>
+    <circle class="dotA" cx="739" cy="410" r="4"/><circle class="dotB" cx="630" cy="333" r="4"/>
+    <circle class="dotC" cx="683" cy="475" r="4"/><circle class="dotA" cx="573" cy="466" r="4"/>
+    <circle class="dotB" cx="745" cy="268" r="4"/><circle class="dotC" cx="548" cy="265" r="4"/>
+  </g>
+  <text class="small" x="500" y="592">3次元なら、多数の点で円盤らしく見える。</text>
+  <text class="label" x="906" y="170">3. 1536次元の場合</text>
+  <text class="small" x="906" y="198">同じ円盤内でも点は中心へ寄りやすい</text>
+  <circle cx="1049" cy="348" r="136" fill="#fffdfa" stroke="#d7d0c2" stroke-width="2"/>
+  <line class="axis" x1="897" y1="348" x2="1201" y2="348"/>
+  <line class="axis" x1="1049" y1="196" x2="1049" y2="500"/>
+  <circle class="ring" cx="1049" cy="348" r="14"/>
+  <circle cx="1049" cy="348" r="136" fill="none" stroke="#9a3f2f" stroke-width="2" opacity="0.38"/>
+  <text class="tiny" x="1068" y="332">典型半径 ≈ 0.036</text>
+  <g opacity="0.85">
+    <circle class="dotA" cx="1052" cy="348" r="3.5"/><circle class="dotB" cx="1041" cy="353" r="3.5"/>
+    <circle class="dotC" cx="1059" cy="340" r="3.5"/><circle class="dotA" cx="1036" cy="345" r="3.5"/>
+    <circle class="dotB" cx="1064" cy="357" r="3.5"/><circle class="dotC" cx="1052" cy="360" r="3.5"/>
+    <circle class="dotA" cx="1045" cy="335" r="3.5"/><circle class="dotB" cx="1032" cy="361" r="3.5"/>
+    <circle class="dotC" cx="1068" cy="345" r="3.5"/><circle class="dotA" cx="1040" cy="337" r="3.5"/>
+    <circle class="dotB" cx="1056" cy="365" r="3.5"/><circle class="dotC" cx="1027" cy="350" r="3.5"/>
+  </g>
+  <rect class="callout" x="914" y="512" width="270" height="78" rx="8"/>
+  <text class="formula" x="936" y="543">外側の割合 = (1-r²)^767</text>
+  <text class="small" x="936" y="572">r = 0.10 でも外側は約0.045%</text>
+  <rect x="78" y="656" width="1124" height="56" rx="8" fill="#f4f3ee" stroke="#d7d0c2"/>
+  <text class="small" x="104" y="690">結論: 2次元射影の範囲は円盤でも、高次元のランダム点は円盤全体を均等には埋めない。図で見る広がりは、射影後に見える「影の広がり」である。</text>
+</svg>

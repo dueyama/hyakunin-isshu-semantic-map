@@ -1,0 +1,1548 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>参照資料・参考文献 | 意味空間で百人一首を読む</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="../assets/reading.css?v=20260703-heian-hero4" />
+  </head>
+  <body class="article article-zero">
+    <main>
+      <nav>
+        <a href="../">トップ</a>
+        <a href="../paper/0/">序章</a>
+        <a href="../paper/">第1章</a>
+        <a href="../paper/2/">第2章</a>
+        <a href="../paper/3/">第3章</a>
+        <a href="../paper/final/">終章</a>
+        <a href="../glossary/">用語集</a>
+        <a href="./" aria-current="page">参照資料</a>
+        <a href="../updates/">更新履歴</a>
+      </nav>
+
+      <header class="article-hero">
+        <p class="meta">意味空間で百人一首を読む / 参照資料 / 随時更新</p>
+        <h1>参照資料・参考文献</h1>
+        <p class="lead">
+          各回で参照する資料、データ出典、モデル条件、先行研究をここに集約する。本文中の [D-1] のような番号は、このページ内の該当項目へ直接つながる。
+        </p>
+      </header>
+
+      <p class="note">
+        ここは、シリーズ全体で根拠をたどるための共通ページである。各回の末尾には参考文献リストを置かず、このページにまとめて整理する。
+      </p>
+
+      <section>
+        <h2>このページの役割</h2>
+        <p>
+          この読み物では、本文を軽く保つために、データ、モデル、先行研究、前作へのリンクを共通参照資料として分けておく。番号はカテゴリ記号と連番で付ける。D はデータ、M は方法・モデル、P は前作、L は先行研究、S は公開範囲を表す。後から資料を追加する場合も、既存番号はなるべく変えず、各カテゴリの末尾へ追加する。
+        </p>
+        <p>
+          もう一つの役割は、数値と読解を照合するための足場である。本文で「近い」「遠い」「山が立つ」と書くとき、それだけで文学的意味を決めるのではなく、歌本文、注釈、部立、先行研究に戻して確認する。埋め込みの結果が文献上の読みと重なる場合は重なりとして記録し、ずれる場合も、そのずれを次に読む場所として扱う。
+        </p>
+      </section>
+
+      <section class="references" id="id-map">
+        <h2>図表ID対応表</h2>
+        <p>
+          PCA分布図、近接ペア表、10×10配置表では、歌を短いIDで示す。<code>H001</code> のような H 番号は小倉百人一首、<code>S076</code> のような S 番号は百人秀歌を表す。図0-3の点ラベルのように、図中では <code>H001</code> を単に <code>1</code> と省略して表示することもある。図中などで番号だけが出てきたときは、この表で歌人と歌を確認する。
+        </p>
+        <p class="note">
+          小倉表は [D-1] をもとにした初期本文候補であり、校訂本文としては未確定である。百人秀歌表は [D-5] を参照した解析用順序の読者向け対応表で、共通歌は小倉側の H 番号へつなぐ。百人秀歌だけに出る四首は、図表IDを読むために本文を掲げる。解析用の完全CSVや埋め込みベクトルは公開しない。
+        </p>
+        <details class="deep-dive">
+          <summary><span>小倉百人一首</span>H番号と歌の対応</summary>
+          <div class="table-wrap poem-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>歌人</th>
+                  <th>歌</th>
+                  <th>主題</th>
+                  <th>出典</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr id="id-h001">
+                <td><code>H001</code></td>
+                <td>天智天皇</td>
+                <td>秋の田の かりほの庵の とまをあらみ わが衣手は 露にぬれつつ</td>
+                <td>秋</td>
+                <td>後撰集 秋中 302</td>
+              </tr>
+              <tr id="id-h002">
+                <td><code>H002</code></td>
+                <td>持統天皇</td>
+                <td>春過ぎて 夏来にけらし 白妙の 衣ほすてふ 天の香具山</td>
+                <td>夏</td>
+                <td>新古今集 夏 175</td>
+              </tr>
+              <tr id="id-h003">
+                <td><code>H003</code></td>
+                <td>柿本人麿</td>
+                <td>足引きの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ</td>
+                <td>恋</td>
+                <td>拾遺集 恋三 778</td>
+              </tr>
+              <tr id="id-h004">
+                <td><code>H004</code></td>
+                <td>山部赤人</td>
+                <td>田子の浦に 打出でてみれば 白妙の ふじの高嶺に 雪は降りつつ</td>
+                <td>冬</td>
+                <td>新古今集 冬 675</td>
+              </tr>
+              <tr id="id-h005">
+                <td><code>H005</code></td>
+                <td>猿丸太夫</td>
+                <td>奥山に 紅葉ふみ分け なく鹿の 聲きく時ぞ 秋は悲しき</td>
+                <td>秋</td>
+                <td>古今集 秋上 215</td>
+              </tr>
+              <tr id="id-h006">
+                <td><code>H006</code></td>
+                <td>中納言家持</td>
+                <td>かさゝぎの 渡せる橋に おく霜の しろきを見れば 夜ぞふけにける</td>
+                <td>冬</td>
+                <td>新古今集 冬 620</td>
+              </tr>
+              <tr id="id-h007">
+                <td><code>H007</code></td>
+                <td>阿倍仲麻呂</td>
+                <td>天の原 ふりさけ見れば 春日なる みかさの山に 出でし月かも</td>
+                <td>羇旅</td>
+                <td>古今集 羇旅 406</td>
+              </tr>
+              <tr id="id-h008">
+                <td><code>H008</code></td>
+                <td>喜撰法師</td>
+                <td>わが庵は 都のたつみ しかぞ住む 世をうぢ山と 人はいふなり</td>
+                <td>雑</td>
+                <td>古今集 雑下 983</td>
+              </tr>
+              <tr id="id-h009">
+                <td><code>H009</code></td>
+                <td>小野小町</td>
+                <td>花の色は 移りにけりな 徒に 我が身世にふる ながめせしまに</td>
+                <td>春</td>
+                <td>古今集 春下 113</td>
+              </tr>
+              <tr id="id-h010">
+                <td><code>H010</code></td>
+                <td>蝉丸</td>
+                <td>これや此の 行くも帰るも 別れては 知るも知らぬも 逢坂の関</td>
+                <td>雑</td>
+                <td>後撰集 雑一 1089</td>
+              </tr>
+              <tr id="id-h011">
+                <td><code>H011</code></td>
+                <td>参議篁</td>
+                <td>わたの原 八十島かけて 漕ぎ出でぬと 人にはつげよ あまの釣舟</td>
+                <td>羇旅</td>
+                <td>古今集 羇旅 407</td>
+              </tr>
+              <tr id="id-h012">
+                <td><code>H012</code></td>
+                <td>僧正遍昭</td>
+                <td>天つ風 雲のかよひぢ 吹きとぢよ をとめの姿 しばし留めむ</td>
+                <td>雑</td>
+                <td>古今集 雑上 872</td>
+              </tr>
+              <tr id="id-h013">
+                <td><code>H013</code></td>
+                <td>陽成院</td>
+                <td>筑波嶺の 峯より落つる みなの川 戀ぞつもりて 淵となりぬる</td>
+                <td>恋</td>
+                <td>後撰集 恋三 776</td>
+              </tr>
+              <tr id="id-h014">
+                <td><code>H014</code></td>
+                <td>河原左大臣</td>
+                <td>陸奥の しのぶもぢずり 誰故に みだれ初めにし 我ならなくに</td>
+                <td>恋</td>
+                <td>古今集 恋四 724</td>
+              </tr>
+              <tr id="id-h015">
+                <td><code>H015</code></td>
+                <td>光孝天皇</td>
+                <td>君がため 春の野に出でて 若菜つむ わが衣手に 雪は降りつつ</td>
+                <td>春</td>
+                <td>古今集 春上 21</td>
+              </tr>
+              <tr id="id-h016">
+                <td><code>H016</code></td>
+                <td>中納言行平</td>
+                <td>立別れ いなばの山の 嶺におふる まつとし聞かば 今帰り来む</td>
+                <td>離別</td>
+                <td>古今集 離別 365</td>
+              </tr>
+              <tr id="id-h017">
+                <td><code>H017</code></td>
+                <td>在原業平朝臣</td>
+                <td>ちはやぶる 神代も聞かず 龍田川 から紅に 水くくるとは</td>
+                <td>秋</td>
+                <td>古今集 秋下 294</td>
+              </tr>
+              <tr id="id-h018">
+                <td><code>H018</code></td>
+                <td>藤原敏行朝臣</td>
+                <td>住の江の 岸に寄る浪 よるさへや 夢の通ひ路 人目よくらむ</td>
+                <td>恋</td>
+                <td>古今集 恋二 559</td>
+              </tr>
+              <tr id="id-h019">
+                <td><code>H019</code></td>
+                <td>伊勢</td>
+                <td>難波潟 短き葦の ふしのまも あはで此の世を すぐしてよとや</td>
+                <td>恋</td>
+                <td>新古今集 恋一 1049</td>
+              </tr>
+              <tr id="id-h020">
+                <td><code>H020</code></td>
+                <td>元良親王</td>
+                <td>侘びぬれば 今はた同じ 難波なる 身をつくしても 逢はむとぞ思ふ</td>
+                <td>恋</td>
+                <td>後撰集 恋五 961</td>
+              </tr>
+              <tr id="id-h021">
+                <td><code>H021</code></td>
+                <td>素性法師</td>
+                <td>今来むと いひしばかりに 長月の 有明の月を 待ち出でつるかな</td>
+                <td>恋</td>
+                <td>古今集 恋四 691</td>
+              </tr>
+              <tr id="id-h022">
+                <td><code>H022</code></td>
+                <td>文屋康秀</td>
+                <td>吹くからに 秋の草木の しをるれば むべ山風を あらしといふらむ</td>
+                <td>秋</td>
+                <td>古今集 秋下 249</td>
+              </tr>
+              <tr id="id-h023">
+                <td><code>H023</code></td>
+                <td>大江千里</td>
+                <td>月見れば 千々に物こそ 悲しけれ わが身ひとつの 秋にはあらねど</td>
+                <td>秋</td>
+                <td>古今集 秋上 193</td>
+              </tr>
+              <tr id="id-h024">
+                <td><code>H024</code></td>
+                <td>菅家</td>
+                <td>此の度は 幣もとりあへず 手向山 紅葉の錦 神のまにまに</td>
+                <td>羇旅</td>
+                <td>古今集 羇旅 420</td>
+              </tr>
+              <tr id="id-h025">
+                <td><code>H025</code></td>
+                <td>三条右大臣</td>
+                <td>名にしおはば 逢坂山の さねかづら 人にしられで くるよしもがな</td>
+                <td>恋</td>
+                <td>後撰集 恋三 701</td>
+              </tr>
+              <tr id="id-h026">
+                <td><code>H026</code></td>
+                <td>貞信公</td>
+                <td>小倉山 峯のもみぢ葉 心あらば 今ひとたびの みゆき待たなむ</td>
+                <td>秋;雑</td>
+                <td>拾遺集 雑秋 1128</td>
+              </tr>
+              <tr id="id-h027">
+                <td><code>H027</code></td>
+                <td>中納言兼輔</td>
+                <td>みかの原 わきて流るる 泉川 いつみきとてか 戀しかるらむ</td>
+                <td>恋</td>
+                <td>新古今集 恋一 996</td>
+              </tr>
+              <tr id="id-h028">
+                <td><code>H028</code></td>
+                <td>源宗行朝臣</td>
+                <td>山里は 冬ぞ寂しさ まさりける 人目も草も かれぬと思へば</td>
+                <td>冬</td>
+                <td>古今集 冬 315</td>
+              </tr>
+              <tr id="id-h029">
+                <td><code>H029</code></td>
+                <td>凡河内躬恒</td>
+                <td>心あてに 折らばや折らむ 初霜の 置きまどはせる 白菊の花</td>
+                <td>秋</td>
+                <td>古今集 秋下 277</td>
+              </tr>
+              <tr id="id-h030">
+                <td><code>H030</code></td>
+                <td>壬生忠岑</td>
+                <td>有明の つれなく見えし 別れより 暁ばかり 憂きものはなし</td>
+                <td>恋</td>
+                <td>古今集 恋三 625</td>
+              </tr>
+              <tr id="id-h031">
+                <td><code>H031</code></td>
+                <td>坂上是則</td>
+                <td>朝ぼらけ 有明の月と 見るまでに 吉野の里に 降れる白雪</td>
+                <td>冬</td>
+                <td>古今集 冬 332</td>
+              </tr>
+              <tr id="id-h032">
+                <td><code>H032</code></td>
+                <td>春道列樹</td>
+                <td>山がはに 風のかけたる しがらみは 流れもあへぬ 紅葉なりけり</td>
+                <td>秋</td>
+                <td>古今集 秋下 303</td>
+              </tr>
+              <tr id="id-h033">
+                <td><code>H033</code></td>
+                <td>紀友則</td>
+                <td>久方の 光のどけき 春の日に しづごころなく 花の散るらむ</td>
+                <td>春</td>
+                <td>古今集 春下 84</td>
+              </tr>
+              <tr id="id-h034">
+                <td><code>H034</code></td>
+                <td>藤原興風</td>
+                <td>誰をかも 知る人にせむ 高砂の 松も昔の 友ならなくに</td>
+                <td>雑</td>
+                <td>古今集 雑上 909</td>
+              </tr>
+              <tr id="id-h035">
+                <td><code>H035</code></td>
+                <td>紀貫之</td>
+                <td>人はいさ 心もしらず ふるさとは 花ぞ昔の 香ににほひける</td>
+                <td>春</td>
+                <td>古今集 春上 42</td>
+              </tr>
+              <tr id="id-h036">
+                <td><code>H036</code></td>
+                <td>清原深養父</td>
+                <td>夏の夜は まだ宵ながら あけぬるを 雲のいづこに 月宿るらむ</td>
+                <td>夏</td>
+                <td>古今集 夏 166</td>
+              </tr>
+              <tr id="id-h037">
+                <td><code>H037</code></td>
+                <td>文屋朝康</td>
+                <td>白露に 風の吹きしく 秋の野は つらぬきとめぬ 玉ぞ散りける</td>
+                <td>秋</td>
+                <td>後撰集 秋中 308</td>
+              </tr>
+              <tr id="id-h038">
+                <td><code>H038</code></td>
+                <td>右近</td>
+                <td>忘らるる 身をば思はず 誓ひてし 人の命の 惜しくもあるかな</td>
+                <td>恋</td>
+                <td>拾遺集 恋四 870</td>
+              </tr>
+              <tr id="id-h039">
+                <td><code>H039</code></td>
+                <td>参議等</td>
+                <td>浅茅生の 小野の篠原 しのぶれど あまりてなどか 人の戀しき</td>
+                <td>恋</td>
+                <td>後撰集 恋一 578</td>
+              </tr>
+              <tr id="id-h040">
+                <td><code>H040</code></td>
+                <td>平兼盛</td>
+                <td>忍ぶれど 色に出にけり 我が戀は ものや思ふと 人の問ふまで</td>
+                <td>恋</td>
+                <td>拾遺集 恋一 622</td>
+              </tr>
+              <tr id="id-h041">
+                <td><code>H041</code></td>
+                <td>壬生忠見</td>
+                <td>戀すてふ わが名はまだき 立ちにけり 人知れずこそ 思ひそめしか</td>
+                <td>恋</td>
+                <td>拾遺集 恋一 621</td>
+              </tr>
+              <tr id="id-h042">
+                <td><code>H042</code></td>
+                <td>清原元輔</td>
+                <td>契りきな かたみに袖を しぼりつつ 末の松山 浪こさじとは</td>
+                <td>恋</td>
+                <td>後拾遺集 恋四 770</td>
+              </tr>
+              <tr id="id-h043">
+                <td><code>H043</code></td>
+                <td>権中納言敦忠</td>
+                <td>逢ひみての 後の心に くらぶれば 昔はものを 思はざりけり</td>
+                <td>恋</td>
+                <td>拾遺集 恋二 710</td>
+              </tr>
+              <tr id="id-h044">
+                <td><code>H044</code></td>
+                <td>中納言朝忠</td>
+                <td>逢ふことの 絶えてしなくば なかなかに 人をも身をも 恨みざらまし</td>
+                <td>恋</td>
+                <td>拾遺集 恋一 678</td>
+              </tr>
+              <tr id="id-h045">
+                <td><code>H045</code></td>
+                <td>謙徳公</td>
+                <td>哀れとも いふべき人は おもほえで 身のいたづらに なりぬべきかな</td>
+                <td>恋</td>
+                <td>拾遺集 恋五 950</td>
+              </tr>
+              <tr id="id-h046">
+                <td><code>H046</code></td>
+                <td>曽根好忠</td>
+                <td>由良の戸を わたる舟人 楫をたえ 行方もしらぬ 戀の道かな</td>
+                <td>恋</td>
+                <td>新古今集 恋一 1071</td>
+              </tr>
+              <tr id="id-h047">
+                <td><code>H047</code></td>
+                <td>恵慶法師</td>
+                <td>八重葎 しげれる宿の さびしきに 人こそ見えね 秋はきにけり</td>
+                <td>秋</td>
+                <td>拾遺集 秋 140</td>
+              </tr>
+              <tr id="id-h048">
+                <td><code>H048</code></td>
+                <td>源重之</td>
+                <td>風をいたみ 岩うつ浪の おのれのみ 砕けてものを 思ふ頃かな</td>
+                <td>恋</td>
+                <td>詞花集 恋上 210</td>
+              </tr>
+              <tr id="id-h049">
+                <td><code>H049</code></td>
+                <td>大中臣能宣朝臣</td>
+                <td>御垣守 衛士のたく火の 夜はもえ 晝は消えつつ ものをこそ思へ</td>
+                <td>恋</td>
+                <td>詞花集 恋上 224</td>
+              </tr>
+              <tr id="id-h050">
+                <td><code>H050</code></td>
+                <td>藤原義孝</td>
+                <td>君がため 惜しからざりし 命さへ 長くもがなと 思ひけるかな</td>
+                <td>恋</td>
+                <td>後拾遺集 恋二 669</td>
+              </tr>
+              <tr id="id-h051">
+                <td><code>H051</code></td>
+                <td>藤原実方朝臣</td>
+                <td>かくとだに えやはいぶきの さしも草 さしも知らじな もゆる思ひを</td>
+                <td>恋</td>
+                <td>後拾遺集 恋一 612</td>
+              </tr>
+              <tr id="id-h052">
+                <td><code>H052</code></td>
+                <td>藤原道信朝臣</td>
+                <td>明けぬれば くるるものとは 知りながら なほ恨めしき 朝ぼらけかな</td>
+                <td>恋</td>
+                <td>後拾遺集 恋二 672</td>
+              </tr>
+              <tr id="id-h053">
+                <td><code>H053</code></td>
+                <td>右大将道綱母</td>
+                <td>嘆きつつ 獨りぬる夜の 明くる間は いかに久しき ものとかは知る</td>
+                <td>恋</td>
+                <td>拾遺集 恋四 912</td>
+              </tr>
+              <tr id="id-h054">
+                <td><code>H054</code></td>
+                <td>儀同三司母</td>
+                <td>忘れじの 行末までは 難ければ 今日を限りの 命ともがな</td>
+                <td>恋</td>
+                <td>新古今集 恋三 1149</td>
+              </tr>
+              <tr id="id-h055">
+                <td><code>H055</code></td>
+                <td>大納言公任</td>
+                <td>瀧の音は たえて久しく なりぬれど 名こそ流れて なほ聞えけれ</td>
+                <td>雑</td>
+                <td>千載集 雑上 1035</td>
+              </tr>
+              <tr id="id-h056">
+                <td><code>H056</code></td>
+                <td>和泉式部</td>
+                <td>あらざらむ 此の世のほかの 思ひ出に 今一たびの 逢ふこともがな</td>
+                <td>恋</td>
+                <td>後拾遺集 恋三 763</td>
+              </tr>
+              <tr id="id-h057">
+                <td><code>H057</code></td>
+                <td>紫式部</td>
+                <td>廻り逢ひて 見しやそれとも わかぬまに 雲がくれにし 夜半の月かな</td>
+                <td>雑</td>
+                <td>新古今集 雑上 1497</td>
+              </tr>
+              <tr id="id-h058">
+                <td><code>H058</code></td>
+                <td>大貮三位</td>
+                <td>有馬山 ゐなのささ原 風吹けば いでそよ人を 忘れやはする</td>
+                <td>恋</td>
+                <td>後拾遺集 恋二 709</td>
+              </tr>
+              <tr id="id-h059">
+                <td><code>H059</code></td>
+                <td>赤染衛門</td>
+                <td>やすらはで 寝なましものを 小夜更けて 傾くまでの 月を見しかな</td>
+                <td>恋</td>
+                <td>後拾遺集 恋二 680</td>
+              </tr>
+              <tr id="id-h060">
+                <td><code>H060</code></td>
+                <td>小式部内侍</td>
+                <td>大江山 いくのの道の 遠ければ まだふみも見ず 天の橋立</td>
+                <td>雑</td>
+                <td>金葉集 雑上 586</td>
+              </tr>
+              <tr id="id-h061">
+                <td><code>H061</code></td>
+                <td>伊勢大輔</td>
+                <td>古への 奈良の都の 八重ざくら 今日九重に 匂ひぬるかな</td>
+                <td>春</td>
+                <td>詞花集 春 27</td>
+              </tr>
+              <tr id="id-h062">
+                <td><code>H062</code></td>
+                <td>清少納言</td>
+                <td>夜をこめて 鳥のそら音は はかるとも 世に逢坂の 関はゆるさじ</td>
+                <td>雑</td>
+                <td>後拾遺集 雑二 940</td>
+              </tr>
+              <tr id="id-h063">
+                <td><code>H063</code></td>
+                <td>左京大夫道雅</td>
+                <td>今はただ 思ひ絶えなむ とばかりを 人づてならで 言ふよしもがな</td>
+                <td>恋</td>
+                <td>後拾遺集 恋三 750</td>
+              </tr>
+              <tr id="id-h064">
+                <td><code>H064</code></td>
+                <td>権中納言定頼</td>
+                <td>朝ぼらけ 宇治の川霧 絶えだえに あらはれ渡る 瀬々の網代木</td>
+                <td>冬</td>
+                <td>千載集 冬 419</td>
+              </tr>
+              <tr id="id-h065">
+                <td><code>H065</code></td>
+                <td>相模</td>
+                <td>恨み侘び ほさぬ袖だに あるものを 戀に朽ちなむ 名こそ惜しけれ</td>
+                <td>恋</td>
+                <td>後拾遺集 恋四 815</td>
+              </tr>
+              <tr id="id-h066">
+                <td><code>H066</code></td>
+                <td>大僧正行尊</td>
+                <td>諸共に あはれと思へ 山ざくら 花よりほかに 知る人もなし</td>
+                <td>雑</td>
+                <td>金葉集 雑上 556</td>
+              </tr>
+              <tr id="id-h067">
+                <td><code>H067</code></td>
+                <td>周防内侍</td>
+                <td>春の夜の 夢ばかりなる 手枕に かひなく立たむ 名こそ惜しけれ</td>
+                <td>雑</td>
+                <td>千載集 雑上 961</td>
+              </tr>
+              <tr id="id-h068">
+                <td><code>H068</code></td>
+                <td>三条院</td>
+                <td>心にも あらで憂世に ながらへば 戀しかるべき 夜半の月かな</td>
+                <td>雑</td>
+                <td>後拾遺集 雑一 861</td>
+              </tr>
+              <tr id="id-h069">
+                <td><code>H069</code></td>
+                <td>能因法師</td>
+                <td>嵐ふく 三室の山の もみぢ葉は 龍田の川の 錦なりけり</td>
+                <td>秋</td>
+                <td>後拾遺集 秋下 366</td>
+              </tr>
+              <tr id="id-h070">
+                <td><code>H070</code></td>
+                <td>良暹法師</td>
+                <td>寂しさに 宿を立ち出でて 眺むれば いづくも同じ 秋の夕暮</td>
+                <td>秋</td>
+                <td>後拾遺集 秋上 333</td>
+              </tr>
+              <tr id="id-h071">
+                <td><code>H071</code></td>
+                <td>大納言経信</td>
+                <td>夕されば 門田の稲葉 おとづれて あしのまろやに 秋風ぞ吹く</td>
+                <td>秋</td>
+                <td>金葉集 秋 183</td>
+              </tr>
+              <tr id="id-h072">
+                <td><code>H072</code></td>
+                <td>祐子内親王家紀伊</td>
+                <td>音に聞く 高師の濱の あだ浪は かけじや袖の ぬれもこそすれ</td>
+                <td>恋</td>
+                <td>金葉集 恋下 501</td>
+              </tr>
+              <tr id="id-h073">
+                <td><code>H073</code></td>
+                <td>権中納言匡房</td>
+                <td>高砂の 尾の上の桜 咲きにけり 外山の霞 立たずもあらなむ</td>
+                <td>春</td>
+                <td>後拾遺集 春上 120</td>
+              </tr>
+              <tr id="id-h074">
+                <td><code>H074</code></td>
+                <td>源俊頼朝臣</td>
+                <td>うかりける 人を初瀬の 山おろし はげしかれとは 祈らぬものを</td>
+                <td>恋</td>
+                <td>千載集 恋二 707</td>
+              </tr>
+              <tr id="id-h075">
+                <td><code>H075</code></td>
+                <td>藤原基俊</td>
+                <td>契りおきし させもが露を 命にて あはれ今年の 秋も去ぬめり</td>
+                <td>雑</td>
+                <td>千載集 雑上 1023</td>
+              </tr>
+              <tr id="id-h076">
+                <td><code>H076</code></td>
+                <td>法性寺入道前関白太政大臣</td>
+                <td>わたの原 漕ぎ出でて見れば 久方の 雲居にまがふ 沖つ白浪</td>
+                <td>雑</td>
+                <td>詞花集 雑下 380</td>
+              </tr>
+              <tr id="id-h077">
+                <td><code>H077</code></td>
+                <td>崇徳院</td>
+                <td>瀬を早み 岩にせかるる 瀧川の われても末に 逢はむとぞ思ふ</td>
+                <td>恋</td>
+                <td>詞花集 恋上 228</td>
+              </tr>
+              <tr id="id-h078">
+                <td><code>H078</code></td>
+                <td>源兼昌</td>
+                <td>淡路島 かよふ千鳥の 鳴く声に いくよ寝覚めぬ 須磨の関守</td>
+                <td>冬</td>
+                <td>金葉集 冬 288</td>
+              </tr>
+              <tr id="id-h079">
+                <td><code>H079</code></td>
+                <td>左京大夫顕輔</td>
+                <td>秋風に たなびく雲の 絶間より もれ出づる月の 影のさやけさ</td>
+                <td>秋</td>
+                <td>新古今集 秋上 413</td>
+              </tr>
+              <tr id="id-h080">
+                <td><code>H080</code></td>
+                <td>待賢門院堀河</td>
+                <td>ながからむ 心も知らず 黒髪の みだれて今朝は ものをこそ思へ</td>
+                <td>恋</td>
+                <td>千載集 恋三 801</td>
+              </tr>
+              <tr id="id-h081">
+                <td><code>H081</code></td>
+                <td>後徳大寺左大臣</td>
+                <td>ほととぎす 鳴きつる方を 眺むれば ただ有明の 月ぞ残れる</td>
+                <td>夏</td>
+                <td>千載集 夏 161</td>
+              </tr>
+              <tr id="id-h082">
+                <td><code>H082</code></td>
+                <td>道因法師</td>
+                <td>思ひわび さても命は あるものを 憂きに堪へぬは 涙なりけり</td>
+                <td>恋</td>
+                <td>千載集 恋三 817</td>
+              </tr>
+              <tr id="id-h083">
+                <td><code>H083</code></td>
+                <td>皇太后宮大夫俊成</td>
+                <td>世の中よ 道こそなけれ 思ひ入る 山の奥にも 鹿ぞなくなる</td>
+                <td>雑</td>
+                <td>千載集 雑中 1148</td>
+              </tr>
+              <tr id="id-h084">
+                <td><code>H084</code></td>
+                <td>藤原清輔朝臣</td>
+                <td>ながらへば また此の頃や しのばれむ 憂しと見し世ぞ 今は戀しき</td>
+                <td>雑</td>
+                <td>新古今集 雑下 1843</td>
+              </tr>
+              <tr id="id-h085">
+                <td><code>H085</code></td>
+                <td>俊恵法師</td>
+                <td>夜もすがら もの思ふ頃は 明けやらで ねやのひまさへ つれなかりけり</td>
+                <td>恋</td>
+                <td>千載集 恋二 765</td>
+              </tr>
+              <tr id="id-h086">
+                <td><code>H086</code></td>
+                <td>西行法師</td>
+                <td>嘆けとて 月やはものを 思はする かこち顔なる わが涙かな</td>
+                <td>恋</td>
+                <td>千載集 恋五 926</td>
+              </tr>
+              <tr id="id-h087">
+                <td><code>H087</code></td>
+                <td>寂蓮法師</td>
+                <td>村雨の 露もまだひぬ 槙の葉に 霧立ちのぼる 秋の夕暮</td>
+                <td>秋</td>
+                <td>新古今集 秋下 491</td>
+              </tr>
+              <tr id="id-h088">
+                <td><code>H088</code></td>
+                <td>皇嘉門院別当</td>
+                <td>難波江の あしのかりねの 一夜ゆゑ みをつくしてや 戀ひわたるべき</td>
+                <td>恋</td>
+                <td>千載集 恋三 806</td>
+              </tr>
+              <tr id="id-h089">
+                <td><code>H089</code></td>
+                <td>式子内親王</td>
+                <td>玉の緒よ たえなば絶えね ながらへば 忍ぶることの 弱りもぞする</td>
+                <td>恋</td>
+                <td>新古今集 恋一 1034</td>
+              </tr>
+              <tr id="id-h090">
+                <td><code>H090</code></td>
+                <td>殷富門院大輔</td>
+                <td>見せばやな 雄島のあまの 袖だにも 濡れにぞ濡れし 色はかはらず</td>
+                <td>恋</td>
+                <td>千載集 恋四 884</td>
+              </tr>
+              <tr id="id-h091">
+                <td><code>H091</code></td>
+                <td>後京極摂政前太政大臣</td>
+                <td>きりぎりす なくや霜夜の さむしろに 衣かたしき 獨りかも寝む</td>
+                <td>秋</td>
+                <td>新古今集 秋下 518</td>
+              </tr>
+              <tr id="id-h092">
+                <td><code>H092</code></td>
+                <td>二条院讃岐</td>
+                <td>わが袖は 汐干に見えぬ 沖の石の 人こそ知らね 乾く間もなし</td>
+                <td>恋</td>
+                <td>千載集 恋二 759</td>
+              </tr>
+              <tr id="id-h093">
+                <td><code>H093</code></td>
+                <td>鎌倉右大臣</td>
+                <td>世の中は 常にもがもな 渚こぐ 海士の小舟の 綱手かなしも</td>
+                <td>羇旅</td>
+                <td>新勅撰集 羇旅 525</td>
+              </tr>
+              <tr id="id-h094">
+                <td><code>H094</code></td>
+                <td>参議雅経</td>
+                <td>みよし野の 山の秋風 小夜更けて 故郷寒く 衣うつなり</td>
+                <td>秋</td>
+                <td>新古今集 秋下 483</td>
+              </tr>
+              <tr id="id-h095">
+                <td><code>H095</code></td>
+                <td>前大僧正慈圓</td>
+                <td>おほけなく うき世の民に おほふかな 我が立つ杣に 墨染の袖</td>
+                <td>雑</td>
+                <td>千載集 雑中 1134</td>
+              </tr>
+              <tr id="id-h096">
+                <td><code>H096</code></td>
+                <td>入道前太政大臣</td>
+                <td>花さそふ あらしの庭の 雪ならで ふりゆくものは 我が身なりけり</td>
+                <td>雑</td>
+                <td>新勅撰集 雑一 1052</td>
+              </tr>
+              <tr id="id-h097">
+                <td><code>H097</code></td>
+                <td>権中納言定家</td>
+                <td>来ぬ人を 松帆の浦の 夕なぎに 焼くや藻塩の 身もこがれつつ</td>
+                <td>恋</td>
+                <td>新勅撰集 恋三 849</td>
+              </tr>
+              <tr id="id-h098">
+                <td><code>H098</code></td>
+                <td>従二位家隆</td>
+                <td>風そよぐ 楢の小川の 夕ぐれは みそぎぞ夏の しるしなりける</td>
+                <td>夏</td>
+                <td>新勅撰集 夏 192</td>
+              </tr>
+              <tr id="id-h099">
+                <td><code>H099</code></td>
+                <td>後鳥羽院</td>
+                <td>人もをし 人もうらめし あぢきなく 世を思ふ故に もの思ふ身は</td>
+                <td>雑</td>
+                <td>続後撰集 雑中 1199</td>
+              </tr>
+              <tr id="id-h100">
+                <td><code>H100</code></td>
+                <td>順徳院</td>
+                <td>百敷や 古き軒端の しのぶにも なほあまりある 昔なりけり</td>
+                <td>雑</td>
+                <td>続後撰集 雑下 1202</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details class="deep-dive">
+          <summary><span>百人秀歌</span>S番号と小倉対応</summary>
+          <div class="table-wrap poem-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>小倉対応</th>
+                  <th>歌人</th>
+                  <th>歌</th>
+                  <th>出典記号</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr id="id-s001">
+                <td><code>S001</code></td>
+                <td><a href="#id-h001"><code>H001</code></a> と同歌</td>
+                <td>天智天皇御製</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>撰</td>
+              </tr>
+              <tr id="id-s002">
+                <td><code>S002</code></td>
+                <td><a href="#id-h002"><code>H002</code></a> と同歌</td>
+                <td>持統天皇御製</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新古</td>
+              </tr>
+              <tr id="id-s003">
+                <td><code>S003</code></td>
+                <td><a href="#id-h003"><code>H003</code></a> と同歌</td>
+                <td>柿本人麿</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>拾遺</td>
+              </tr>
+              <tr id="id-s004">
+                <td><code>S004</code></td>
+                <td><a href="#id-h004"><code>H004</code></a> と同歌</td>
+                <td>山部赤人</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s005">
+                <td><code>S005</code></td>
+                <td><a href="#id-h006"><code>H006</code></a> と同歌</td>
+                <td>中納言家持</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s006">
+                <td><code>S006</code></td>
+                <td><a href="#id-h007"><code>H007</code></a> と同歌</td>
+                <td>阿倍仲麻呂</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>古今</td>
+              </tr>
+              <tr id="id-s007">
+                <td><code>S007</code></td>
+                <td><a href="#id-h011"><code>H011</code></a> と同歌</td>
+                <td>参議篁</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s008">
+                <td><code>S008</code></td>
+                <td><a href="#id-h005"><code>H005</code></a> と同歌</td>
+                <td>猿丸大夫</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s009">
+                <td><code>S009</code></td>
+                <td><a href="#id-h016"><code>H016</code></a> と同歌</td>
+                <td>中納言行平</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s010">
+                <td><code>S010</code></td>
+                <td><a href="#id-h017"><code>H017</code></a> と同歌</td>
+                <td>在原業平朝臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s011">
+                <td><code>S011</code></td>
+                <td><a href="#id-h018"><code>H018</code></a> と同歌</td>
+                <td>藤原敏行朝臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s012">
+                <td><code>S012</code></td>
+                <td><a href="#id-h013"><code>H013</code></a> と同歌</td>
+                <td>陽成院御製</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>撰</td>
+              </tr>
+              <tr id="id-s013">
+                <td><code>S013</code></td>
+                <td><a href="#id-h009"><code>H009</code></a> と同歌</td>
+                <td>小野小町</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>古</td>
+              </tr>
+              <tr id="id-s014">
+                <td><code>S014</code></td>
+                <td><a href="#id-h008"><code>H008</code></a> と同歌</td>
+                <td>喜撰法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s015">
+                <td><code>S015</code></td>
+                <td><a href="#id-h012"><code>H012</code></a> と同歌</td>
+                <td>僧正遍昭</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s016">
+                <td><code>S016</code></td>
+                <td><a href="#id-h010"><code>H010</code></a> と同歌</td>
+                <td>蝉丸</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>撰</td>
+              </tr>
+              <tr id="id-s017">
+                <td><code>S017</code></td>
+                <td><a href="#id-h014"><code>H014</code></a> と同歌</td>
+                <td>河原左大臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>古</td>
+              </tr>
+              <tr id="id-s018">
+                <td><code>S018</code></td>
+                <td><a href="#id-h015"><code>H015</code></a> と同歌</td>
+                <td>光孝天皇御製</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s019">
+                <td><code>S019</code></td>
+                <td><a href="#id-h019"><code>H019</code></a> と同歌</td>
+                <td>伊勢</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s020">
+                <td><code>S020</code></td>
+                <td><a href="#id-h020"><code>H020</code></a> と同歌</td>
+                <td>元良親王</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>撰</td>
+              </tr>
+              <tr id="id-s021">
+                <td><code>S021</code></td>
+                <td><a href="#id-h028"><code>H028</code></a> と同歌</td>
+                <td>源宗于朝臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>古</td>
+              </tr>
+              <tr id="id-s022">
+                <td><code>S022</code></td>
+                <td><a href="#id-h021"><code>H021</code></a> と同歌</td>
+                <td>素性法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s023">
+                <td><code>S023</code></td>
+                <td><a href="#id-h024"><code>H024</code></a> と同歌</td>
+                <td>菅家</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s024">
+                <td><code>S024</code></td>
+                <td><a href="#id-h030"><code>H030</code></a> と同歌</td>
+                <td>壬生忠岑</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s025">
+                <td><code>S025</code></td>
+                <td><a href="#id-h029"><code>H029</code></a> と同歌</td>
+                <td>凡河内躬恒</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s026">
+                <td><code>S026</code></td>
+                <td><a href="#id-h033"><code>H033</code></a> と同歌</td>
+                <td>紀友則</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s027">
+                <td><code>S027</code></td>
+                <td><a href="#id-h022"><code>H022</code></a> と同歌</td>
+                <td>文屋康秀</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s028">
+                <td><code>S028</code></td>
+                <td><a href="#id-h035"><code>H035</code></a> と同歌</td>
+                <td>紀貫之</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s029">
+                <td><code>S029</code></td>
+                <td><a href="#id-h031"><code>H031</code></a> と同歌</td>
+                <td>坂上是則</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s030">
+                <td><code>S030</code></td>
+                <td><a href="#id-h023"><code>H023</code></a> と同歌</td>
+                <td>大江千里</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s031">
+                <td><code>S031</code></td>
+                <td><a href="#id-h034"><code>H034</code></a> と同歌</td>
+                <td>藤原興風</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s032">
+                <td><code>S032</code></td>
+                <td><a href="#id-h032"><code>H032</code></a> と同歌</td>
+                <td>春道列樹</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s033">
+                <td><code>S033</code></td>
+                <td><a href="#id-h036"><code>H036</code></a> と同歌</td>
+                <td>清原深養父</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s034">
+                <td><code>S034</code></td>
+                <td><a href="#id-h026"><code>H026</code></a> と同歌</td>
+                <td>貞信公</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>拾</td>
+              </tr>
+              <tr id="id-s035">
+                <td><code>S035</code></td>
+                <td><a href="#id-h025"><code>H025</code></a> と同歌</td>
+                <td>三条右大臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>撰</td>
+              </tr>
+              <tr id="id-s036">
+                <td><code>S036</code></td>
+                <td><a href="#id-h027"><code>H027</code></a> と同歌</td>
+                <td>中納言兼輔</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s037">
+                <td><code>S037</code></td>
+                <td><a href="#id-h039"><code>H039</code></a> と同歌</td>
+                <td>参議等</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>撰</td>
+              </tr>
+              <tr id="id-s038">
+                <td><code>S038</code></td>
+                <td><a href="#id-h037"><code>H037</code></a> と同歌</td>
+                <td>文屋朝康</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s039">
+                <td><code>S039</code></td>
+                <td><a href="#id-h038"><code>H038</code></a> と同歌</td>
+                <td>右近</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>拾</td>
+              </tr>
+              <tr id="id-s040">
+                <td><code>S040</code></td>
+                <td><a href="#id-h043"><code>H043</code></a> と同歌</td>
+                <td>中納言敦忠</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s041">
+                <td><code>S041</code></td>
+                <td><a href="#id-h040"><code>H040</code></a> と同歌</td>
+                <td>平兼盛</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s042">
+                <td><code>S042</code></td>
+                <td><a href="#id-h041"><code>H041</code></a> と同歌</td>
+                <td>壬生忠見</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s043">
+                <td><code>S043</code></td>
+                <td><a href="#id-h045"><code>H045</code></a> と同歌</td>
+                <td>謙徳公</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s044">
+                <td><code>S044</code></td>
+                <td><a href="#id-h044"><code>H044</code></a> と同歌</td>
+                <td>中納言朝忠</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s045">
+                <td><code>S045</code></td>
+                <td><a href="#id-h042"><code>H042</code></a> と同歌</td>
+                <td>清原元輔</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>後拾遺</td>
+              </tr>
+              <tr id="id-s046">
+                <td><code>S046</code></td>
+                <td><a href="#id-h048"><code>H048</code></a> と同歌</td>
+                <td>源重之</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>詞華</td>
+              </tr>
+              <tr id="id-s047">
+                <td><code>S047</code></td>
+                <td><a href="#id-h046"><code>H046</code></a> と同歌</td>
+                <td>曽祢好忠</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s048">
+                <td><code>S048</code></td>
+                <td><a href="#id-h049"><code>H049</code></a> と同歌</td>
+                <td>大中臣能宣朝臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>詞</td>
+              </tr>
+              <tr id="id-s049">
+                <td><code>S049</code></td>
+                <td><a href="#id-h050"><code>H050</code></a> と同歌</td>
+                <td>藤原義孝</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>後</td>
+              </tr>
+              <tr id="id-s050">
+                <td><code>S050</code></td>
+                <td><a href="#id-h051"><code>H051</code></a> と同歌</td>
+                <td>藤原實方朝臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s051">
+                <td><code>S051</code></td>
+                <td><a href="#id-h052"><code>H052</code></a> と同歌</td>
+                <td>藤原道信朝臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s052">
+                <td><code>S052</code></td>
+                <td><a href="#id-h047"><code>H047</code></a> と同歌</td>
+                <td>恵慶法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>拾</td>
+              </tr>
+              <tr id="id-s053">
+                <td><code>S053</code></td>
+                <td>百人秀歌のみ</td>
+                <td>一条院皇后宮</td>
+                <td>よもすからちきりしことをわすれすはこひんなみたのいろそゆかしき</td>
+                <td>後</td>
+              </tr>
+              <tr id="id-s054">
+                <td><code>S054</code></td>
+                <td><a href="#id-h068"><code>H068</code></a> と同歌</td>
+                <td>三条院御製</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s055">
+                <td><code>S055</code></td>
+                <td><a href="#id-h054"><code>H054</code></a> と同歌</td>
+                <td>儀同三司母</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s056">
+                <td><code>S056</code></td>
+                <td><a href="#id-h053"><code>H053</code></a> と同歌</td>
+                <td>右大将道綱母</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>拾</td>
+              </tr>
+              <tr id="id-s057">
+                <td><code>S057</code></td>
+                <td><a href="#id-h069"><code>H069</code></a> と同歌</td>
+                <td>能因法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>後</td>
+              </tr>
+              <tr id="id-s058">
+                <td><code>S058</code></td>
+                <td><a href="#id-h070"><code>H070</code></a> と同歌</td>
+                <td>良暹法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s059">
+                <td><code>S059</code></td>
+                <td><a href="#id-h055"><code>H055</code></a> と同歌</td>
+                <td>大納言公任</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>拾</td>
+              </tr>
+              <tr id="id-s060">
+                <td><code>S060</code></td>
+                <td><a href="#id-h062"><code>H062</code></a> と同歌</td>
+                <td>清少納言</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>後</td>
+              </tr>
+              <tr id="id-s061">
+                <td><code>S061</code></td>
+                <td><a href="#id-h056"><code>H056</code></a> と同歌</td>
+                <td>和泉式部</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s062">
+                <td><code>S062</code></td>
+                <td><a href="#id-h058"><code>H058</code></a> と同歌</td>
+                <td>大貳三位</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s063">
+                <td><code>S063</code></td>
+                <td><a href="#id-h059"><code>H059</code></a> と同歌</td>
+                <td>赤染右衛門</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s064">
+                <td><code>S064</code></td>
+                <td><a href="#id-h057"><code>H057</code></a> と同歌</td>
+                <td>紫式部</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s065">
+                <td><code>S065</code></td>
+                <td><a href="#id-h061"><code>H061</code></a> と同歌</td>
+                <td>伊勢大輔</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>詞</td>
+              </tr>
+              <tr id="id-s066">
+                <td><code>S066</code></td>
+                <td><a href="#id-h060"><code>H060</code></a> と同歌</td>
+                <td>小式部内侍</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>金葉</td>
+              </tr>
+              <tr id="id-s067">
+                <td><code>S067</code></td>
+                <td><a href="#id-h064"><code>H064</code></a> と同歌</td>
+                <td>権中納言定頼</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s068">
+                <td><code>S068</code></td>
+                <td><a href="#id-h063"><code>H063</code></a> と同歌</td>
+                <td>左京大夫道雅</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>後</td>
+              </tr>
+              <tr id="id-s069">
+                <td><code>S069</code></td>
+                <td><a href="#id-h067"><code>H067</code></a> と同歌</td>
+                <td>周防内侍</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s070">
+                <td><code>S070</code></td>
+                <td><a href="#id-h071"><code>H071</code></a> と同歌</td>
+                <td>大納言経信</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>金</td>
+              </tr>
+              <tr id="id-s071">
+                <td><code>S071</code></td>
+                <td><a href="#id-h066"><code>H066</code></a> と同歌</td>
+                <td>前大僧正行尊</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s072">
+                <td><code>S072</code></td>
+                <td><a href="#id-h073"><code>H073</code></a> と同歌</td>
+                <td>前中納言匡房</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>後</td>
+              </tr>
+              <tr id="id-s073">
+                <td><code>S073</code></td>
+                <td>百人秀歌のみ</td>
+                <td>権中納言国信</td>
+                <td>かすかのゝしたもえわたるくさのうへにつれなくみゆるはるのあはゆき</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s074">
+                <td><code>S074</code></td>
+                <td><a href="#id-h072"><code>H072</code></a> と同歌</td>
+                <td>祐子内親王家紀伊</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>金</td>
+              </tr>
+              <tr id="id-s075">
+                <td><code>S075</code></td>
+                <td><a href="#id-h065"><code>H065</code></a> と同歌</td>
+                <td>相模</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>後</td>
+              </tr>
+              <tr id="id-s076">
+                <td><code>S076</code></td>
+                <td>百人秀歌のみ</td>
+                <td>源俊頼朝臣</td>
+                <td>山さくらさきそめしよりひさかたのくもゐにみゆるたきの白いと</td>
+                <td>金</td>
+              </tr>
+              <tr id="id-s077">
+                <td><code>S077</code></td>
+                <td><a href="#id-h077"><code>H077</code></a> と同歌</td>
+                <td>崇徳院御製</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>詞</td>
+              </tr>
+              <tr id="id-s078">
+                <td><code>S078</code></td>
+                <td><a href="#id-h080"><code>H080</code></a> と同歌</td>
+                <td>待賢門院堀川</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s079">
+                <td><code>S079</code></td>
+                <td><a href="#id-h076"><code>H076</code></a> と同歌</td>
+                <td>法性寺入道前関白太政大臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>詞</td>
+              </tr>
+              <tr id="id-s080">
+                <td><code>S080</code></td>
+                <td><a href="#id-h079"><code>H079</code></a> と同歌</td>
+                <td>左京大夫顕輔</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s081">
+                <td><code>S081</code></td>
+                <td><a href="#id-h078"><code>H078</code></a> と同歌</td>
+                <td>源兼昌</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>金</td>
+              </tr>
+              <tr id="id-s082">
+                <td><code>S082</code></td>
+                <td><a href="#id-h075"><code>H075</code></a> と同歌</td>
+                <td>藤原基俊</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s083">
+                <td><code>S083</code></td>
+                <td><a href="#id-h082"><code>H082</code></a> と同歌</td>
+                <td>道因法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s084">
+                <td><code>S084</code></td>
+                <td><a href="#id-h084"><code>H084</code></a> と同歌</td>
+                <td>藤原清輔朝臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s085">
+                <td><code>S085</code></td>
+                <td><a href="#id-h085"><code>H085</code></a> と同歌</td>
+                <td>俊恵法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s086">
+                <td><code>S086</code></td>
+                <td><a href="#id-h081"><code>H081</code></a> と同歌</td>
+                <td>後徳大寺左大臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s087">
+                <td><code>S087</code></td>
+                <td><a href="#id-h083"><code>H083</code></a> と同歌</td>
+                <td>皇太后宮大夫俊成</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s088">
+                <td><code>S088</code></td>
+                <td><a href="#id-h086"><code>H086</code></a> と同歌</td>
+                <td>西行法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s089">
+                <td><code>S089</code></td>
+                <td><a href="#id-h088"><code>H088</code></a> と同歌</td>
+                <td>皇嘉門院別当</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s090">
+                <td><code>S090</code></td>
+                <td>百人秀歌のみ</td>
+                <td>権中納言長方</td>
+                <td>きのくにのゆらのみさきにひろふてふたまさかにたにあひみてしがな</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s091">
+                <td><code>S091</code></td>
+                <td><a href="#id-h090"><code>H090</code></a> と同歌</td>
+                <td>殷富門院大輔</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s092">
+                <td><code>S092</code></td>
+                <td><a href="#id-h089"><code>H089</code></a> と同歌</td>
+                <td>式子内親王</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s093">
+                <td><code>S093</code></td>
+                <td><a href="#id-h087"><code>H087</code></a> と同歌</td>
+                <td>寂蓮法師</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s094">
+                <td><code>S094</code></td>
+                <td><a href="#id-h092"><code>H092</code></a> と同歌</td>
+                <td>二条院讃岐</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s095">
+                <td><code>S095</code></td>
+                <td><a href="#id-h091"><code>H091</code></a> と同歌</td>
+                <td>後京極摂政前太政大臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s096">
+                <td><code>S096</code></td>
+                <td><a href="#id-h095"><code>H095</code></a> と同歌</td>
+                <td>前大僧正慈圓</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>千</td>
+              </tr>
+              <tr id="id-s097">
+                <td><code>S097</code></td>
+                <td><a href="#id-h094"><code>H094</code></a> と同歌</td>
+                <td>参議雅経</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新</td>
+              </tr>
+              <tr id="id-s098">
+                <td><code>S098</code></td>
+                <td><a href="#id-h093"><code>H093</code></a> と同歌</td>
+                <td>鎌倉右大臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>新勅</td>
+              </tr>
+              <tr id="id-s099">
+                <td><code>S099</code></td>
+                <td><a href="#id-h098"><code>H098</code></a> と同歌</td>
+                <td>正三位家隆</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s100">
+                <td><code>S100</code></td>
+                <td><a href="#id-h097"><code>H097</code></a> と同歌</td>
+                <td>権中納言定家</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              <tr id="id-s101">
+                <td><code>S101</code></td>
+                <td><a href="#id-h096"><code>H096</code></a> と同歌</td>
+                <td>入道前太政大臣</td>
+                <td>小倉表の対応歌を参照</td>
+                <td>同</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <section class="references">
+        <h2>データ・本文</h2>
+        <div class="ref-list">
+          <p class="ref-item" id="ref-g-1"><span class="ref-label">[D-1]</span><a href="https://ja.wikisource.org/w/index.php?title=%E5%B0%8F%E5%80%89%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96&amp;oldid=240235">Japanese Wikisource「小倉百人一首」固定版 oldid 240235</a>。小倉百人一首100首の初期CSV候補の採用元。校訂本文としては未確定。</p>
+          <p class="ref-item" id="ref-g-2"><span class="ref-label">[D-2]</span><a href="https://kokusho.nijl.ac.jp/">国文学研究資料館 国書データベース</a>。古典籍画像、書誌、伝本確認、出典照合の候補。画像・翻刻の再配布条件は個別確認が必要。</p>
+          <p class="ref-item" id="ref-g-3"><span class="ref-label">[D-3]</span><a href="https://kokusho.nijl.ac.jp/work/426517">国書データベース「百人秀歌」</a>。百人秀歌の書誌・伝本確認候補。</p>
+          <p class="ref-item" id="ref-g-4"><span class="ref-label">[D-4]</span><a href="https://shoryobu.kunaicho.go.jp/Toshoryo/Viewer/1000029900000/49bb58467eb148d39c8dc10a60837cea">宮内庁書陵部所蔵資料目録・画像公開システム「百人秀歌（一巻・百人一首異本）」</a>。宮内庁書陵部所蔵本の確認候補。</p>
+          <p class="ref-item" id="ref-g-5"><span class="ref-label">[D-5]</span><a href="https://www.asahi-net.or.jp/~sg2h-ymst/yamatouta/sennin/100i/100s.html">水垣久「百人秀歌」</a>。百人秀歌本文・小倉番号対応を確認するための解析用参照資料。二首一対の歌合形式という概説も参照した。図表ID対応表では読者がS番号を追える範囲を示すが、解析用の完全CSVや埋め込みベクトルは公開しない。</p>
+          <p class="ref-item" id="ref-g-6"><span class="ref-label">[D-6]</span><a href="https://jti.lib.virginia.edu/japanese/hyakunin/macauley.html">University of Virginia Japanese Text Initiative「MacCauley's Translation」</a>。Clay MacCauley, <i>Hyakunin-Isshu</i>, 1917 に基づく英訳ページ。UVA版の英訳方針は <a href="https://jti.lib.virginia.edu/japanese/hyakunin/english.html">A Note on the English Translation</a> も参照。英訳本文は公開ページに再掲せず、集計値だけを扱う。</p>
+        </div>
+      </section>
+
+      <section class="references">
+        <h2>方法・モデル</h2>
+        <div class="ref-list">
+          <p class="ref-item" id="ref-g-10"><span class="ref-label">[M-1]</span><a href="https://platform.openai.com/docs/guides/embeddings">OpenAI Embeddings guide</a>。<code>text-embedding-3-large</code> と <code>text-embedding-3-small</code> による埋め込み実行、正規化、類似度計算の参照。</p>
+          <p class="ref-item" id="ref-g-11"><span class="ref-label">[M-2]</span><a href="https://platform.openai.com/docs/pricing">OpenAI API pricing</a>。費用を書く場合に再確認する参照ページ。</p>
+          <p class="ref-item" id="ref-g-12"><span class="ref-label">[M-3]</span>モデル条件。第1章の主要条件は、入力 <code>original_kana</code>、主モデル <code>text-embedding-3-small</code>、PCA投影、ランダム順10,000回比較である。<code>text-embedding-3-large</code> は感度確認として使う。第1章の二首一組・百人秀歌順検査では、百人秀歌101首と小倉100首を比較用に同じ本文のみ条件でかけ直した集計も用いる。第2章・第3章の10×10検査では、百人秀歌側と小倉側をそろえるため、作業用本文表記 <code>original</code> 条件の <code>text-embedding-3-small</code> も使う。そのため、第1章の隣接表と第2・第3章の10×10表では、同じペアでも小数値が一致しない場合がある。本文中で必要な歌は掲げるが、解析用の完全本文データセットと埋め込みベクトルは公開ページに含めない。</p>
+        </div>
+      </section>
+
+      <section class="references">
+        <h2>前作</h2>
+        <div class="ref-list">
+          <p class="ref-item" id="ref-g-20"><span class="ref-label">[P-1]</span><a href="https://dueyama.github.io/buddhist-text-embedding-map/">意味埋め込みによる仏教文献の探索地図</a>。仏教文献を意味空間上に置く前作。</p>
+          <p class="ref-item" id="ref-g-21"><span class="ref-label">[P-2]</span><a href="https://dueyama.github.io/honen-shinran-shared-core-map/">法然・親鸞の共有核とはみ出し領域</a>。法然『選択集』と親鸞『教行信証』を三層探索地図として比較した前作。</p>
+        </div>
+      </section>
+
+      <section class="references">
+        <h2>百人秀歌・先行説</h2>
+        <div class="ref-list">
+          <p class="ref-item" id="ref-g-30"><span class="ref-label">[L-1]</span><a href="https://www.jstage.jst.go.jp/article/tja/76/1/76_1/_article/-char/ja/">久保田淳「後鳥羽院の『時代不同歌合』と藤原定家の『百人秀歌』」</a>『日本學士院紀要』76(1), 1-19, 2021. DOI: <code>10.2183/tja.76.1_1</code>。百人秀歌、後鳥羽院、時代不同歌合、撰者説、百人秀歌と小倉百人一首の差し替え・並べ替えを読む候補文献。</p>
+          <p class="ref-item" id="ref-g-31"><span class="ref-label">[L-2]</span>中川博夫・田渕句美子・渡邉裕美子編『百人一首の現在』青簡舎, 2022。近年の百人一首・百人秀歌研究整理の候補。</p>
+          <p class="ref-item" id="ref-g-32"><span class="ref-label">[L-3]</span>瀬戸口善則「定家撰『百人秀歌』の10×10の枡目配列における絵図と背景図」『岐阜大学工学部研究報告』50, 53-76, 2000。10×10配列説の確認候補。書誌情報と機関リポジトリのメタデータは確認済みだが、リポジトリ上は metadata only access で、本文・図・配置規則はウェブ公開資料として未確認。</p>
+          <p class="ref-item" id="ref-g-33"><span class="ref-label">[L-4]</span>草野隆「源俊頼朝臣と二首の表歌 - 『百人秀歌』私考(8)」『星美学園短期大学研究論叢』45, 3-29。源俊頼の入撰歌差を読む候補文献。</p>
+          <p class="ref-item" id="ref-g-34"><span class="ref-label">[L-5]</span><a href="https://ja.wikipedia.org/wiki/%E7%99%BE%E4%BA%BA%E7%A7%80%E6%AD%8C">Wikipedia「百人秀歌」</a>。百人秀歌を二首で一組とする概説の所在確認用。学術的根拠としては、本文・伝本・研究文献で別途確認する。</p>
+        </div>
+      </section>
+
+      <section class="references">
+        <h2>公開範囲</h2>
+        <div class="ref-list">
+          <p class="ref-item" id="ref-g-40"><span class="ref-label">[S-1]</span>このサイトで公開するのは、図、集計値、参照情報、読み物本文である。本文中で必要な歌は出典付きで掲げる。一方、解析用の完全CSV、埋め込みベクトル、API key、非公開作業メモは公開対象に含めない。</p>
+          <p class="ref-item" id="ref-g-41"><span class="ref-label">[S-2]</span>百人秀歌については、資料の利用条件を確認しながら進める。読者が図表を読めるようにS番号の対応表は示すが、解析用CSV、埋め込みベクトル、非公開作業メモは公開しない。</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

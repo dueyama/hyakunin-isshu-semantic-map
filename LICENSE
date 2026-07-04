@@ -1,0 +1,16 @@
+This repository uses a split license.
+
+Code is licensed under the MIT License. See LICENSE-CODE.
+
+The paper, figures, public documentation, process records, and public derived
+data created in this repository are licensed under Creative Commons Attribution
+4.0 International (CC BY 4.0). See LICENSE-CONTENT.
+
+External source texts, transcriptions, images, translations, and database
+records are not covered by this repository's licenses. They remain subject to
+the terms of their respective providers.
+
+Files that include Japanese Wikisource-derived text from "小倉百人一首",
+including data/hyakunin_isshu.csv and normalized derivatives, are treated under
+the Wikisource page's Creative Commons Attribution-ShareAlike 3.0 Unported
+(CC BY-SA 3.0) notice, not relicensed under this repository's CC BY 4.0 notice.

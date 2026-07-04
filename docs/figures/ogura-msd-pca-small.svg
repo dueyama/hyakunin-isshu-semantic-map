@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#fbfaf7"/>
+<text x="90" y="62" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="42" fill="#222">小倉順のMSDを見る</text>
+<text x="90" y="100" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="19" fill="#555">PCA二次元図上で、k首先まで進むと平均してどれくらい離れるか。</text>
+<rect x="112" y="150" width="1320" height="560" fill="#fffdfa" stroke="#d7d0c2"/>
+<line x1="112" y1="710.00" x2="1432" y2="710.00" stroke="#eee7dc" stroke-width="1"/>
+<text x="98" y="715.00" text-anchor="end" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#74706a">0.00</text>
+<line x1="112" y1="570.00" x2="1432" y2="570.00" stroke="#eee7dc" stroke-width="1"/>
+<text x="98" y="575.00" text-anchor="end" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#74706a">0.04</text>
+<line x1="112" y1="430.00" x2="1432" y2="430.00" stroke="#eee7dc" stroke-width="1"/>
+<text x="98" y="435.00" text-anchor="end" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#74706a">0.09</text>
+<line x1="112" y1="290.00" x2="1432" y2="290.00" stroke="#eee7dc" stroke-width="1"/>
+<text x="98" y="295.00" text-anchor="end" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#74706a">0.13</text>
+<line x1="112" y1="150.00" x2="1432" y2="150.00" stroke="#eee7dc" stroke-width="1"/>
+<text x="98" y="155.00" text-anchor="end" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#74706a">0.17</text>
+<line x1="112.00" y1="150" x2="112.00" y2="710" stroke="#f0ebe3" stroke-width="1"/>
+<text x="112.00" y="742" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">1</text>
+<line x1="247.38" y1="150" x2="247.38" y2="710" stroke="#f0ebe3" stroke-width="1"/>
+<text x="247.38" y="742" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">5</text>
+<line x1="416.62" y1="150" x2="416.62" y2="710" stroke="#f0ebe3" stroke-width="1"/>
+<text x="416.62" y="742" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">10</text>
+<line x1="755.08" y1="150" x2="755.08" y2="710" stroke="#f0ebe3" stroke-width="1"/>
+<text x="755.08" y="742" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">20</text>
+<line x1="1093.54" y1="150" x2="1093.54" y2="710" stroke="#f0ebe3" stroke-width="1"/>
+<text x="1093.54" y="742" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">30</text>
+<line x1="1432.00" y1="150" x2="1432.00" y2="710" stroke="#f0ebe3" stroke-width="1"/>
+<text x="1432.00" y="742" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">40</text>
+<path d="M 112.00 210.20 L 145.85 210.03 L 179.69 209.05 L 213.54 208.10 L 247.38 208.02 L 281.23 208.05 L 315.08 207.48 L 348.92 207.90 L 382.77 207.46 L 416.62 205.45 L 450.46 205.05 L 484.31 204.75 L 518.15 205.34 L 552.00 204.29 L 585.85 203.21 L 619.69 202.48 L 653.54 204.52 L 687.38 202.10 L 721.23 202.20 L 755.08 202.14 L 788.92 200.10 L 822.77 200.77 L 856.62 200.66 L 890.46 200.39 L 924.31 199.93 L 958.15 199.21 L 992.00 198.59 L 1025.85 199.13 L 1059.69 197.23 L 1093.54 197.59 L 1127.38 197.34 L 1161.23 196.47 L 1195.08 196.21 L 1228.92 195.23 L 1262.77 194.77 L 1296.62 194.94 L 1330.46 193.45 L 1364.31 192.23 L 1398.15 192.70 L 1432.00 191.48 L 1432.00 329.72 L 1398.15 330.75 L 1364.31 329.53 L 1330.46 329.34 L 1296.62 329.32 L 1262.77 328.35 L 1228.92 327.96 L 1195.08 325.45 L 1161.23 326.93 L 1127.38 327.22 L 1093.54 325.38 L 1059.69 325.73 L 1025.85 324.86 L 992.00 325.47 L 958.15 323.79 L 924.31 322.67 L 890.46 323.88 L 856.62 323.20 L 822.77 323.49 L 788.92 322.12 L 755.08 321.66 L 721.23 321.59 L 687.38 320.12 L 653.54 320.42 L 619.69 319.32 L 585.85 320.47 L 552.00 318.85 L 518.15 318.09 L 484.31 317.57 L 450.46 318.98 L 416.62 317.17 L 382.77 316.95 L 348.92 316.71 L 315.08 316.66 L 281.23 316.42 L 247.38 316.14 L 213.54 314.81 L 179.69 313.69 L 145.85 314.66 L 112.00 314.78 Z" fill="#b8c7d9" opacity="0.34"/>
+<path d="M 112.00 262.14 L 145.85 261.94 L 179.69 261.67 L 213.54 261.55 L 247.38 261.77 L 281.23 262.49 L 315.08 261.99 L 348.92 262.01 L 382.77 261.80 L 416.62 261.48 L 450.46 261.97 L 484.31 261.78 L 518.15 262.31 L 552.00 261.88 L 585.85 261.68 L 619.69 261.58 L 653.54 262.09 L 687.38 261.72 L 721.23 262.22 L 755.08 261.49 L 788.92 261.98 L 822.77 261.57 L 856.62 262.00 L 890.46 262.56 L 924.31 261.80 L 958.15 262.06 L 992.00 262.11 L 1025.85 262.27 L 1059.69 261.77 L 1093.54 261.97 L 1127.38 261.89 L 1161.23 261.61 L 1195.08 261.29 L 1228.92 261.87 L 1262.77 262.21 L 1296.62 261.88 L 1330.46 261.87 L 1364.31 261.54 L 1398.15 262.25 L 1432.00 261.01" fill="none" stroke="#6e8197" stroke-width="3" stroke-dasharray="8 8" opacity="0.9"/>
+<path d="M 112.00 300.64 L 145.85 333.42 L 179.69 312.31 L 213.54 272.52 L 247.38 293.85 L 281.23 294.30 L 315.08 283.93 L 348.92 269.84 L 382.77 293.22 L 416.62 288.39 L 450.46 285.84 L 484.31 208.64 L 518.15 218.97 L 552.00 244.99 L 585.85 269.32 L 619.69 259.62 L 653.54 252.06 L 687.38 265.36 L 721.23 233.88 L 755.08 236.19 L 788.92 255.69 L 822.77 244.76 L 856.62 274.89 L 890.46 258.41 L 924.31 251.73 L 958.15 257.02 L 992.00 248.39 L 1025.85 238.57 L 1059.69 259.26 L 1093.54 247.90 L 1127.38 234.87 L 1161.23 291.39 L 1195.08 203.66 L 1228.92 264.11 L 1262.77 205.49 L 1296.62 279.47 L 1330.46 216.06 L 1364.31 266.44 L 1398.15 234.09 L 1432.00 213.33" fill="none" stroke="#9a3f2f" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="112.00" cy="300.64" r="6" fill="#9a3f2f" stroke="#fffdfa" stroke-width="2"/>
+<circle cx="145.85" cy="333.42" r="6" fill="#9a3f2f" stroke="#fffdfa" stroke-width="2"/>
+<text x="155.85" y="317.42" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#4b4039">k=2: 0.116 / pct 0.011</text>
+<circle cx="247.38" cy="293.85" r="6" fill="#9a3f2f" stroke="#fffdfa" stroke-width="2"/>
+<circle cx="416.62" cy="288.39" r="6" fill="#9a3f2f" stroke="#fffdfa" stroke-width="2"/>
+<circle cx="755.08" cy="236.19" r="6" fill="#9a3f2f" stroke="#fffdfa" stroke-width="2"/>
+<text x="765.08" y="220.19" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#4b4039">k=20: 0.146 / pct 0.760</text>
+<circle cx="1432.00" cy="213.33" r="6" fill="#9a3f2f" stroke="#fffdfa" stroke-width="2"/>
+<text x="1442.00" y="201.33" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#4b4039">k=40: 0.153 / pct 0.877</text>
+<text x="90" y="764" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" fill="#555">横軸: 何首先を見るか（lag）。縦軸: PCA二次元図上の平均二乗変位（MSD）。</text>
+<rect x="90" y="794" width="28" height="12" fill="#b8c7d9" opacity="0.34"/><text x="128" y="806" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#555">ランダム順の5-95%帯</text>
+<line x1="338" y1="800" x2="392" y2="800" stroke="#6e8197" stroke-width="3" stroke-dasharray="8 8"/><text x="402" y="806" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#555">ランダム順平均</text>
+<line x1="586" y1="800" x2="640" y2="800" stroke="#9a3f2f" stroke-width="4"/><text x="650" y="806" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#555">小倉順</text>
+<text x="90" y="842" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">k=1: 小倉0.126 / ランダム0.138 / percentile 0.110。k=2: 小倉0.116 / ランダム0.138 / percentile 0.011。</text>
+<text x="90" y="866" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#74706a">短いlagでは近く、長いlagではランダム平均との差が薄れる。これはPCA図上の補助診断であり、高次元の意味距離そのものではない。</text>
+<text x="1348" y="772" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" fill="#74706a">lag</text>
+<text x="110" y="134" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" fill="#74706a">MSD</text>
+</svg>

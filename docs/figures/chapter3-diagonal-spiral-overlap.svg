@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="840" viewBox="0 0 1280 840" role="img">
+<defs>
+  <filter id="shadow" x="-12%" y="-12%" width="124%" height="124%">
+    <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#202124" flood-opacity="0.11"/>
+  </filter>
+</defs>
+<rect width="1280" height="840" fill="#fbfaf7"/>
+<rect x="34" y="34" width="1212" height="772" rx="18" fill="#fffdf8" stroke="#ded6c9" filter="url(#shadow)"/>
+<text x="78" y="88" fill="#4b2447" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="34" font-weight="700" letter-spacing="0">百人秀歌の斜め × 小倉の螺旋</text>
+<text x="78" y="122" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" letter-spacing="0">S076を外した百人秀歌の斜めつづら折りと、小倉の螺旋置きが同じ隣ペアをどれだけ拾うか。</text>
+<rect x="78" y="158" width="330" height="114" fill="#f4f1ea" stroke="#9a3f2f" rx="16" stroke-width="1.4"/>
+<text x="106" y="212" fill="#9a3f2f" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="34" font-weight="800" letter-spacing="0">22組</text>
+<text x="106" y="246" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" letter-spacing="0">上下左右で重なるペア</text>
+<rect x="448" y="158" width="330" height="114" fill="#f4f1ea" stroke="#263c61" rx="16" stroke-width="1.4"/>
+<text x="476" y="212" fill="#263c61" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="34" font-weight="800" letter-spacing="0">13.0%</text>
+<text x="476" y="246" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" letter-spacing="0">百人秀歌斜め側から見た重なり率</text>
+<rect x="818" y="158" width="330" height="114" fill="#f4f1ea" stroke="#526b55" rx="16" stroke-width="1.4"/>
+<text x="846" y="212" fill="#526b55" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="34" font-weight="800" letter-spacing="0">21/22</text>
+<text x="846" y="246" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" letter-spacing="0">重なった上下左右ペアの多くは連番</text>
+<text x="78" y="322" fill="#202124" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="24" font-weight="700" letter-spacing="0">百人秀歌斜めと、小倉側の各置き方の重なり</text>
+<text x="78" y="350" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" letter-spacing="0">数値は上下左右近傍。螺旋置きは偶然より重なるが、候補中で特別に高いわけではない。</text>
+<text x="90" y="402" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" font-weight="700" letter-spacing="0">通常行型</text>
+<rect x="260" y="382" width="470" height="28" fill="#eee8dc" rx="14"/>
+<rect x="260" y="382" width="470.0" height="28" fill="#496f86" rx="14"/>
+<text x="720.0" y="402" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="end" letter-spacing="0">30</text>
+<text x="750" y="402" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0"/>
+<text x="90" y="448" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" font-weight="700" letter-spacing="0">通常列型</text>
+<rect x="260" y="428" width="470" height="28" fill="#eee8dc" rx="14"/>
+<rect x="260" y="428" width="470.0" height="28" fill="#496f86" rx="14"/>
+<text x="720.0" y="448" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="end" letter-spacing="0">30</text>
+<text x="750" y="448" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0"/>
+<text x="90" y="494" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" font-weight="700" letter-spacing="0">斜めつづら折り</text>
+<rect x="260" y="474" width="470" height="28" fill="#eee8dc" rx="14"/>
+<rect x="260" y="474" width="423.0" height="28" fill="#496f86" rx="14"/>
+<text x="673.0" y="494" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="end" letter-spacing="0">27</text>
+<text x="750" y="494" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0"/>
+<text x="90" y="540" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" font-weight="700" letter-spacing="0">逆斜めつづら折り</text>
+<rect x="260" y="520" width="470" height="28" fill="#eee8dc" rx="14"/>
+<rect x="260" y="520" width="423.0" height="28" fill="#496f86" rx="14"/>
+<text x="673.0" y="540" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="end" letter-spacing="0">27</text>
+<text x="750" y="540" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0"/>
+<text x="90" y="586" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" font-weight="700" letter-spacing="0">行つづら折り</text>
+<rect x="260" y="566" width="470" height="28" fill="#eee8dc" rx="14"/>
+<rect x="260" y="566" width="407.3333333333333" height="28" fill="#496f86" rx="14"/>
+<text x="657.3333333333333" y="586" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="end" letter-spacing="0">26</text>
+<text x="750" y="586" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0"/>
+<text x="90" y="632" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" font-weight="700" letter-spacing="0">列つづら折り</text>
+<rect x="260" y="612" width="470" height="28" fill="#eee8dc" rx="14"/>
+<rect x="260" y="612" width="407.3333333333333" height="28" fill="#496f86" rx="14"/>
+<text x="657.3333333333333" y="632" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="end" letter-spacing="0">26</text>
+<text x="750" y="632" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0"/>
+<text x="90" y="678" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" font-weight="700" letter-spacing="0">螺旋置き</text>
+<rect x="260" y="658" width="470" height="28" fill="#eee8dc" rx="14"/>
+<rect x="260" y="658" width="344.6666666666667" height="28" fill="#9a3f2f" rx="14"/>
+<text x="594.6666666666667" y="678" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="end" letter-spacing="0">22</text>
+<text x="750" y="678" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0">小倉螺旋</text>
+<line x1="88" y1="712" x2="1160" y2="712" stroke="#ded6c9" stroke-width="1.2"/>
+<text x="90" y="744" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" letter-spacing="0">8近傍では、螺旋置きの重なりは 55組 / 321組。最大は 行つづら折り の 85組。</text>
+<text x="90" y="772" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" letter-spacing="0">全97首から任意のペアを選ぶだけなら、上下左右の期待重なりは約6.1組。観測値はその約3.6倍。</text>
+</svg>

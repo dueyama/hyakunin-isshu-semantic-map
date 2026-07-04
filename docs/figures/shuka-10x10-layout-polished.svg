@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="730" viewBox="0 0 1280 730" role="img">
+<defs>
+  <filter id="shadow" x="-12%" y="-12%" width="124%" height="124%">
+    <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#202124" flood-opacity="0.11"/>
+  </filter>
+  <linearGradient id="barGloss" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="1280" height="730" fill="#fbfaf7"/>
+<rect x="34" y="34" width="1212" height="662" rx="18" fill="#fffdf8" stroke="#ded6c9" filter="url(#shadow)"/>
+<text x="78" y="82" fill="#4b2447" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="32" font-weight="700" letter-spacing="0">百人秀歌 10×10置き方比較</text>
+<text x="78" y="116" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" letter-spacing="0">S076 源俊頼別歌を枠外に置いた場合。棒は上下左右近傍平均のランダムpercentile。</text>
+<rect x="930" y="78" width="174" height="34" fill="#f4f1ea" stroke="#9a3f2f" rx="17" stroke-width="1.4"/>
+<text x="1017.0" y="101" fill="#9a3f2f" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0">外す歌 S076</text>
+<rect x="1114" y="78" width="116" height="34" fill="#f4f1ea" stroke="#4b2447" rx="17" stroke-width="1.4"/>
+<text x="1172.0" y="101" fill="#4b2447" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0">上下左右</text>
+<line x1="304" y1="154" x2="304" y2="592" stroke="#ded6c9" stroke-width="1" opacity="0.75"/>
+<text x="304" y="142" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="13" text-anchor="middle" letter-spacing="0">0</text>
+<line x1="456.5" y1="154" x2="456.5" y2="592" stroke="#ded6c9" stroke-width="1" opacity="0.75"/>
+<text x="456.5" y="142" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="13" text-anchor="middle" letter-spacing="0">0.25</text>
+<line x1="609.0" y1="154" x2="609.0" y2="592" stroke="#ded6c9" stroke-width="1" opacity="0.75"/>
+<text x="609.0" y="142" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="13" text-anchor="middle" letter-spacing="0">0.50</text>
+<line x1="761.5" y1="154" x2="761.5" y2="592" stroke="#ded6c9" stroke-width="1" opacity="0.75"/>
+<text x="761.5" y="142" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="13" text-anchor="middle" letter-spacing="0">0.75</text>
+<line x1="914.0" y1="154" x2="914.0" y2="592" stroke="#ded6c9" stroke-width="1" opacity="0.75"/>
+<text x="914.0" y="142" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="13" text-anchor="middle" letter-spacing="0">1</text>
+<line x1="304" y1="592" x2="914" y2="592" stroke="#ded6c9" stroke-width="1.2"/>
+<text x="78" y="154" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" letter-spacing="0">置き方</text>
+<text x="970" y="154" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0">平均</text>
+<text x="1060" y="154" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0">z</text>
+<text x="1152" y="154" fill="#6f6a62" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0">目安</text>
+<text x="78" y="198" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="700" letter-spacing="0">斜め NE-SW</text>
+<rect x="304" y="174" width="610" height="24" fill="#ede8dd" rx="12.0"/>
+<rect x="304" y="174" width="563.64" height="24" fill="#8f4e76" rx="12.0" opacity="0.93"/>
+<rect x="304" y="174" width="563.64" height="24" fill="url(#barGloss)" rx="12.0"/>
+<text x="857.64" y="191" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" text-anchor="end" letter-spacing="0">0.924</text>
+<text x="970" y="195" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">0.4678</text>
+<text x="1060" y="195" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">1.40</text>
+<text x="1152" y="195" fill="#8f4e76" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0">上位</text>
+<text x="78" y="256" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="700" letter-spacing="0">斜め NW-SE</text>
+<rect x="304" y="232" width="610" height="24" fill="#ede8dd" rx="12.0"/>
+<rect x="304" y="232" width="563.64" height="24" fill="#8f4e76" rx="12.0" opacity="0.93"/>
+<rect x="304" y="232" width="563.64" height="24" fill="url(#barGloss)" rx="12.0"/>
+<text x="857.64" y="249" fill="#fffdf8" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" text-anchor="end" letter-spacing="0">0.924</text>
+<text x="970" y="253" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">0.4678</text>
+<text x="1060" y="253" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">1.40</text>
+<text x="1152" y="253" fill="#8f4e76" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0">上位</text>
+<text x="78" y="314" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="700" letter-spacing="0">列つづら折り</text>
+<rect x="304" y="290" width="610" height="24" fill="#ede8dd" rx="12.0"/>
+<rect x="304" y="290" width="164.09" height="24" fill="#496f86" rx="12.0" opacity="0.93"/>
+<rect x="304" y="290" width="164.09" height="24" fill="url(#barGloss)" rx="12.0"/>
+<text x="478.09000000000003" y="307" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" letter-spacing="0">0.269</text>
+<text x="970" y="311" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">0.4574</text>
+<text x="1060" y="311" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">-0.61</text>
+<text x="1152" y="311" fill="#496f86" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0">低め</text>
+<text x="78" y="372" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="700" letter-spacing="0">行つづら折り</text>
+<rect x="304" y="348" width="610" height="24" fill="#ede8dd" rx="12.0"/>
+<rect x="304" y="348" width="164.09" height="24" fill="#496f86" rx="12.0" opacity="0.93"/>
+<rect x="304" y="348" width="164.09" height="24" fill="url(#barGloss)" rx="12.0"/>
+<text x="478.09000000000003" y="365" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" letter-spacing="0">0.269</text>
+<text x="970" y="369" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">0.4574</text>
+<text x="1060" y="369" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">-0.61</text>
+<text x="1152" y="369" fill="#496f86" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0">低め</text>
+<text x="78" y="430" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="700" letter-spacing="0">渦巻き型</text>
+<rect x="304" y="406" width="610" height="24" fill="#ede8dd" rx="12.0"/>
+<rect x="304" y="406" width="120.17" height="24" fill="#938b80" rx="12.0" opacity="0.93"/>
+<rect x="304" y="406" width="120.17" height="24" fill="url(#barGloss)" rx="12.0"/>
+<text x="434.17" y="423" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" letter-spacing="0">0.197</text>
+<text x="970" y="427" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">0.4561</text>
+<text x="1060" y="427" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">-0.86</text>
+<text x="1152" y="427" fill="#938b80" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0">低め</text>
+<text x="78" y="488" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="700" letter-spacing="0">通常列型</text>
+<rect x="304" y="464" width="610" height="24" fill="#ede8dd" rx="12.0"/>
+<rect x="304" y="464" width="80.52000000000001" height="24" fill="#938b80" rx="12.0" opacity="0.93"/>
+<rect x="304" y="464" width="80.52000000000001" height="24" fill="url(#barGloss)" rx="12.0"/>
+<text x="394.52" y="481" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" letter-spacing="0">0.132</text>
+<text x="970" y="485" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">0.4547</text>
+<text x="1060" y="485" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">-1.13</text>
+<text x="1152" y="485" fill="#938b80" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0">低め</text>
+<text x="78" y="546" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="700" letter-spacing="0">通常行型</text>
+<rect x="304" y="522" width="610" height="24" fill="#ede8dd" rx="12.0"/>
+<rect x="304" y="522" width="80.52000000000001" height="24" fill="#938b80" rx="12.0" opacity="0.93"/>
+<rect x="304" y="522" width="80.52000000000001" height="24" fill="url(#barGloss)" rx="12.0"/>
+<text x="394.52" y="539" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" font-weight="700" letter-spacing="0">0.132</text>
+<text x="970" y="543" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">0.4547</text>
+<text x="1060" y="543" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" text-anchor="middle" letter-spacing="0">-1.13</text>
+<text x="1152" y="543" fill="#938b80" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="0">低め</text>
+<rect x="78" y="628" width="1124" height="66" fill="#f4f1ea" stroke="#ded6c9" rx="14"/>
+<text x="104" y="668" fill="#4b2447" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="19" font-weight="700" letter-spacing="0">図で見ること</text>
+<text x="218" y="668" fill="#202124" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" letter-spacing="0">斜めつづら折り型が上位に来る。一方、行・列型や渦巻き型はこの条件では低めに出る。</text>
+</svg>

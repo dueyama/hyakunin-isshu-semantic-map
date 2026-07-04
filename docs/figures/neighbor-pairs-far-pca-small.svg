@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1610" viewBox="0 0 1600 1610">
+<rect width="1600" height="1610" fill="#fbfaf7"/>
+<text x="90" y="70" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="42" fill="#222">遠い隣は地図のどこにいるか</text>
+<text x="90" y="112" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="19" fill="#555">text-embedding-3-small / PCA。PC1/PC2は同一スケールで描いている。</text>
+<text x="90" y="162" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="34" fill="#4b2447">大きく跳ぶ候補</text>
+<text x="90" y="196" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" fill="#5d5a55">歌順の前後で場面が切り替わるペア</text>
+<rect x="90" y="230" width="1420" height="1230" fill="#fffdfa" stroke="#d7d0c2"/>
+<rect x="90.00" y="230.08" width="1420.00" height="1229.84" fill="#fffdfa" stroke="#ebe5db"/>
+<line x1="787.12" y1="230.08" x2="787.12" y2="1459.92" stroke="#ebe5db" stroke-width="1"/>
+<line x1="90.00" y1="734.38" x2="1510.00" y2="734.38" stroke="#ebe5db" stroke-width="1"/>
+<circle cx="419.56" cy="513.31" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="398.02" cy="605.01" r="5.4" fill="#008c95" opacity="0.24"/>
+<circle cx="617.64" cy="831.80" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="465.38" cy="349.66" r="5.4" fill="#3f6fb5" opacity="0.24"/>
+<circle cx="362.53" cy="724.35" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="569.40" cy="751.88" r="5.4" fill="#3f6fb5" opacity="0.24"/>
+<circle cx="285.88" cy="889.73" r="5.4" fill="#7b61b8" opacity="0.24"/>
+<circle cx="933.82" cy="499.08" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="973.29" cy="734.44" r="5.4" fill="#64a338" opacity="0.24"/>
+<circle cx="986.09" cy="657.18" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="939.19" cy="295.96" r="5.4" fill="#7b61b8" opacity="0.24"/>
+<circle cx="580.24" cy="814.99" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="773.41" cy="358.34" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="945.59" cy="432.84" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="442.18" cy="687.56" r="5.4" fill="#64a338" opacity="0.24"/>
+<circle cx="764.21" cy="399.11" r="5.4" fill="#bd5e21" opacity="0.24"/>
+<circle cx="770.62" cy="361.36" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="841.67" cy="668.78" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="913.45" cy="417.13" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1252.16" cy="790.96" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="567.81" cy="1233.32" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="361.88" cy="471.43" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="511.31" cy="1130.44" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="453.04" cy="556.06" r="5.4" fill="#7b61b8" opacity="0.24"/>
+<circle cx="920.75" cy="341.62" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="636.48" cy="564.68" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="888.99" cy="603.90" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="643.98" cy="748.74" r="5.4" fill="#3f6fb5" opacity="0.24"/>
+<circle cx="579.40" cy="896.47" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="803.48" cy="1241.12" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="275.80" cy="894.03" r="5.4" fill="#3f6fb5" opacity="0.24"/>
+<circle cx="409.26" cy="565.39" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="494.09" cy="715.98" r="5.4" fill="#64a338" opacity="0.24"/>
+<circle cx="1041.94" cy="607.53" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="1076.29" cy="659.43" r="5.4" fill="#64a338" opacity="0.24"/>
+<circle cx="360.28" cy="1111.33" r="5.4" fill="#008c95" opacity="0.24"/>
+<circle cx="251.94" cy="659.58" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="1397.68" cy="975.59" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="991.65" cy="536.58" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1192.20" cy="829.83" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1254.36" cy="689.72" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="751.56" cy="553.17" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1114.62" cy="1007.33" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1249.04" cy="762.14" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1275.95" cy="922.45" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1113.55" cy="613.62" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="500.71" cy="770.88" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="1018.40" cy="611.51" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="765.00" cy="1062.11" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1230.04" cy="993.99" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1030.25" cy="668.19" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="959.78" cy="987.79" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="747.54" cy="1317.91" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1175.23" cy="892.93" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="878.35" cy="543.68" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="1186.86" cy="876.22" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="542.78" cy="1233.18" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="898.29" cy="506.34" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="539.77" cy="1192.21" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="623.10" cy="548.91" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="784.30" cy="474.87" r="5.4" fill="#64a338" opacity="0.24"/>
+<circle cx="624.55" cy="882.69" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="1370.69" cy="914.67" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="646.90" cy="335.81" r="5.4" fill="#3f6fb5" opacity="0.24"/>
+<circle cx="1158.75" cy="769.52" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1004.70" cy="589.24" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="718.18" cy="974.82" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="816.07" cy="1394.04" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="407.89" cy="362.18" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="471.94" cy="1060.00" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="315.99" cy="650.07" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="805.42" cy="488.17" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="512.48" cy="532.32" r="5.4" fill="#64a338" opacity="0.24"/>
+<circle cx="1028.28" cy="474.55" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="631.40" cy="823.98" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="657.52" cy="512.80" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="992.92" cy="545.65" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="683.41" cy="729.97" r="5.4" fill="#3f6fb5" opacity="0.24"/>
+<circle cx="330.68" cy="997.56" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="1094.52" cy="853.28" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="556.32" cy="1140.81" r="5.4" fill="#008c95" opacity="0.24"/>
+<circle cx="1234.29" cy="997.88" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="918.92" cy="540.09" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="1207.31" cy="880.91" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="775.20" cy="1265.59" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="829.42" cy="1284.83" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="166.07" cy="679.12" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="736.35" cy="770.66" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1057.43" cy="701.75" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="899.46" cy="563.21" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="580.50" cy="1037.52" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="1007.18" cy="504.91" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="1102.22" cy="510.34" r="5.4" fill="#7b61b8" opacity="0.24"/>
+<circle cx="362.50" cy="720.23" r="5.4" fill="#c27a00" opacity="0.24"/>
+<circle cx="889.41" cy="474.09" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="746.14" cy="550.93" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="930.32" cy="500.54" r="5.4" fill="#c44f73" opacity="0.24"/>
+<circle cx="298.36" cy="643.51" r="5.4" fill="#008c95" opacity="0.24"/>
+<circle cx="1433.93" cy="965.46" r="5.4" fill="#666666" opacity="0.24"/>
+<circle cx="975.91" cy="458.32" r="5.4" fill="#666666" opacity="0.24"/>
+<line x1="973.29" y1="734.44" x2="986.09" y2="657.18" stroke="#a43a2f" stroke-width="4.2" opacity="0.78" stroke-linecap="round"/>
+<text x="986.69" y="688.81" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#a43a2f" font-weight="700">0.324</text>
+<line x1="986.09" y1="657.18" x2="939.19" y2="295.96" stroke="#a43a2f" stroke-width="4.2" opacity="0.78" stroke-linecap="round"/>
+<text x="969.64" y="469.57" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#a43a2f" font-weight="700">0.286</text>
+<line x1="1254.36" y1="689.72" x2="751.56" y2="553.17" stroke="#a43a2f" stroke-width="4.2" opacity="0.78" stroke-linecap="round"/>
+<text x="1009.96" y="614.44" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#a43a2f" font-weight="700">0.324</text>
+<line x1="816.07" y1="1394.04" x2="407.89" y2="362.18" stroke="#a43a2f" stroke-width="4.2" opacity="0.78" stroke-linecap="round"/>
+<text x="618.98" y="871.11" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#a43a2f" font-weight="700">0.319</text>
+<line x1="1102.22" y1="510.34" x2="362.50" y2="720.23" stroke="#a43a2f" stroke-width="4.2" opacity="0.78" stroke-linecap="round"/>
+<text x="739.36" y="608.29" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#a43a2f" font-weight="700">0.293</text>
+<line x1="298.36" y1="643.51" x2="1433.93" y2="965.46" stroke="#a43a2f" stroke-width="4.2" opacity="0.78" stroke-linecap="round"/>
+<text x="873.14" y="797.48" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#a43a2f" font-weight="700">0.308</text>
+<circle cx="973.29" cy="734.44" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="973.29" cy="734.44" r="8" fill="#64a338" opacity="0.96"/>
+<rect x="810.29" y="735.44" width="103.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="818.29" y="756.44" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H009 小野小町</text>
+<circle cx="986.09" cy="657.18" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="986.09" cy="657.18" r="8" fill="#666666" opacity="0.96"/>
+<rect x="992.09" y="618.18" width="85.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="1000.09" y="639.18" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H010 蝉丸</text>
+<circle cx="939.19" cy="295.96" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="939.19" cy="295.96" r="8" fill="#7b61b8" opacity="0.96"/>
+<rect x="941.19" y="256.96" width="94.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="949.19" y="277.96" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H011 参議篁</text>
+<circle cx="1254.36" cy="689.72" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="1254.36" cy="689.72" r="8" fill="#c44f73" opacity="0.96"/>
+<rect x="1256.36" y="686.72" width="103.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="1264.36" y="707.72" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H041 壬生忠見</text>
+<circle cx="751.56" cy="553.17" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="751.56" cy="553.17" r="8" fill="#c44f73" opacity="0.96"/>
+<rect x="568.56" y="516.17" width="103.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="576.56" y="537.17" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H042 清原元輔</text>
+<circle cx="816.07" cy="1394.04" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="816.07" cy="1394.04" r="8" fill="#666666" opacity="0.96"/>
+<rect x="818.07" y="1351.04" width="94.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="826.07" y="1372.04" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H068 三条院</text>
+<circle cx="407.89" cy="362.18" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="407.89" cy="362.18" r="8" fill="#c27a00" opacity="0.96"/>
+<rect x="226.89" y="359.18" width="103.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="234.89" y="380.18" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H069 能因法師</text>
+<circle cx="1102.22" cy="510.34" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="1102.22" cy="510.34" r="8" fill="#7b61b8" opacity="0.96"/>
+<rect x="1104.22" y="471.34" width="112.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="1112.22" y="492.34" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H093 鎌倉右大臣</text>
+<circle cx="362.50" cy="720.23" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="362.50" cy="720.23" r="8" fill="#c27a00" opacity="0.96"/>
+<rect x="181.50" y="719.23" width="103.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="189.50" y="740.23" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H094 参議雅経</text>
+<circle cx="298.36" cy="643.51" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="298.36" cy="643.51" r="8" fill="#008c95" opacity="0.96"/>
+<rect x="112.36" y="606.51" width="112.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="120.36" y="627.51" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H098 従二位家隆</text>
+<circle cx="1433.93" cy="965.46" r="15" fill="#fffdfa" stroke="#a43a2f" stroke-width="4"/>
+<circle cx="1433.93" cy="965.46" r="8" fill="#666666" opacity="0.96"/>
+<rect x="1404.00" y="964.46" width="103.00" height="30" rx="6" fill="#fffdfa" stroke="#d7d0c2" opacity="0.95"/>
+<text x="1412.00" y="985.46" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#202124" font-weight="700">H099 後鳥羽院</text>
+<text x="1448.00" y="1493.92" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" fill="#74706a">PC1</text>
+<text x="88.00" y="220.08" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" fill="#74706a">PC2</text>
+<circle cx="94" cy="1552" r="6" fill="#999" opacity="0.35"/>
+<text x="112" y="1559" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="17" fill="#666">薄い点は全100首。線の横の数値はsmall条件のcosine similarity。</text>
+</svg>

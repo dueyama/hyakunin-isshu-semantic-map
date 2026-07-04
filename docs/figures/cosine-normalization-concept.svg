@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">cosine similarity と正規化</title>
+  <desc id="desc">ベクトルの長さを1にそろえると、向きの近さが比較しやすくなることを示す模式図。</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#202124" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill: #fbfaf6; }
+      .panel { fill: #fffefa; stroke: #d7d0c2; stroke-width: 1.4; filter: url(#shadow); }
+      .title { fill: #263c61; font: 700 27px sans-serif; }
+      .subtitle { fill: #5d6066; font: 500 15px sans-serif; }
+      .label { fill: #263c61; font: 700 18px sans-serif; }
+      .small { fill: #5f625e; font: 500 14px sans-serif; }
+      .tiny { fill: #74706a; font: 500 12px sans-serif; }
+      .mono { fill: #4b2447; font: 700 17px ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .axis { stroke: #a9aba4; stroke-width: 1.2; }
+      .unit { fill: #f4f3ee; stroke: #d7d0c2; stroke-width: 2; }
+      .a { stroke: #263c61; fill: none; stroke-width: 5; marker-end: url(#arrowA); }
+      .b { stroke: #9a3f2f; fill: none; stroke-width: 5; marker-end: url(#arrowB); }
+      .c { stroke: #526b55; fill: none; stroke-width: 5; marker-end: url(#arrowC); }
+      .dotA { fill: #263c61; }
+      .dotB { fill: #9a3f2f; }
+      .dotC { fill: #526b55; }
+      .callout { fill: #f4f3ee; stroke: #d7d0c2; }
+    </style>
+    <marker id="arrowA" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#263c61"/>
+    </marker>
+    <marker id="arrowB" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#9a3f2f"/>
+    </marker>
+    <marker id="arrowC" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#526b55"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1280" height="760"/>
+  <text class="title" x="64" y="58">cosine similarity は「向きの近さ」を見る</text>
+  <text class="subtitle" x="64" y="86">長さを1にそろえると、同じ方向の矢印は同じ場所へ、違う方向の矢印は別の場所へ来る。</text>
+
+  <rect class="panel" x="58" y="126" width="354" height="512" rx="8"/>
+  <text class="label" x="88" y="170">正規化前</text>
+  <text class="small" x="88" y="200">同じ方向でも長さは違う</text>
+  <line class="axis" x1="104" y1="462" x2="360" y2="462"/>
+  <line class="axis" x1="104" y1="462" x2="104" y2="214"/>
+  <path class="a" d="M104 462 L205 360"/>
+  <path class="b" d="M104 462 L306 260"/>
+  <path class="c" d="M104 462 L306 430"/>
+  <text class="small" x="218" y="356">A</text>
+  <text class="small" x="318" y="258">B</text>
+  <text class="small" x="318" y="432">C</text>
+  <rect class="callout" x="88" y="520" width="280" height="68" rx="8"/>
+  <text class="small" x="108" y="548">AとBは同じ方向。</text>
+  <text class="small" x="108" y="574">Cは別の方向。</text>
+
+  <rect class="panel" x="464" y="126" width="354" height="512" rx="8"/>
+  <text class="label" x="494" y="170">長さを1にそろえる</text>
+  <text class="small" x="494" y="200">単位球面へ乗せる</text>
+  <circle class="unit" cx="641" cy="358" r="138"/>
+  <line class="axis" x1="486" y1="358" x2="796" y2="358"/>
+  <line class="axis" x1="641" y1="203" x2="641" y2="513"/>
+  <path class="a" d="M641 358 L738 260"/>
+  <path class="b" d="M641 358 L738 260"/>
+  <path class="c" d="M641 358 L777 337"/>
+  <circle class="dotA" cx="738" cy="260" r="7"/>
+  <circle class="dotC" cx="777" cy="337" r="7"/>
+  <text class="small" x="748" y="252">A/B</text>
+  <text class="small" x="787" y="337">C</text>
+  <text class="mono" x="508" y="570">長さ = 1</text>
+
+  <rect class="panel" x="870" y="126" width="354" height="512" rx="8"/>
+  <text class="label" x="900" y="170">cosine の読み方</text>
+  <text class="small" x="900" y="200">角度が小さいほど近い</text>
+  <circle class="unit" cx="1048" cy="330" r="118"/>
+  <line class="axis" x1="912" y1="330" x2="1184" y2="330"/>
+  <line class="axis" x1="1048" y1="194" x2="1048" y2="466"/>
+  <path class="a" d="M1048 330 L1132 246"/>
+  <path class="c" d="M1048 330 L1164 312"/>
+  <path d="M1104 274 A78 78 0 0 1 1125 318" fill="none" stroke="#a77d35" stroke-width="4"/>
+  <text class="tiny" x="1114" y="292">角度</text>
+  <rect class="callout" x="910" y="494" width="276" height="96" rx="8"/>
+  <text class="mono" x="930" y="526">1に近い = 似ている</text>
+  <text class="mono" x="930" y="556">0付近 = 別方向</text>
+  <text class="mono" x="930" y="586">-1付近 = 反対方向</text>
+
+  <rect x="86" y="676" width="1108" height="44" rx="8" fill="#f4f3ee" stroke="#d7d0c2"/>
+  <text class="small" x="112" y="704">ポイント: OpenAIの埋め込みでは長さがほぼ1なので、ユークリッド距離も結局は向きの違いを別の形で見ている。</text>
+</svg>

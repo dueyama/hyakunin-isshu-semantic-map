@@ -1,0 +1,24 @@
+# Local secrets
+.env
+
+# Private research material and review handoffs
+_private/
+
+# Python caches and virtual environments
+__pycache__/
+*.pyc
+
+# Source/raw data and embeddings that should not be published
+data/raw/
+data/embeddings/
+
+# Generated web-app data is not part of the current HTML-only publication
+public/data/
+docs/viewer/
+
+# Local/internal notes
+docs/progress.md
+docs/hyakunin_shuka_comparison_notes.md
+
+# macOS metadata
+.DS_Store

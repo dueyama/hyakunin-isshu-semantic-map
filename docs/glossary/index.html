@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>用語集 | 意味空間で百人一首を読む</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="../assets/reading.css?v=20260703-heian-hero4" />
+  </head>
+  <body class="article article-zero">
+    <main>
+      <nav>
+        <a href="../">トップ</a>
+        <a href="../paper/0/">序章</a>
+        <a href="../paper/">第1章</a>
+        <a href="../paper/2/">第2章</a>
+        <a href="../paper/3/">第3章</a>
+        <a href="../paper/final/">終章</a>
+        <a href="./" aria-current="page">用語集</a>
+        <a href="../references/">参照資料</a>
+        <a href="../updates/">更新履歴</a>
+      </nav>
+
+      <header class="article-hero">
+        <p class="meta">意味空間で百人一首を読む / 用語集 / 随時更新</p>
+        <h1>専門用語事典</h1>
+        <p class="lead">
+          このシリーズで使う専門用語を、本文から戻れる形でまとめる。数式の正確さより先に、「読んでいる数字が何を意味するのか」をつかむための小さな辞書である。
+        </p>
+      </header>
+
+      <p class="note">
+        用語は、避けるのではなく、少しずつ慣れていく。本文では流れを優先し、細かい確認はこのページに集める。
+      </p>
+
+      <section>
+        <h2>意味を地図にする言葉</h2>
+        <div class="glossary-list">
+          <article class="glossary-item" id="term-semantic-space">
+            <h3>意味空間 <a class="anchor-link" href="#term-semantic-space">#</a></h3>
+            <p>
+              文章どうしの近さを、地図のように眺めるための仮想的な場所。近くに置かれた文章は、語彙、主題、語り口などが似ている可能性がある。ただし、地図上で近いことは、作者や撰者の意図が同じだったことを直接証明しない。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-embedding">
+            <h3>埋め込み / embedding <a class="anchor-link" href="#term-embedding">#</a></h3>
+            <p>
+              文章を長い数字の列へ変換すること。ここでは、和歌本文をAIモデルに入れ、意味の住所のような数字列を得る処理を指す。文章を分類名に押し込むのではなく、近さを計算できる形へ置き換える。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-vector">
+            <h3>ベクトル <a class="anchor-link" href="#term-vector">#</a></h3>
+            <p>
+              数字がずらりと並んだもの。2次元なら <code>(1, 2)</code>、3次元なら <code>(1, 2, 5)</code> のように書ける。このシリーズでは、一首につけられた長いプロフィール表だと思えばよい。<code>text-embedding-3-small</code> では、一首が1536個の数字を持つ。見た目としては <code>(1.2, 5.6, ..., -3.9, 0.2)</code> のような長い数列である。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-dimension">
+            <h3>次元数 <a class="anchor-link" href="#term-dimension">#</a></h3>
+            <p>
+              ベクトルに含まれる数字の個数。今回の条件では、<code>text-embedding-3-large</code> は3072次元、<code>text-embedding-3-small</code> は1536次元である。多ければ細かい違いを持てるが、短い和歌の読みでは、常に多い方が見やすいとは限らない。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-model-large-small">
+            <h3>text-embedding-3-large / text-embedding-3-small <a class="anchor-link" href="#term-model-large-small">#</a></h3>
+            <p>
+              このシリーズで使ったOpenAIの埋め込みモデル名。<code>text-embedding-3-large</code> は出力される数字の列が3072次元で、細かな違いまで拾いやすい高解像度の地図に近い。<code>text-embedding-3-small</code> は1536次元で、軽く扱いやすい実用的な地図に近い。第1章では、本文のみ条件で順番の信号がより強く出たsmallを主軸にし、largeは補助的な確認に使う。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-ai-model">
+            <h3>AIモデル <a class="anchor-link" href="#term-ai-model">#</a></h3>
+            <p>
+              文章を入力すると、何らかの結果を返す学習済みの仕組み。このシリーズでは、和歌本文を入れると、意味の住所にあたる長い数字列を返すものを指す。人間が手で「恋」「秋」と分類しているのではなく、モデルが学習で得た言葉の近さを使って数字を作る。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-original-kana">
+            <h3>original_kana <a class="anchor-link" href="#term-original-kana">#</a></h3>
+            <p>
+              解析用にそろえた、読み寄りの歌本文列。このシリーズでは、現代語訳や注釈を加える前の本文に近い条件として使う。歌本文の表記には複数の形があるため、公開本文では必要な歌を掲げつつ、集計条件としてはこの列名を使って区別する。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-cosine">
+            <h3>cosine similarity / コサイン類似度 <a class="anchor-link" href="#term-cosine">#</a></h3>
+            <p>
+              二つのベクトルがどれくらい同じ方向を向いているかを見る数値。ここでいうコサインは、三角関数のサイン・コサインのコサインである。内積には <code>A・B = |A| × |B| × cosθ</code> という関係があり、内積をそれぞれのベクトルの長さで割ると <code>cosθ</code> が残る。一般には -1 から 1 の範囲で、1に近いほど向きが似ている。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-euclidean">
+            <h3>ユークリッド距離 <a class="anchor-link" href="#term-euclidean">#</a></h3>
+            <p>
+              ふつうの意味での直線距離。2次元なら地図上の二点間距離、3次元なら空間内の二点間距離である。1536次元ベクトルでも同じ考え方で計算できる。各次元の差を二乗して足し、最後に平方根を取る。ただし、ベクトルの長さが1にそろっている場合、ユークリッド距離の順位は cosine similarity の順位と同じになる。この場合の距離は、単位球面上の二点を結ぶ弦の長さであり、正規化前の「原点からの長さ」の差は含まない。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-normalization">
+            <h3>正規化 / normalization <a class="anchor-link" href="#term-normalization">#</a></h3>
+            <p>
+              数字の列を、比較しやすい形にそろえる処理。ここでは主に、ベクトルの長さを1にそろえることを指す。このシリーズで使うOpenAIの埋め込みは、長さ1に正規化されたベクトルとして返る仕様である。正規化すると、原点からどれくらい遠いかという半径方向の情報は消え、どちらの方向を向いているかが主に残る。そのかわり、cosine similarity、内積、ユークリッド距離の関係が単純になり、検索や比較に使いやすくなる。正規化後のユークリッド距離は計算できるが、それは cosine similarity とほぼ同じ関係を別の形で見ていることになる。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-unit-sphere">
+            <h3>単位球面 / unit sphere <a class="anchor-link" href="#term-unit-sphere">#</a></h3>
+            <p>
+              原点からの長さが1である点だけを集めた表面。2次元なら円周、3次元なら球の表面にあたる。今回の <code>text-embedding-3-small</code> では、一首は1536個の数字を持つ。OpenAIの埋め込みは長さ1に正規化されて返るため、各歌は1536次元空間 <code>R^1536</code> の中の単位球面にほぼ乗っている、と考えられる。単位球の内部ではなく表面であり、その表面自体の自由度は1535次元になる。3次元球面を2次元へ射影すれば円盤が見える。1536次元でも射影の範囲は半径1の円盤内だが、高次元では多くの成分が見えない方向に分散するため、普通のサンプル数では中心付近の雲として見えやすい。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-dot-product">
+            <h3>内積 / dot product <a class="anchor-link" href="#term-dot-product">#</a></h3>
+            <p>
+              二つのベクトルを比べる基本操作。計算としては、対応する成分どうしを掛けて足す。幾何的には <code>A・B = |A| × |B| × cosθ</code> と書けるので、内積には二本のベクトルの長さと、あいだの角度のコサインが含まれている。cosine similarity は、この内積をそれぞれのベクトルの長さで割り、長さの影響をならした値である。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>図を見る言葉</h2>
+        <div class="glossary-list">
+          <article class="glossary-item" id="term-pca">
+            <h3>PCA / 主成分分析 <a class="anchor-link" href="#term-pca">#</a></h3>
+            <p>
+              何千個もの数字で表された文章を、見やすい2次元や3次元の図へ押しつぶす方法。なるべく情報を失わない向きを探して、横軸や縦軸を作る。ただし、押しつぶしている以上、図に出ない情報も多い。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-projection">
+            <h3>射影 / projection <a class="anchor-link" href="#term-projection">#</a></h3>
+            <p>
+              高い次元のものを、低い次元へ写して見ること。立体の影を紙に落とすようなもの。PCA図は高次元の意味空間を2次元へ射影した見取り図なので、図上で近い点が元の空間でも必ず近いとは限らない。高次元の単位球面を2次元へ写す場合、取りうる範囲は円盤内でも、実際の点は中心付近の小さな雲として見えやすい。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-pc">
+            <h3>PC1 / PC2 <a class="anchor-link" href="#term-pc">#</a></h3>
+            <p>
+              PCAで作った第1の軸と第2の軸。PC1は、データの違いがもっともよく出る方向、PC2はその次によく出る方向である。地図の東西南北のようなものだが、人間が最初から「恋軸」「季節軸」と名付けたものではない。図の原点は、PCAのために今回の点群を中心化した基準点であり、埋め込みベクトルそのものの原点ではない。同じPCA図の中では、原点から見た方角や象限の違いは手がかりになるが、それは2次元に映った範囲での見え方である。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-explained-variance">
+            <h3>寄与率 <a class="anchor-link" href="#term-explained-variance">#</a></h3>
+            <p>
+              PCAで作った軸が、元の情報をどれくらい説明できているかを表す割合。0から1で読み、0.1168なら約11.7%である。PC1+PC2寄与率が低い場合、2次元の図は便利な見取り図ではあっても、全体を代表する完全な地図ではない。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-centroid">
+            <h3>centroid / 重心 <a class="anchor-link" href="#term-centroid">#</a></h3>
+            <p>
+              あるグループの点を平均した中心位置。たとえば恋タグの歌を全部集め、その平均位置を出すと、恋タグのcentroidになる。図では、主題ごとの大まかな位置を示す目印として使う。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-theme-tag">
+            <h3>主題タグ <a class="anchor-link" href="#term-theme-tag">#</a></h3>
+            <p>
+              歌に付けた「恋」「秋」「旅」「雑」などの分類ラベル。読者の助けにはなるが、和歌の意味を完全に表すものではない。一首が複数の主題を持つこともあり、タグの粗さが分析結果に影響する。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-budate">
+            <h3>部立 <a class="anchor-link" href="#term-budate">#</a></h3>
+            <p>
+              和歌を主題ごとに分ける古典的な分類。春、夏、秋、冬、恋、雑、羇旅、離別などがある。勅撰集では部立が歌の読み方を支える大きな手がかりになる。このシリーズの主題タグは、こうした部立や注釈的分類を参考にした仮ラベルであり、歌の意味を一つに固定するものではない。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>数値を読む言葉</h2>
+        <div class="glossary-list">
+          <article class="glossary-item" id="term-nearest-neighbor">
+            <h3>最近傍 <a class="anchor-link" href="#term-nearest-neighbor">#</a></h3>
+            <p>
+              ある歌から見て、意味空間上でもっとも近い歌。最近傍が同じ主題タグなら、モデルが拾った近さと人間が付けた主題タグが少し重なっている可能性がある。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-adjacent-similarity">
+            <h3>隣接平均類似度 <a class="anchor-link" href="#term-adjacent-similarity">#</a></h3>
+            <p>
+              1番と2番、2番と3番のように、順番で隣り合う歌どうしの類似度を平均した値。順番そのものに意味の流れがあれば、ランダムに並べた場合より高くなるかもしれない。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-random-order">
+            <h3>ランダム順 <a class="anchor-link" href="#term-random-order">#</a></h3>
+            <p>
+              歌の順番を無作為に並べ替えた比較用の順序。実際の小倉順や百人秀歌順がどのくらい珍しいかを見るため、ランダム順を何千回、何万回も作って比べる。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-msd">
+            <h3>MSD / 平均二乗変位 <a class="anchor-link" href="#term-msd">#</a></h3>
+            <p>
+              順番に進む点列について、「k歩先の点が平均してどれくらい離れているか」を見る指標。正式には mean squared displacement の略で、距離を二乗して平均する。ランダムウォークでは、歩数が増えるほどMSDが大きくなる様子を見ることが多い。このシリーズでは、物理の厳密なランダムウォーク解析ではなく、歌順をたどったときに、近い範囲で点がどれくらいまとまっているかを見る補助指標として使う。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-z-score">
+            <h3>z-score <a class="anchor-link" href="#term-z-score">#</a></h3>
+            <p>
+              ランダム順の平均から、どれくらい離れているかを標準偏差というものさしで表す値。0なら平均付近、1なら少し高い、2を超えるとかなり目を引く。ただし、探索条件が多い場合は、たまたま高い値も出やすくなる。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-percentile">
+            <h3>percentile / パーセンタイル <a class="anchor-link" href="#term-percentile">#</a></h3>
+            <p>
+              比較対象の中で、どのくらい上にいるかを示す割合。0から1で読み、0.982ならランダム比較の98.2%より高いという意味である。高いほど珍しいが、それだけで意図や構造の証明にはならない。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-permutation">
+            <h3>permutation test / 並べ替え検定 <a class="anchor-link" href="#term-permutation">#</a></h3>
+            <p>
+              順番やラベルを何度も並べ替えて、実際の結果がどれくらい珍しいかを見る検査。このシリーズでは、歌順をランダムに並べたときの分布と比べる発想がこれに近い。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>配置を読む言葉</h2>
+        <div class="glossary-list">
+          <article class="glossary-item" id="term-two-poem-pair">
+            <h3>二首一組 <a class="anchor-link" href="#term-two-poem-pair">#</a></h3>
+            <p>
+              二首を一つの単位として並べ、対、照応、取り合わせとして読む見方。順番そのものは、採用した百人秀歌本文にある歌の並びであり、この読み物が作った説ではない。二首一組とは、その順番を S001-S002、S003-S004 のように二首ずつ区切って読む見方である。このシリーズでは、その見方をまず直線順序の奇数-偶数ペアとして埋め込みで比べる。百人秀歌は101首あるため、この単純モデルでは最後の一首が残る。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-utaawase">
+            <h3>歌合 / 歌合せ <a class="anchor-link" href="#term-utaawase">#</a></h3>
+            <p>
+              二つの歌を左右に出し、どちらが優れているか、またはどのように響き合うかを比べる文芸の形式。勝敗を決める場合もあるが、ここで大事なのは、二首を向かい合わせて読むという発想である。百人秀歌の二首一組を考えるときも、単に「意味が近い二首」というより、歌合せ的な対、照応、取り合わせとして見る方が近い。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-neighborhood">
+            <h3>近傍 / 8近傍 <a class="anchor-link" href="#term-neighborhood">#</a></h3>
+            <p>
+              格子状に並べたとき、あるセルの周囲にあるセルを近傍と呼ぶ。上下左右だけを見る場合と、斜めも含めた8近傍を見る場合がある。10×10配置説を試すときは、近くのセルに意味的に近い歌が来るかを調べる。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-selection-bias">
+            <h3>選択バイアス <a class="anchor-link" href="#term-selection-bias">#</a></h3>
+            <p>
+              いろいろ試したうち、いちばん良かった結果だけを見ると、偶然の上振れを実力のように見てしまう問題。配置モデル、除外する歌、近傍の取り方などをたくさん試すほど、どこかに高い値が出る可能性は上がる。
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

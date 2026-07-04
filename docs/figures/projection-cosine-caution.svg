@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <rect width="1280" height="760" fill="#fbfaf7"/>
+  <text x="70" y="62" font-family="Hiragino Mincho ProN, Yu Mincho, serif" font-size="34" fill="#222">近さを見る場所は二つある</text>
+  <text x="70" y="96" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" fill="#555">cosine similarity は高次元ベクトルの向きを比べる。PCA図は、その高次元空間を2次元へ落とした影である。</text>
+
+  <rect x="70" y="138" width="535" height="510" rx="10" fill="#fffefa" stroke="#d9d1c2"/>
+  <text x="104" y="182" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="20" font-weight="700" fill="#4b2447">1. cosine は矢印の向きを見る</text>
+  <text x="104" y="212" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#555">長さよりも、どれくらい同じ方向を向くか。</text>
+
+  <line x1="168" y1="498" x2="505" y2="498" stroke="#d8d2c8" stroke-width="2"/>
+  <line x1="168" y1="498" x2="168" y2="248" stroke="#d8d2c8" stroke-width="2"/>
+  <text x="508" y="504" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#777">特徴1</text>
+  <text x="132" y="248" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#777">特徴2</text>
+
+  <line x1="168" y1="498" x2="450" y2="318" stroke="#235f78" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="450,318 428,321 440,339" fill="#235f78"/>
+  <text x="456" y="313" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" fill="#235f78">歌A</text>
+
+  <line x1="168" y1="498" x2="417" y2="287" stroke="#5a8c43" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="417,287 396,294 411,309" fill="#5a8c43"/>
+  <text x="424" y="282" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" fill="#5a8c43">歌B</text>
+
+  <line x1="168" y1="498" x2="280" y2="247" stroke="#9a3f2f" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="280,247 263,262 284,270" fill="#9a3f2f"/>
+  <text x="287" y="245" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="16" font-weight="700" fill="#9a3f2f">歌C</text>
+
+  <path d="M 238 453 A 92 92 0 0 1 256 378" fill="none" stroke="#235f78" stroke-width="2"/>
+  <text x="260" y="416" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#235f78">角度が小さい</text>
+  <text x="104" y="575" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#333">AとBは向きが近い。AとCは同じ原点から出ても、向きが違う。</text>
+  <text x="104" y="603" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#333">この向きを、内積から計算するのが cosine similarity である。</text>
+
+  <rect x="675" y="138" width="535" height="510" rx="10" fill="#fffefa" stroke="#d9d1c2"/>
+  <text x="709" y="182" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="20" font-weight="700" fill="#4b2447">2. PCA図は影なので重なることがある</text>
+  <text x="709" y="212" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="14" fill="#555">3次元でも、上から見れば高さの違いは消える。</text>
+
+  <polygon points="760,525 1048,525 1134,464 847,464" fill="#f1eee7" stroke="#d0c7b8"/>
+  <line x1="760" y1="525" x2="847" y2="258" stroke="#c8c1b5" stroke-width="2"/>
+  <line x1="1048" y1="525" x2="1134" y2="258" stroke="#c8c1b5" stroke-width="2"/>
+  <line x1="847" y1="464" x2="847" y2="258" stroke="#c8c1b5" stroke-width="2"/>
+  <line x1="1134" y1="464" x2="1134" y2="258" stroke="#c8c1b5" stroke-width="2"/>
+  <polygon points="847,258 1134,258 1134,464 847,464" fill="none" stroke="#ded7cb" stroke-dasharray="6 7"/>
+
+  <circle cx="925" cy="352" r="12" fill="#235f78"/>
+  <text x="943" y="357" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" fill="#235f78">点A 高い場所</text>
+  <line x1="925" y1="352" x2="925" y2="498" stroke="#235f78" stroke-width="2" stroke-dasharray="6 6" opacity="0.75"/>
+  <circle cx="925" cy="498" r="9" fill="#235f78" opacity="0.32"/>
+
+  <circle cx="925" cy="465" r="12" fill="#9a3f2f"/>
+  <text x="943" y="470" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" font-weight="700" fill="#9a3f2f">点B 低い場所</text>
+  <line x1="925" y1="465" x2="925" y2="498" stroke="#9a3f2f" stroke-width="2" stroke-dasharray="6 6" opacity="0.75"/>
+  <circle cx="925" cy="498" r="15" fill="none" stroke="#4b2447" stroke-width="2"/>
+  <text x="774" y="572" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#333">床の影ではAとBが同じ場所に見える。</text>
+  <text x="774" y="600" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#333">でも、3次元では高さが違う。高次元から2次元でも同じことが起こる。</text>
+
+  <text x="70" y="692" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#666">このため、図で近い・遠いは「見取り図上の手がかり」であり、最終的な近さは元の高次元ベクトルで計算した数値と本文読解で確かめる。</text>
+  <text x="70" y="722" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="15" fill="#666">PCA図の十字線は、今回の点群を中心化した後の基準線であり、埋め込み空間そのものの原点ではない。</text>
+</svg>
