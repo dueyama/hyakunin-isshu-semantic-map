@@ -11,9 +11,12 @@ import statistics
 from pathlib import Path
 from typing import Any
 
+from layout_permutation import random_layout_permutations, random_layout_samples
+
 
 ROOT = Path(__file__).resolve().parents[1]
 RANDOM_SEED = 20260702
+GRID_RANDOM_SEED = 20260710
 GRID_SIZE = 10
 
 
@@ -152,7 +155,7 @@ def all_pair_scores(size: int, sim: list[list[float]]) -> list[float]:
     return scores
 
 
-def random_samples(scores: list[float], sample_size: int, trials: int) -> list[float]:
+def random_pair_samples(scores: list[float], sample_size: int, trials: int) -> list[float]:
     rng = random.Random(RANDOM_SEED + sample_size)
     return [statistics.fmean(rng.sample(scores, sample_size)) for _ in range(trials)]
 
@@ -217,23 +220,26 @@ def analyze(records: list[dict[str, Any]], trials: int) -> dict[str, Any]:
     scores = all_pair_scores(len(records), sim)
     result_rows: list[dict[str, Any]] = []
     details: dict[str, Any] = {}
-    random_cache: dict[int, list[float]] = {}
+    canonical_cells = row_major(GRID_SIZE)
+    canonical_orthogonal = cell_edges(canonical_cells, include_diagonal=False)
+    canonical_eight = cell_edges(canonical_cells, include_diagonal=True)
+    permutations = random_layout_permutations(len(records), trials, GRID_RANDOM_SEED)
+    orthogonal_random = random_layout_samples(sim, canonical_orthogonal, permutations)
+    eight_random = random_layout_samples(sim, canonical_eight, permutations)
     for name, layout_fn in LAYOUTS.items():
         cells = layout_fn(GRID_SIZE)
         orthogonal_edges = cell_edges(cells, include_diagonal=False)
         eight_edges = cell_edges(cells, include_diagonal=True)
-        random_cache.setdefault(len(orthogonal_edges), random_samples(scores, len(orthogonal_edges), trials))
-        random_cache.setdefault(len(eight_edges), random_samples(scores, len(eight_edges), trials))
         result_rows.append(
             {
                 "layout": name,
                 "orthogonal_neighbors": {
                     "edge_count": len(orthogonal_edges),
-                    **compare_to_random(edge_mean(orthogonal_edges, sim), random_cache[len(orthogonal_edges)]),
+                    **compare_to_random(edge_mean(orthogonal_edges, sim), orthogonal_random),
                 },
                 "eight_neighbors": {
                     "edge_count": len(eight_edges),
-                    **compare_to_random(edge_mean(eight_edges, sim), random_cache[len(eight_edges)]),
+                    **compare_to_random(edge_mean(eight_edges, sim), eight_random),
                 },
             }
         )
@@ -244,15 +250,17 @@ def analyze(records: list[dict[str, Any]], trials: int) -> dict[str, Any]:
 
     mirror = mirror_pairs(records, sim)
     mirror_scores = [item["cosine_similarity"] for item in mirror]
-    mirror_random = random_samples(scores, len(mirror), trials)
+    mirror_random = random_pair_samples(scores, len(mirror), trials)
     return {
         "meta": {
             "method": "exploratory 10x10 placement analysis using private Ogura embeddings",
             "grid_size": GRID_SIZE,
             "layout_names": list(LAYOUTS),
-            "random_baseline": "sample same number of unordered poem pairs from all 100 poems",
+            "random_baseline": "for grid layouts, randomly permute all 100 poems across a fixed 10x10 grid",
+            "mirror_random_baseline": "for mirror pairs, sample the same number of unordered poem pairs",
             "random_trials": trials,
-            "random_seed": RANDOM_SEED,
+            "grid_random_seed": GRID_RANDOM_SEED,
+            "mirror_random_seed": RANDOM_SEED,
             "record_count": len(records),
             "text_policy": "do not publish private vectors",
         },

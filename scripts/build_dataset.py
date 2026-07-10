@@ -105,7 +105,10 @@ def report() -> int:
                 print(f"ERROR {error}", file=sys.stderr)
             continue
         _fieldnames, rows = read_rows(path)
-        print(f"OK {relative}: {len(rows)} data rows")
+        if not rows:
+            print(f"SCHEMA-ONLY {relative}: 0 data rows (public placeholder)")
+        else:
+            print(f"OK {relative}: {len(rows)} data rows")
     return exit_code
 
 

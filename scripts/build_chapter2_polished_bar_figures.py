@@ -523,13 +523,13 @@ def figure_overlay_workflow() -> str:
 
 def figure_shuka() -> str:
     rows = [
-        ("diagonal_ne", 0.924, 1.40, 0.4678, COLORS["plum_soft"]),
-        ("diagonal_nw", 0.924, 1.40, 0.4678, COLORS["plum_soft"]),
-        ("column_serpentine", 0.269, -0.61, 0.4574, COLORS["blue"]),
-        ("row_serpentine", 0.269, -0.61, 0.4574, COLORS["blue"]),
-        ("spiral", 0.197, -0.86, 0.4561, COLORS["low"]),
-        ("column_major", 0.132, -1.13, 0.4547, COLORS["low"]),
-        ("row_major", 0.132, -1.13, 0.4547, COLORS["low"]),
+        ("diagonal_ne", 0.951, 1.69, 0.4678, COLORS["plum_soft"]),
+        ("diagonal_nw", 0.951, 1.69, 0.4678, COLORS["plum_soft"]),
+        ("column_serpentine", 0.224, -0.77, 0.4574, COLORS["blue"]),
+        ("row_serpentine", 0.224, -0.77, 0.4574, COLORS["blue"]),
+        ("spiral", 0.138, -1.08, 0.4561, COLORS["low"]),
+        ("column_major", 0.074, -1.41, 0.4547, COLORS["low"]),
+        ("row_major", 0.074, -1.41, 0.4547, COLORS["low"]),
     ]
     chart_x, chart_y, chart_w = 304, 174, 610
     row_h = 58
@@ -565,13 +565,13 @@ def figure_shuka() -> str:
 
 def figure_ogura() -> str:
     rows = [
-        ("spiral", 0.9007, 1.302, 0.3724, 0.8870, 1.217, 0.3697),
-        ("row_major", 0.8881, 1.238, 0.3720, 0.9441, 1.589, 0.3712),
-        ("column_major", 0.8881, 1.238, 0.3720, 0.9441, 1.589, 0.3712),
-        ("row_serpentine", 0.7363, 0.633, 0.3685, 0.6315, 0.337, 0.3661),
-        ("column_serpentine", 0.7363, 0.633, 0.3685, 0.6315, 0.337, 0.3661),
-        ("diagonal_nw", 0.4496, -0.151, 0.3640, 0.6921, 0.489, 0.3667),
-        ("diagonal_ne", 0.4496, -0.151, 0.3640, 0.6921, 0.489, 0.3667),
+        ("spiral", 0.9364, 1.535, 0.3724, 0.9078, 1.334, 0.3697),
+        ("row_major", 0.9270, 1.461, 0.3720, 0.9555, 1.739, 0.3712),
+        ("column_major", 0.9270, 1.461, 0.3720, 0.9555, 1.739, 0.3712),
+        ("row_serpentine", 0.7779, 0.768, 0.3685, 0.6496, 0.378, 0.3661),
+        ("column_serpentine", 0.7779, 0.768, 0.3685, 0.6496, 0.378, 0.3661),
+        ("diagonal_nw", 0.4530, -0.131, 0.3640, 0.7126, 0.544, 0.3667),
+        ("diagonal_ne", 0.4530, -0.131, 0.3640, 0.7126, 0.544, 0.3667),
     ]
     chart_x, chart_y, chart_w = 300, 186, 660
     row_h = 60
@@ -610,13 +610,13 @@ def figure_ogura() -> str:
 
 def figure_overlay() -> str:
     rows = [
-        ("spiral", 0.4780, -0.06, 0.4596, 0.9536, 1.70, 0.3744),
-        ("diagonal_nw", 0.9242, 1.44, 0.4678, 0.9218, 1.43, 0.3729),
-        ("diagonal_ne", 0.9242, 1.44, 0.4678, 0.9218, 1.43, 0.3729),
-        ("row_serpentine", 0.6110, 0.28, 0.4613, 0.8151, 0.90, 0.3698),
-        ("column_serpentine", 0.6110, 0.28, 0.4613, 0.8151, 0.90, 0.3698),
-        ("row_major", 0.4365, -0.15, 0.4585, 0.7992, 0.84, 0.3695),
-        ("column_major", 0.4365, -0.15, 0.4585, 0.7992, 0.84, 0.3695),
+        ("spiral", 0.4704, -0.09, 0.4596, 0.9700, 1.93, 0.3744),
+        ("diagonal_nw", 0.9514, 1.69, 0.4678, 0.9459, 1.63, 0.3729),
+        ("diagonal_ne", 0.9514, 1.69, 0.4678, 0.9459, 1.63, 0.3729),
+        ("row_serpentine", 0.6297, 0.32, 0.4613, 0.8431, 1.02, 0.3698),
+        ("column_serpentine", 0.6297, 0.32, 0.4613, 0.8431, 1.02, 0.3698),
+        ("row_major", 0.4333, -0.18, 0.4585, 0.8267, 0.95, 0.3695),
+        ("column_major", 0.4333, -0.18, 0.4585, 0.8267, 0.95, 0.3695),
     ]
     chart_x, chart_y, chart_w = 310, 188, 620
     row_h = 62
@@ -645,10 +645,10 @@ def figure_overlay() -> str:
         [
             rect(78, footer_y, 540, 70, "#f6efe4", COLORS["gold"], rx=14, stroke_width=1.2),
             text(104, footer_y + 28, "上下左右の最高", 16, COLORS["gold"], 700),
-            text(104, footer_y + 54, "渦巻き型 / S053枠外 / 小倉差替 percentile 0.954", 17, COLORS["ink"], 700),
+            text(104, footer_y + 54, "渦巻き型 / S053枠外 / 小倉差替 percentile 0.970", 17, COLORS["ink"], 700),
             rect(642, footer_y, 560, 70, "#f1e8ef", COLORS["plum"], rx=14, stroke_width=1.2),
             text(668, footer_y + 28, "8近傍の最高", 16, COLORS["plum"], 700),
-            text(668, footer_y + 54, "斜め型 / S076枠外 / 小倉差替 percentile 0.982", 17, COLORS["ink"], 700),
+            text(668, footer_y + 54, "斜め型 / S076枠外 / 小倉差替 percentile 0.988", 17, COLORS["ink"], 700),
         ]
     )
     return svg_doc(752, "\n".join(body))

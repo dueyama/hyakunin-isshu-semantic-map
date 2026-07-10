@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>意味空間で百人一首を読む 第1章 | 百人秀歌と小倉百人一首を並べてみる</title>
+    <meta name="description" content="小倉百人一首と百人秀歌を意味空間に置き、歌順、近い隣、遠い隣、差し替え箇所を探索する第1章。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="第1章 百人秀歌と小倉百人一首を並べてみる" />
+    <meta property="og:description" content="意味空間から、二つの歌集の歌順と差し替えを眺める。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="stylesheet" href="../assets/reading.css?v=20260703-heian-hero4" />
+    <link rel="stylesheet" href="../assets/reading.css?v=20260710-review" />
   </head>
   <body class="article article-one">
     <main>
@@ -22,7 +31,7 @@
       </nav>
 
       <header class="article-hero">
-        <p class="meta">意味空間で百人一首を読む 第1章 / HTML読み物・随時更新 / 初稿 2026-07-03 / 更新 2026-07-08</p>
+        <p class="meta">意味空間で百人一首を読む 第1章 / HTML読み物・随時更新 / 初稿 2026-07-03 / 更新 2026-07-10</p>
         <h1>百人秀歌と<br />小倉百人一首を並べてみる</h1>
         <p class="lead">
           小倉百人一首の順番には、意味の流れがあるのだろうか。よく似たもう一つの選歌、百人秀歌と並べると、何が同じで、何が少し違って見えるのだろうか。序章で作った「数字の住所」という道具を持って、二つの歌集を同じ地図に置く。きれいな答えを探すのではなく、近い歌、急に跳ぶ歌、片方にだけ現れる歌を手がかりに、次に読むべき場所を探す。
@@ -82,7 +91,7 @@
           この章の読み方は単純である。図を見る。数字で気になる場所を拾う。そして、必ず歌へ戻る。ここでいう近さは文学的な価値判断ではなく、モデルが本文を数値化したときの近さである。意味空間は答えを出す機械ではなく、読み直す場所を照らす懐中電灯のようなものだ。
         </p>
         <figure class="article-illustration">
-          <img src="../figures/illustration-reading-loop.jpg" alt="歌札、数値の地図、本文への読み戻しが円環状につながる挿絵" />
+          <img loading="lazy" decoding="async" src="../figures/illustration-reading-loop.jpg" alt="歌札、数値の地図、本文への読み戻しが円環状につながる挿絵" />
           <figcaption>
             挿絵1-0. 数字の地図から、もう一度歌へ戻る。第1章は、この往復の最初の試運転である。
           </figcaption>
@@ -115,7 +124,7 @@
           </div>
         </div>
         <figure>
-          <img src="../figures/semantic-pca-distribution-small.svg" alt="小倉百人一首100首を意味空間に置いたPCA分布図" />
+          <img loading="lazy" decoding="async" src="../figures/semantic-pca-distribution-small.svg" alt="小倉百人一首100首を意味空間に置いたPCA分布図" />
           <figcaption>
             図1-1. 小倉百人一首100首のPCA分布。線は引いていない。点の番号1-100は <a href="../references/#id-map">H001-H100対応表</a> に対応する。点の色は初期主題タグ、薄い大きな点は主題別<a class="term" href="../glossary/#term-centroid">centroid</a>。
           </figcaption>
@@ -127,7 +136,7 @@
           次に、同じ点を小倉百人一首の順番どおり、1番から100番まで線でつないでみる。点の位置は変えない。変えるのは、そこに歌順という道筋を重ねることだけである。
         </p>
         <figure class="figure-wide">
-          <img src="../figures/ogura-sequence-path-pca-small.svg?v=20260703-sequence-path3" alt="小倉百人一首100首のPCA分布を1番から100番まで歌順に線でつないだ図" />
+          <img loading="lazy" decoding="async" src="../figures/ogura-sequence-path-pca-small.svg?v=20260703-sequence-path3" alt="小倉百人一首100首のPCA分布を1番から100番まで歌順に線でつないだ図" />
           <figcaption>
             図1-1a. 小倉順をPCA分布上で1番から100番まで線でつないだ図。番号は <a href="../references/#id-map">H001-H100対応表</a> に対応し、色は序盤から終盤への進行を示す。2次元図の上では一本の滑らかな流れにはならず、点群の中を折り返しながら進む。見た目はランダムウォークに少し似ているが、ここでの線は「固定された100点を小倉順でたどる経路」である。<a href="../figures/ogura-sequence-path-pca-small.svg">図だけを開く</a>。
           </figcaption>
@@ -147,7 +156,7 @@
             ランダムウォークらしさを見る道具として、MSDも試した。MSDは、順番に沿って1首先、2首先、5首先へ進んだとき、平均してどれくらい離れるかを見る値である。ここではPCA二次元図の中で計算するので、意味空間そのものの完全な距離ではなく、「この図の上ではどれくらい広がって見えるか」を見る補助診断である。
           </p>
           <figure class="figure-wide">
-            <img src="../figures/ogura-msd-pca-small.svg?v=20260703-msd" alt="小倉百人一首の歌順についてPCA二次元図上のMSDをランダム順と比較した図" />
+            <img loading="lazy" decoding="async" src="../figures/ogura-msd-pca-small.svg?v=20260703-msd" alt="小倉百人一首の歌順についてPCA二次元図上のMSDをランダム順と比較した図" />
             <figcaption>
               図1-1b. 小倉順のMSD。横軸は何首先を見るか、縦軸はPCA二次元図上の平均二乗変位。赤線が小倉順、青い帯が同じ100点をランダム順に並べた場合の5-95%帯、破線がランダム順平均である。
             </figcaption>
@@ -179,7 +188,7 @@
           ただし、高解像度なら必ず読みやすい、というわけではない。写真でも、細部がよく写りすぎると、かえって輪郭が見えにくくなることがある。和歌は31音しかない。掛詞、歌枕、部立、注釈といった本文外の文脈も大きい。大きいモデルが拾った細かな語感が、こちらの見たい「配列の流れ」といつも一致するとは限らない。
         </p>
         <p>
-          この第1章では、smallを主軸にする。理由は単純で、本文のみの条件では、小倉順の隣接平均がsmallの方ではっきり出たからである。以後、この章では特に断らない限り、数値・図・近傍候補は <code>text-embedding-3-small</code>、略してsmallによるものとして読む。largeは捨てるのではなく、必要なところで「モデルを替えても同じ候補が残るか」を見るために使う。
+          この第1章では、smallを主軸にする。理由は単純で、本文のみの条件では、小倉順の隣接平均がsmallの方で相対的に高く出たからである。以後、この章では特に断らない限り、数値・図・近傍候補は <code>text-embedding-3-small</code>、略してsmallによるものとして読む。largeは捨てるのではなく、必要なところで「モデルを替えても同じ候補が残るか」を見るために使う。
         </p>
         <h3>この章で必要な数字は三つだけ</h3>
         <p>
@@ -351,13 +360,13 @@
           次の図で見たいのは、線の長さそのものではない。どの隣接ペアが、PCA二次元図の上でも目印として見えるかである。線は、歌どうしの意味的な近さを読むための補助線であり、直接の影響関係や引用関係を示すものではない。実際の近さは高次元のcosine similarityで測っているので、図と数値はあわせて読む。
         </p>
         <figure class="figure-spread">
-          <img src="../figures/neighbor-pairs-near-pca-small.svg" alt="小倉百人一首のPCA分布上で近い隣を強調した図" />
+          <img loading="lazy" decoding="async" src="../figures/neighbor-pairs-near-pca-small.svg" alt="小倉百人一首のPCA分布上で近い隣を強調した図" />
           <figcaption>
             図1-1c. PCA分布上で、近く出る候補を強調したもの。薄い点は小倉百人一首100首全体で、番号は <a href="../references/#id-map">H001-H100対応表</a> に対応する。太線は歌順で隣り合う候補、線上の数値は<a class="term" href="../glossary/#term-cosine">cosine similarity</a>である。PC1/PC2は同一スケールで描いている。近い候補は必ずしも画面上で密集して見えるとは限らないため、数値と図はあわせて読む。<a href="../figures/neighbor-pairs-near-pca-small.svg">図だけを開く</a>。
           </figcaption>
         </figure>
         <figure class="figure-spread">
-          <img src="../figures/neighbor-pairs-far-pca-small.svg" alt="小倉百人一首のPCA分布上で遠い隣を強調した図" />
+          <img loading="lazy" decoding="async" src="../figures/neighbor-pairs-far-pca-small.svg" alt="小倉百人一首のPCA分布上で遠い隣を強調した図" />
           <figcaption>
             図1-1d. PCA分布上で、大きく跳ぶ候補を強調したもの。番号は <a href="../references/#id-map">H001-H100対応表</a> に対応する。こちらもPC1/PC2は同一スケールで描いている。H009-H010とH010-H011は蝉丸をはさんだ連続する跳び目として、H093-H094とH098-H099は後半部の大きな場面転換として見る。<a href="../figures/neighbor-pairs-far-pca-small.svg">図だけを開く</a>。
           </figcaption>
@@ -788,7 +797,7 @@
           では、この差分は<a class="term" href="../glossary/#term-pca">PCA</a>分布上ではどこに出るのか。小倉100首だけの図とは別に、本文のみ条件で小倉100首に百人秀歌側だけの4首を加え、104点でPCAをかけ直した。青いひし形が百人秀歌側だけの4首、赤い丸が小倉側で同じ形では現れない3首である。源俊頼だけは、百人秀歌の別歌 S076 と小倉の H074 が同じ歌人なので点線で結んだ。この点線も、直接の置き換えを示す線ではなく、読み比べるべき場所を示す補助線である。
         </p>
         <figure class="figure-wide">
-          <img src="../figures/shuka-difference-pca-small.svg?v=20260703-labels2" alt="小倉100首に百人秀歌側だけの4首を加えたPCA分布図" />
+          <img loading="lazy" decoding="async" src="../figures/shuka-difference-pca-small.svg?v=20260703-labels2" alt="小倉100首に百人秀歌側だけの4首を加えたPCA分布図" />
           <figcaption>
             図1-2. 小倉100首＋百人秀歌差分4首のPCA分布。青いひし形は百人秀歌側だけの4首、赤い丸は小倉側で同じ形では現れない3首。H番号とS番号は <a href="../references/#id-map">図表ID対応表</a> に対応する。<a class="term" href="../glossary/#term-pc">PC1+PC2</a>の<a class="term" href="../glossary/#term-explained-variance">寄与率</a>は12.1%であり、図上の距離は高次元での近さそのものではない。<a href="../figures/shuka-difference-pca-small.svg">図だけを開く</a>。
           </figcaption>
@@ -898,7 +907,7 @@
           そこで、まずは直線順序の奇数-偶数ペア、つまり第1首と第2首、第3首と第4首、第5首と第6首を組にする切り方として試してみる。説を、測れる形に置き換えるのである。
         </p>
         <figure class="article-illustration">
-          <img src="../figures/illustration-shuka-grid-comparison.jpg" alt="二つの10×10格子が重なり、数枚の札が光って対応線で結ばれる挿絵" />
+          <img loading="lazy" decoding="async" src="../figures/illustration-shuka-grid-comparison.jpg" alt="二つの10×10格子が重なり、数枚の札が光って対応線で結ばれる挿絵" />
           <figcaption>
             挿絵1-1. ほとんど同じ歌群を、少し違う順番で並べる。差し替えられた数首と、ずれたセルが、読みの入口になる。
           </figcaption>
@@ -1031,10 +1040,10 @@
       <section id="next">
         <h2>9. 次に読む場所</h2>
         <p>
-          第1章の結論は、派手な「発見」ではない。むしろ、次に読む場所が絞れた、というのが近い。百人秀歌と小倉百人一首を意味空間に並べると、二つの歌集が大きく重なっていることが見えてくる。これは、両者が近い関係にある選歌集であることを、意味空間の上でも確認する結果といえる。
+          第1章の結論は、派手な「発見」ではない。むしろ、次に読む場所が絞れた、というのが近い。百人秀歌と小倉百人一首が地図上で大きく重なるのは、両者が97首を共有するという資料上の事実を見直したものでもあり、埋め込みが新たに証明したことではない。
         </p>
         <p>
-          一方で、片方にだけ現れる歌も、意味空間の中で無作為に散っているわけではない。近い位置に現れる歌をたどると、主題や情景の担い方の違いとして読み比べられそうな箇所がある。小倉順全体は、意味空間で圧倒的に特別とは言えない。それでも、近い隣、遠い隣、百人秀歌との差分を並べると、いくつかの読み戻り先が浮かぶ。
+          片方にだけ現れる7首は一つの島を作らず、それぞれ既存の点群の中へ投影された。7点だけから偶然でない散らばり方を論じることはできないが、近い位置に現れる歌をたどれば、主題や情景の担い方を読み比べる入口にはなる。小倉順全体は、意味空間で圧倒的に特別とは言えない。それでも、近い隣、遠い隣、百人秀歌との差分を並べると、いくつかの読み戻り先が浮かぶ。
         </p>
         <p>
           一つ目は、源俊頼である。同じ歌人が、小倉と百人秀歌で別の歌を担う。二つ目は、後鳥羽院と順徳院である。小倉側に入るこの二首が、作品の末尾で何を変えるのかは、本文へ戻って読む価値がある。三つ目は、10×10である。これは第1章では入口だけを置き、第2章で検査手順から読む。

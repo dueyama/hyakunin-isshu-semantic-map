@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>意味空間で百人一首を読む 第2章 | こぼれる一首、入ってくる三首</title>
+    <meta name="description" content="百人秀歌101首から10×10の枠外に置く一首と、小倉百人一首へ入ってくる三首を探索する第2章。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/2/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="第2章 こぼれる一首、入ってくる三首" />
+    <meta property="og:description" content="10×10配置から、源俊頼の別歌と小倉側の三首を追う。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/2/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-    <link rel="stylesheet" href="../../assets/reading.css?v=20260703-heian-hero4" />
+    <link rel="stylesheet" href="../../assets/reading.css?v=20260710-review" />
   </head>
   <body class="article article-two">
     <main>
@@ -22,7 +31,7 @@
       </nav>
 
       <header class="article-hero">
-        <p class="meta">意味空間で百人一首を読む 第2章 / HTML読み物・随時更新 / 初稿 2026-07-04 / 更新 2026-07-05</p>
+        <p class="meta">意味空間で百人一首を読む 第2章 / HTML読み物・随時更新 / 初稿 2026-07-04 / 更新 2026-07-10</p>
         <h1>こぼれる一首、<br />入ってくる三首</h1>
         <p class="lead">
           百人秀歌は101首ある。ところが10×10の枡目に置けるのは100首だけである。では、どの一首を枠外に置くと、残りの100首はいちばんまとまって見えるのか。さらに、小倉百人一首へ移るとき、どの三首が入ってくるのか。第2章では、この出入りを一続きの事件として読む。
@@ -78,7 +87,7 @@
           </div>
         </div>
         <figure class="article-illustration">
-          <img src="../../figures/illustration-shuka-grid-comparison.jpg" alt="二つの百首配列を見比べる平安風の挿絵" />
+          <img loading="lazy" decoding="async" src="../../figures/illustration-shuka-grid-comparison.jpg" alt="二つの百首配列を見比べる平安風の挿絵" />
           <figcaption>
             挿絵2-0. 二つの配列を見比べる。第2章では、百人秀歌の10×10仮説を手がかりに、小倉百人一首へ変わる場所を一続きに探す。
           </figcaption>
@@ -112,6 +121,9 @@
         <p>
           置き終えたら、今度はマス目の上で隣り合う歌のペアを全部拾う。上下左右だけを隣とするなら、10×10では180組になる。斜め隣も含める<a class="term" href="../../glossary/#term-neighborhood">8近傍</a>なら342組になる。この一組一組について、意味空間でどれくらい近いかを計算し、最後に平均する。
         </p>
+        <p>
+          比較用の<a class="term" href="../../glossary/#term-random-layout">ランダム配置</a>でも、端や角を含む同じ10×10の形を使う。残った同じ100首を毎回ランダムにセルへ置き直し、上下左右なら同じ180組、8近傍なら同じ342組の平均を計算する。これを1万回繰り返し、実際の置き方がその分布のどこに来るかを見る。したがって、端の歌ほど隣が少ないという境界条件も、実際の配置とランダム配置の両方でそろっている。
+        </p>
         <p class="note">
           ここでは、10×10を普通の紙面として扱う。つまり、右端と左端、上端と下端はつながっていない。角の歌も比較から外れるわけではないが、上下左右だけを見る場合、隣は二つだけになる。辺の歌は三つ、内側の歌は四つである。そのため、角や端に置かれた歌は、平均値への関わりが相対的に小さくなる。この章の数値は、その開いたマス目の上での比較である。
         </p>
@@ -119,15 +131,15 @@
           だから、この検査で見ているのは「この置き方にすると、近所のマスに意味的に近い歌が集まりやすいか」である。置き方が変われば、同じ100首でも隣として拾われるペアが変わる。そこに差が出るかを見る。
         </p>
         <figure class="figure-wide">
-          <img src="../../figures/layout-models-polished.svg" alt="10×10への置き方を示す図" />
+          <img loading="lazy" decoding="async" src="../../figures/layout-models-polished.svg" alt="10×10への置き方を示す図" />
           <figcaption>
             図2-1. この章で試した代表的な10×10への置き方。通常行型、行つづら折り、斜めつづら折り、渦巻き型では、同じ100首でも隣として拾われる歌の組み合わせが変わる。
           </figcaption>
         </figure>
         <figure class="figure-wide">
-          <img src="../../figures/grid-comparison-method-polished.svg" alt="10×10に置いたあと隣接ペアを集計して比較する手順の図" />
+          <img loading="lazy" decoding="async" src="../../figures/grid-comparison-method-polished.svg" alt="10×10に置いたあと隣接ペアを集計して比較する手順の図" />
           <figcaption>
-            図2-1b. 置いたあとに何を比べるか。各セルについて隣り合う歌を拾い、歌どうしの近さを一組ずつ計算し、最後に平均する。ここでの類似度は大きいほど近い。図中の数値は説明用の例であり、実データ値そのものではない。
+            図2-1a. 置いたあとに何を比べるか。各セルについて隣り合う歌を拾い、歌どうしの近さを一組ずつ計算し、最後に平均する。ここでの類似度は大きいほど近い。図中の数値は説明用の例であり、実データ値そのものではない。
           </figcaption>
         </figure>
         <details class="deep-dive">
@@ -136,7 +148,7 @@
             近さは <a class="term" href="../../glossary/#term-cosine">cosine similarity</a> で測る。値が高いほど、本文条件では近い向きを向く歌どうしだと読む。第2章も、特に断らない限り <a class="term" href="../../glossary/#term-model-large-small"><code>text-embedding-3-small</code></a> の結果を見る。ただし10×10検査の類似度は、第1章の <code>original_kana</code> 条件ではなく、百人秀歌側と小倉側をそろえるための作業用本文表記 <code>original</code> 条件で再計算した値である。そのため、同じペアでも第1章の隣接表と小数値が一致しない場合がある。
           </p>
           <p>
-            <a class="term" href="../../glossary/#term-percentile">percentile</a> は、ランダムな比較と比べた位置である。たとえば0.924なら、ランダムに作った比較条件の約92.4%より高かった、という意味になる。<a class="term" href="../../glossary/#term-z-score">z-score</a> は、ランダム平均からどれくらい離れているかを見る別の尺度である。
+            <a class="term" href="../../glossary/#term-percentile">percentile</a> は、ランダムな比較と比べた位置である。たとえば0.951なら、ランダム配置1万回の約95.1%より高かった、という意味になる。<a class="term" href="../../glossary/#term-z-score">z-score</a> は、ランダム平均からどれくらい離れているかを見る別の尺度である。
           </p>
           <div class="table-wrap">
             <table>
@@ -193,13 +205,13 @@
           まず、百人秀歌101首を全部候補にして見る。ここで上位に来たのは、斜めつづら折り型だった。斜めの帯をたどるように10×10を埋めていく置き方である。
         </p>
         <figure class="figure-wide">
-          <img src="../../figures/shuka-10x10-layout-polished.svg" alt="百人秀歌10×10置き方比較の横棒グラフ" />
+          <img loading="lazy" decoding="async" src="../../figures/shuka-10x10-layout-polished.svg" alt="百人秀歌10×10置き方比較の横棒グラフ" />
           <figcaption>
             図2-2. 全101通りを比べた中で上位に来た条件の一例として、百人秀歌101首からS076を枠外に置いた場合を示す。S番号は <a href="../../references/#id-map">図表ID対応表</a> に対応する。棒は上下左右近傍平均のランダムpercentileで、大きいほどランダムより「近い歌が近所に集まった」と読む。
           </figcaption>
         </figure>
         <p>
-          ここで大事なのは、「S076だけが圧倒的に一位」という話ではない。平均値やz-scoreで見るとS076が先頭に来るが、percentileだけならS071 前大僧正行尊がわずかに上回る。差は0.001程度で、順位を大きく語るほどではない。
+          ここで大事なのは、「S076だけが圧倒的に一位」という話ではない。平均値、z-score、percentileのいずれでもS076が先頭に来たが、S071 前大僧正行尊との差はpercentileで0.002ほどしかない。順位を大きく語るほどの差ではない。
         </p>
         <div class="table-wrap">
           <table>
@@ -218,39 +230,39 @@
                 <td>斜めつづら折り</td>
                 <td>S076 源俊頼朝臣 別歌</td>
                 <td>0.4678</td>
-                <td>1.404</td>
-                <td>0.924</td>
+                <td>1.685</td>
+                <td>0.951</td>
                 <td>小倉にも源俊頼は残るが、歌は差し替わる。</td>
               </tr>
               <tr>
                 <td>斜めつづら折り</td>
                 <td>S071 前大僧正行尊</td>
                 <td>0.4677</td>
-                <td>1.392</td>
-                <td>0.925</td>
-                <td>percentileでは僅差でこちらが高い。</td>
+                <td>1.664</td>
+                <td>0.950</td>
+                <td>S076との差は小さく、ほぼ並ぶ。</td>
               </tr>
               <tr>
                 <td>斜めつづら折り</td>
                 <td>S075 相模</td>
                 <td>0.4663</td>
-                <td>1.303</td>
-                <td>0.907</td>
+                <td>1.556</td>
+                <td>0.938</td>
                 <td>共通歌。差し替え候補そのものではない。</td>
               </tr>
               <tr>
                 <td>斜めつづら折り</td>
                 <td>S073 権中納言国信</td>
                 <td>0.4656</td>
-                <td>1.287</td>
-                <td>0.906</td>
+                <td>1.518</td>
+                <td>0.932</td>
                 <td>小倉には対応しない百人秀歌側の歌人。</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p>
-          だから、ここでの読みは慎重にする。全101首の順位表だけを見るなら、「S076が唯一の鍵」とは言えない。むしろ、斜めつづら折り型そのものが上がり、その上位にS076、S071、S075、S073が並ぶ、と読むのが正確である。
+          だから、ここでの読みは慎重にする。全101首の順位表だけを見るなら、「S076が唯一の鍵」とは言えない。斜めつづら折り型そのものが上がり、その上位にS076、S071、S075、S073が並ぶ、と読むのが正確である。
         </p>
       </section>
 
@@ -277,29 +289,29 @@
               <tr>
                 <td>斜めつづら折り</td>
                 <td>S076 源俊頼朝臣 別歌</td>
-                <td>0.9242</td>
-                <td>0.8592</td>
+                <td>0.9514</td>
+                <td>0.8754</td>
                 <td>歌人は小倉にも残るが、歌が変わる。</td>
               </tr>
               <tr>
                 <td>斜めつづら折り</td>
                 <td>S073 権中納言国信</td>
-                <td>0.8961</td>
-                <td>0.7776</td>
+                <td>0.9324</td>
+                <td>0.8009</td>
                 <td>小倉には対応しない百人秀歌側だけの歌人。</td>
               </tr>
               <tr>
                 <td>斜めつづら折り</td>
                 <td>S090 権中納言長方</td>
-                <td>0.7582</td>
-                <td>0.6331</td>
+                <td>0.7937</td>
+                <td>0.6434</td>
                 <td>こちらも小倉には対応しない歌人。</td>
               </tr>
               <tr>
                 <td>斜めつづら折り</td>
                 <td>S053 一条院皇后宮</td>
-                <td>0.6143</td>
-                <td>0.5835</td>
+                <td>0.6321</td>
+                <td>0.5965</td>
                 <td>百人秀歌側だけに見える候補。</td>
               </tr>
             </tbody>
@@ -372,16 +384,16 @@
           ここまで見ると、百人秀歌の10×10だけが特別に見えるかもしれない。そこで、小倉百人一首だけにも同じ代表配置を当ててみる。小倉はちょうど100首なので、百人秀歌のように「どの一首を外すか」は選ばない。100首をそのまま10×10に置き、近くのセルに意味的に近い歌が来やすいかを見る。
         </p>
         <figure class="figure-wide">
-          <img src="../../figures/ogura-10x10-layout-polished.svg" alt="小倉百人一首10×10置き方比較の横棒グラフ" />
+          <img loading="lazy" decoding="async" src="../../figures/ogura-10x10-layout-polished.svg" alt="小倉百人一首10×10置き方比較の横棒グラフ" />
           <figcaption>
             図2-3. 小倉百人一首100首の10×10置き方比較。棒は上下左右近傍、点は斜めを含む8近傍のランダムpercentileで、どちらも大きいほど、ランダムな並べ方より近い歌が隣に来やすかったことを示す。上下左右だけなら渦巻き型（螺旋置き）が一番高く、8近傍なら通常行・列型が高い。
           </figcaption>
         </figure>
         <p>
-          結果は、少し複雑である。上下左右だけを見ると、渦巻き型、つまり螺旋置きが percentile 0.9007で一番高い。けれど、斜めも含む8近傍では、通常の行・列配置が percentile 0.9441まで上がり、こちらが一番高い。つまり、「小倉は螺旋置きが正解」という話ではない。どの範囲を隣と見るかで、一番高い置き方が変わる。
+          結果は、少し複雑である。上下左右だけを見ると、渦巻き型、つまり螺旋置きが percentile 0.9364で一番高い。けれど、斜めも含む8近傍では、通常の行・列配置が percentile 0.9555まで上がり、こちらが一番高い。つまり、「小倉は螺旋置きが正解」という話ではない。どの範囲を隣と見るかで、一番高い置き方が変わる。
         </p>
         <p>
-          むしろここで重要なのは、百人秀歌で目立った斜めつづら折り型が、小倉単体では同じようには上がらないことである。斜めつづら折り型は、上下左右 percentile 0.4496、8近傍 percentile 0.6921にとどまる。
+          むしろここで重要なのは、百人秀歌で目立った斜めつづら折り型が、小倉単体では同じようには上がらないことである。斜めつづら折り型は、上下左右 percentile 0.4530、8近傍 percentile 0.7126にとどまる。
         </p>
         <p class="note">
           ここで「四首しか違わないのに、なぜこんなに違うのか」と疑ってよい。理由は、10×10検査が、歌の集合そのものではなく、マス目の上で隣として拾われるペアを見ているからである。百人秀歌でS076を外した斜めつづら折り配置と、小倉の同じ配置を、共通97首だけで比べると、同じセルに入る歌は14首だけだった。上下左右の隣ペアの重なりも約16%、斜めを含めても約26%にとどまる。歌群がほぼ同じでも、マス目上の隣はかなり入れ替わる。
@@ -401,26 +413,26 @@
             <tbody>
               <tr>
                 <td>渦巻き型（螺旋置き）</td>
-                <td>0.9007</td>
-                <td>1.302</td>
-                <td>0.8870</td>
-                <td>1.217</td>
+                <td>0.9364</td>
+                <td>1.535</td>
+                <td>0.9078</td>
+                <td>1.334</td>
                 <td>上下左右では小倉単体の最上位。</td>
               </tr>
               <tr>
                 <td>通常行・列型</td>
-                <td>0.8881</td>
-                <td>1.238</td>
-                <td>0.9441</td>
-                <td>1.589</td>
+                <td>0.9270</td>
+                <td>1.461</td>
+                <td>0.9555</td>
+                <td>1.739</td>
                 <td>8近傍では最上位。行と列は同じ値になる。</td>
               </tr>
               <tr>
                 <td>斜めつづら折り型</td>
-                <td>0.4496</td>
-                <td>-0.151</td>
-                <td>0.6921</td>
-                <td>0.489</td>
+                <td>0.4530</td>
+                <td>-0.131</td>
+                <td>0.7126</td>
+                <td>0.544</td>
                 <td>百人秀歌で目立った型は、小倉単体では目立たない。</td>
               </tr>
             </tbody>
@@ -443,22 +455,22 @@
           三首の入れ方は3!、つまり6通りである。これは総当たりできる。たとえば、百人秀歌側でS076を枠外に置くと、S053、S073、S090のセルが残る。そこへH074、H099、H100を入れる6通りをすべて試し、どこに何を入れると小倉側の100首が格子上でまとまって見えるのかを調べた。
         </p>
         <figure class="figure-wide">
-          <img src="../../figures/shuka-overlay-workflow-polished.svg" alt="百人秀歌基準で小倉三首を入れる検査手順の図" />
+          <img loading="lazy" decoding="async" src="../../figures/shuka-overlay-workflow-polished.svg" alt="百人秀歌基準で小倉三首を入れる検査手順の図" />
           <figcaption>
             図2-4. 百人秀歌を基準に小倉三首を入れる検査の手順。共通97首を固定し、百人秀歌側だけの四つのセルから一首を枠外へ置き、残り三セルへ小倉側の三首、H074・H099・H100を入れる。H番号とS番号は <a href="../../references/#id-map">図表ID対応表</a> に対応する。
           </figcaption>
         </figure>
         <figure class="figure-wide">
-          <img src="../../figures/shuka-base-shared-cell-polished.svg" alt="百人秀歌基準で共通97首を固定した10×10比較の横棒グラフ" />
+          <img loading="lazy" decoding="async" src="../../figures/shuka-base-shared-cell-polished.svg" alt="百人秀歌基準で共通97首を固定した10×10比較の横棒グラフ" />
           <figcaption>
             図2-5. 百人秀歌を基準にし、共通97首のセルを固定した比較。棒は上下左右近傍のランダムpercentileで、大きいほど、ランダムな並べ方より近い歌が隣に来やすかったことを示す。下段には8近傍で最も高かった条件も示す。H番号とS番号は <a href="../../references/#id-map">図表ID対応表</a> に対応する。
           </figcaption>
         </figure>
         <p>
-          ここでも、置き方や近傍の取り方によって山は変わる。今回試した条件の範囲では、8近傍で最も高かったのは、S076を枠外に置き、残ったS053・S073・S090のセルへ小倉側の三首を入れる条件だった。percentile は0.9817、z-score は2.134である。このときの入れ方は、S053のセルにH100 順徳院、S073のセルにH074 源俊頼朝臣、S090のセルにH099 後鳥羽院を入れる組み合わせだった。
+          ここでも、置き方や近傍の取り方によって山は変わる。今回試した条件の範囲では、8近傍で最も高かったのは、S076を枠外に置き、残ったS053・S073・S090のセルへ小倉側の三首を入れる条件だった。percentile は0.9877、z-score は2.322である。このときの入れ方は、S053のセルにH100 順徳院、S073のセルにH074 源俊頼朝臣、S090のセルにH099 後鳥羽院を入れる組み合わせだった。
         </p>
         <p>
-          一方、上下左右だけを見ると、別の山が出る。渦巻き型でS053を外し、S073のセルにH074、S076のセルにH099、S090のセルにH100を入れる条件が、percentile 0.9536で上に来る。つまり、S076だけを見ていればよい、という単純な話ではない。
+          一方、上下左右だけを見ると、別の山が出る。渦巻き型でS053を外し、S073のセルにH074、S076のセルにH099、S090のセルにH100を入れる条件が、percentile 0.9700で上に来る。つまり、S076だけを見ていればよい、という単純な話ではない。
         </p>
         <div class="table-wrap">
           <table>
@@ -475,21 +487,21 @@
               <tr>
                 <td>百人秀歌そのもの</td>
                 <td>S076を外す斜めつづら折り</td>
-                <td>上下左右 percentile 0.9242</td>
+                <td>上下左右 percentile 0.9514</td>
                 <td>小倉三首はまだ入れない。</td>
                 <td>差分候補ではS076が目立つ。</td>
               </tr>
               <tr>
                 <td>百人秀歌基準に小倉三首を入れる</td>
                 <td>S076を外す斜めつづら折り</td>
-                <td>8近傍 percentile 0.9817</td>
+                <td>8近傍 percentile 0.9877</td>
                 <td>S053セルへH100、S073セルへH074、S090セルへH099。</td>
                 <td>H074・H099・H100の入れ方まで含めて高い。</td>
               </tr>
               <tr>
                 <td>百人秀歌基準に小倉三首を入れる</td>
                 <td>S053を外す渦巻き型</td>
-                <td>上下左右 percentile 0.9536</td>
+                <td>上下左右 percentile 0.9700</td>
                 <td>S073セルへH074、S076セルへH099、S090セルへH100。</td>
                 <td>近傍の取り方を変えると、別の条件も上がる。</td>
               </tr>
@@ -497,9 +509,9 @@
           </table>
         </div>
         <details class="deep-dive">
-          <summary><span>もう少し詳しく</span>なぜ0.9817だけを結論にしないのか</summary>
+          <summary><span>もう少し詳しく</span>なぜ0.9877だけを結論にしないのか</summary>
           <p>
-            percentile 0.9817は、ランダム比較の98.17%より高かった、という意味である。数字だけならかなり高い。しかしここでは、置き方、枠外に置く歌、近傍の取り方、三首の入れ方を複数試している。たくさん試したあとで最も高い値だけを見ると、偶然高く出た条件を大きく見てしまう。
+            percentile 0.9877は、ランダム配置1万回の98.77%より高かった、という意味である。数字だけならかなり高い。しかしここでは、置き方、枠外に置く歌、近傍の取り方、三首の入れ方を複数試している。たくさん試したあとで最も高い値だけを見ると、偶然高く出た条件を大きく見てしまう。
           </p>
           <p>
             だから、この値は「証明」ではない。より正確には、「百人秀歌の斜めつづら折り型を基準にし、S076を外し、小倉側三首を特定のセルに入れると、8近傍では近い歌が隣に来やすかった」という観察である。読み物として面白いのは、その山が源俊頼、後鳥羽院、順徳院という差し替えの焦点に重なっている点である。
@@ -645,7 +657,7 @@
               <li>小倉側には、螺旋置きで上下左右だけを見る別の読み筋があるかもしれない。</li>
               <li>ただし、10×10配置説が証明されたわけではない。</li>
               <li>瀬戸口論文の図を再現できた、という段階でもない。</li>
-              <li>percentile 0.9817は、本文へ戻る目印であり、配置の正解そのものではない。</li>
+              <li>percentile 0.9877は、本文へ戻る目印であり、配置の正解そのものではない。</li>
               <li>最終的には、本文・伝本・出典・部立・先行研究へ戻して読む必要がある。</li>
             </ul>
           </div>

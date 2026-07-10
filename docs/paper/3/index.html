@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>意味空間で百人一首を読む 第3章 | 螺旋の小倉、斜めの秀歌</title>
+    <meta name="description" content="百人秀歌の斜めつづら折りと、小倉百人一首の螺旋置きが作る隣接関係を数えて比べる第3章。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/3/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="第3章 螺旋の小倉、斜めの秀歌" />
+    <meta property="og:description" content="二つの謎めいた10×10配置は、本当に同じ構造なのか。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/3/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-    <link rel="stylesheet" href="../../assets/reading.css?v=20260703-heian-hero4" />
+    <link rel="stylesheet" href="../../assets/reading.css?v=20260710-review" />
   </head>
   <body class="article article-three">
     <main>
@@ -22,7 +31,7 @@
       </nav>
 
       <header class="article-hero">
-        <p class="meta">意味空間で百人一首を読む 第3章 / HTML読み物・随時更新 / 初稿 2026-07-04 / 更新 2026-07-08</p>
+        <p class="meta">意味空間で百人一首を読む 第3章 / HTML読み物・随時更新 / 初稿 2026-07-04 / 更新 2026-07-10</p>
         <h1>螺旋の小倉、<br />斜めの秀歌</h1>
         <p class="lead">
           第2章では、百人秀歌の斜めつづら折りと、小倉百人一首の螺旋置きが、それぞれ別の場所で目を引いた。では、この二つはどこかで同じ隣関係を作っているのか。それとも、似たように謎めいて見えるだけで、実際には別の数学遊びなのか。第3章では、組み合わせそのものを比べる。
@@ -54,7 +63,7 @@
           ただし、ここで急いで物語にしてはいけない。10×10への置き方は、順番を平面へ折りたたむ操作である。折りたたみ方を変えれば、同じ歌順でも隣になる相手が変わる。そこには文学的な読みの入口もあるが、同時に、かなり単純な数学遊びも混じる。
         </p>
         <figure class="article-illustration">
-          <img src="../../figures/illustration-chapter3-spiral-mystery.png" alt="灯明のそばで歌札と10×10の配置図を見比べる平安風の挿絵" />
+          <img loading="lazy" decoding="async" src="../../figures/illustration-chapter3-spiral-mystery.jpg" alt="灯明のそばで歌札と10×10の配置図を見比べる平安風の挿絵" />
           <figcaption>
             挿絵3-0. 螺旋と斜めの二つの線。第3章では、謎めいて見える配置の重なりを、まず組み合わせとして数える。
           </figcaption>
@@ -77,7 +86,7 @@
       <section id="overlap">
         <h2>3. 斜めと螺旋は一致するか</h2>
         <figure class="figure-wide">
-          <img src="../../figures/chapter3-diagonal-spiral-overlap.svg" alt="百人秀歌の斜めつづら折りと小倉の螺旋置きの隣接ペア重複を比べる図" />
+          <img loading="lazy" decoding="async" src="../../figures/chapter3-diagonal-spiral-overlap.svg" alt="百人秀歌の斜めつづら折りと小倉の螺旋置きの隣接ペア重複を比べる図" />
           <figcaption>
             図3-1. 百人秀歌の斜めつづら折りと、小倉の螺旋置きの隣接ペアの重なり。これは歌どうしの類似度ではなく、二つの置き方で同じペアが隣として現れる数を比べた図である。上下左右だけでは22組、8近傍では55組が重なった。同じ数だけ無作為にペアを選んだ場合と比べれば多いが、小倉側の置き方候補の中では螺旋置きが特別に高いわけではない。
           </figcaption>
@@ -193,7 +202,7 @@
       <section id="ogura-spiral">
         <h2>5. 小倉螺旋を読む</h2>
           <p>
-            では、小倉の螺旋置きは意味がないのか。そうは言い切れない。百人秀歌の斜めと強く対応しないとしても、小倉百人一首そのものを螺旋に置いたとき、上下左右の近所に意味的に近い歌が来やすかった、という観察は残る。第2章の値では、螺旋置きの上下左右 percentile は0.9007だった。
+            では、小倉の螺旋置きは意味がないのか。そうは言い切れない。百人秀歌の斜めと強く対応しないとしても、小倉百人一首そのものを螺旋に置いたとき、上下左右の近所に意味的に近い歌が来やすかった、という観察は残る。第2章の値では、螺旋置きの上下左右 percentile は0.9364だった。
           </p>
           <p class="note">
             この節の類似度は、第2章・第3章の10×10検査用にそろえた <code>original</code> 条件で計算した値である。第1章の隣接表は <code>original_kana</code> 条件なので、同じペアでも小数値が一致しない場合がある。ここでは、螺旋配置で読み返す候補を探すための別検査として読む。

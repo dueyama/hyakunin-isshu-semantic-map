@@ -12,15 +12,16 @@ import argparse
 import itertools
 import json
 import math
-import random
 import statistics
 from pathlib import Path
 from typing import Any
 
+from layout_permutation import random_layout_permutations, random_layout_samples
+
 
 ROOT = Path(__file__).resolve().parents[1]
 GRID_SIZE = 10
-RANDOM_SEED = 20260703
+RANDOM_SEED = 20260710
 
 Cell = tuple[int, int]
 
@@ -132,12 +133,6 @@ def cell_edges(cells: list[Cell], include_diagonal: bool) -> list[tuple[int, int
     return edges
 
 
-def compare_to_random(value: float, pair_scores: list[float], sample_size: int, trials: int, seed: int) -> dict[str, float | None]:
-    rng = random.Random(seed)
-    samples = [statistics.fmean(rng.sample(pair_scores, sample_size)) for _ in range(trials)]
-    return compare_to_samples(value, samples)
-
-
 def compare_to_samples(value: float, samples: list[float]) -> dict[str, float | None]:
     random_mean = statistics.fmean(samples)
     random_sd = statistics.pstdev(samples)
@@ -164,11 +159,14 @@ def similarity(left_id: str, right_id: str, scores: dict[tuple[str, str], float]
     return scores[tuple(sorted((left_id, right_id)))]
 
 
-def pair_scores(records: list[dict[str, Any]], score_lookup: dict[tuple[str, str], float]) -> list[float]:
-    output: list[float] = []
-    for left, right in itertools.combinations(records, 2):
-        output.append(similarity(left["id"], right["id"], score_lookup))
-    return output
+def similarity_matrix_for_records(
+    records: list[dict[str, Any]],
+    score_lookup: dict[tuple[str, str], float],
+) -> list[list[float]]:
+    return [
+        [similarity(left["id"], right["id"], score_lookup) for right in records]
+        for left in records
+    ]
 
 
 def edge_mean(
@@ -221,6 +219,10 @@ def analyze(records: list[dict[str, Any]], trials: int) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
     details: dict[str, Any] = {}
     random_cache: dict[tuple[str, int], list[float]] = {}
+    canonical_cells = row_major(GRID_SIZE)
+    canonical_orthogonal = cell_edges(canonical_cells, include_diagonal=False)
+    canonical_eight = cell_edges(canonical_cells, include_diagonal=True)
+    permutations = random_layout_permutations(GRID_SIZE * GRID_SIZE, trials, RANDOM_SEED)
 
     for layout_name, layout_fn in LAYOUTS.items():
         cells_by_ogura_order = {ogura_id: cell for ogura_id, cell in enumerate(layout_fn(GRID_SIZE), start=1)}
@@ -249,24 +251,20 @@ def analyze(records: list[dict[str, Any]], trials: int) -> dict[str, Any]:
                 occupied = [occupied_by_cell[cell] for cell in canonical_cells]
                 if len(occupied) != GRID_SIZE * GRID_SIZE:
                     raise ValueError("shared grid assignment did not fill all cells")
-                selected_pair_scores = pair_scores(occupied, similarity_cache)
-                seed_base = RANDOM_SEED + len(rows) * 17
                 orth_mean = edge_mean(orthogonal_edges, occupied, similarity_cache)
                 eight_mean = edge_mean(eight_edges, occupied, similarity_cache)
                 orth_random_key = (omitted["id"], len(orthogonal_edges))
                 eight_random_key = (omitted["id"], len(eight_edges))
                 if orth_random_key not in random_cache:
-                    rng = random.Random(seed_base)
-                    random_cache[orth_random_key] = [
-                        statistics.fmean(rng.sample(selected_pair_scores, len(orthogonal_edges)))
-                        for _ in range(trials)
-                    ]
+                    selected_sim = similarity_matrix_for_records(occupied, similarity_cache)
+                    random_cache[orth_random_key] = random_layout_samples(
+                        selected_sim, canonical_orthogonal, permutations
+                    )
                 if eight_random_key not in random_cache:
-                    rng = random.Random(seed_base + 1)
-                    random_cache[eight_random_key] = [
-                        statistics.fmean(rng.sample(selected_pair_scores, len(eight_edges)))
-                        for _ in range(trials)
-                    ]
+                    selected_sim = similarity_matrix_for_records(occupied, similarity_cache)
+                    random_cache[eight_random_key] = random_layout_samples(
+                        selected_sim, canonical_eight, permutations
+                    )
                 row = {
                     "layout": layout_name,
                     "omitted": assignment_label(omitted),
@@ -296,7 +294,7 @@ def analyze(records: list[dict[str, Any]], trials: int) -> dict[str, Any]:
             "missing_ogura_ids": missing_ogura_ids,
             "shuka_only": [assignment_label(record) for record in shuka_only],
             "layout_names": list(LAYOUTS),
-            "random_baseline": "sample same number of unordered pairs from the selected 100 occupied cells",
+            "random_baseline": "randomly permute each selected 100-poem set across a fixed 10x10 grid",
             "random_trials": trials,
             "random_seed": RANDOM_SEED,
             "text_policy": "private embeddings and private Shuka text are not published",

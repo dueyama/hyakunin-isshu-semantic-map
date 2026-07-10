@@ -22,20 +22,26 @@ AIには、まず次の順番で読ませるとよいです。
 1. `README.md`
    - プロジェクトの位置づけ、方法上の立場、公開物、再現前提、ライセンス。
 2. `docs/paper/0/index.html`
-   - 第0回。シリーズの背景、方法、公開形式。
+   - 序章。シリーズの背景、埋め込み入門、方法、公開形式。
 3. `docs/paper/index.html`
-   - 第1回。百人秀歌と小倉百人一首を並べる初期探索記事。
-4. `docs/data_sources.md`
+   - 第1章。百人秀歌と小倉百人一首を意味空間と歌順から比べる。
+4. `docs/paper/2/index.html`
+   - 第2章。10×10配置、枠外に置く一首、小倉側の三首を検査する。
+5. `docs/paper/3/index.html`
+   - 第3章。斜め配置と螺旋配置が作る隣接ペアを比べる。
+6. `docs/paper/final/index.html`
+   - 終章。シリーズ全体の到達点と限界をまとめる。
+7. `docs/data_sources.md`
    - 利用候補データ、利用条件、未確認点。
-5. `docs/method.md`
-   - 正規化、タグ、埋め込み、隣接類似度、ランダム順比較、百人秀歌比較。
-6. `docs/model_notes.md`
+8. `docs/method.md`
+   - 正規化、埋め込み、隣接類似度、ランダム順比較、10×10ランダム配置。
+9. `docs/model_notes.md`
    - 埋め込みモデル、入力形式、実行条件。
-7. `docs/PUBLICATION.md`
+10. `docs/PUBLICATION.md`
    - 公開対象、公開しないもの、GitHub Pages設定、公開前チェック。
-8. `docs/updates/index.html`
+11. `docs/updates/index.html`
    - 公開後に読者へ示す更新概要。
-9. `scripts/*.py`
+12. `scripts/*.py`
    - CSV検証、正規化、タグベースJSON出力、配列分析、将来のembedding実行。
 
 ## What Is Not In The Public Repo
@@ -54,6 +60,8 @@ AIには、まず次の順番で読ませるとよいです。
 AIエージェントは、これらをgitに追加してはいけません。本文を再取得・再処理する場合は、各提供元の利用条件を確認し、raw本文やprocessed本文を公開commitに含めないでください。
 
 例外的に、`data/hyakunin_isshu.csv` は Japanese Wikisource「小倉百人一首」から作成した初期データ候補です。このファイルと本文由来の正規化CSVは、Wikisourceページの CC BY-SA 3.0 条件に従い、校訂済み本文ではなく要照合データとして扱ってください。
+
+`data/hyakunin_shuka.csv` と `data/metadata_poets.csv` は列構成だけを示す公開schema placeholderです。0行を「解析データがない」というエラーにはしませんが、完全な公開データセットと解釈してはいけません。
 
 ## Minimal Public Check Path
 
@@ -80,7 +88,7 @@ git diff --check
 - embedding model
 - vector dimension
 - PCA/UMAPなどの投影法
-- ランダム順比較のseedと試行数
+- 歌順検査のランダム順と、10×10検査のランダム配置を区別したseed・試行数
 - 出力JSON/CSVに未確認本文、embedding vector、ローカルパスが含まれないこと
 
 ## Interpretation Rules
@@ -94,6 +102,7 @@ AIは次の点を守って解釈します。
 - 百人秀歌との違いは、本文・配列・歌人差を分けて扱う。
 - 日本語HTML本文を主本文として扱い、英語版は作成しない。
 - 図や数値は結論ではなく、読む場所を探すための地図である。
+- 10×10検査では、同数の独立ペア抽出ではなく、同じ100首を格子へ無作為に置き直す基準を使う。
 
 ## Suggested Initial Prompt For AI
 

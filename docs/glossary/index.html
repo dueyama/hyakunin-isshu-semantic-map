@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>用語集 | 意味空間で百人一首を読む</title>
+    <meta name="description" content="埋め込み、ベクトル、cosine similarity、PCA、percentileなど、本文で使う専門用語を一般読者向けに説明する用語集。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/glossary/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="用語集 | 意味空間で百人一首を読む" />
+    <meta property="og:description" content="AI埋め込みと統計の言葉を、本文の流れに沿って説明する。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/glossary/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="stylesheet" href="../assets/reading.css?v=20260703-heian-hero4" />
+    <link rel="stylesheet" href="../assets/reading.css?v=20260710-review" />
   </head>
   <body class="article article-zero">
     <main>
@@ -210,7 +219,7 @@
           <article class="glossary-item" id="term-z-score">
             <h3>z-score <a class="anchor-link" href="#term-z-score">#</a></h3>
             <p>
-              ランダム順の平均から、どれくらい離れているかを標準偏差というものさしで表す値。0なら平均付近、1なら少し高い、2を超えるとかなり目を引く。ただし、探索条件が多い場合は、たまたま高い値も出やすくなる。
+              ランダム順やランダム配置の平均から、どれくらい離れているかを標準偏差というものさしで表す値。0なら平均付近、1なら少し高い、2を超えるとかなり目を引く。ただし、探索条件が多い場合は、たまたま高い値も出やすくなる。
             </p>
           </article>
 
@@ -224,7 +233,7 @@
           <article class="glossary-item" id="term-permutation">
             <h3>permutation test / 並べ替え検定 <a class="anchor-link" href="#term-permutation">#</a></h3>
             <p>
-              順番やラベルを何度も並べ替えて、実際の結果がどれくらい珍しいかを見る検査。このシリーズでは、歌順をランダムに並べたときの分布と比べる発想がこれに近い。
+              順番やラベルを何度も並べ替えて、実際の結果がどれくらい珍しいかを見る検査。このシリーズでは、歌順をランダムに並べる検査と、同じ100首を10×10へランダムに置く検査がこの発想にあたる。
             </p>
           </article>
         </div>
@@ -251,6 +260,13 @@
             <h3>近傍 / 8近傍 <a class="anchor-link" href="#term-neighborhood">#</a></h3>
             <p>
               格子状に並べたとき、あるセルの周囲にあるセルを近傍と呼ぶ。上下左右だけを見る場合と、斜めも含めた8近傍を見る場合がある。10×10配置説を試すときは、近くのセルに意味的に近い歌が来るかを調べる。
+            </p>
+          </article>
+
+          <article class="glossary-item" id="term-random-layout">
+            <h3>ランダム配置 <a class="anchor-link" href="#term-random-layout">#</a></h3>
+            <p>
+              同じ100首を、10×10の100セルへ無作為に置き直した比較用の配置。上下左右なら180組、8近傍なら342組という格子の形を保ったまま、実際の置き方がどのくらい珍しいかを見る。端や角のセルは、実際の配置でもランダム配置でも同じように隣が少ない。
             </p>
           </article>
 

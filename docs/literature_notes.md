@@ -1,6 +1,6 @@
 # Literature Notes
 
-最終更新: 2026-07-02
+最終更新: 2026-07-10
 
 このメモは、小倉百人一首・百人秀歌をめぐる先行説と文献候補を、意味配列解析のための「検証課題」として整理する台帳である。ここに書く説は、ただちに本プロジェクトの結論ではない。
 
@@ -202,15 +202,15 @@
 | 影印 | 久曽神昇編『御所本百人秀歌 : 宮内庁書陵部蔵』笠間書院, 1971 | 百人秀歌本文・伝本 | [NDL](https://ndlsearch.ndl.go.jp/books/R100000001-I46111132012650) |
 | Web資料 | 水垣久「百人秀歌」2004-04-06 | 百人秀歌本文・小倉番号対応。暫定解析のローカル原資料 | [百人秀歌](https://www.asahi-net.or.jp/~sg2h-ymst/yamatouta/sennin/100i/100s.html) |
 | Web資料 | 国文学研究資料館 国書データベース「百人秀歌」 | 伝本・書誌確認 | [国書DB](https://kokusho.nijl.ac.jp/work/426517) |
-| Web資料 | 宮内庁書陵部所蔵資料目録・画像公開システム「百人秀歌（一巻・百人一首異本）」 | 宮内庁書陵部所蔵本の確認 | [宮内庁書陵部](https://shoryobu.kunaicho.go.jp/Toshoryo/Viewer/1000029900000/49bb58467eb148d39c8dc10a60837cea) |
+| Web資料 | 宮内庁書陵部所蔵資料目録・画像公開システム「百人秀歌（一巻・百人一首異本）」 | 宮内庁書陵部所蔵本の確認 | [宮内庁書陵部](https://shoryobu.kunaicho.go.jp/Toshoryo/Detail/1000029900000) |
 | 論文 | 徳原茂美「基調講演 1.百人一首と百人秀歌」『関西文化研究』3, 5-11, 2006 | 成立と享受、百人秀歌比較 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I7897899), [CiNii](https://cir.nii.ac.jp/crid/1520853835400664960) |
 | 論文 | 林直道「『小倉百人一首』論 - 中 - 百人一首と百人秀歌」『文化評論』230, 188-201 | 国文学界の論争、百人秀歌関係 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I2133254), [CiNii](https://cir.nii.ac.jp/crid/1520010379876412160) |
 | 論文 | 田渕句美子「『百人秀歌』とは何か」『百人一首の現在』青簡舎, 28-60, 2022 | 百人秀歌の位置づけ | [NDL](https://ndlsearch.ndl.go.jp/books/R100000136-I1010580143191128193) |
 | 論文 | 田口暢之「『百人一首』と『百人秀歌』の研究史 - 撰者説を中心に」『百人一首の現在』89-109, 2022 | 撰者説の研究史 | [NDL](https://ndlsearch.ndl.go.jp/books/R100000136-I1010580143229305866) |
 | 論文 | 寺島恒世「『百人秀歌』覚書」『武蔵野文学館紀要』3-18, 2020 | 百人秀歌整理 | [NDL](https://ndlsearch.ndl.go.jp/books/R100000136-I1011694355590640384) |
 | 図書 | 中川博夫・田渕句美子・渡邉裕美子編『百人一首の現在』青簡舎, 2022 | 近年の研究整理 | [NDL](https://ndlsearch.ndl.go.jp/books/R100000002-I032432137) |
-| 論文 | 瀬戸口善則「定家撰『百人秀歌』の10×10の枡目配列における絵図と背景図」『岐阜大学工学部研究報告』50, 53-76, 2000 | 10×10配列、図像説 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I5322385), [CiNii](https://cir.nii.ac.jp/crid/1520572360157152128), [Gifu Repository](http://hdl.handle.net/20.500.12099/4223) |
-| 論文 | 瀬戸口善則「ターレスの円を用いた『蟻通明神説話絵図』」『岐阜大学工学部研究報告』51, 49-58, 2001 | 斜めつづら折配列、図像説 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I5798570), [CiNii](https://cir.nii.ac.jp/crid/1520009408205189376), [Gifu Repository](http://hdl.handle.net/20.500.12099/4171) |
+| 論文 | 瀬戸口善則「定家撰『百人秀歌』の10×10の枡目配列における絵図と背景図」『岐阜大学工学部研究報告』50, 53-76, 2000 | 10×10配列、図像説 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I5322385), [CiNii](https://cir.nii.ac.jp/crid/2120307889878291968), [Gifu Repository](https://hdl.handle.net/20.500.12099/4223) |
+| 論文 | 瀬戸口善則「ターレスの円を用いた『蟻通明神説話絵図』」『岐阜大学工学部研究報告』51, 49-58, 2001 | 斜めつづら折配列、図像説 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I5798570), [CiNii](https://cir.nii.ac.jp/crid/1520009408205189376), [Gifu Repository](https://hdl.handle.net/20.500.12099/4171) |
 | 論文 | 草野隆「権中納言藤原長方と藤原定家 - 『百人秀歌』私考(1)」『星美学園短期大学研究論叢』34, 17-46 | 差し替え歌・長方 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I6260515), [CiNii](https://cir.nii.ac.jp/crid/1520853832928283776) |
 | 論文 | 草野隆「権中納言源国信と藤原定家 - 『百人秀歌』私考(2)」『星美学園短期大学研究論叢』35, 21-50 | 差し替え歌・国信 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I6588556), [CiNii](https://cir.nii.ac.jp/crid/1520853833257705088) |
 | 論文 | 草野隆「一条院皇后宮藤原定子の最期の歌と『百人一首』『百人秀歌』私考(3)」『星美学園短期大学研究論叢』37, 57-78 | 差し替え歌・定子 | [NDL](https://ndlsearch.ndl.go.jp/books/R000000004-I7738735), [CiNii](https://cir.nii.ac.jp/crid/1520572357712830848) |

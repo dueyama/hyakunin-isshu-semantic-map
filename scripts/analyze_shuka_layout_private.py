@@ -10,14 +10,15 @@ from __future__ import annotations
 import argparse
 import json
 import math
-import random
 import statistics
 from pathlib import Path
 from typing import Any, Callable
 
+from layout_permutation import random_layout_permutations, random_layout_samples
+
 
 ROOT = Path(__file__).resolve().parents[1]
-RANDOM_SEED = 20260702
+RANDOM_SEED = 20260710
 GRID_SIZE = 10
 
 
@@ -154,22 +155,6 @@ def edge_mean(edges: list[tuple[int, int]], indexes: list[int], sim: list[list[f
     return statistics.fmean(sim[indexes[left]][indexes[right]] for left, right in edges)
 
 
-def all_pair_scores(indexes: list[int], sim: list[list[float]]) -> list[float]:
-    scores: list[float] = []
-    for offset, left in enumerate(indexes):
-        for right in indexes[offset + 1 :]:
-            scores.append(sim[left][right])
-    return scores
-
-
-def random_samples(scores: list[float], sample_size: int, trials: int) -> list[float]:
-    rng = random.Random(RANDOM_SEED + sample_size + len(scores))
-    values: list[float] = []
-    for _ in range(trials):
-        values.append(statistics.fmean(rng.sample(scores, sample_size)))
-    return values
-
-
 def percentile(value: float, samples: list[float]) -> float:
     return sum(1 for sample in samples if sample <= value) / len(samples)
 
@@ -200,15 +185,13 @@ def score_configuration(
     sim: list[list[float]],
     layout_name: str,
     omitted_index: int,
-    trials: int,
+    orthogonal_random: list[float],
+    eight_random: list[float],
 ) -> dict[str, Any]:
     kept = [index for index in range(len(records)) if index != omitted_index]
     cells = LAYOUTS[layout_name](GRID_SIZE)
     orthogonal_edges = cell_edges(cells, include_diagonal=False)
     eight_edges = cell_edges(cells, include_diagonal=True)
-    pair_scores = all_pair_scores(kept, sim)
-    orthogonal_random = random_samples(pair_scores, len(orthogonal_edges), trials)
-    eight_random = random_samples(pair_scores, len(eight_edges), trials)
     return {
         "layout": layout_name,
         "omitted_index": omitted_index,
@@ -232,9 +215,27 @@ def score_configuration(
 def analyze(records: list[dict[str, Any]], trials: int) -> dict[str, Any]:
     sim = similarity_matrix(records)
     configurations: list[dict[str, Any]] = []
-    for layout_name in LAYOUTS:
-        for omitted_index in range(len(records)):
-            configurations.append(score_configuration(records, sim, layout_name, omitted_index, trials))
+    canonical_cells = row_major(GRID_SIZE)
+    orthogonal_edges = cell_edges(canonical_cells, include_diagonal=False)
+    eight_edges = cell_edges(canonical_cells, include_diagonal=True)
+    permutations = random_layout_permutations(GRID_SIZE * GRID_SIZE, trials, RANDOM_SEED)
+
+    for omitted_index in range(len(records)):
+        kept = [index for index in range(len(records)) if index != omitted_index]
+        kept_sim = [[sim[left][right] for right in kept] for left in kept]
+        orthogonal_random = random_layout_samples(kept_sim, orthogonal_edges, permutations)
+        eight_random = random_layout_samples(kept_sim, eight_edges, permutations)
+        for layout_name in LAYOUTS:
+            configurations.append(
+                score_configuration(
+                    records,
+                    sim,
+                    layout_name,
+                    omitted_index,
+                    orthogonal_random,
+                    eight_random,
+                )
+            )
 
     def sort_key_orthogonal(item: dict[str, Any]) -> float:
         return item["orthogonal_neighbors"]["z_score"] or float("-inf")
@@ -254,7 +255,7 @@ def analyze(records: list[dict[str, Any]], trials: int) -> dict[str, Any]:
             "method": "exploratory 10x10 placement analysis using private Hyakunin Shuka embeddings",
             "grid_size": GRID_SIZE,
             "layout_names": list(LAYOUTS),
-            "random_baseline": "sample same number of unordered poem pairs from the same 100 kept poems",
+            "random_baseline": "randomly permute the same 100 kept poems across a fixed 10x10 grid",
             "random_trials": trials,
             "random_seed": RANDOM_SEED,
             "record_count": len(records),
@@ -282,7 +283,7 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=ROOT / "_private/literature/records/hyakunin_shuka_10x10_layout_analysis_small.json",
     )
-    parser.add_argument("--random-trials", type=int, default=1_000)
+    parser.add_argument("--random-trials", type=int, default=10_000)
     return parser.parse_args()
 
 

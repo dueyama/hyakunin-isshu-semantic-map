@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>参照資料・参考文献 | 意味空間で百人一首を読む</title>
+    <meta name="description" content="小倉百人一首と百人秀歌の図表ID対応表、データ出典、モデル条件、先行研究をまとめた参照資料ページ。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/references/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="参照資料・参考文献 | 意味空間で百人一首を読む" />
+    <meta property="og:description" content="図表ID、データ出典、モデル条件、先行研究を一か所に集約。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/references/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="stylesheet" href="../assets/reading.css?v=20260703-heian-hero4" />
+    <link rel="stylesheet" href="../assets/reading.css?v=20260710-review" />
   </head>
   <body class="article article-zero">
     <main>
@@ -25,12 +34,12 @@
         <p class="meta">意味空間で百人一首を読む / 参照資料 / 随時更新</p>
         <h1>参照資料・参考文献</h1>
         <p class="lead">
-          各回で参照する資料、データ出典、モデル条件、先行研究をここに集約する。本文中の [D-1] のような番号は、このページ内の該当項目へ直接つながる。
+          各章で参照する資料、データ出典、モデル条件、先行研究をここに集約する。本文中の [D-1] のような番号は、このページ内の該当項目へ直接つながる。
         </p>
       </header>
 
       <p class="note">
-        ここは、シリーズ全体で根拠をたどるための共通ページである。各回の末尾には参考文献リストを置かず、このページにまとめて整理する。
+        ここは、シリーズ全体で根拠をたどるための共通ページである。各章の末尾には参考文献リストを置かず、このページにまとめて整理する。
       </p>
 
       <section>
@@ -1502,7 +1511,7 @@
           <p class="ref-item" id="ref-g-1"><span class="ref-label">[D-1]</span><a href="https://ja.wikisource.org/w/index.php?title=%E5%B0%8F%E5%80%89%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96&amp;oldid=240235">Japanese Wikisource「小倉百人一首」固定版 oldid 240235</a>。小倉百人一首100首の解析用本文候補の採用元。本文校訂を目的とするものではない。</p>
           <p class="ref-item" id="ref-g-2"><span class="ref-label">[D-2]</span><a href="https://kokusho.nijl.ac.jp/">国文学研究資料館 国書データベース</a>。古典籍画像、書誌、伝本確認、出典照合の候補。画像・翻刻の再配布条件は個別確認が必要。</p>
           <p class="ref-item" id="ref-g-3"><span class="ref-label">[D-3]</span><a href="https://kokusho.nijl.ac.jp/work/426517">国書データベース「百人秀歌」</a>。百人秀歌の書誌・伝本確認候補。</p>
-          <p class="ref-item" id="ref-g-4"><span class="ref-label">[D-4]</span><a href="https://shoryobu.kunaicho.go.jp/Toshoryo/Viewer/1000029900000/49bb58467eb148d39c8dc10a60837cea">宮内庁書陵部所蔵資料目録・画像公開システム「百人秀歌（一巻・百人一首異本）」</a>。宮内庁書陵部所蔵本の確認候補。</p>
+          <p class="ref-item" id="ref-g-4"><span class="ref-label">[D-4]</span><a href="https://shoryobu.kunaicho.go.jp/Toshoryo/Detail/1000029900000">宮内庁書陵部所蔵資料目録・画像公開システム「百人秀歌（一巻・百人一首異本）」</a>。宮内庁書陵部所蔵本の確認候補。</p>
           <p class="ref-item" id="ref-g-5"><span class="ref-label">[D-5]</span><a href="https://www.asahi-net.or.jp/~sg2h-ymst/yamatouta/sennin/100i/100s.html">水垣久「百人秀歌」</a>。百人秀歌本文・小倉番号対応を確認するための解析用参照資料。二首一対の歌合形式という概説も参照した。図表ID対応表では読者がS番号を追える範囲を示すが、解析用の完全CSVや埋め込みベクトルは公開しない。</p>
           <p class="ref-item" id="ref-g-6"><span class="ref-label">[D-6]</span><a href="https://jti.lib.virginia.edu/japanese/hyakunin/macauley.html">University of Virginia Japanese Text Initiative「MacCauley's Translation」</a>。Clay MacCauley, <i>Hyakunin-Isshu</i>, 1917 に基づく英訳ページ。UVA版の英訳方針は <a href="https://jti.lib.virginia.edu/japanese/hyakunin/english.html">A Note on the English Translation</a> も参照。英訳本文は公開ページに再掲せず、集計値だけを扱う。</p>
         </div>
@@ -1511,9 +1520,9 @@
       <section class="references">
         <h2>方法・モデル</h2>
         <div class="ref-list">
-          <p class="ref-item" id="ref-g-10"><span class="ref-label">[M-1]</span><a href="https://platform.openai.com/docs/guides/embeddings">OpenAI Embeddings guide</a>。<code>text-embedding-3-large</code> と <code>text-embedding-3-small</code> による埋め込み実行、正規化、類似度計算の参照。</p>
-          <p class="ref-item" id="ref-g-11"><span class="ref-label">[M-2]</span><a href="https://platform.openai.com/docs/pricing">OpenAI API pricing</a>。費用を書く場合に再確認する参照ページ。</p>
-          <p class="ref-item" id="ref-g-12"><span class="ref-label">[M-3]</span>モデル条件。第1章の主要条件は、入力 <code>original_kana</code>、主モデル <code>text-embedding-3-small</code>、PCA投影、ランダム順10,000回比較である。<code>text-embedding-3-large</code> は感度確認として使う。第1章の二首一組・百人秀歌順検査では、百人秀歌101首と小倉100首を比較用に同じ本文のみ条件でかけ直した集計も用いる。第2章・第3章の10×10検査では、百人秀歌側と小倉側をそろえるため、作業用本文表記 <code>original</code> 条件の <code>text-embedding-3-small</code> も使う。そのため、第1章の隣接表と第2・第3章の10×10表では、同じペアでも小数値が一致しない場合がある。本文中で必要な歌は掲げるが、解析用の完全本文データセットと埋め込みベクトルは公開ページに含めない。</p>
+          <p class="ref-item" id="ref-g-10"><span class="ref-label">[M-1]</span><a href="https://developers.openai.com/api/docs/guides/embeddings">OpenAI Embeddings guide</a>。<code>text-embedding-3-large</code> と <code>text-embedding-3-small</code> による埋め込み実行、正規化、類似度計算の参照。</p>
+          <p class="ref-item" id="ref-g-11"><span class="ref-label">[M-2]</span><a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a>。費用を書く場合に再確認する参照ページ。</p>
+          <p class="ref-item" id="ref-g-12"><span class="ref-label">[M-3]</span>モデル条件。第1章の主要条件は、入力 <code>original_kana</code>、主モデル <code>text-embedding-3-small</code>、PCA投影、ランダム順10,000回比較である。<code>text-embedding-3-large</code> は感度確認として使う。第1章の二首一組・百人秀歌順検査では、百人秀歌101首と小倉100首を比較用に同じ本文のみ条件でかけ直した集計も用いる。第2章・第3章の10×10検査では、百人秀歌側と小倉側をそろえるため、作業用本文表記 <code>original</code> 条件の <code>text-embedding-3-small</code> も使う。ランダム基準は、同じ100首を10×10のセルへ無作為に置き直す操作を10,000回行い、端・角を含む同じ隣接関係で平均を比べる。seedは <code>20260710</code> である。そのため、第1章の隣接表と第2・第3章の10×10表では、同じペアでも小数値が一致しない場合がある。本文中で必要な歌は掲げるが、解析用の完全本文データセットと埋め込みベクトルは公開ページに含めない。</p>
         </div>
       </section>
 
@@ -1529,9 +1538,9 @@
         <h2>百人秀歌・先行説</h2>
         <div class="ref-list">
           <p class="ref-item" id="ref-g-30"><span class="ref-label">[L-1]</span><a href="https://www.jstage.jst.go.jp/article/tja/76/1/76_1/_article/-char/ja/">久保田淳「後鳥羽院の『時代不同歌合』と藤原定家の『百人秀歌』」</a>『日本學士院紀要』76(1), 1-19, 2021. DOI: <code>10.2183/tja.76.1_1</code>。百人秀歌、後鳥羽院、時代不同歌合、撰者説、百人秀歌と小倉百人一首の差し替え・並べ替えを読む候補文献。</p>
-          <p class="ref-item" id="ref-g-31"><span class="ref-label">[L-2]</span>中川博夫・田渕句美子・渡邉裕美子編『百人一首の現在』青簡舎, 2022。近年の百人一首・百人秀歌研究整理の候補。</p>
-          <p class="ref-item" id="ref-g-32"><span class="ref-label">[L-3]</span>瀬戸口善則「定家撰『百人秀歌』の10×10の枡目配列における絵図と背景図」『岐阜大学工学部研究報告』50, 53-76, 2000。10×10配列説の確認候補。書誌情報と機関リポジトリのメタデータは確認済みだが、リポジトリ上は metadata only access で、本文・図・配置規則はウェブ公開資料として未確認。</p>
-          <p class="ref-item" id="ref-g-33"><span class="ref-label">[L-4]</span>草野隆「源俊頼朝臣と二首の表歌 - 『百人秀歌』私考(8)」『星美学園短期大学研究論叢』45, 3-29。源俊頼の入撰歌差を読む候補文献。</p>
+          <p class="ref-item" id="ref-g-31"><span class="ref-label">[L-2]</span><a href="https://ndlsearch.ndl.go.jp/books/R100000002-I032432137">中川博夫・田渕句美子・渡邉裕美子編『百人一首の現在』</a>青簡舎, 2022。近年の百人一首・百人秀歌研究整理の候補。</p>
+          <p class="ref-item" id="ref-g-32"><span class="ref-label">[L-3]</span><a href="https://ndlsearch.ndl.go.jp/books/R000000004-I5322385">瀬戸口善則「定家撰『百人秀歌』の10×10の枡目配列における絵図と背景図」</a>『岐阜大学工学部研究報告』50, 53-76, 2000。<a href="https://cir.nii.ac.jp/crid/2120307889878291968">CiNii</a>、<a href="https://hdl.handle.net/20.500.12099/4223">岐阜大学機関リポジトリ</a>。10×10配列説の確認候補。書誌情報と機関リポジトリのメタデータは確認済みだが、リポジトリ上は metadata only access で、本文・図・配置規則はウェブ公開資料として未確認。</p>
+          <p class="ref-item" id="ref-g-33"><span class="ref-label">[L-4]</span><a href="https://ndlsearch.ndl.go.jp/books/R000000004-I024741561">草野隆「源俊頼朝臣と二首の表歌 - 『百人秀歌』私考(8)」</a>『星美学園短期大学研究論叢』45, 3-29。<a href="https://cir.nii.ac.jp/crid/1520853832556316032">CiNii</a>。源俊頼の入撰歌差を読む候補文献。</p>
           <p class="ref-item" id="ref-g-34"><span class="ref-label">[L-5]</span><a href="https://ja.wikipedia.org/wiki/%E7%99%BE%E4%BA%BA%E7%A7%80%E6%AD%8C">Wikipedia「百人秀歌」</a>。百人秀歌を二首で一組とする概説の所在確認用。学術的根拠としては、本文・伝本・研究文献で別途確認する。</p>
         </div>
       </section>

@@ -12,7 +12,6 @@ from __future__ import annotations
 import argparse
 import itertools
 import json
-import random
 import statistics
 from pathlib import Path
 from typing import Any
@@ -28,10 +27,11 @@ from analyze_shared_grid_private import (
     unit,
     write_json,
 )
+from layout_permutation import random_layout_permutations, random_layout_samples
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RANDOM_SEED = 20260704
+RANDOM_SEED = 20260710
 Cell = tuple[int, int]
 
 
@@ -39,11 +39,17 @@ def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def pair_scores(records: list[dict[str, Any]], scores: dict[tuple[str, str], float]) -> list[float]:
-    output: list[float] = []
-    for left, right in itertools.combinations(records, 2):
-        output.append(similarity(left["vector_id"], right["vector_id"], scores))
-    return output
+def similarity_matrix_for_records(
+    records: list[dict[str, Any]],
+    scores: dict[tuple[str, str], float],
+) -> list[list[float]]:
+    return [
+        [
+            similarity(left["vector_id"], right["vector_id"], scores)
+            for right in records
+        ]
+        for left in records
+    ]
 
 
 def edge_mean(
@@ -55,11 +61,6 @@ def edge_mean(
         similarity(occupied[left]["vector_id"], occupied[right]["vector_id"], scores)
         for left, right in edges
     )
-
-
-def random_samples(pair_score_values: list[float], sample_size: int, trials: int, seed: int) -> list[float]:
-    rng = random.Random(seed)
-    return [statistics.fmean(rng.sample(pair_score_values, sample_size)) for _ in range(trials)]
 
 
 def shuka_label(record: dict[str, Any]) -> str:
@@ -130,12 +131,14 @@ def analyze(shuka_records: list[dict[str, Any]], ogura_records: list[dict[str, A
     ogura_by_id = {int(record["id"]): record for record in ogura_records}
     ogura_only_ids = [ogura_id for ogura_id in range(1, 101) if ogura_id not in common_ids]
     ogura_only = [ogura_by_id[ogura_id] for ogura_id in ogura_only_ids]
-    ogura_all_pair_scores = pair_scores(ogura_records, ogura_scores)
-
     shuka_rows: list[dict[str, Any]] = []
     ogura_rows: list[dict[str, Any]] = []
     details: dict[str, Any] = {}
     random_cache: dict[tuple[str, str, int], list[float]] = {}
+    canonical_cells = LAYOUTS["row_major"](GRID_SIZE)
+    canonical_orthogonal = cell_edges(canonical_cells, include_diagonal=False)
+    canonical_eight = cell_edges(canonical_cells, include_diagonal=True)
+    permutations = random_layout_permutations(GRID_SIZE * GRID_SIZE, trials, RANDOM_SEED)
 
     for layout_name, layout_fn in LAYOUTS.items():
         cells = layout_fn(GRID_SIZE)
@@ -148,16 +151,17 @@ def analyze(shuka_records: list[dict[str, Any]], ogura_records: list[dict[str, A
             shuka_occupied = selected_shuka
             if len(shuka_occupied) != GRID_SIZE * GRID_SIZE:
                 raise ValueError("Shuka base grid must have 100 occupied cells")
-            shuka_pair_values = pair_scores(shuka_occupied, shuka_scores)
             shuka_orth_key = (omitted["id"], "shuka_orth", len(orthogonal_edges))
             shuka_eight_key = (omitted["id"], "shuka_eight", len(eight_edges))
             if shuka_orth_key not in random_cache:
-                random_cache[shuka_orth_key] = random_samples(
-                    shuka_pair_values, len(orthogonal_edges), trials, RANDOM_SEED + len(random_cache)
+                shuka_sim = similarity_matrix_for_records(shuka_occupied, shuka_scores)
+                random_cache[shuka_orth_key] = random_layout_samples(
+                    shuka_sim, canonical_orthogonal, permutations
                 )
             if shuka_eight_key not in random_cache:
-                random_cache[shuka_eight_key] = random_samples(
-                    shuka_pair_values, len(eight_edges), trials, RANDOM_SEED + len(random_cache)
+                shuka_sim = similarity_matrix_for_records(shuka_occupied, shuka_scores)
+                random_cache[shuka_eight_key] = random_layout_samples(
+                    shuka_sim, canonical_eight, permutations
                 )
             shuka_orth_mean = edge_mean(orthogonal_edges, shuka_occupied, shuka_scores)
             shuka_eight_mean = edge_mean(eight_edges, shuka_occupied, shuka_scores)
@@ -216,12 +220,14 @@ def analyze(shuka_records: list[dict[str, Any]], ogura_records: list[dict[str, A
                 ogura_orth_key = ("ogura_all", "orth", len(orthogonal_edges))
                 ogura_eight_key = ("ogura_all", "eight", len(eight_edges))
                 if ogura_orth_key not in random_cache:
-                    random_cache[ogura_orth_key] = random_samples(
-                        ogura_all_pair_scores, len(orthogonal_edges), trials, RANDOM_SEED + len(random_cache)
+                    ogura_sim = similarity_matrix_for_records(typed_ogura_occupied, ogura_scores)
+                    random_cache[ogura_orth_key] = random_layout_samples(
+                        ogura_sim, canonical_orthogonal, permutations
                     )
                 if ogura_eight_key not in random_cache:
-                    random_cache[ogura_eight_key] = random_samples(
-                        ogura_all_pair_scores, len(eight_edges), trials, RANDOM_SEED + len(random_cache)
+                    ogura_sim = similarity_matrix_for_records(typed_ogura_occupied, ogura_scores)
+                    random_cache[ogura_eight_key] = random_layout_samples(
+                        ogura_sim, canonical_eight, permutations
                     )
                 ogura_orth_mean = edge_mean(orthogonal_edges, typed_ogura_occupied, ogura_scores)
                 ogura_eight_mean = edge_mean(eight_edges, typed_ogura_occupied, ogura_scores)
@@ -253,7 +259,7 @@ def analyze(shuka_records: list[dict[str, Any]], ogura_records: list[dict[str, A
             "shuka_only": [record["label"] for record in shuka_only],
             "ogura_only": [record["label"] for record in ogura_only],
             "layout_names": list(LAYOUTS),
-            "random_baseline": "sample same number of unordered pairs from each selected 100-poem set",
+            "random_baseline": "randomly permute each selected 100-poem set across a fixed 10x10 grid",
             "random_trials": trials,
             "random_seed": RANDOM_SEED,
             "text_policy": "private embeddings and private Shuka text are not published",

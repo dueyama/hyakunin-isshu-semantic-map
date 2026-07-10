@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>意味空間で百人一首を読む 序章 | AI支援と背景・方法</title>
+    <meta name="description" content="百人一首とは何かから始め、AIの埋め込み、ベクトル、cosine similarity、PCAを一般読者向けに解説する序章。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/0/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="序章 なぜ百人一首を意味空間に置くのか" />
+    <meta property="og:description" content="百人一首とAI埋め込みを、一般読者向けに一歩ずつ解説する。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/0/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
     <style>
       :root {
@@ -80,7 +89,7 @@
         padding: 10px 0 10px 16px;
       }
     </style>
-    <link rel="stylesheet" href="../../assets/reading.css?v=20260703-heian-hero4" />
+    <link rel="stylesheet" href="../../assets/reading.css?v=20260710-review" />
   </head>
   <body class="article article-zero">
     <main>
@@ -149,7 +158,7 @@
           もし、この百首をカルタ札としてではなく、夜空の星のように並べたらどう見えるだろう。恋の歌はひとつのあたりに寄るのか。孤独な歌は孤独な場所に浮くのか。後半に進むにつれて、景色は変わるのか。そういう問いは、専門家でなくても少し気になる。序章は、その気になる感じを、乱暴な断定にせず、検査できる形へ変えるための入口である。
         </p>
         <figure class="article-illustration">
-          <img src="../../figures/illustration-karuta-constellation.jpg" alt="散らばる歌札から、点と線の意味地図が立ち上がる挿絵" />
+          <img loading="lazy" decoding="async" src="../../figures/illustration-karuta-constellation.jpg" alt="散らばる歌札から、点と線の意味地図が立ち上がる挿絵" />
           <figcaption>
             挿絵0-1. 百首を札としてだけでなく、意味の星座として眺める。このシリーズは、その見方を計量的な地図に変える。
           </figcaption>
@@ -177,7 +186,7 @@
           この差を、ただの「別バージョンの違い」として片づけてしまうのは少し惜しい。後鳥羽院・順徳院が小倉に入り、百人秀歌にはいないこと。源俊頼が別歌で現れること。百人秀歌側にだけ見える歌人がいること。これらは、承久の乱の後の政治状況、後鳥羽院を中心とする歌壇、新勅撰和歌集、時代不同歌合、定家とその子である為家をめぐる議論と重ねて読まれてきた。ここで細部まで覚える必要はない。まずは、百人一首と百人秀歌の差が、文学史の中でも気になる差として扱われてきた、と押さえればよい。<a class="cite" href="../../references/#ref-g-31">[L-2]</a>
         </p>
         <figure class="article-illustration">
-          <img src="../../figures/illustration-ogura-shuka-shift.jpg" alt="二つの歌集の流れが並び、数枚の札だけが光って入れ替わる挿絵" />
+          <img loading="lazy" decoding="async" src="../../figures/illustration-ogura-shuka-shift.jpg" alt="二つの歌集の流れが並び、数枚の札だけが光って入れ替わる挿絵" />
           <figcaption>
             挿絵0-2. 小倉百人一首と百人秀歌は、多くを共有しながら、差し替えと並びのずれを持つ。その小さな差が、読みの入口になる。
           </figcaption>
@@ -251,7 +260,7 @@
           図0-1では、左から右へ読む。まず歌の本文があり、それを数字の住所に変え、最後に似た歌が近くに来る地図として見る。ここでは細かな数値ではなく、「歌を点として置けるようにする」という流れだけを見ればよい。
         </p>
         <figure>
-          <img src="../../figures/meaning-space-concept.svg" alt="和歌を数値の住所に変換し、近い歌を近くに置く意味空間の模式図" />
+          <img loading="lazy" decoding="async" src="../../figures/meaning-space-concept.svg" alt="和歌を数値の住所に変換し、近い歌を近くに置く意味空間の模式図" />
           <figcaption>
             図0-1. 意味空間の考え方。左の歌本文を、中央の数値の住所に変え、右の地図では似た歌が近くに来るように置く。これはデータを示す分析図ではなく、処理の流れを説明する模式図である。
           </figcaption>
@@ -326,7 +335,7 @@
           埋め込みのベクトルも、考え方は同じである。ただし、数字の個数が急に増える。今回主に使う <code>text-embedding-3-small</code> では、一首が1536個の数字で表される。見た目としては、たとえば <code>(1.2, 5.6, ..., -3.9, 0.2)</code> のような長い数列だと思えばよい。実際には1536個も並ぶので、人間には図に描けない。そこで、計算では1536次元ベクトルの向きの近さを測り、見せるときだけPCAで2次元へ押しつぶす。
         </p>
         <figure>
-          <img src="../../figures/vector-profile-dimensions.svg?v=20260703" alt="日常の印象が長いベクトルとして表されることを示す模式図" />
+          <img loading="lazy" decoding="async" src="../../figures/vector-profile-dimensions.svg?v=20260703" alt="日常の印象が長いベクトルとして表されることを示す模式図" />
           <figcaption>
             補図0-A. ベクトルは、文章についた長いプロフィール表のようなもの。2次元や3次元なら矢印として描けるが、埋め込みでは1536個の数字が並ぶ。
           </figcaption>
@@ -356,7 +365,7 @@
           1536次元のベクトルでは、人間が角度を目で測ることはできない。けれど、成分ごとに掛けて足す内積は計算できる。だから高次元でも、内積を使って「角度のコサインにあたる値」を取り出せる。外積は、三次元で二本の矢印に垂直な矢印を作る別の計算で、このシリーズの近さ判定では基本的に使わない。
         </p>
         <figure>
-          <img src="../../figures/cosine-normalization-concept.svg?v=20260703" alt="ベクトルの長さを1にそろえ、向きの近さを見ることを示す模式図" />
+          <img loading="lazy" decoding="async" src="../../figures/cosine-normalization-concept.svg?v=20260703" alt="ベクトルの長さを1にそろえ、向きの近さを見ることを示す模式図" />
           <figcaption>
             補図0-B. cosine similarity は、三角関数のコサインを使って、矢印の長さではなく向きの近さを見る。長さを1にそろえると、同じ方向の矢印は同じ場所へ、違う方向の矢印は別の場所へ来る。
           </figcaption>
@@ -407,7 +416,7 @@
           1536次元でも、理屈の上では同じである。原点を通る2次元平面へそのまま正射影すれば、影として取りうる範囲は半径1の円盤になる。ただし、ここで大事なのは、取りうる範囲と、実際に点が濃く出る場所は別だということだ。高次元の球面上にランダムな点を置くと、任意の2次元だけに見える成分はごく小さくなりやすい。1536次元なら、ランダムな点の2次元射影の典型的な半径は、おおよそ <code>√(2 / 1536)</code>、つまり約0.036になる。
         </p>
         <figure>
-          <img src="../../figures/high-dimensional-projection-decay.svg?v=20260703-appendix" alt="3次元球面と1536次元単位球面の2次元射影の違いを示す模式図" />
+          <img loading="lazy" decoding="async" src="../../figures/high-dimensional-projection-decay.svg?v=20260703-appendix" alt="3次元球面と1536次元単位球面の2次元射影の違いを示す模式図" />
           <figcaption>
             補図0-C. 3次元球面を2次元へ射影すると円盤が見える。1536次元でも射影の範囲は円盤内だが、ランダム点は中心付近に寄って見えやすい。詳しい減り方は<a href="#appendix-projection">付録</a>に回す。
           </figcaption>
@@ -428,7 +437,7 @@
           ただし、それはあくまで「この2次元に映った範囲で」の話である。中心のすぐ近くにある二点なら、別々の象限に入っていても距離は小さい。逆に、同じ象限にあっても、中心からの遠さが大きく違えばそれなりに離れている。さらに、PCA図に出なかった残りの次元で大きく違うこともある。したがって、四象限の方角は読解の手がかりにはなるが、高次元の距離やcosine similarityそのものとは区別して読む。
         </p>
         <figure>
-          <img src="../../figures/projection-cosine-caution.svg?v=20260703-origin" alt="cosine similarity とPCA射影の違いを示す模式図" />
+          <img loading="lazy" decoding="async" src="../../figures/projection-cosine-caution.svg?v=20260703-origin" alt="cosine similarity とPCA射影の違いを示す模式図" />
           <figcaption>
             補図0-D. cosine similarity は高次元ベクトルの向きの近さを見る。一方、PCA図は高次元空間を2次元へ落とした影である。影で近い点が本当に近いとは限らず、影で遠い点も、元の空間での関係は別に確認する必要がある。
           </figcaption>
@@ -445,7 +454,7 @@
           しかし、実際の文章では、そこまで都合よく分かれないことも多い。恋の歌に秋の景色が入り、旅の歌に別れの気分が入り、雑の歌に老いや無常が混ざる。和歌は特に短く、ひとつの歌にいくつもの気配が圧縮される。だから点は、島になるより、にじんで重なり合うことがある。
         </p>
         <figure>
-          <img src="../../figures/clear-vs-overlap-clusters.svg" alt="主題ごとにくっきり分離する図と、点群が重なり合う図を比べた模式図" />
+          <img loading="lazy" decoding="async" src="../../figures/clear-vs-overlap-clusters.svg" alt="主題ごとにくっきり分離する図と、点群が重なり合う図を比べた模式図" />
           <figcaption>
             図0-2. くっきり分離する図と、重なり合う図の違い。どちらも模式図である。左のように主題ごとの島が離れれば読みやすいが、実際の和歌では右のように境界がにじむことが多い。
           </figcaption>
@@ -463,7 +472,7 @@
           それでは、実際の図を一枚だけ先に見ておく。ここでは歌番号や細部を追わなくてよい。点が一首を表し、色は初期の主題分類を表す。近くにある点ほど、モデル上では似た意味を持つ歌として扱われている。ただし、地球儀を平面の地図にすると歪みが出るように、意味空間を2次元に描くと距離関係は多少歪む。全体としてどれくらいまとまるのか、あるいは思ったほどまとまらないのかを見る。
         </p>
         <figure>
-          <img src="../../figures/semantic-pca-distribution-small.svg" alt="小倉百人一首100首を意味空間に置いたPCA分布図" />
+          <img loading="lazy" decoding="async" src="../../figures/semantic-pca-distribution-small.svg" alt="小倉百人一首100首を意味空間に置いたPCA分布図" />
           <figcaption>
             図0-3. 第1章で使う実際の分布図の例。点は一首、色は初期の主題分類を表す。点の番号1-100は、小倉百人一首の <a href="../../references/#id-map">H001-H100対応表</a> に対応する。近い点は、本文条件では似た語彙や主題を持つ可能性がある。ただし、これは高次元空間を2次元へ落とした見取り図であり、図上の距離だけで結論は出さない。
           </figcaption>
@@ -519,7 +528,7 @@
           だから、数値が高く出た場所は、必ず歌本文と参照資料へ戻して見る。注釈や先行研究がすでに近いものとして読んできた歌が、埋め込みでも近く出るなら、それは「人間の読解とAIの見え方が重なった」観察として記録できる。逆に、文献上は重要そうなのに数値では近く出ない場合も、本文だけでは拾えない歌枕、部立、本歌取り、歴史的文脈があるかもしれない。どちらの場合も、数値だけで終わらせず、歌と文献に戻る。
         </p>
         <figure class="article-illustration">
-          <img src="../../figures/illustration-reading-loop.jpg" alt="開いた本の上に意味地図が浮かび、点と本文が線で結ばれる挿絵" />
+          <img loading="lazy" decoding="async" src="../../figures/illustration-reading-loop.jpg" alt="開いた本の上に意味地図が浮かび、点と本文が線で結ばれる挿絵" />
           <figcaption>
             挿絵0-3. 地図で気になる場所を見つけ、本文と文献に戻り、また地図を見る。数値は、読むための近道ではなく、読み戻すための手がかりである。
           </figcaption>

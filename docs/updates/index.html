@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>更新履歴 | 意味空間で百人一首を読む</title>
+    <meta name="description" content="意味空間で百人一首を読むの、本文、数値、図、解釈に関する主な更新履歴。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/updates/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="更新履歴 | 意味空間で百人一首を読む" />
+    <meta property="og:description" content="本文、数値、図、解釈に関する主な変更を記録する。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/updates/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="stylesheet" href="../assets/reading.css?v=20260703-heian-hero4" />
+    <link rel="stylesheet" href="../assets/reading.css?v=20260710-review" />
   </head>
   <body class="article article-zero">
     <main>
@@ -35,6 +44,12 @@
 
       <section>
         <h2>主な更新</h2>
+        <article>
+          <h3>2026-07-10 全体点検と10×10比較基準の修正</h3>
+          <p>
+            表紙のAI執筆・解析支援モデルを、それまでの Codex GPT-5.5 から Codex GPT-5.6 Sol Ultra へ更新し、シリーズ全体を再点検した。第2章・第3章の10×10検査は、従来の「全ペアから同数を抽出する」比較から、同じ100首を実際に10×10へ無作為配置する比較へ修正し、seed <code>20260710</code>、10,000回で数値と図を再生成した。主要な配置順位と解釈の方向は変わらなかったが、percentileとz-score、およびS076とS071の僅差の順序を更新した。あわせて、第1章の表現、図の表示崩れ、方法・データ説明、参考リンク、公開メタデータ、画像容量を整理した。詳細はGitHubのコミット差分を参照。
+          </p>
+        </article>
         <article>
           <h3>2026-07-08 解釈上の注意を追記</h3>
           <p>

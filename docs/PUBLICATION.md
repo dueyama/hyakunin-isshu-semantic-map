@@ -13,6 +13,7 @@
 - `AI_RESEARCHER_GUIDE.md`
 - `docs/index.html`
 - `docs/favicon.svg`
+- `docs/favicon.ico`
 - `docs/paper/0/index.html`
 - `docs/paper/index.html`
 - `docs/paper/2/index.html`
@@ -30,6 +31,7 @@
 - `docs/figures/` 以下の、HTML本文で参照する公開用図版
 - `scripts/*.py`
 - `data/hyakunin_isshu.csv`: Japanese Wikisource由来の初期データ候補。CC BY-SA 3.0として扱う。
+- `data/hyakunin_shuka.csv`, `data/metadata_poets.csv`: 列構成だけを示す公開schema placeholder。0行であることを明記する。
 - 利用条件確認済みの派生データ
 
 今後追加する公開候補:
@@ -109,6 +111,9 @@ git ls-files | rg '^\.env$|^_private/|^data/raw/|^data/embeddings/|^docs/viewer/
 - 大きな解釈変更や数値変更は、公開後は `docs/updates/index.html` に読者向け概要として記録する。ローカル作業台帳を使う場合も、公開リポジトリには含めない。
 - 表紙 `docs/index.html` には、サイト全体の `初回公開` と `最終更新` を表示する。公開本文に意味のある変更を入れた日は、表紙の `最終更新` を更新する。
 - 各章のヘッダーメタには、`初稿 YYYY-MM-DD / 更新 YYYY-MM-DD` を表示する。章本文を変更した場合は、その章の `更新` 日付を変更する。表記だけの全体整理やナビゲーション修正など、章本文の内容に直接関わらない場合は、必要に応じて該当ページだけ更新する。
+- 表紙のAI執筆・解析支援には、現行版で実際に使ったモデル名を記し、「完成時点」は付けない。完成稿を対象にしたレビュー協力には時点表記を残し、過去のレビュー協力モデルを勝手に置き換えない。
+- AI執筆・解析支援モデルを変更した場合は、更新履歴に旧モデル名と新モデル名を併記し、変遷を追えるようにする。
+- 10×10検査のランダム基準は、同じ100首を固定格子へ無作為に置き直す。独立な任意ペア抽出へ戻っていないこと、seed・試行数・本文・図の数値が一致することを確認する。
 - `docs/updates/index.html` には、読む側に意味のある変更だけをまとめる。細かな表記修正や作業単位の詳細は GitHub のコミット差分に任せる。
 - GitHub Release や tag は必須にしない。切る場合も、論文の確定版ではなく、その時点のスナップショットとして扱う。
 
