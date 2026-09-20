@@ -1,0 +1,5568 @@
+{
+  "meta": {
+    "model": "gpt-5.6-luna",
+    "condition": "with_evidence",
+    "reasoning_effort": "medium",
+    "max_output_tokens": 4096,
+    "completed": 201,
+    "total": 201,
+    "schema_field_order": [
+      "season",
+      "evidence",
+      "explanation"
+    ],
+    "additional_instructions_sha256": "a763e8299fb8ba78f5ae26a7c6e2427043f33fd62df0add61c675fa98dec97b0",
+    "evidence_max_items": 2,
+    "evidence_max_characters_each": 8,
+    "explanation_max_characters": 180,
+    "baseline_public_json_sha256": "572dd43e0900c2022689e6d765e32702c0cc92c5e7b02a0536cd55e2a28185ed",
+    "input_and_principal_criteria_unchanged": true,
+    "first_request_at": "2026-09-20T09:29:21.255431+00:00",
+    "last_request_at": "2026-09-20T09:32:16.338258+00:00",
+    "usage": {
+      "input_tokens": 96885,
+      "output_tokens": 39335,
+      "total_tokens": 136220
+    },
+    "evidence_mismatch_ids": [
+      "H084",
+      "S009",
+      "S013",
+      "S030"
+    ],
+    "withheld_explanation_ids": [],
+    "note": "Two single-run conditions; differences do not isolate an explanation effect from run variation. Explanations are model-generated justifications, not verified annotations or internal reasoning traces."
+  },
+  "corpora": {
+    "ogura": {
+      "n": 100,
+      "changed_n": 1,
+      "changed_ids": [
+        "H012"
+      ],
+      "baseline_counts": {
+        "autumn": 21,
+        "summer": 4,
+        "unspecified": 60,
+        "winter": 6,
+        "spring": 9
+      },
+      "reasoned_counts": {
+        "autumn": 22,
+        "summer": 4,
+        "unspecified": 59,
+        "winter": 6,
+        "spring": 9
+      },
+      "jev_agree_n": 94,
+      "reference_seasonal": {
+        "n": 33,
+        "baseline_agree_n": 33,
+        "reasoned_agree_n": 33
+      },
+      "transitions": [
+        {
+          "from": "unspecified",
+          "to": "autumn",
+          "n": 1
+        }
+      ]
+    },
+    "shuka": {
+      "n": 101,
+      "changed_n": 1,
+      "changed_ids": [
+        "S005"
+      ],
+      "baseline_counts": {
+        "autumn": 21,
+        "summer": 4,
+        "unspecified": 59,
+        "winter": 6,
+        "spring": 11
+      },
+      "reasoned_counts": {
+        "autumn": 22,
+        "summer": 4,
+        "unspecified": 59,
+        "winter": 5,
+        "spring": 11
+      },
+      "jev_agree_n": 82,
+      "reference_seasonal": {
+        "n": 35,
+        "baseline_agree_n": 35,
+        "reasoned_agree_n": 34
+      },
+      "transitions": [
+        {
+          "from": "winter",
+          "to": "autumn",
+          "n": 1
+        }
+      ]
+    }
+  },
+  "shared": {
+    "baseline_season": {
+      "n": 97,
+      "agree_n": 97,
+      "difference_ids": []
+    },
+    "reasoned_season": {
+      "n": 97,
+      "agree_n": 95,
+      "difference_ids": [
+        "S005",
+        "S015"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "H001",
+      "corpus": "ogura",
+      "order": 1,
+      "poet": "天智天皇",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=1",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H001",
+        "scope": "direct"
+      },
+      "evidence": [
+        "秋の田の",
+        "露にぬれつつ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋の田」と明示され、田の庵で衣が露に濡れる情景が描かれているため、秋が主な季節です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H002",
+      "corpus": "ogura",
+      "order": 2,
+      "poet": "持統天皇",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "summer",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=2",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H002",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夏来にけらし",
+        "衣ほすてふ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「春過ぎて夏来にけらし」と夏の到来を明示し、衣を干す情景も夏の山の景として描かれているため、主季は夏である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H003",
+      "corpus": "ogura",
+      "order": 3,
+      "poet": "柿本人麿",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=3",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H003",
+        "scope": "direct"
+      },
+      "evidence": [
+        "ながながし夜"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「ながながし夜」は長い夜を示すが、季節を特定する語ではない。「山鳥」も季節的焦点とはならず、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H004",
+      "corpus": "ogura",
+      "order": 4,
+      "poet": "山部赤人",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=4",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H004",
+        "scope": "direct"
+      },
+      "evidence": [
+        "雪は降りつつ",
+        "ふじの高嶺"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "富士の高嶺に雪が降り続く情景が中心で、冬の雪景色を明確に示している。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H005",
+      "corpus": "ogura",
+      "order": 5,
+      "poet": "猿丸太夫",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=5",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H005",
+        "scope": "direct"
+      },
+      "evidence": [
+        "紅葉",
+        "秋は悲しき"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「紅葉」と「秋は悲しき」が明示され、山中で鹿の声を聞く秋の情景が主題となっているため。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H006",
+      "corpus": "ogura",
+      "order": 6,
+      "poet": "中納言家持",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=6",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H006",
+        "scope": "direct"
+      },
+      "evidence": [
+        "おく霜",
+        "霜のしろき"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "霜の白さが夜更けの情景の中心に描かれており、冬の季節感が明確です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H007",
+      "corpus": "ogura",
+      "order": 7,
+      "poet": "阿倍仲麻呂",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=7",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H007",
+        "scope": "direct"
+      },
+      "evidence": [
+        "春日なる",
+        "出でし月"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「春日なる」は春の季節ではなく地名を示し、月の描写だけでは特定の季節を定められないため、主な季節は unspecified。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H008",
+      "corpus": "ogura",
+      "order": 8,
+      "poet": "喜撰法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=8",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H008",
+        "scope": "direct"
+      },
+      "evidence": [
+        "しかぞ住む",
+        "うぢ山と"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "都を離れた庵と鹿の住む山が詠まれていますが、特定の季節を示す語はなく、主たる季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H009",
+      "corpus": "ogura",
+      "order": 9,
+      "poet": "小野小町",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=9",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H009",
+        "scope": "direct"
+      },
+      "evidence": [
+        "花の色",
+        "うつりにけりな"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「花の色」が移ろう情景が中心で、春の盛りから散り際への季節感を示す。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H010",
+      "corpus": "ogura",
+      "order": 10,
+      "poet": "蝉丸",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=10",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H010",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "逢坂の関で行き交う人々との別れや出会いを詠む歌で、季節を示す語や季節的な情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H011",
+      "corpus": "ogura",
+      "order": 11,
+      "poet": "参議篁",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=11",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H011",
+        "scope": "direct"
+      },
+      "evidence": [
+        "八十島",
+        "あまの釣舟"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "海上へ漕ぎ出す情景は描かれますが、季節を示す語や季節行事はなく、特定の季節を主 setting とは定められません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H012",
+      "corpus": "ogura",
+      "order": 12,
+      "poet": "僧正遍昭",
+      "baseline_season": "unspecified",
+      "reasoned_season": "autumn",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=12",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H012",
+        "scope": "direct"
+      },
+      "evidence": [
+        "天つ風",
+        "をとめの姿"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "天上の乙女が舞う七夕の情景を詠み、古典和歌では秋の季節感を伴う題材として読めるため、主な季節は秋です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H013",
+      "corpus": "ogura",
+      "order": 13,
+      "poet": "陽成院",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=13",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H013",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "筑波嶺やみなの川は恋の比喩として詠まれており、特定の季節を示す語はないため、主たる季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H014",
+      "corpus": "ogura",
+      "order": 14,
+      "poet": "河原左大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=14",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H014",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の乱れを「しのぶもぢずり」にたとえた歌で、特定の季節を示す語や季節の情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H015",
+      "corpus": "ogura",
+      "order": 15,
+      "poet": "光孝天皇",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=15",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H015",
+        "scope": "direct"
+      },
+      "evidence": [
+        "春の野に",
+        "若菜つむ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「春の野」と若菜摘みが明示され、雪は春に降り続く情景として描かれているため、主な季節は春である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H016",
+      "corpus": "ogura",
+      "order": 16,
+      "poet": "中納言行平",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "winter",
+      "reference": {
+        "division": "離別",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=16",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H016",
+        "scope": "direct"
+      },
+      "evidence": [
+        "いなばの山",
+        "おふるまつ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "別れと「待つ／松」の掛詞が中心で、松や山は特定の季節を示さないため、主たる季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H017",
+      "corpus": "ogura",
+      "order": 17,
+      "poet": "在原業平朝臣",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=17",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H017",
+        "scope": "direct"
+      },
+      "evidence": [
+        "龍田川",
+        "から紅に"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "龍田川を紅に染める情景は、秋の紅葉を主題としているため、主な季節は秋です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H018",
+      "corpus": "ogura",
+      "order": 18,
+      "poet": "藤原敏行朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=18",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H018",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "住の江の岸の浪と夜は描かれるが、特定の季節を示す語はなく、主たる季節設定は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H019",
+      "corpus": "ogura",
+      "order": 19,
+      "poet": "伊勢",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=19",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H019",
+        "scope": "direct"
+      },
+      "evidence": [
+        "短き葦",
+        "ふしのまも"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "葦の節の短さは逢瀬の間もないことの比喩であり、特定の季節を主題・舞台としては示していない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H020",
+      "corpus": "ogura",
+      "order": 20,
+      "poet": "元良親王",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=20",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H020",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の決意と難波の地名・身をつくしの掛詞を詠む歌で、特定の季節を示す語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H021",
+      "corpus": "ogura",
+      "order": 21,
+      "poet": "素性法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=21",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H021",
+        "scope": "direct"
+      },
+      "evidence": [
+        "長月の",
+        "有明の月"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「長月」は秋の月を指し、秋の夜長に有明の月が出るまで待つ情景が中心なので、主な季節は秋です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H022",
+      "corpus": "ogura",
+      "order": 22,
+      "poet": "文屋康秀",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=22",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H022",
+        "scope": "direct"
+      },
+      "evidence": [
+        "秋の草木",
+        "しをるれば"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋の草木」が山風にしおれる情景を詠んでおり、秋が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H023",
+      "corpus": "ogura",
+      "order": 23,
+      "poet": "大江千里",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=23",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H023",
+        "scope": "direct"
+      },
+      "evidence": [
+        "わが身ひとつの秋"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「秋」と明示され、月を見て物悲しさが千々に広がる情景も秋の夜を主な setting としている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H024",
+      "corpus": "ogura",
+      "order": 24,
+      "poet": "菅家",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=24",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H024",
+        "scope": "direct"
+      },
+      "evidence": [
+        "紅葉の錦",
+        "もみぢのにしき"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「紅葉の錦」と詠まれる色づいた木々が主たる景であり、山の秋が明確に示されている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H025",
+      "corpus": "ogura",
+      "order": 25,
+      "poet": "三条右大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=25",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H025",
+        "scope": "direct"
+      },
+      "evidence": [
+        "さねかづら",
+        "人にしられで"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "逢坂山とさねかづらは恋の逢瀬を導く比喩・景物で、特定の季節を示す語ではない。秘密に通う願いが主題で、主季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H026",
+      "corpus": "ogura",
+      "order": 26,
+      "poet": "貞信公",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "雑（秋）",
+        "season": "秋",
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=26",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H026",
+        "scope": "direct"
+      },
+      "evidence": [
+        "もみぢ葉"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「もみぢ葉」が小倉山の主景として詠まれ、紅葉の盛りに行幸を待つ歌なので、主な季節は秋です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H027",
+      "corpus": "ogura",
+      "order": 27,
+      "poet": "中納言兼輔",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=27",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H027",
+        "scope": "direct"
+      },
+      "evidence": [
+        "泉川"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「泉川」は川の名として詠まれ、季節を特定する景物ではない。主題は恋慕であり、特定の季節は示されていない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H028",
+      "corpus": "ogura",
+      "order": 28,
+      "poet": "源宗行朝臣",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=28",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H028",
+        "scope": "direct"
+      },
+      "evidence": [
+        "冬ぞ寂しさ",
+        "草もかれぬ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「冬」と明示され、冬に人目も草も絶えることで寂しさが増す情景が主題となっているため、冬が中心です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H029",
+      "corpus": "ogura",
+      "order": 29,
+      "poet": "凡河内躬恒",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=29",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H029",
+        "scope": "direct"
+      },
+      "evidence": [
+        "初霜の",
+        "白菊の花"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "初霜に見まどう白菊が中心に描かれ、晩秋の情景が主な季節設定である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H030",
+      "corpus": "ogura",
+      "order": 30,
+      "poet": "壬生忠岑",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=30",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H030",
+        "scope": "direct"
+      },
+      "evidence": [
+        "有明の",
+        "暁ばかり"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "有明や暁は別れの情景を示すが、特定の季節を明確に示す季語・季節描写はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H031",
+      "corpus": "ogura",
+      "order": 31,
+      "poet": "坂上是則",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=31",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H031",
+        "scope": "direct"
+      },
+      "evidence": [
+        "降れる白雪",
+        "吉野の里"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "吉野の里に白雪が降り、有明の月と見まがうほどの雪景色が中心なので、冬が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H032",
+      "corpus": "ogura",
+      "order": 32,
+      "poet": "春道列樹",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=32",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H032",
+        "scope": "direct"
+      },
+      "evidence": [
+        "流れもあへぬ紅葉"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "山川をせき止めるように散り敷く紅葉が中心に描かれており、秋が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H033",
+      "corpus": "ogura",
+      "order": 33,
+      "poet": "紀友則",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=33",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H033",
+        "scope": "direct"
+      },
+      "evidence": [
+        "春の日",
+        "光のどけき"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「春の日」と明示され、のどかな春の光の中で花が散る情景が描かれているため、主な季節は春です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H034",
+      "corpus": "ogura",
+      "order": 34,
+      "poet": "藤原興風",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=34",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H034",
+        "scope": "direct"
+      },
+      "evidence": [
+        "高砂の松"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「高砂の松」は長寿や昔の友の比喩として詠まれており、春夏秋冬の特定の季節を主題・舞台として示していない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H035",
+      "corpus": "ogura",
+      "order": 35,
+      "poet": "紀貫之",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=35",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H035",
+        "scope": "direct"
+      },
+      "evidence": [
+        "ふるさとは花",
+        "花ぞ昔の香"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "花の咲く故郷とその香りが中心に描かれており、桜を思わせる春の情景が主題となっている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H036",
+      "corpus": "ogura",
+      "order": 36,
+      "poet": "清原深養父",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "summer",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=36",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H036",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夏の夜は",
+        "まだ宵ながら"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「夏の夜」が明示され、短い夏の夜が明けた情景を中心に詠んでいるため、主な季節は夏である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H037",
+      "corpus": "ogura",
+      "order": 37,
+      "poet": "文屋朝康",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=37",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H037",
+        "scope": "direct"
+      },
+      "evidence": [
+        "白露に",
+        "秋の野は"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋の野」と明示され、白露が風に吹き散る野の情景が中心なので、主な季節は秋です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H038",
+      "corpus": "ogura",
+      "order": 38,
+      "poet": "右近",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=38",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H038",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の誓いと相手の命を惜しむ心を詠んだ歌で、季節を示す語や季節の情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H039",
+      "corpus": "ogura",
+      "order": 39,
+      "poet": "参議等",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=39",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H039",
+        "scope": "direct"
+      },
+      "evidence": [
+        "浅茅生の",
+        "篠原"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "浅茅や篠原は詠まれていますが、季節を特定する語はなく、主眼は募る恋しさにあります。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H040",
+      "corpus": "ogura",
+      "order": 40,
+      "poet": "平兼盛",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=40",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H040",
+        "scope": "direct"
+      },
+      "evidence": [
+        "我が戀は",
+        "ものや思ふ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "恋心が顔色に表れ、人に問われるまでを詠んだ歌で、季節を示す語や季節的な情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H041",
+      "corpus": "ogura",
+      "order": 41,
+      "poet": "壬生忠見",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=41",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H041",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の始まりと、その噂が早く広まったことを詠む歌で、特定の季節を示す語や季節的な情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H042",
+      "corpus": "ogura",
+      "order": 42,
+      "poet": "清原元輔",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=42",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H042",
+        "scope": "direct"
+      },
+      "evidence": [
+        "末の松山",
+        "浪こさじとは"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "松山や波は詠まれていますが、特定の季節を示す語はなく、主たる季節設定は成立しません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H043",
+      "corpus": "ogura",
+      "order": 43,
+      "poet": "権中納言敦忠",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=43",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H043",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の深まりを詠んだ歌ですが、季節を示す語や情景はなく、特定の季節を主な setting とする根拠はありません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H044",
+      "corpus": "ogura",
+      "order": 44,
+      "poet": "中納言朝忠",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=44",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H044",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "逢瀬が絶えた苦しみと、人や身を恨む心を詠んだ恋の歌で、特定の季節を示す語や季節設定はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H045",
+      "corpus": "ogura",
+      "order": 45,
+      "poet": "謙徳公",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=45",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H045",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "季節を示す景物や時節の語がなく、恋の嘆きと身のむなしさが中心であるため、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H046",
+      "corpus": "ogura",
+      "order": 46,
+      "poet": "曽根好忠",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=46",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H046",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "舟人が行方を知らぬことを恋の道にたとえた歌で、季節を示す語や季節的な景物はなく、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H047",
+      "corpus": "ogura",
+      "order": 47,
+      "poet": "恵慶法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=47",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H047",
+        "scope": "direct"
+      },
+      "evidence": [
+        "秋はきにけり"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「秋はきにけり」と明示され、荒れた宿に人が見えなくても、秋の到来が主題となっている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H048",
+      "corpus": "ogura",
+      "order": 48,
+      "poet": "源重之",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=48",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H048",
+        "scope": "direct"
+      },
+      "evidence": [
+        "風をいたみ",
+        "岩うつ浪"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "風や岩に砕ける波は詠まれているが、特定の季節を示す季語や季節の到来はなく、恋の嘆きが中心である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H049",
+      "corpus": "ogura",
+      "order": 49,
+      "poet": "大中臣能宣朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=49",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H049",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夜はもえ",
+        "晝は消え"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "夜に燃え昼に消える衛士の火を恋情にたとえているが、季節を示す語や季節的な景物はなく、特定の季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H050",
+      "corpus": "ogura",
+      "order": 50,
+      "poet": "藤原義孝",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=50",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H050",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋する相手のために命を長らえたいという心情を詠んだ歌で、季節を示す語や情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H051",
+      "corpus": "ogura",
+      "order": 51,
+      "poet": "藤原実方朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=51",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H051",
+        "scope": "direct"
+      },
+      "evidence": [
+        "さしも草",
+        "もゆる思ひを"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「さしも草」や「もゆる」は恋の思いを表す比喩で、特定の季節の情景・季節感を主題としてはいない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H052",
+      "corpus": "ogura",
+      "order": 52,
+      "poet": "藤原道信朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=52",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H052",
+        "scope": "direct"
+      },
+      "evidence": [
+        "朝ぼらけ",
+        "明けぬれば"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "夜が明けて朝ぼらけとなる情景は示されますが、特定の季節を示す語はなく、主たる季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H053",
+      "corpus": "ogura",
+      "order": 53,
+      "poet": "右大将道綱母",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=53",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H053",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "独りで過ごす夜の長さを嘆く歌だが、特定の季節を示す語はなく、季節の主な設定は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H054",
+      "corpus": "ogura",
+      "order": 54,
+      "poet": "儀同三司母",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=54",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H054",
+        "scope": "direct"
+      },
+      "evidence": [
+        "今日を限り"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「今日を限り」は時の区切りを示す表現で、春夏秋冬の季節を特定する景物や季語はない。主題は恋の誓いと命への願いである。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H055",
+      "corpus": "ogura",
+      "order": 55,
+      "poet": "大納言公任",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=55",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H055",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "滝の音が聞こえなくなったことと名声の持続を詠むが、特定の季節を示す語や季節的情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H056",
+      "corpus": "ogura",
+      "order": 56,
+      "poet": "和泉式部",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=56",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H056",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "季節を示す語や景物はなく、死を前にした恋人との再会への願いが主題であるため、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H057",
+      "corpus": "ogura",
+      "order": 57,
+      "poet": "紫式部",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=57",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H057",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "夜半の月や雲隠れは季節を特定する表現ではなく、再会した相手がすぐ去ったことの比喩として用いられているため、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H058",
+      "corpus": "ogura",
+      "order": 58,
+      "poet": "大貮三位",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=58",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H058",
+        "scope": "direct"
+      },
+      "evidence": [
+        "ささ原",
+        "風吹けば"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "笹原を吹く風は季節を特定する語ではなく、恋の忘れまじという内容が中心で、主たる季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H059",
+      "corpus": "ogura",
+      "order": 59,
+      "poet": "赤染衛門",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=59",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H059",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "月が傾くまで夜更けに見ていた情景は示されますが、季節を特定する語はなく、主な季節設定は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H060",
+      "corpus": "ogura",
+      "order": 60,
+      "poet": "小式部内侍",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=60",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H060",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "道の遠さと文をまだ見ていないことを詠む地名中心の歌で、春夏秋冬を示す季節語や季節景物はない。主な季節は特定できない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H061",
+      "corpus": "ogura",
+      "order": 61,
+      "poet": "伊勢大輔",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=61",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H061",
+        "scope": "direct"
+      },
+      "evidence": [
+        "八重ざくら",
+        "今日九重に"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "八重桜が今日、宮中で美しく咲いている情景が中心であり、春の花見の季節を示す。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H062",
+      "corpus": "ogura",
+      "order": 62,
+      "poet": "清少納言",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=62",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H062",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夜をこめて",
+        "鳥のそら音"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "夜明け前の鳥の鳴きまねと逢坂の関を詠むが、特定の季節を示す季節語や季節的情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H063",
+      "corpus": "ogura",
+      "order": 63,
+      "poet": "左京大夫道雅",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=63",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H063",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の思いを直接伝えたいという内容で、季節を示す語や季節的な情景はないため、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H064",
+      "corpus": "ogura",
+      "order": 64,
+      "poet": "権中納言定頼",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=64",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H064",
+        "scope": "direct"
+      },
+      "evidence": [
+        "川霧",
+        "網代木"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「川霧」の立つ明け方、冬の川漁を思わせる「網代木」が描写の中心で、冬の川辺の情景と読むのが自然です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H065",
+      "corpus": "ogura",
+      "order": 65,
+      "poet": "相模",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=65",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H065",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の嘆きと評判を惜しむ心を詠んだ歌で、季節を示す語や季節的な情景はなく、主な季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H066",
+      "corpus": "ogura",
+      "order": 66,
+      "poet": "大僧正行尊",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=66",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H066",
+        "scope": "direct"
+      },
+      "evidence": [
+        "山ざくら",
+        "花より"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "山桜の花を中心に詠んでおり、桜が咲く春がこの歌の主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H067",
+      "corpus": "ogura",
+      "order": 67,
+      "poet": "周防内侍",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=67",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H067",
+        "scope": "direct"
+      },
+      "evidence": [
+        "春の夜"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「春の夜」と明示され、春の夜のはかない夢のような逢瀬が主な情景となっているため、春です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H068",
+      "corpus": "ogura",
+      "order": 68,
+      "poet": "三条院",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=68",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H068",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夜半の月"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「夜半の月」は詠まれているが、月だけでは特定の季節を示さない。ほかに明確な季節語もなく、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H069",
+      "corpus": "ogura",
+      "order": 69,
+      "poet": "能因法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=69",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H069",
+        "scope": "direct"
+      },
+      "evidence": [
+        "もみぢ葉",
+        "龍田の川"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "もみぢ葉が散り流れて龍田川を錦にする情景が中心で、紅葉の秋を明確に詠んでいる。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H070",
+      "corpus": "ogura",
+      "order": 70,
+      "poet": "良暹法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=70",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H070",
+        "scope": "direct"
+      },
+      "evidence": [
+        "秋の夕暮"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「秋の夕暮」と明示され、夕暮れの眺め全体が秋の情景として描かれているため、主な季節は秋です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H071",
+      "corpus": "ogura",
+      "order": 71,
+      "poet": "大納言経信",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=71",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H071",
+        "scope": "direct"
+      },
+      "evidence": [
+        "秋風ぞ吹く",
+        "門田の稲葉"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "門田の稲葉を訪れて吹く風を「秋風」と明示しており、秋が主な季節の舞台です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H072",
+      "corpus": "ogura",
+      "order": 72,
+      "poet": "祐子内親王家紀伊",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=72",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H072",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "浜の波を恋の誘いにたとえた歌で、春夏秋冬を示す季語や季節の情景はなく、主な季節は特定できない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H073",
+      "corpus": "ogura",
+      "order": 73,
+      "poet": "権中納言匡房",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=73",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H073",
+        "scope": "direct"
+      },
+      "evidence": [
+        "桜咲きにけり",
+        "外山の霞"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "桜が咲いたことが中心に詠まれ、外山の霞も春の景を示しているため、主な季節は春です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H074",
+      "corpus": "ogura",
+      "order": 74,
+      "poet": "源俊頼朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=74",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H074",
+        "scope": "direct"
+      },
+      "evidence": [
+        "初瀬の山おろし"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「初瀬の山おろし」は冷たく激しい風の比喩として詠まれており、特定の季節を明示する語ではないため、主な季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H075",
+      "corpus": "ogura",
+      "order": 75,
+      "poet": "藤原基俊",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=75",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H075",
+        "scope": "direct"
+      },
+      "evidence": [
+        "今年の秋",
+        "秋も去ぬめり"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「今年の秋も去ぬめり」と、今年の秋が過ぎ去ろうとしていることを直接詠んでおり、秋が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H076",
+      "corpus": "ogura",
+      "order": 76,
+      "poet": "法性寺入道前関白太政大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=76",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H076",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "沖の白波と雲の景は描かれるが、特定の季節を示す語や季節的状況はなく、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H077",
+      "corpus": "ogura",
+      "order": 77,
+      "poet": "崇徳院",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=77",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H077",
+        "scope": "direct"
+      },
+      "evidence": [
+        "瀧川の",
+        "われても"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "瀧川は恋の隔たりと再会を表す比喩で、特定の季節を示す季語や季節描写はないため、主な季節は定められない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H078",
+      "corpus": "ogura",
+      "order": 78,
+      "poet": "源兼昌",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=78",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H078",
+        "scope": "direct"
+      },
+      "evidence": [
+        "千鳥の鳴く声",
+        "いくよ寝覚めぬ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "冬の夜、淡路島を往来する千鳥の鳴き声に関守が幾夜も目を覚ます情景が中心で、冬の季節感が明確です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H079",
+      "corpus": "ogura",
+      "order": 79,
+      "poet": "左京大夫顕輔",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=79",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H079",
+        "scope": "direct"
+      },
+      "evidence": [
+        "秋風に",
+        "たなびく雲"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋風」とたなびく雲の間から月が差す情景が描かれ、秋が主な季節設定である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H080",
+      "corpus": "ogura",
+      "order": 80,
+      "poet": "待賢門院堀河",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=80",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H080",
+        "scope": "direct"
+      },
+      "evidence": [
+        "黒髪のみだれて",
+        "今朝はものを"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "恋情と、乱れた黒髪のまま迎えた今朝の思いを詠む歌で、特定の季節を示す語や季節的情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H081",
+      "corpus": "ogura",
+      "order": 81,
+      "poet": "後徳大寺左大臣",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "summer",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=81",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H081",
+        "scope": "direct"
+      },
+      "evidence": [
+        "ほととぎす",
+        "有明の月"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「ほととぎす」は夏の季節を示す鳥であり、月はその場に残る景として描かれているため、主な季節は夏です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H082",
+      "corpus": "ogura",
+      "order": 82,
+      "poet": "道因法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=82",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H082",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "季節を示す語や季節の情景はなく、恋の憂苦と涙を詠んだ歌なので、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H083",
+      "corpus": "ogura",
+      "order": 83,
+      "poet": "皇太后宮大夫俊成",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=83",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H083",
+        "scope": "direct"
+      },
+      "evidence": [
+        "鹿ぞなくなる"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "山奥に響く鹿の声は、古典和歌で秋を示す代表的な景物であり、この歌の主な季節を秋と判断する。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H084",
+      "corpus": "ogura",
+      "order": 84,
+      "poet": "藤原清輔朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=84",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H084",
+        "scope": "direct"
+      },
+      "evidence": [
+        "この頃"
+      ],
+      "evidence_matches": [
+        false
+      ],
+      "explanation": "「この頃」は現在の時期を指すだけで、春夏秋冬の具体的な季節描写はありません。主題は過去への感慨と世への思いです。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H085",
+      "corpus": "ogura",
+      "order": 85,
+      "poet": "俊恵法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=85",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H085",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夜もすがら",
+        "明けやらで"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "夜通し物思いをし、夜明けを待つ情景だが、特定の季節を示す季語や季節的景物はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H086",
+      "corpus": "ogura",
+      "order": 86,
+      "poet": "西行法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=86",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H086",
+        "scope": "direct"
+      },
+      "evidence": [
+        "月やはものを"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "月と涙は詠まれていますが、特定の季節を示す語はなく、月や嘆きだけから秋とは決められません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H087",
+      "corpus": "ogura",
+      "order": 87,
+      "poet": "寂蓮法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=87",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H087",
+        "scope": "direct"
+      },
+      "evidence": [
+        "秋の夕暮",
+        "霧立ちのぼる"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋の夕暮」と明示され、村雨の露や立ちのぼる霧が重なる夕暮れの情景も秋を主な舞台としている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H088",
+      "corpus": "ogura",
+      "order": 88,
+      "poet": "皇嘉門院別当",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=88",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H088",
+        "scope": "direct"
+      },
+      "evidence": [
+        "難波江の",
+        "あしのかりね"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "難波江と葦、仮寝の一夜が恋の比喩として詠まれているが、特定の季節を示す決定的な景物はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H089",
+      "corpus": "ogura",
+      "order": 89,
+      "poet": "式子内親王",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=89",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H089",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の苦しみと忍耐を詠んだ歌で、季節を示す語や季節的な情景はなく、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H090",
+      "corpus": "ogura",
+      "order": 90,
+      "poet": "殷富門院大輔",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=90",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H090",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "涙で袖が濡れる恋の比喩が中心で、季節を示す草木・気象・行事などは明記されないため、特定の季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H091",
+      "corpus": "ogura",
+      "order": 91,
+      "poet": "後京極摂政前太政大臣",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=91",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H091",
+        "scope": "direct"
+      },
+      "evidence": [
+        "きりぎりす",
+        "霜夜"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "きりぎりすの鳴く霜の夜に独り寝る情景が中心で、秋の夜が明確に示されている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H092",
+      "corpus": "ogura",
+      "order": 92,
+      "poet": "二条院讃岐",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=92",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H092",
+        "scope": "direct"
+      },
+      "evidence": [
+        "汐干に",
+        "乾く間もなし"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「汐干」は潮の状態を示す語で、季節を特定しない。袖が乾かないという恋の嘆きが中心で、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H093",
+      "corpus": "ogura",
+      "order": 93,
+      "poet": "鎌倉右大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=93",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H093",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "渚を漕ぐ海士の小舟は描かれていますが、特定の季節を示す語はなく、主な季節設定は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H094",
+      "corpus": "ogura",
+      "order": 94,
+      "poet": "参議雅経",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=94",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H094",
+        "scope": "direct"
+      },
+      "evidence": [
+        "山の秋風",
+        "故郷寒く"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋風」と、夜更けの寒さや衣を打つ情景が重なり、秋の夜が主な季節設定である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H095",
+      "corpus": "ogura",
+      "order": 95,
+      "poet": "前大僧正慈圓",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=95",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H095",
+        "scope": "direct"
+      },
+      "evidence": [
+        "墨染の袖"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "人々を覆う僧衣の袖を詠んだ歌で、春夏秋冬を示す明確な季語や季節の情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H096",
+      "corpus": "ogura",
+      "order": 96,
+      "poet": "入道前太政大臣",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=96",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H096",
+        "scope": "direct"
+      },
+      "evidence": [
+        "花さそふ",
+        "あらしの庭"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「花」と花を散らす嵐が中心で、庭の雪は散る花の比喩です。春の景を背景に、老いゆく我が身を詠んでいます。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H097",
+      "corpus": "ogura",
+      "order": 97,
+      "poet": "権中納言定家",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=97",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H097",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夕なぎ",
+        "藻塩"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「夕なぎ」や「藻塩」は情景・比喩を示すが、特定の季節を主題または舞台として確定させる語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H098",
+      "corpus": "ogura",
+      "order": 98,
+      "poet": "従二位家隆",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "summer",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=98",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H098",
+        "scope": "direct"
+      },
+      "evidence": [
+        "夏のしるし"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「夏のしるし」と明示され、夕暮れの風景も夏の到来を示すものとして描かれているため、主な季節は夏です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H099",
+      "corpus": "ogura",
+      "order": 99,
+      "poet": "後鳥羽院",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=99",
+        "source_anthology": "続後撰集",
+        "source_number": null,
+        "ogura_id": "H099",
+        "scope": "direct"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "人への複雑な思いと世を憂う心情を詠んでおり、季節を示す語や季節的な情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "H100",
+      "corpus": "ogura",
+      "order": 100,
+      "poet": "順徳院",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=100",
+        "source_anthology": "続後撰集",
+        "source_number": null,
+        "ogura_id": "H100",
+        "scope": "direct"
+      },
+      "evidence": [
+        "古き軒端",
+        "しのぶにも"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "古い軒端としのぶ草（または忍ぶ心）が詠まれるが、特定の季節を示す語はなく、主題は過ぎ去った昔への追懐である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S001",
+      "corpus": "shuka",
+      "order": 1,
+      "poet": "天智天皇御製",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=1",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H001",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "あきのた",
+        "つゆにぬれつゝ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「あきのた」と明示され、刈り田の仮庵で衣が露に濡れる情景も秋の農村風景を示しているため、主な季節は秋である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S002",
+      "corpus": "shuka",
+      "order": 2,
+      "poet": "持統天皇御製",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=2",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H002",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "なつきにけらし",
+        "ころもほすてふ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「はるすきて」と春が過ぎ、「なつきにけらし」と夏の到来が明示されているため、主な季節は夏です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S003",
+      "corpus": "shuka",
+      "order": 3,
+      "poet": "柿本人麿",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=3",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H003",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "なかゝゝしよ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「長々し夜」と夜の長さは詠まれていますが、特定の季節を示す決定的な季語や状況はなく、主な季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S004",
+      "corpus": "shuka",
+      "order": 4,
+      "poet": "山邊赤人",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=4",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H004",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ゆきはふりつゝ",
+        "ふしのたかね"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "富士の高嶺に雪が降り続く情景が中心であり、雪に覆われた冬の景として読める。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S005",
+      "corpus": "shuka",
+      "order": 5,
+      "poet": "中納言家持",
+      "baseline_season": "winter",
+      "reasoned_season": "autumn",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=6",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H006",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "かさゝきの",
+        "おくしも"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "かさゝきが天の川に橋を渡す七夕の情景に、置く霜が描かれており、秋の夜が主な舞台である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S006",
+      "corpus": "shuka",
+      "order": 6,
+      "poet": "安倍仲丸",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=7",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H007",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "いてし月"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "月は詠まれているが、季節を特定する語や文脈はなく、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S007",
+      "corpus": "shuka",
+      "order": 7,
+      "poet": "参議篁",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=11",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H011",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "海原を漕ぎ出す旅立ちの情景は描かれていますが、特定の季節を示す語や季節的な景物はありません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S008",
+      "corpus": "shuka",
+      "order": 8,
+      "poet": "猿丸大夫",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=5",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H005",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "もみちふみわけ",
+        "きくときそ秋"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「もみち」と「秋」が明示され、山奥で鹿の声を聞く情景全体が秋を主な舞台としている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S009",
+      "corpus": "shuka",
+      "order": 9,
+      "poet": "中納言行平",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "離別",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=16",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H016",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "みねにおふる",
+        "まつとしきかば"
+      ],
+      "evidence_matches": [
+        true,
+        false
+      ],
+      "explanation": "峰に生える松が詠まれていますが、特定の季節を示す語や季節的な場面はなく、主たる季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S010",
+      "corpus": "shuka",
+      "order": 10,
+      "poet": "在原業平朝臣",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=17",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H017",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "たつた河",
+        "からくれなゐ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "竜田川が唐紅に染まる景は、秋の紅葉によるものと読め、秋が主たる季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S011",
+      "corpus": "shuka",
+      "order": 11,
+      "poet": "藤原敏行朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=18",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H018",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "きしによるなみ",
+        "よるさへや"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "岸に寄せる波や夜は季節を特定する表現ではなく、恋の夢の通い路が主題であるため、特定の季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S012",
+      "corpus": "shuka",
+      "order": 12,
+      "poet": "陽成院御製",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=13",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H013",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "山から落ちる川と積もる恋が主題で、特定の季節を示す季語や季節描写はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S013",
+      "corpus": "shuka",
+      "order": 13,
+      "poet": "小野小町",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=9",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H009",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "はなのいろ",
+        "ながめせしまに"
+      ],
+      "evidence_matches": [
+        true,
+        false
+      ],
+      "explanation": "花の色が移ろい、長雨を思わせる「ながめ」のうちに散る情景が中心で、春が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S014",
+      "corpus": "shuka",
+      "order": 14,
+      "poet": "喜撰法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=8",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H008",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "わかいほは",
+        "しかそすむ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "庵と都の方角、住み方を述べる歌で、特定の季節を示す語や情景はないため、季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S015",
+      "corpus": "shuka",
+      "order": 15,
+      "poet": "僧正遍昭",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=12",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H012",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "雲のかよひち",
+        "をとめのすかた"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "雲や風、乙女の姿は描かれるが、特定の季節を示す語や季節行事はなく、主たる季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S016",
+      "corpus": "shuka",
+      "order": 16,
+      "poet": "蝉丸",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=10",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H010",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "あふさかのせき"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "逢坂の関で行き交う人々の別れを詠んでいますが、季節を示す語や季節的な景物はなく、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S017",
+      "corpus": "shuka",
+      "order": 17,
+      "poet": "河原左大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=14",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H014",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の乱れを「しのぶもちすり」にたとえた歌で、春夏秋冬を示す季節語や季節の情景は明確でない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S018",
+      "corpus": "shuka",
+      "order": 18,
+      "poet": "光孝天皇御製",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=15",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H015",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "はるのゝ",
+        "わかなつむ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「はるのゝ」で春の野が明示され、若菜を摘む場面が中心です。雪は降り続いていますが、春に入った情景として読めます。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S019",
+      "corpus": "shuka",
+      "order": 19,
+      "poet": "伊勢",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=19",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H019",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "なにはかた",
+        "あしのふし"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「なにはかた」「あしのふし」は逢瀬の短さをたとえる比喩で、特定の季節を主題・舞台としては定めていない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S020",
+      "corpus": "shuka",
+      "order": 20,
+      "poet": "元良親王",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=20",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H020",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の思いを述べた歌で、難波や「みをつくし」は地名・掛詞として働くが、特定の季節を示す語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S021",
+      "corpus": "shuka",
+      "order": 21,
+      "poet": "源宗于朝臣",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=28",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H028",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ふゆそさひしさ",
+        "草もかれぬ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「ふゆ」と明示され、草も枯れた山里の寂しさが冬の到来によって増したと詠まれているため、冬が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S022",
+      "corpus": "shuka",
+      "order": 22,
+      "poet": "素性法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=21",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H021",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "なか月の",
+        "ありあけの月"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「なか月」は秋の長月を指し、有明の月が出るまで待つ情景も秋に置かれているため、主な季節は秋です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S023",
+      "corpus": "shuka",
+      "order": 23,
+      "poet": "菅家",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=24",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H024",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "もみちのにしき"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「もみちのにしき」と明示され、紅葉が山を彩る秋の景が主題となっているため、秋と判断できる。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S024",
+      "corpus": "shuka",
+      "order": 24,
+      "poet": "壬生忠岑",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=30",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H030",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ありあけの",
+        "あかつきはかり"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「ありあけ」や「暁」は時刻・月の情景を示すが、特定の季節を示す語ではないため、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S025",
+      "corpus": "shuka",
+      "order": 25,
+      "poet": "凡河内躬恒",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=29",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H029",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "はつしもの",
+        "白きくのはな"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「初霜」と白菊が重なり、初霜に置き惑う白菊の花を詠む秋の歌である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S026",
+      "corpus": "shuka",
+      "order": 26,
+      "poet": "紀友則",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=33",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H033",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "はるの日",
+        "花のちる"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「はるの日」と明示され、穏やかな春の日に花が散る情景が主な舞台となっている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S027",
+      "corpus": "shuka",
+      "order": 27,
+      "poet": "文屋康秀",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=22",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H022",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋の草木",
+        "しほるれは"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋の草木」が山風によってしおれる情景を中心に詠んでおり、主な季節は秋である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S028",
+      "corpus": "shuka",
+      "order": 28,
+      "poet": "紀貫之",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=35",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H035",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "花そむかし",
+        "かにゝほひける"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「花」とその香りが故郷の春の情景を主に示しているため、春が中心です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S029",
+      "corpus": "shuka",
+      "order": 29,
+      "poet": "坂上是則",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=31",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H031",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ふれるしらゆき"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「しらゆき（白雪）」が吉野の里に降る情景が中心であり、明確に冬の景を示している。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S030",
+      "corpus": "shuka",
+      "order": 30,
+      "poet": "大江千里",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=23",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H023",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "月みれは",
+        "秋にはあらねど"
+      ],
+      "evidence_matches": [
+        true,
+        false
+      ],
+      "explanation": "月を見て千々の悲しみを覚える心情が、明示された「秋」と結びついており、秋が主な季節背景である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S031",
+      "corpus": "shuka",
+      "order": 31,
+      "poet": "藤原興風",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=34",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H034",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "たかさこのまつ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "高砂の松は長寿や昔からの友の比喩として詠まれており、特定の季節を主な舞台・焦点とする語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S032",
+      "corpus": "shuka",
+      "order": 32,
+      "poet": "春道列樹",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=32",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H032",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "もみちなりけり"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "山川に流れきらず滞る紅葉が、詩の中心的な景として描かれているため、秋が主な季節です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S033",
+      "corpus": "shuka",
+      "order": 33,
+      "poet": "清原深養父",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "summer",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=36",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H036",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "なつのよは",
+        "またよひなから"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「なつのよは」と明示され、短い夏の夜が明けてしまったことを詠むため、主な季節は夏である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S034",
+      "corpus": "shuka",
+      "order": 34,
+      "poet": "貞信公",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "雑（秋）",
+        "season": "秋",
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=26",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H026",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "みねのもみちは"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「もみち（紅葉）」が山の峰を彩る情景が中心で、秋の山を主な舞台としている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S035",
+      "corpus": "shuka",
+      "order": 35,
+      "poet": "三条右大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=25",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H025",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "あふさか山",
+        "さねかつら"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "逢坂山やさねかづらは恋の比喩・情景として用いられており、特定の季節を示す語ではないため、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S036",
+      "corpus": "shuka",
+      "order": 36,
+      "poet": "中納言兼輔",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=27",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H027",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "泉河が湧き流れる景と恋情を詠むが、春夏秋冬のいずれかを示す季節語や明確な季節設定はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S037",
+      "corpus": "shuka",
+      "order": 37,
+      "poet": "参議等",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=39",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H039",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "あさちふのおのゝ",
+        "しのはら"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "浅茅や篠原は情景描写として用いられているが、特定の季節を示す語ではない。恋情が中心で、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S038",
+      "corpus": "shuka",
+      "order": 38,
+      "poet": "文屋朝康",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=37",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H037",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋のゝ",
+        "かせのふきしく"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋のゝ」と明示され、白露に風が吹きしきる野が描かれているため、秋が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S039",
+      "corpus": "shuka",
+      "order": 39,
+      "poet": "右近",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=38",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H038",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "季節を示す景物や語はなく、忘れられた身と、誓いを破った人の命を惜しむ恋の心情が中心である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S040",
+      "corpus": "shuka",
+      "order": 40,
+      "poet": "中納言敦忠",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=43",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H043",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の心情を詠んだ歌で、特定の季節を示す季節語や季節の情景は見られないため、主な季節は定められない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S041",
+      "corpus": "shuka",
+      "order": 41,
+      "poet": "平兼盛",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=40",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H040",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "しのふれと",
+        "わかこひは"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "恋心が顔色に表れたことを詠む歌で、季節を示す自然描写や季語はなく、特定の季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S042",
+      "corpus": "shuka",
+      "order": 42,
+      "poet": "壬生忠見",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=41",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H041",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の思いを知られぬうちに抱いたことと、噂が早く立ったことを詠む歌で、特定の季節を示す語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S043",
+      "corpus": "shuka",
+      "order": 43,
+      "poet": "謙徳公",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=45",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H045",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の嘆きを詠んだ内容ですが、季節を示す語や季節的な情景はなく、主たる季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S044",
+      "corpus": "shuka",
+      "order": 44,
+      "poet": "中納言朝忠",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=44",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H044",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "逢えない苦しみと人・我が身への恨みを詠んだ恋歌で、季節を示す語や情景はないため、特定の季節は定められない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S045",
+      "corpus": "shuka",
+      "order": 45,
+      "poet": "清原元輔",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=42",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H042",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の誓いを述べる歌で、波や松山は比喩的な情景です。季節を特定する語がないため、主な季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S046",
+      "corpus": "shuka",
+      "order": 46,
+      "poet": "源重之",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=48",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H048",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "かせをいたみ",
+        "いはうつなみ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "風に岩を打つ波は恋の苦しみを表す比喩で、特定の季節を示す語や情景は明確でない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S047",
+      "corpus": "shuka",
+      "order": 47,
+      "poet": "曽祢好忠",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=46",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H046",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の行方が分からない心情を詠んだ歌で、季節を示す語や季節的な景物は見当たらず、主たる季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S048",
+      "corpus": "shuka",
+      "order": 48,
+      "poet": "大中臣能宣朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "summer",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=49",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H049",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "よるはもえ",
+        "ひるはきえ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "夜に燃え昼に消える衛士の火を恋情にたとえた歌で、特定の季節を示す語はなく、主な季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S049",
+      "corpus": "shuka",
+      "order": 49,
+      "poet": "藤原義孝",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=50",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H050",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の思いを述べた歌ですが、季節を示す語や景物がなく、特定の季節を主な舞台とは定められません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S050",
+      "corpus": "shuka",
+      "order": 50,
+      "poet": "藤原實方朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=51",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H051",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "さしもくさ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「さしもくさ」は燃える思いの比喩として用いられており、特定の季節を主な舞台・焦点として示してはいない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S051",
+      "corpus": "shuka",
+      "order": 51,
+      "poet": "藤原道信朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=52",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H052",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "あさほらけ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「朝ぼらけ」は夜明けの時刻を示すが、特定の季節を示す語ではない。恋の恨みも季節を定めないため、主な季節は特定できない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S052",
+      "corpus": "shuka",
+      "order": 52,
+      "poet": "恵慶法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=47",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H047",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋はきにけり"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「秋はきにけり」と秋の到来が明示され、荒れた宿の寂しさを背景に秋が主な季節として描かれている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S053",
+      "corpus": "shuka",
+      "order": 53,
+      "poet": "一条院皇后宮",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "spring",
+      "reference": {
+        "division": "哀傷",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i004.html",
+        "source_anthology": "後拾遺集",
+        "source_number": "00536",
+        "ogura_id": null,
+        "scope": "source_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の誓いと涙を詠んだ歌で、特定の季節を示す語や情景は見当たらない。したがって主たる季節は定められない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S054",
+      "corpus": "shuka",
+      "order": 54,
+      "poet": "三条院御製",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=68",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H068",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "よはの月"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「よはの月」は月夜を示すが、秋を特定する語ではない。恋慕の内容が中心で、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S055",
+      "corpus": "shuka",
+      "order": 55,
+      "poet": "儀同三司母",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=54",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H054",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "季節を示す花・鳥・月・雪などの語がなく、忘れがたさと命への思いのみが詠まれているため、特定の季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S056",
+      "corpus": "shuka",
+      "order": 56,
+      "poet": "右大将道綱母",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=53",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H053",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ひとりぬるよ",
+        "あくるま"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "独り寝の夜明けの長さを嘆く恋歌で、特定の季節を示す語はなく、季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S057",
+      "corpus": "shuka",
+      "order": 57,
+      "poet": "能因法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=69",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H069",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "もみちはゝ",
+        "たつたのかは"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "山の紅葉が竜田川を錦のように彩る情景が中心で、秋の景を明確に詠んでいる。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S058",
+      "corpus": "shuka",
+      "order": 58,
+      "poet": "良暹法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=70",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H070",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋のゆふくれ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「秋のゆふくれ」と明示され、どこを眺めても同じ秋の夕暮れが広がるため、秋が主な季節設定である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S059",
+      "corpus": "shuka",
+      "order": 59,
+      "poet": "大納言公任",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=55",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H055",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "たきのおと",
+        "ひさしくなりぬれ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "滝の音が絶えたことと名が流れ続けることを詠むが、特定の季節を示す語はなく、主な季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S060",
+      "corpus": "shuka",
+      "order": 60,
+      "poet": "清少納言",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=62",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H062",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "よをこめて",
+        "とりのそらね"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "夜や鳥の声は描かれますが、特定の季節を示す語はなく、主な季節設定は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S061",
+      "corpus": "shuka",
+      "order": 61,
+      "poet": "和泉式部",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=56",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H056",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "死を前にした恋人との再会を願う歌で、特定の季節を示す景物や季語はない。したがって主たる季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S062",
+      "corpus": "shuka",
+      "order": 62,
+      "poet": "大貳三位",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=58",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H058",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "かせふけは"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "笹原に風が吹く情景はあるが、季節を特定する語はなく、恋の訴えが中心なので、主な季節は定めにくい。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S063",
+      "corpus": "shuka",
+      "order": 63,
+      "poet": "赤染右衛門",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=59",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H059",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "さよふけて",
+        "月をみしかな"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "夜更けまで月を見た情景はあるが、月だけでは特定の季節を示さず、主たる季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S064",
+      "corpus": "shuka",
+      "order": 64,
+      "poet": "紫式部",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=57",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H057",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "よはの月"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "月が雲に隠れる夜を詠むが、季節を直接示す語はなく、月だけでは特定の季節を主 setting とできない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S065",
+      "corpus": "shuka",
+      "order": 65,
+      "poet": "伊勢大輔",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=61",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H061",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "やへさくら",
+        "けふこゝのへ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "八重桜が今日、都で美しく咲き誇っているため、春が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S066",
+      "corpus": "shuka",
+      "order": 66,
+      "poet": "小式部内侍",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=60",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H060",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "地名と「ふみ」の掛詞による遠距離・恋の趣旨が中心で、春夏秋冬を示す季節語や季節の情景はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S067",
+      "corpus": "shuka",
+      "order": 67,
+      "poet": "権中納言定頼",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=64",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H064",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "河きり",
+        "あしろき"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "川霧の立つ朝、霧の切れ間から網代木が現れる景で、古典和歌では冬の川辺の情景として捉えられる。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S068",
+      "corpus": "shuka",
+      "order": 68,
+      "poet": "左京大夫道雅",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=63",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H063",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "いまはたゝ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「いまはたゝ」は時の心情を示す表現で、特定の季節を示す語はない。恋の思いを伝えたい心情が中心で、季節設定は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S069",
+      "corpus": "shuka",
+      "order": 69,
+      "poet": "周防内侍",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=67",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H067",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "はるのよ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「はるのよ」と明示され、春の夜が歌の主な情景となっているため、春です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S070",
+      "corpus": "shuka",
+      "order": 70,
+      "poet": "大納言経信",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=71",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H071",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋かせそふく",
+        "いなはおとつれて"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋かせそふく」と明示され、稲葉を訪れる風の音が夕暮れの主な情景となっているため、秋が中心です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S071",
+      "corpus": "shuka",
+      "order": 71,
+      "poet": "前大僧正行尊",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=66",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H066",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "山さくら",
+        "花よりほか"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "山桜が咲く情景を中心に詠んでおり、桜は春の季節を示すため、主な季節は春である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S072",
+      "corpus": "shuka",
+      "order": 72,
+      "poet": "前中納言匡房",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=73",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H073",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "さくらさきにけり",
+        "とやまのかすみ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「さくら」が咲き、「かすみ」が立つ情景が中心で、春の到来を明確に示している。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S073",
+      "corpus": "shuka",
+      "order": 73,
+      "poet": "権中納言国信",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "春上",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i010.html",
+        "source_anthology": "新古今集",
+        "source_number": "00010",
+        "ogura_id": null,
+        "scope": "source_poem"
+      },
+      "evidence": [
+        "はるのあはゆき"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「春の淡雪」と明示され、草の下萌えも春の到来を示すため、主な季節は春です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S074",
+      "corpus": "shuka",
+      "order": 74,
+      "poet": "祐子内親王家紀伊",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=72",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H072",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "あたなみ",
+        "袖のぬれも"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "浜の波と袖の濡れは恋の比喩として描かれており、特定の季節を示す季節語や季節設定はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S075",
+      "corpus": "shuka",
+      "order": 75,
+      "poet": "相模",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=65",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H065",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の嘆きを詠んだ歌で、季節を示す語や季節の情景は見られず、主な季節は特定できない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S076",
+      "corpus": "shuka",
+      "order": 76,
+      "poet": "源俊頼朝臣",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "春",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i006.html",
+        "source_anthology": "金葉集（二度本）",
+        "source_number": "00050",
+        "ogura_id": null,
+        "scope": "source_poem"
+      },
+      "evidence": [
+        "山さくら",
+        "さきそめし"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "山桜が咲き始めた情景が中心で、春の到来と山の景観が主な季節設定になっている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S077",
+      "corpus": "shuka",
+      "order": 77,
+      "poet": "崇徳院御製",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "spring",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=77",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H077",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "たきかは"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "滝川は恋人同士の隔たりをたとえる imagery で、春夏秋冬を示す季節語や季節の情景は明確でないため、主な季節は特定できない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S078",
+      "corpus": "shuka",
+      "order": 78,
+      "poet": "待賢門院堀川",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=80",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H080",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "みたれてけさ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "黒髪の乱れと今朝の物思いを詠む恋歌で、季節を示す語はなく、特定の季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S079",
+      "corpus": "shuka",
+      "order": 79,
+      "poet": "法性寺入道前関白太政大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=76",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H076",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "おきつしらなみ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "沖の白波と雲の景は描かれるが、特定の季節を示す語はなく、主たる季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S080",
+      "corpus": "shuka",
+      "order": 80,
+      "poet": "左京大夫顕輔",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=79",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H079",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋かせ",
+        "月のかけのさやけ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋かせ」と明示され、秋風にたなびく雲間から漏れる月の清らかさが主題となっているため、秋が中心です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S081",
+      "corpus": "shuka",
+      "order": 81,
+      "poet": "源兼昌",
+      "baseline_season": "winter",
+      "reasoned_season": "winter",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=78",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H078",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "かよふちとり",
+        "ちとりのなく"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「千鳥」の鳴き声が夜の須磨の関守を目覚めさせる冬の情景として詠まれており、冬が主な季節です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S082",
+      "corpus": "shuka",
+      "order": 82,
+      "poet": "藤原基俊",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=75",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H075",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ことしの秋",
+        "秋もいぬめり"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「ことしの秋もいぬめり」と、今年の秋が過ぎ去ろうとしていることを詠むため、秋が主な季節である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S083",
+      "corpus": "shuka",
+      "order": 83,
+      "poet": "道因法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=82",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H082",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "恋の苦しみと涙を詠んだ歌ですが、季節を示す語や季節的な情景はなく、主な季節は特定できません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S084",
+      "corpus": "shuka",
+      "order": 84,
+      "poet": "藤原清輔朝臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=84",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H084",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "このころ"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「このころ」は人生や時期を指す表現で、特定の季節を示す語はない。したがって主たる季節設定は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S085",
+      "corpus": "shuka",
+      "order": 85,
+      "poet": "俊恵法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=85",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H085",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "夜通し物思いをする恋の場面で、夜明けの遅さは描かれるが、特定の季節を示す語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S086",
+      "corpus": "shuka",
+      "order": 86,
+      "poet": "後徳大寺左大臣",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=81",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H081",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ほとゝきす"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "ほとゝきす（ホトトギス）は夏の季節を示す鳥であり、月はその余情として描かれているため、主な季節は夏である。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S087",
+      "corpus": "shuka",
+      "order": 87,
+      "poet": "皇太后宮大夫俊成",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=83",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H083",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "しかそなくなる",
+        "山のおく"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "山奥で鹿が鳴く情景は、古典和歌では秋の代表的な季節感を示すため、秋が主な季節です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S088",
+      "corpus": "shuka",
+      "order": 88,
+      "poet": "西行法師",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=86",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H086",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "月やは",
+        "なみたかな"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "月と涙は詠まれているが、特定の季節を示す語はなく、月だけでは秋と断定できない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S089",
+      "corpus": "shuka",
+      "order": 89,
+      "poet": "皇嘉門院別当",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=88",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H088",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "なにはえのあし",
+        "ひとよゆへ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "葦や「一夜」は恋の比喩・情景として詠まれているが、特定の季節を示す語はなく、主たる季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S090",
+      "corpus": "shuka",
+      "order": 90,
+      "poet": "権中納言長方",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋一",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i010.html",
+        "source_anthology": "新古今集",
+        "source_number": "01075",
+        "ogura_id": null,
+        "scope": "related_version"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "紀の国の由良の岬を舞台に、玉にたとえた出会いを願う歌で、季節を示す語は見当たらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S091",
+      "corpus": "shuka",
+      "order": 91,
+      "poet": "殷富門院大輔",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=90",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H090",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "をしまのあま",
+        "ぬれにそぬれし"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "漁夫の袖が濡れる比喩と、色が変わらないことを詠むが、特定の季節を示す語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S092",
+      "corpus": "shuka",
+      "order": 92,
+      "poet": "式子内親王",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=89",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H089",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "季節を示す語や情景はなく、恋の苦しみと忍ぶ心の弱まりを詠んだ歌であるため、特定の季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S093",
+      "corpus": "shuka",
+      "order": 93,
+      "poet": "寂蓮法師",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=87",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H087",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋のゆふくれ",
+        "きりたちのほる"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋のゆふくれ」と明示され、霧の立ち上る夕暮れが秋の主な情景として描かれている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S094",
+      "corpus": "shuka",
+      "order": 94,
+      "poet": "二条院讃岐",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=92",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H092",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "しほひに",
+        "かはくまもなし"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「しほひ」は潮の満ち引きであって季節を示さず、袖が乾かないという恋の嘆きにも特定の季節は定まらない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S095",
+      "corpus": "shuka",
+      "order": 95,
+      "poet": "後京極摂政前太政大臣",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "winter",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=91",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H091",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "きりゝゝす",
+        "しもよ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "きりぎりすの鳴き声と霜の夜が、秋の寂しい夜の情景を主に示している。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S096",
+      "corpus": "shuka",
+      "order": 96,
+      "poet": "前大僧正慈圓",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=95",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H095",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "うきよのたみに"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "世の人々を覆い救おうとする出家の志を詠んだ歌で、季節を示す景物や時節は明確に現れない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S097",
+      "corpus": "shuka",
+      "order": 97,
+      "poet": "参議雅経",
+      "baseline_season": "autumn",
+      "reasoned_season": "autumn",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=94",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H094",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "秋かせ",
+        "ふるさとさむく"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「秋かせ」と秋の寒さが明示され、夜更けの山里で衣を打つ情景も秋を主な舞台としている。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S098",
+      "corpus": "shuka",
+      "order": 98,
+      "poet": "鎌倉右大臣",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "unspecified",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=93",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H093",
+        "scope": "shared_poem"
+      },
+      "evidence": [],
+      "evidence_matches": [],
+      "explanation": "渚を漕ぐ海人の小舟という情景は描かれますが、特定の季節を示す語はなく、主な季節は定まりません。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S099",
+      "corpus": "shuka",
+      "order": 99,
+      "poet": "正三位家隆",
+      "baseline_season": "summer",
+      "reasoned_season": "summer",
+      "jev_season": "summer",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=98",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H098",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "なつのしるし"
+      ],
+      "evidence_matches": [
+        true
+      ],
+      "explanation": "「みそき」が夏のしるしとして詠まれており、夕暮れや風の描写があっても主題は夏の到来・季節感です。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S100",
+      "corpus": "shuka",
+      "order": 100,
+      "poet": "権中納言定家",
+      "baseline_season": "unspecified",
+      "reasoned_season": "unspecified",
+      "jev_season": "autumn",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=97",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H097",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "ゆふなき",
+        "やくやもしほ"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "「ゆふなき」は夕景を、「やくやもしほ」は恋の苦しさの比喩を示すが、特定の季節を主題・背景とする語はない。",
+      "explanation_withheld": false
+    },
+    {
+      "id": "S101",
+      "corpus": "shuka",
+      "order": 101,
+      "poet": "入道前太政大臣",
+      "baseline_season": "spring",
+      "reasoned_season": "spring",
+      "jev_season": "spring",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=96",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H096",
+        "scope": "shared_poem"
+      },
+      "evidence": [
+        "はなさそふ",
+        "あらしのには"
+      ],
+      "evidence_matches": [
+        true,
+        true
+      ],
+      "explanation": "花を誘う嵐と庭に降るものが詠まれており、散る花の春が主な季節設定です。自分の老いはその比喩として用いられています。",
+      "explanation_withheld": false
+    }
+  ]
+}

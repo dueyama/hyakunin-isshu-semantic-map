@@ -25,13 +25,14 @@
         <a href="./2/">第2章</a>
         <a href="./3/">第3章</a>
         <a href="./final/">終章</a>
+        <a href="./seasons/">季節比較</a>
         <a href="../glossary/">用語集</a>
         <a href="../references/">参照資料</a>
         <a href="../updates/">更新履歴</a>
       </nav>
 
       <header class="article-hero">
-        <p class="meta">意味空間で百人一首を読む 第1章 / HTML読み物・随時更新 / 初稿 2026-07-03 / 更新 2026-07-10</p>
+        <p class="meta">意味空間で百人一首を読む 第1章 / HTML読み物・随時更新 / 初稿 2026-07-03 / 更新 2026-09-20</p>
         <h1>百人秀歌と<br />小倉百人一首を並べてみる</h1>
         <p class="lead">
           小倉百人一首の順番には、意味の流れがあるのだろうか。よく似たもう一つの選歌、百人秀歌と並べると、何が同じで、何が少し違って見えるのだろうか。序章で作った「数字の住所」という道具を持って、二つの歌集を同じ地図に置く。きれいな答えを探すのではなく、近い歌、急に跳ぶ歌、片方にだけ現れる歌を手がかりに、次に読むべき場所を探す。
@@ -100,6 +101,7 @@
 
       <section id="distribution">
         <h2>2. まず、きれいには分かれない</h2>
+        <p class="note">追加分析（2026-09-20）：<a href="./seasons/">補章では、Jevが本文から判定した季節を、この既存の埋め込みに重ねて比較する</a>。以下の従来の図・数値はそのままに、分類との対応を別の角度から確かめた。</p>
         <p>
           最初に、小倉百人一首100首を一枚の地図に置いてみる。使うのは <a class="term" href="../glossary/#term-model-large-small"><code>text-embedding-3-small</code></a> による<a class="term" href="../glossary/#term-embedding">埋め込み</a>である。入力は、解析用にそろえた歌本文の読み寄り表記、ここでは <a class="term" href="../glossary/#term-original-kana"><code>original_kana</code></a> と呼ぶ本文列である。本来は1536個の数字で表される場所を、そのままでは人間が見られないので、<a class="term" href="../glossary/#term-pca">PCA</a>で2次元の図に写した。点が一首ずつの歌、色が初期の<a class="term" href="../glossary/#term-theme-tag">主題タグ</a>である。<a class="cite" href="../references/#ref-g-10">[M-1]</a><a class="cite" href="../references/#ref-g-12">[M-3]</a>
         </p>

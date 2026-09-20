@@ -1,0 +1,1483 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>一首ごとの季節判定 | 意味空間で百人一首を読む</title>
+    <meta name="description" content="小倉百人一首100首・百人秀歌101首について、JevとGPT-5.6-Lunaの季節判定、資料で確認した部立を一首ずつ比較する一覧。" />
+    <link rel="canonical" href="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/seasons/list/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="一首ごとの季節判定 | 意味空間で百人一首を読む" />
+    <meta property="og:description" content="Jev・GPT-5.6-Lunaの出力と、資料の部立を並べて読む。" />
+    <meta property="og:url" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/paper/seasons/list/" />
+    <meta property="og:image" content="https://dueyama.github.io/hyakunin-isshu-semantic-map/figures/hero-heian-semantic-map.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+    <link rel="stylesheet" href="../../../assets/reading.css?v=20260710-review" />
+    <link rel="stylesheet" href="../../../assets/season-list.css?v=20260920" />
+    <script src="../../../assets/season-list.js?v=20260920" defer></script>
+  </head>
+  <body class="article article-one season-catalogue">
+    <main>
+      <nav aria-label="主なページ">
+        <a href="../../../">トップ</a><a href="../">季節比較</a>
+        <a href="./" aria-current="page">一首ごとの判定</a><a href="../../../references/">参照資料</a>
+      </nav>
+      <header class="article-hero">
+        <p class="meta">意味空間で百人一首を読む 補章 / 季節判定の一覧</p>
+        <h1>一首ごとの季節判定</h1>
+        <p class="lead">歌を読みながら、モデルの答えと資料の分類を見比べる。小倉100首、秀歌101首の結果を並べた。</p>
+        <div class="project-credits" aria-label="制作クレジット">
+          <span><b>分析・実装・本文整理:</b> Codex GPT-6 Astra Ultra</span>
+          <span><b>季節判定:</b> TypeSafe Jev / OpenAI GPT-5.6-Luna</span>
+        </div>
+        <p><a href="../luna-reasons/">追加実験：Lunaに根拠も求めた結果を見る →</a></p>
+      </header>
+      <section aria-labelledby="reading-guide">
+        <h2 id="reading-guide">この一覧の読み方</h2>
+        <p>JevとGPTに、同じ本文と七つの選択肢から「主な季節」を一つ選ぶよう求めた。ここに示すのは、それぞれのモデルを今回の条件で実行した結果である。<a href="../">実験の条件と集計を見る</a>。</p>
+        <p><b>資料の分類・部立は、紹介資料の分類や、出典の歌集での部門</b>を示す。「恋」「羇旅」「雑」などの部にも季節の情景はあるため、本文を読むモデルの答えとは別の軸として並べた。四季以外の分類を「無季」という正解には扱わない。資料の欄を押すと確認元に移動する。</p>
+        <p>秀歌の共通歌では、表示本文と資料の部立は小倉の対応歌を参照している。秀歌の実際の判定には別表記の作業用本文を用いたため、<b>表示本文は判定入力そのものではない</b>。資料の部立も、秀歌の異文を一首ずつ検証した結果ではない。</p>
+        <details class="catalogue-notes">
+          <summary>判定名・モデル・表示本文の出典</summary>
+          <p>「複数季節」は主な季節を一つに絞れないという出力、「季節不特定」は主な季節を特定しないという出力、「判定困難」は本文を解釈しにくいという出力である。「季節不特定」は文学的な無季を確定するものではない。この一覧ではJevの確信度やGPTの自己申告値を正解率として示さない。</p>
+          <p>モデル：<code>jev-1.13.0</code> ／ <code>gpt-5.6-luna</code>。埋め込みモデルは季節を直接判定していないため、この一覧の判定列には含めていない。</p>
+          <p>歌本文と対応は、当サイトの<a href="../../../references/#id-map">公開済み歌番号対応表</a>から再掲。小倉本文は<a href="https://ja.wikisource.org/w/index.php?title=%E5%B0%8F%E5%80%89%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96&amp;oldid=240235">Japanese Wikisource「小倉百人一首」固定版 oldid 240235</a>に由来し、<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.ja">CC BY-SA 3.0</a>の対象。秀歌のみの4首と小倉対応は同表の<a href="../../../references/#ref-g-5">水垣久「百人秀歌」への出典記載</a>を引き継ぐ。<a href="../../../data_sources.md">本文の利用条件</a>。</p>
+        </details>
+      </section>
+      <section class="catalogue-results" aria-labelledby="catalogue-heading">
+        <h2 id="catalogue-heading">201首の比較</h2>
+        <p>Jevは201首、GPTは201／201首で判定を取得。小倉は比較できた100首のうち、両モデルで異なる答えが5首。秀歌は比較できた101首のうち、両モデルで異なる答えが19首。不一致数は、誤りの数を確定したものではない。</p>
+        <form class="catalogue-filters" id="season-filters" hidden>
+          <div class="filter-field"><label for="corpus-filter">歌集</label><select id="corpus-filter" name="corpus"><option value="all">両方の歌集</option><option value="ogura">小倉百人一首</option><option value="shuka">百人秀歌</option></select></div>
+          <div class="filter-field"><label for="model-filter">季節を絞るモデル</label><select id="model-filter" name="model"><option value="jev">Jev</option><option value="gpt">GPT-5.6-Luna</option><option value="either">どちらかのモデル</option></select></div>
+          <div class="filter-field"><label for="season-filter">判定された季節</label><select id="season-filter" name="season"><option value="all">すべての判定</option><option value="spring">春</option><option value="summer">夏</option><option value="autumn">秋</option><option value="winter">冬</option><option value="mixed">複数季節</option><option value="unspecified">季節不特定</option><option value="uncertain">判定困難</option></select></div>
+          <div class="filter-field search-field"><label for="poem-search">歌番号・歌人・表示本文</label><input id="poem-search" name="query" type="search" autocomplete="off" placeholder="例：H024、春、定家" /></div>
+          <label class="checkbox-field"><input id="disagreement-filter" name="disagreement" type="checkbox" />JevとGPTで異なる判定だけ</label>
+          <button type="reset" class="reset-filters">条件をリセット</button>
+        </form>
+        <p id="result-count" class="result-count" role="status" aria-live="polite" aria-atomic="true">201首を表示（小倉100首・秀歌101首）</p>
+        <p class="table-scroll-hint" id="table-scroll-hint">表は横にスクロールできます。歌番号から参照資料へ移動できます。</p>
+        <div class="table-wrap season-table-wrap" tabindex="0" role="region" aria-label="一首ごとの季節比較表" aria-describedby="table-scroll-hint">
+          <table class="season-table">
+            <caption>各歌の季節判定と、資料で確認した分類・部立。Jev・GPTの列は今回のAPI出力。</caption>
+            <thead><tr><th scope="col">歌番号・歌人</th><th scope="col">歌（公開参照表の本文）</th><th scope="col">Jev</th><th scope="col">GPT-5.6-Luna</th><th scope="col">資料の分類・部立</th></tr></thead>
+            <tbody id="season-rows">
+              <tr id="poem-h001" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H001 天智天皇 天智天皇 秋の田の かりほの庵の とまをあらみ わが衣手は 露にぬれつつ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h001">H001</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">天智天皇</span></th>
+                <td class="poem-text">秋の田の かりほの庵の とまをあらみ わが衣手は 露にぬれつつ</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=1">四季（秋）</a><small class="source-note">後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h002" data-corpus="ogura" data-jev="summer" data-gpt="summer" data-disagreement="false" data-search="H002 持統天皇 持統天皇 春過ぎて 夏来にけらし 白妙の 衣ほすてふ 天の香具山 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h002">H002</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">持統天皇</span></th>
+                <td class="poem-text">春過ぎて 夏来にけらし 白妙の 衣ほすてふ 天の香具山</td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=2">四季（夏）</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h003" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H003 柿本人麿 柿本人麿 足引きの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h003">H003</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">柿本人麿</span></th>
+                <td class="poem-text">足引きの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=3">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h004" data-corpus="ogura" data-jev="winter" data-gpt="winter" data-disagreement="false" data-search="H004 山部赤人 山部赤人 田子の浦に 打出でてみれば 白妙の ふじの高嶺に 雪は降りつつ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h004">H004</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">山部赤人</span></th>
+                <td class="poem-text">田子の浦に 打出でてみれば 白妙の ふじの高嶺に 雪は降りつつ</td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=4">四季（冬）</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h005" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H005 猿丸太夫 猿丸太夫 奥山に 紅葉ふみ分け なく鹿の 聲きく時ぞ 秋は悲しき ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h005">H005</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">猿丸太夫</span></th>
+                <td class="poem-text">奥山に 紅葉ふみ分け なく鹿の 聲きく時ぞ 秋は悲しき</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=5">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h006" data-corpus="ogura" data-jev="winter" data-gpt="winter" data-disagreement="false" data-search="H006 中納言家持 中納言家持 かさゝぎの 渡せる橋に おく霜の しろきを見れば 夜ぞふけにける ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h006">H006</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">中納言家持</span></th>
+                <td class="poem-text">かさゝぎの 渡せる橋に おく霜の しろきを見れば 夜ぞふけにける</td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=6">四季（冬）</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h007" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H007 阿倍仲麻呂 阿倍仲麻呂 天の原 ふりさけ見れば 春日なる みかさの山に 出でし月かも ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h007">H007</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">阿倍仲麻呂</span></th>
+                <td class="poem-text">天の原 ふりさけ見れば 春日なる みかさの山に 出でし月かも</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=7">羈旅</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h008" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H008 喜撰法師 喜撰法師 わが庵は 都のたつみ しかぞ住む 世をうぢ山と 人はいふなり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h008">H008</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">喜撰法師</span></th>
+                <td class="poem-text">わが庵は 都のたつみ しかぞ住む 世をうぢ山と 人はいふなり</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=8">雑</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h009" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H009 小野小町 小野小町 花の色は 移りにけりな 徒に 我が身世にふる ながめせしまに ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h009">H009</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">小野小町</span></th>
+                <td class="poem-text">花の色は 移りにけりな 徒に 我が身世にふる ながめせしまに</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=9">四季（春）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h010" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H010 蝉丸 蝉丸 これや此の 行くも帰るも 別れては 知るも知らぬも 逢坂の関 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h010">H010</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">蝉丸</span></th>
+                <td class="poem-text">これや此の 行くも帰るも 別れては 知るも知らぬも 逢坂の関</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=10">雑</a><small class="source-note">後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h011" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H011 参議篁 参議篁 わたの原 八十島かけて 漕ぎ出でぬと 人にはつげよ あまの釣舟 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h011">H011</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">参議篁</span></th>
+                <td class="poem-text">わたの原 八十島かけて 漕ぎ出でぬと 人にはつげよ あまの釣舟</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=11">羈旅</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h012" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H012 僧正遍昭 僧正遍昭 天つ風 雲のかよひぢ 吹きとぢよ をとめの姿 しばし留めむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h012">H012</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">僧正遍昭</span></th>
+                <td class="poem-text">天つ風 雲のかよひぢ 吹きとぢよ をとめの姿 しばし留めむ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=12">雑</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h013" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H013 陽成院 陽成院 筑波嶺の 峯より落つる みなの川 戀ぞつもりて 淵となりぬる ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h013">H013</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">陽成院</span></th>
+                <td class="poem-text">筑波嶺の 峯より落つる みなの川 戀ぞつもりて 淵となりぬる</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=13">恋</a><small class="source-note">後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h014" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H014 河原左大臣 河原左大臣 陸奥の しのぶもぢずり 誰故に みだれ初めにし 我ならなくに ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h014">H014</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">河原左大臣</span></th>
+                <td class="poem-text">陸奥の しのぶもぢずり 誰故に みだれ初めにし 我ならなくに</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=14">恋</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h015" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H015 光孝天皇 光孝天皇 君がため 春の野に出でて 若菜つむ わが衣手に 雪は降りつつ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h015">H015</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">光孝天皇</span></th>
+                <td class="poem-text">君がため 春の野に出でて 若菜つむ わが衣手に 雪は降りつつ</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=15">四季（春）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h016" data-corpus="ogura" data-jev="winter" data-gpt="unspecified" data-disagreement="true" data-search="H016 中納言行平 中納言行平 立別れ いなばの山の 嶺におふる まつとし聞かば 今帰り来む ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h016">H016</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">中納言行平</span></th>
+                <td class="poem-text">立別れ いなばの山の 嶺におふる まつとし聞かば 今帰り来む</td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=16">離別</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h017" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H017 在原業平朝臣 在原業平朝臣 ちはやぶる 神代も聞かず 龍田川 から紅に 水くくるとは ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h017">H017</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">在原業平朝臣</span></th>
+                <td class="poem-text">ちはやぶる 神代も聞かず 龍田川 から紅に 水くくるとは</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=17">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h018" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H018 藤原敏行朝臣 藤原敏行朝臣 住の江の 岸に寄る浪 よるさへや 夢の通ひ路 人目よくらむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h018">H018</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">藤原敏行朝臣</span></th>
+                <td class="poem-text">住の江の 岸に寄る浪 よるさへや 夢の通ひ路 人目よくらむ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=18">恋</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h019" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H019 伊勢 伊勢 難波潟 短き葦の ふしのまも あはで此の世を すぐしてよとや ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h019">H019</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">伊勢</span></th>
+                <td class="poem-text">難波潟 短き葦の ふしのまも あはで此の世を すぐしてよとや</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=19">恋</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h020" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H020 元良親王 元良親王 侘びぬれば 今はた同じ 難波なる 身をつくしても 逢はむとぞ思ふ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h020">H020</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">元良親王</span></th>
+                <td class="poem-text">侘びぬれば 今はた同じ 難波なる 身をつくしても 逢はむとぞ思ふ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=20">恋</a><small class="source-note">後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h021" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H021 素性法師 素性法師 今来むと いひしばかりに 長月の 有明の月を 待ち出でつるかな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h021">H021</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">素性法師</span></th>
+                <td class="poem-text">今来むと いひしばかりに 長月の 有明の月を 待ち出でつるかな</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=21">恋</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h022" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H022 文屋康秀 文屋康秀 吹くからに 秋の草木の しをるれば むべ山風を あらしといふらむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h022">H022</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">文屋康秀</span></th>
+                <td class="poem-text">吹くからに 秋の草木の しをるれば むべ山風を あらしといふらむ</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=22">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h023" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H023 大江千里 大江千里 月見れば 千々に物こそ 悲しけれ わが身ひとつの 秋にはあらねど ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h023">H023</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">大江千里</span></th>
+                <td class="poem-text">月見れば 千々に物こそ 悲しけれ わが身ひとつの 秋にはあらねど</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=23">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h024" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H024 菅家 菅家 此の度は 幣もとりあへず 手向山 紅葉の錦 神のまにまに ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h024">H024</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">菅家</span></th>
+                <td class="poem-text">此の度は 幣もとりあへず 手向山 紅葉の錦 神のまにまに</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=24">羈旅</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h025" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H025 三条右大臣 三条右大臣 名にしおはば 逢坂山の さねかづら 人にしられで くるよしもがな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h025">H025</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">三条右大臣</span></th>
+                <td class="poem-text">名にしおはば 逢坂山の さねかづら 人にしられで くるよしもがな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=25">恋</a><small class="source-note">後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h026" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H026 貞信公 貞信公 小倉山 峯のもみぢ葉 心あらば 今ひとたびの みゆき待たなむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h026">H026</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">貞信公</span></th>
+                <td class="poem-text">小倉山 峯のもみぢ葉 心あらば 今ひとたびの みゆき待たなむ</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=26">雑（秋）</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h027" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H027 中納言兼輔 中納言兼輔 みかの原 わきて流るる 泉川 いつみきとてか 戀しかるらむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h027">H027</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">中納言兼輔</span></th>
+                <td class="poem-text">みかの原 わきて流るる 泉川 いつみきとてか 戀しかるらむ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=27">恋</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h028" data-corpus="ogura" data-jev="winter" data-gpt="winter" data-disagreement="false" data-search="H028 源宗行朝臣 源宗行朝臣 山里は 冬ぞ寂しさ まさりける 人目も草も かれぬと思へば ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h028">H028</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">源宗行朝臣</span></th>
+                <td class="poem-text">山里は 冬ぞ寂しさ まさりける 人目も草も かれぬと思へば</td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=28">四季（冬）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h029" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H029 凡河内躬恒 凡河内躬恒 心あてに 折らばや折らむ 初霜の 置きまどはせる 白菊の花 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h029">H029</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">凡河内躬恒</span></th>
+                <td class="poem-text">心あてに 折らばや折らむ 初霜の 置きまどはせる 白菊の花</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=29">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h030" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H030 壬生忠岑 壬生忠岑 有明の つれなく見えし 別れより 暁ばかり 憂きものはなし ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h030">H030</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">壬生忠岑</span></th>
+                <td class="poem-text">有明の つれなく見えし 別れより 暁ばかり 憂きものはなし</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=30">恋</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h031" data-corpus="ogura" data-jev="winter" data-gpt="winter" data-disagreement="false" data-search="H031 坂上是則 坂上是則 朝ぼらけ 有明の月と 見るまでに 吉野の里に 降れる白雪 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h031">H031</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">坂上是則</span></th>
+                <td class="poem-text">朝ぼらけ 有明の月と 見るまでに 吉野の里に 降れる白雪</td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=31">四季（冬）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h032" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H032 春道列樹 春道列樹 山がはに 風のかけたる しがらみは 流れもあへぬ 紅葉なりけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h032">H032</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">春道列樹</span></th>
+                <td class="poem-text">山がはに 風のかけたる しがらみは 流れもあへぬ 紅葉なりけり</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=32">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h033" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H033 紀友則 紀友則 久方の 光のどけき 春の日に しづごころなく 花の散るらむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h033">H033</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">紀友則</span></th>
+                <td class="poem-text">久方の 光のどけき 春の日に しづごころなく 花の散るらむ</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=33">四季（春）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h034" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H034 藤原興風 藤原興風 誰をかも 知る人にせむ 高砂の 松も昔の 友ならなくに ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h034">H034</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">藤原興風</span></th>
+                <td class="poem-text">誰をかも 知る人にせむ 高砂の 松も昔の 友ならなくに</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=34">雑</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h035" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H035 紀貫之 紀貫之 人はいさ 心もしらず ふるさとは 花ぞ昔の 香ににほひける ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h035">H035</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">紀貫之</span></th>
+                <td class="poem-text">人はいさ 心もしらず ふるさとは 花ぞ昔の 香ににほひける</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=35">四季（春）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h036" data-corpus="ogura" data-jev="summer" data-gpt="summer" data-disagreement="false" data-search="H036 清原深養父 清原深養父 夏の夜は まだ宵ながら あけぬるを 雲のいづこに 月宿るらむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h036">H036</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">清原深養父</span></th>
+                <td class="poem-text">夏の夜は まだ宵ながら あけぬるを 雲のいづこに 月宿るらむ</td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=36">四季（夏）</a><small class="source-note">古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h037" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H037 文屋朝康 文屋朝康 白露に 風の吹きしく 秋の野は つらぬきとめぬ 玉ぞ散りける ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h037">H037</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">文屋朝康</span></th>
+                <td class="poem-text">白露に 風の吹きしく 秋の野は つらぬきとめぬ 玉ぞ散りける</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=37">四季（秋）</a><small class="source-note">後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h038" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H038 右近 右近 忘らるる 身をば思はず 誓ひてし 人の命の 惜しくもあるかな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h038">H038</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">右近</span></th>
+                <td class="poem-text">忘らるる 身をば思はず 誓ひてし 人の命の 惜しくもあるかな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=38">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h039" data-corpus="ogura" data-jev="autumn" data-gpt="unspecified" data-disagreement="true" data-search="H039 参議等 参議等 浅茅生の 小野の篠原 しのぶれど あまりてなどか 人の戀しき ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h039">H039</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">参議等</span></th>
+                <td class="poem-text">浅茅生の 小野の篠原 しのぶれど あまりてなどか 人の戀しき</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=39">恋</a><small class="source-note">後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h040" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H040 平兼盛 平兼盛 忍ぶれど 色に出にけり 我が戀は ものや思ふと 人の問ふまで ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h040">H040</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">平兼盛</span></th>
+                <td class="poem-text">忍ぶれど 色に出にけり 我が戀は ものや思ふと 人の問ふまで</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=40">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h041" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H041 壬生忠見 壬生忠見 戀すてふ わが名はまだき 立ちにけり 人知れずこそ 思ひそめしか ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h041">H041</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">壬生忠見</span></th>
+                <td class="poem-text">戀すてふ わが名はまだき 立ちにけり 人知れずこそ 思ひそめしか</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=41">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h042" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H042 清原元輔 清原元輔 契りきな かたみに袖を しぼりつつ 末の松山 浪こさじとは ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h042">H042</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">清原元輔</span></th>
+                <td class="poem-text">契りきな かたみに袖を しぼりつつ 末の松山 浪こさじとは</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=42">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h043" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H043 権中納言敦忠 権中納言敦忠 逢ひみての 後の心に くらぶれば 昔はものを 思はざりけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h043">H043</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">権中納言敦忠</span></th>
+                <td class="poem-text">逢ひみての 後の心に くらぶれば 昔はものを 思はざりけり</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=43">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h044" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H044 中納言朝忠 中納言朝忠 逢ふことの 絶えてしなくば なかなかに 人をも身をも 恨みざらまし ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h044">H044</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">中納言朝忠</span></th>
+                <td class="poem-text">逢ふことの 絶えてしなくば なかなかに 人をも身をも 恨みざらまし</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=44">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h045" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H045 謙徳公 謙徳公 哀れとも いふべき人は おもほえで 身のいたづらに なりぬべきかな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h045">H045</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">謙徳公</span></th>
+                <td class="poem-text">哀れとも いふべき人は おもほえで 身のいたづらに なりぬべきかな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=45">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h046" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H046 曽根好忠 曽根好忠 由良の戸を わたる舟人 楫をたえ 行方もしらぬ 戀の道かな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h046">H046</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">曽根好忠</span></th>
+                <td class="poem-text">由良の戸を わたる舟人 楫をたえ 行方もしらぬ 戀の道かな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=46">恋</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h047" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H047 恵慶法師 恵慶法師 八重葎 しげれる宿の さびしきに 人こそ見えね 秋はきにけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h047">H047</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">恵慶法師</span></th>
+                <td class="poem-text">八重葎 しげれる宿の さびしきに 人こそ見えね 秋はきにけり</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=47">四季（秋）</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h048" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H048 源重之 源重之 風をいたみ 岩うつ浪の おのれのみ 砕けてものを 思ふ頃かな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h048">H048</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">源重之</span></th>
+                <td class="poem-text">風をいたみ 岩うつ浪の おのれのみ 砕けてものを 思ふ頃かな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=48">恋</a><small class="source-note">詞花集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h049" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H049 大中臣能宣朝臣 大中臣能宣朝臣 御垣守 衛士のたく火の 夜はもえ 晝は消えつつ ものをこそ思へ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h049">H049</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">大中臣能宣朝臣</span></th>
+                <td class="poem-text">御垣守 衛士のたく火の 夜はもえ 晝は消えつつ ものをこそ思へ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=49">恋</a><small class="source-note">詞花集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h050" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H050 藤原義孝 藤原義孝 君がため 惜しからざりし 命さへ 長くもがなと 思ひけるかな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h050">H050</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">藤原義孝</span></th>
+                <td class="poem-text">君がため 惜しからざりし 命さへ 長くもがなと 思ひけるかな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=50">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h051" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H051 藤原実方朝臣 藤原実方朝臣 かくとだに えやはいぶきの さしも草 さしも知らじな もゆる思ひを ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h051">H051</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">藤原実方朝臣</span></th>
+                <td class="poem-text">かくとだに えやはいぶきの さしも草 さしも知らじな もゆる思ひを</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=51">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h052" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H052 藤原道信朝臣 藤原道信朝臣 明けぬれば くるるものとは 知りながら なほ恨めしき 朝ぼらけかな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h052">H052</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">藤原道信朝臣</span></th>
+                <td class="poem-text">明けぬれば くるるものとは 知りながら なほ恨めしき 朝ぼらけかな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=52">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h053" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H053 右大将道綱母 右大将道綱母 嘆きつつ 獨りぬる夜の 明くる間は いかに久しき ものとかは知る ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h053">H053</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">右大将道綱母</span></th>
+                <td class="poem-text">嘆きつつ 獨りぬる夜の 明くる間は いかに久しき ものとかは知る</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=53">恋</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h054" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H054 儀同三司母 儀同三司母 忘れじの 行末までは 難ければ 今日を限りの 命ともがな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h054">H054</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">儀同三司母</span></th>
+                <td class="poem-text">忘れじの 行末までは 難ければ 今日を限りの 命ともがな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=54">恋</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h055" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H055 大納言公任 大納言公任 瀧の音は たえて久しく なりぬれど 名こそ流れて なほ聞えけれ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h055">H055</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">大納言公任</span></th>
+                <td class="poem-text">瀧の音は たえて久しく なりぬれど 名こそ流れて なほ聞えけれ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=55">雑</a><small class="source-note">拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h056" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H056 和泉式部 和泉式部 あらざらむ 此の世のほかの 思ひ出に 今一たびの 逢ふこともがな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h056">H056</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">和泉式部</span></th>
+                <td class="poem-text">あらざらむ 此の世のほかの 思ひ出に 今一たびの 逢ふこともがな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=56">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h057" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H057 紫式部 紫式部 廻り逢ひて 見しやそれとも わかぬまに 雲がくれにし 夜半の月かな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h057">H057</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">紫式部</span></th>
+                <td class="poem-text">廻り逢ひて 見しやそれとも わかぬまに 雲がくれにし 夜半の月かな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=57">雑</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h058" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H058 大貮三位 大貮三位 有馬山 ゐなのささ原 風吹けば いでそよ人を 忘れやはする ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h058">H058</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">大貮三位</span></th>
+                <td class="poem-text">有馬山 ゐなのささ原 風吹けば いでそよ人を 忘れやはする</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=58">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h059" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H059 赤染衛門 赤染衛門 やすらはで 寝なましものを 小夜更けて 傾くまでの 月を見しかな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h059">H059</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">赤染衛門</span></th>
+                <td class="poem-text">やすらはで 寝なましものを 小夜更けて 傾くまでの 月を見しかな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=59">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h060" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H060 小式部内侍 小式部内侍 大江山 いくのの道の 遠ければ まだふみも見ず 天の橋立 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h060">H060</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">小式部内侍</span></th>
+                <td class="poem-text">大江山 いくのの道の 遠ければ まだふみも見ず 天の橋立</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=60">雑</a><small class="source-note">金葉集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h061" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H061 伊勢大輔 伊勢大輔 古への 奈良の都の 八重ざくら 今日九重に 匂ひぬるかな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h061">H061</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">伊勢大輔</span></th>
+                <td class="poem-text">古への 奈良の都の 八重ざくら 今日九重に 匂ひぬるかな</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=61">四季（春）</a><small class="source-note">詞花集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h062" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H062 清少納言 清少納言 夜をこめて 鳥のそら音は はかるとも 世に逢坂の 関はゆるさじ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h062">H062</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">清少納言</span></th>
+                <td class="poem-text">夜をこめて 鳥のそら音は はかるとも 世に逢坂の 関はゆるさじ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=62">雑</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h063" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H063 左京大夫道雅 左京大夫道雅 今はただ 思ひ絶えなむ とばかりを 人づてならで 言ふよしもがな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h063">H063</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">左京大夫道雅</span></th>
+                <td class="poem-text">今はただ 思ひ絶えなむ とばかりを 人づてならで 言ふよしもがな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=63">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h064" data-corpus="ogura" data-jev="unspecified" data-gpt="winter" data-disagreement="true" data-search="H064 権中納言定頼 権中納言定頼 朝ぼらけ 宇治の川霧 絶えだえに あらはれ渡る 瀬々の網代木 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h064">H064</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">権中納言定頼</span></th>
+                <td class="poem-text">朝ぼらけ 宇治の川霧 絶えだえに あらはれ渡る 瀬々の網代木</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-winter">冬</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=64">四季（冬）</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h065" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H065 相模 相模 恨み侘び ほさぬ袖だに あるものを 戀に朽ちなむ 名こそ惜しけれ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h065">H065</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">相模</span></th>
+                <td class="poem-text">恨み侘び ほさぬ袖だに あるものを 戀に朽ちなむ 名こそ惜しけれ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=65">恋</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h066" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H066 大僧正行尊 大僧正行尊 諸共に あはれと思へ 山ざくら 花よりほかに 知る人もなし ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h066">H066</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">大僧正行尊</span></th>
+                <td class="poem-text">諸共に あはれと思へ 山ざくら 花よりほかに 知る人もなし</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=66">雑</a><small class="source-note">金葉集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h067" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H067 周防内侍 周防内侍 春の夜の 夢ばかりなる 手枕に かひなく立たむ 名こそ惜しけれ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h067">H067</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">周防内侍</span></th>
+                <td class="poem-text">春の夜の 夢ばかりなる 手枕に かひなく立たむ 名こそ惜しけれ</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=67">雑</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h068" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H068 三条院 三条院 心にも あらで憂世に ながらへば 戀しかるべき 夜半の月かな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h068">H068</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">三条院</span></th>
+                <td class="poem-text">心にも あらで憂世に ながらへば 戀しかるべき 夜半の月かな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=68">雑</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h069" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H069 能因法師 能因法師 嵐ふく 三室の山の もみぢ葉は 龍田の川の 錦なりけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h069">H069</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">能因法師</span></th>
+                <td class="poem-text">嵐ふく 三室の山の もみぢ葉は 龍田の川の 錦なりけり</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=69">四季（秋）</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h070" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H070 良暹法師 良暹法師 寂しさに 宿を立ち出でて 眺むれば いづくも同じ 秋の夕暮 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h070">H070</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">良暹法師</span></th>
+                <td class="poem-text">寂しさに 宿を立ち出でて 眺むれば いづくも同じ 秋の夕暮</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=70">四季（秋）</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h071" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H071 大納言経信 大納言経信 夕されば 門田の稲葉 おとづれて あしのまろやに 秋風ぞ吹く ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h071">H071</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">大納言経信</span></th>
+                <td class="poem-text">夕されば 門田の稲葉 おとづれて あしのまろやに 秋風ぞ吹く</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=71">四季（秋）</a><small class="source-note">金葉集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h072" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H072 祐子内親王家紀伊 祐子内親王家紀伊 音に聞く 高師の濱の あだ浪は かけじや袖の ぬれもこそすれ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h072">H072</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">祐子内親王家紀伊</span></th>
+                <td class="poem-text">音に聞く 高師の濱の あだ浪は かけじや袖の ぬれもこそすれ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=72">恋</a><small class="source-note">金葉集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h073" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H073 権中納言匡房 権中納言匡房 高砂の 尾の上の桜 咲きにけり 外山の霞 立たずもあらなむ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h073">H073</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">権中納言匡房</span></th>
+                <td class="poem-text">高砂の 尾の上の桜 咲きにけり 外山の霞 立たずもあらなむ</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=73">四季（春）</a><small class="source-note">後拾遺集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h074" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H074 源俊頼朝臣 源俊頼朝臣 うかりける 人を初瀬の 山おろし はげしかれとは 祈らぬものを ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h074">H074</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">源俊頼朝臣</span></th>
+                <td class="poem-text">うかりける 人を初瀬の 山おろし はげしかれとは 祈らぬものを</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=74">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h075" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H075 藤原基俊 藤原基俊 契りおきし させもが露を 命にて あはれ今年の 秋も去ぬめり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h075">H075</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">藤原基俊</span></th>
+                <td class="poem-text">契りおきし させもが露を 命にて あはれ今年の 秋も去ぬめり</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=75">雑</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h076" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H076 法性寺入道前関白太政大臣 法性寺入道前関白太政大臣 わたの原 漕ぎ出でて見れば 久方の 雲居にまがふ 沖つ白浪 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h076">H076</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">法性寺入道前関白太政大臣</span></th>
+                <td class="poem-text">わたの原 漕ぎ出でて見れば 久方の 雲居にまがふ 沖つ白浪</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=76">雑</a><small class="source-note">詞花集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h077" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H077 崇徳院 崇徳院 瀬を早み 岩にせかるる 瀧川の われても末に 逢はむとぞ思ふ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h077">H077</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">崇徳院</span></th>
+                <td class="poem-text">瀬を早み 岩にせかるる 瀧川の われても末に 逢はむとぞ思ふ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=77">恋</a><small class="source-note">詞花集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h078" data-corpus="ogura" data-jev="unspecified" data-gpt="winter" data-disagreement="true" data-search="H078 源兼昌 源兼昌 淡路島 かよふ千鳥の 鳴く声に いくよ寝覚めぬ 須磨の関守 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h078">H078</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">源兼昌</span></th>
+                <td class="poem-text">淡路島 かよふ千鳥の 鳴く声に いくよ寝覚めぬ 須磨の関守</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-winter">冬</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=78">四季（冬）</a><small class="source-note">金葉集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h079" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H079 左京大夫顕輔 左京大夫顕輔 秋風に たなびく雲の 絶間より もれ出づる月の 影のさやけさ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h079">H079</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">左京大夫顕輔</span></th>
+                <td class="poem-text">秋風に たなびく雲の 絶間より もれ出づる月の 影のさやけさ</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=79">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h080" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H080 待賢門院堀河 待賢門院堀河 ながからむ 心も知らず 黒髪の みだれて今朝は ものをこそ思へ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h080">H080</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">待賢門院堀河</span></th>
+                <td class="poem-text">ながからむ 心も知らず 黒髪の みだれて今朝は ものをこそ思へ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=80">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h081" data-corpus="ogura" data-jev="summer" data-gpt="summer" data-disagreement="false" data-search="H081 後徳大寺左大臣 後徳大寺左大臣 ほととぎす 鳴きつる方を 眺むれば ただ有明の 月ぞ残れる ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h081">H081</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">後徳大寺左大臣</span></th>
+                <td class="poem-text">ほととぎす 鳴きつる方を 眺むれば ただ有明の 月ぞ残れる</td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=81">四季（夏）</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h082" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H082 道因法師 道因法師 思ひわび さても命は あるものを 憂きに堪へぬは 涙なりけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h082">H082</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">道因法師</span></th>
+                <td class="poem-text">思ひわび さても命は あるものを 憂きに堪へぬは 涙なりけり</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=82">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h083" data-corpus="ogura" data-jev="unspecified" data-gpt="autumn" data-disagreement="true" data-search="H083 皇太后宮大夫俊成 皇太后宮大夫俊成 世の中よ 道こそなけれ 思ひ入る 山の奥にも 鹿ぞなくなる ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h083">H083</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">皇太后宮大夫俊成</span></th>
+                <td class="poem-text">世の中よ 道こそなけれ 思ひ入る 山の奥にも 鹿ぞなくなる</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-autumn">秋</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=83">雑</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h084" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H084 藤原清輔朝臣 藤原清輔朝臣 ながらへば また此の頃や しのばれむ 憂しと見し世ぞ 今は戀しき ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h084">H084</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">藤原清輔朝臣</span></th>
+                <td class="poem-text">ながらへば また此の頃や しのばれむ 憂しと見し世ぞ 今は戀しき</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=84">雑</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h085" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H085 俊恵法師 俊恵法師 夜もすがら もの思ふ頃は 明けやらで ねやのひまさへ つれなかりけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h085">H085</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">俊恵法師</span></th>
+                <td class="poem-text">夜もすがら もの思ふ頃は 明けやらで ねやのひまさへ つれなかりけり</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=85">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h086" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H086 西行法師 西行法師 嘆けとて 月やはものを 思はする かこち顔なる わが涙かな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h086">H086</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">西行法師</span></th>
+                <td class="poem-text">嘆けとて 月やはものを 思はする かこち顔なる わが涙かな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=86">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h087" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H087 寂蓮法師 寂蓮法師 村雨の 露もまだひぬ 槙の葉に 霧立ちのぼる 秋の夕暮 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h087">H087</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">寂蓮法師</span></th>
+                <td class="poem-text">村雨の 露もまだひぬ 槙の葉に 霧立ちのぼる 秋の夕暮</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=87">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h088" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H088 皇嘉門院別当 皇嘉門院別当 難波江の あしのかりねの 一夜ゆゑ みをつくしてや 戀ひわたるべき ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h088">H088</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">皇嘉門院別当</span></th>
+                <td class="poem-text">難波江の あしのかりねの 一夜ゆゑ みをつくしてや 戀ひわたるべき</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=88">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h089" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H089 式子内親王 式子内親王 玉の緒よ たえなば絶えね ながらへば 忍ぶることの 弱りもぞする ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h089">H089</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">式子内親王</span></th>
+                <td class="poem-text">玉の緒よ たえなば絶えね ながらへば 忍ぶることの 弱りもぞする</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=89">恋</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h090" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H090 殷富門院大輔 殷富門院大輔 見せばやな 雄島のあまの 袖だにも 濡れにぞ濡れし 色はかはらず ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h090">H090</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">殷富門院大輔</span></th>
+                <td class="poem-text">見せばやな 雄島のあまの 袖だにも 濡れにぞ濡れし 色はかはらず</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=90">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h091" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H091 後京極摂政前太政大臣 後京極摂政前太政大臣 きりぎりす なくや霜夜の さむしろに 衣かたしき 獨りかも寝む ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h091">H091</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">後京極摂政前太政大臣</span></th>
+                <td class="poem-text">きりぎりす なくや霜夜の さむしろに 衣かたしき 獨りかも寝む</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=91">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h092" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H092 二条院讃岐 二条院讃岐 わが袖は 汐干に見えぬ 沖の石の 人こそ知らね 乾く間もなし ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h092">H092</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">二条院讃岐</span></th>
+                <td class="poem-text">わが袖は 汐干に見えぬ 沖の石の 人こそ知らね 乾く間もなし</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=92">恋</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h093" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H093 鎌倉右大臣 鎌倉右大臣 世の中は 常にもがもな 渚こぐ 海士の小舟の 綱手かなしも ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h093">H093</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">鎌倉右大臣</span></th>
+                <td class="poem-text">世の中は 常にもがもな 渚こぐ 海士の小舟の 綱手かなしも</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=93">羈旅</a><small class="source-note">新勅撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h094" data-corpus="ogura" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="H094 参議雅経 参議雅経 みよし野の 山の秋風 小夜更けて 故郷寒く 衣うつなり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h094">H094</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">参議雅経</span></th>
+                <td class="poem-text">みよし野の 山の秋風 小夜更けて 故郷寒く 衣うつなり</td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=94">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h095" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H095 前大僧正慈圓 前大僧正慈圓 おほけなく うき世の民に おほふかな 我が立つ杣に 墨染の袖 ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h095">H095</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">前大僧正慈圓</span></th>
+                <td class="poem-text">おほけなく うき世の民に おほふかな 我が立つ杣に 墨染の袖</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=95">雑</a><small class="source-note">千載集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h096" data-corpus="ogura" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="H096 入道前太政大臣 入道前太政大臣 花さそふ あらしの庭の 雪ならで ふりゆくものは 我が身なりけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h096">H096</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">入道前太政大臣</span></th>
+                <td class="poem-text">花さそふ あらしの庭の 雪ならで ふりゆくものは 我が身なりけり</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=96">雑</a><small class="source-note">新勅撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h097" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H097 権中納言定家 権中納言定家 来ぬ人を 松帆の浦の 夕なぎに 焼くや藻塩の 身もこがれつつ ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h097">H097</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">権中納言定家</span></th>
+                <td class="poem-text">来ぬ人を 松帆の浦の 夕なぎに 焼くや藻塩の 身もこがれつつ</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=97">恋</a><small class="source-note">新勅撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h098" data-corpus="ogura" data-jev="summer" data-gpt="summer" data-disagreement="false" data-search="H098 従二位家隆 従二位家隆 風そよぐ 楢の小川の 夕ぐれは みそぎぞ夏の しるしなりける ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h098">H098</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">従二位家隆</span></th>
+                <td class="poem-text">風そよぐ 楢の小川の 夕ぐれは みそぎぞ夏の しるしなりける</td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=98">四季（夏）</a><small class="source-note">新勅撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h099" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H099 後鳥羽院 後鳥羽院 人もをし 人もうらめし あぢきなく 世を思ふ故に もの思ふ身は ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h099">H099</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">後鳥羽院</span></th>
+                <td class="poem-text">人もをし 人もうらめし あぢきなく 世を思ふ故に もの思ふ身は</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=99">雑</a><small class="source-note">続後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-h100" data-corpus="ogura" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="H100 順徳院 順徳院 百敷や 古き軒端の しのぶにも なほあまりある 昔なりけり ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-h100">H100</a><span class="corpus-label">小倉百人一首</span><span class="poet-name">順徳院</span></th>
+                <td class="poem-text">百敷や 古き軒端の しのぶにも なほあまりある 昔なりけり</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=100">雑</a><small class="source-note">続後撰集</small><small class="source-note">紹介資料で確認した分類。</small></td>
+              </tr>
+              <tr id="poem-s001" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S001 天智天皇御製 天智天皇御製 秋の田の かりほの庵の とまをあらみ わが衣手は 露にぬれつつ H001">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s001">S001</a><span class="corpus-label">百人秀歌</span><span class="poet-name">天智天皇御製</span></th>
+                <td class="poem-text">秋の田の かりほの庵の とまをあらみ わが衣手は 露にぬれつつ<small class="poem-note">小倉同歌 <a href="#poem-h001">H001</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=1">四季（秋）</a><small class="source-note">後撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s002" data-corpus="shuka" data-jev="spring" data-gpt="summer" data-disagreement="true" data-search="S002 持統天皇御製 持統天皇御製 春過ぎて 夏来にけらし 白妙の 衣ほすてふ 天の香具山 H002">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s002">S002</a><span class="corpus-label">百人秀歌</span><span class="poet-name">持統天皇御製</span></th>
+                <td class="poem-text">春過ぎて 夏来にけらし 白妙の 衣ほすてふ 天の香具山<small class="poem-note">小倉同歌 <a href="#poem-h002">H002</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-summer">夏</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=2">四季（夏）</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s003" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S003 柿本人麿 柿本人麿 足引きの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ H003">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s003">S003</a><span class="corpus-label">百人秀歌</span><span class="poet-name">柿本人麿</span></th>
+                <td class="poem-text">足引きの 山鳥の尾の しだり尾の ながながし夜を ひとりかもねむ<small class="poem-note">小倉同歌 <a href="#poem-h003">H003</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=3">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s004" data-corpus="shuka" data-jev="winter" data-gpt="winter" data-disagreement="false" data-search="S004 山部赤人 山邊赤人 田子の浦に 打出でてみれば 白妙の ふじの高嶺に 雪は降りつつ H004">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s004">S004</a><span class="corpus-label">百人秀歌</span><span class="poet-name">山部赤人</span></th>
+                <td class="poem-text">田子の浦に 打出でてみれば 白妙の ふじの高嶺に 雪は降りつつ<small class="poem-note">小倉同歌 <a href="#poem-h004">H004</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=4">四季（冬）</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s005" data-corpus="shuka" data-jev="unspecified" data-gpt="winter" data-disagreement="true" data-search="S005 中納言家持 中納言家持 かさゝぎの 渡せる橋に おく霜の しろきを見れば 夜ぞふけにける H006">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s005">S005</a><span class="corpus-label">百人秀歌</span><span class="poet-name">中納言家持</span></th>
+                <td class="poem-text">かさゝぎの 渡せる橋に おく霜の しろきを見れば 夜ぞふけにける<small class="poem-note">小倉同歌 <a href="#poem-h006">H006</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-winter">冬</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=6">四季（冬）</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s006" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S006 阿倍仲麻呂 安倍仲丸 天の原 ふりさけ見れば 春日なる みかさの山に 出でし月かも H007">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s006">S006</a><span class="corpus-label">百人秀歌</span><span class="poet-name">阿倍仲麻呂</span></th>
+                <td class="poem-text">天の原 ふりさけ見れば 春日なる みかさの山に 出でし月かも<small class="poem-note">小倉同歌 <a href="#poem-h007">H007</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=7">羈旅</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s007" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S007 参議篁 参議篁 わたの原 八十島かけて 漕ぎ出でぬと 人にはつげよ あまの釣舟 H011">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s007">S007</a><span class="corpus-label">百人秀歌</span><span class="poet-name">参議篁</span></th>
+                <td class="poem-text">わたの原 八十島かけて 漕ぎ出でぬと 人にはつげよ あまの釣舟<small class="poem-note">小倉同歌 <a href="#poem-h011">H011</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=11">羈旅</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s008" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S008 猿丸大夫 猿丸大夫 奥山に 紅葉ふみ分け なく鹿の 聲きく時ぞ 秋は悲しき H005">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s008">S008</a><span class="corpus-label">百人秀歌</span><span class="poet-name">猿丸大夫</span></th>
+                <td class="poem-text">奥山に 紅葉ふみ分け なく鹿の 聲きく時ぞ 秋は悲しき<small class="poem-note">小倉同歌 <a href="#poem-h005">H005</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=5">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s009" data-corpus="shuka" data-jev="autumn" data-gpt="unspecified" data-disagreement="true" data-search="S009 中納言行平 中納言行平 立別れ いなばの山の 嶺におふる まつとし聞かば 今帰り来む H016">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s009">S009</a><span class="corpus-label">百人秀歌</span><span class="poet-name">中納言行平</span></th>
+                <td class="poem-text">立別れ いなばの山の 嶺におふる まつとし聞かば 今帰り来む<small class="poem-note">小倉同歌 <a href="#poem-h016">H016</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=16">離別</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s010" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S010 在原業平朝臣 在原業平朝臣 ちはやぶる 神代も聞かず 龍田川 から紅に 水くくるとは H017">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s010">S010</a><span class="corpus-label">百人秀歌</span><span class="poet-name">在原業平朝臣</span></th>
+                <td class="poem-text">ちはやぶる 神代も聞かず 龍田川 から紅に 水くくるとは<small class="poem-note">小倉同歌 <a href="#poem-h017">H017</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=17">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s011" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S011 藤原敏行朝臣 藤原敏行朝臣 住の江の 岸に寄る浪 よるさへや 夢の通ひ路 人目よくらむ H018">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s011">S011</a><span class="corpus-label">百人秀歌</span><span class="poet-name">藤原敏行朝臣</span></th>
+                <td class="poem-text">住の江の 岸に寄る浪 よるさへや 夢の通ひ路 人目よくらむ<small class="poem-note">小倉同歌 <a href="#poem-h018">H018</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=18">恋</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s012" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S012 陽成院御製 陽成院御製 筑波嶺の 峯より落つる みなの川 戀ぞつもりて 淵となりぬる H013">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s012">S012</a><span class="corpus-label">百人秀歌</span><span class="poet-name">陽成院御製</span></th>
+                <td class="poem-text">筑波嶺の 峯より落つる みなの川 戀ぞつもりて 淵となりぬる<small class="poem-note">小倉同歌 <a href="#poem-h013">H013</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=13">恋</a><small class="source-note">後撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s013" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S013 小野小町 小野小町 花の色は 移りにけりな 徒に 我が身世にふる ながめせしまに H009">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s013">S013</a><span class="corpus-label">百人秀歌</span><span class="poet-name">小野小町</span></th>
+                <td class="poem-text">花の色は 移りにけりな 徒に 我が身世にふる ながめせしまに<small class="poem-note">小倉同歌 <a href="#poem-h009">H009</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=9">四季（春）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s014" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S014 喜撰法師 喜撰法師 わが庵は 都のたつみ しかぞ住む 世をうぢ山と 人はいふなり H008">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s014">S014</a><span class="corpus-label">百人秀歌</span><span class="poet-name">喜撰法師</span></th>
+                <td class="poem-text">わが庵は 都のたつみ しかぞ住む 世をうぢ山と 人はいふなり<small class="poem-note">小倉同歌 <a href="#poem-h008">H008</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=8">雑</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s015" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S015 僧正遍昭 僧正遍昭 天つ風 雲のかよひぢ 吹きとぢよ をとめの姿 しばし留めむ H012">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s015">S015</a><span class="corpus-label">百人秀歌</span><span class="poet-name">僧正遍昭</span></th>
+                <td class="poem-text">天つ風 雲のかよひぢ 吹きとぢよ をとめの姿 しばし留めむ<small class="poem-note">小倉同歌 <a href="#poem-h012">H012</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=12">雑</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s016" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S016 蝉丸 蝉丸 これや此の 行くも帰るも 別れては 知るも知らぬも 逢坂の関 H010">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s016">S016</a><span class="corpus-label">百人秀歌</span><span class="poet-name">蝉丸</span></th>
+                <td class="poem-text">これや此の 行くも帰るも 別れては 知るも知らぬも 逢坂の関<small class="poem-note">小倉同歌 <a href="#poem-h010">H010</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=10">雑</a><small class="source-note">後撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s017" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S017 河原左大臣 河原左大臣 陸奥の しのぶもぢずり 誰故に みだれ初めにし 我ならなくに H014">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s017">S017</a><span class="corpus-label">百人秀歌</span><span class="poet-name">河原左大臣</span></th>
+                <td class="poem-text">陸奥の しのぶもぢずり 誰故に みだれ初めにし 我ならなくに<small class="poem-note">小倉同歌 <a href="#poem-h014">H014</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=14">恋</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s018" data-corpus="shuka" data-jev="winter" data-gpt="spring" data-disagreement="true" data-search="S018 光孝天皇御製 光孝天皇御製 君がため 春の野に出でて 若菜つむ わが衣手に 雪は降りつつ H015">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s018">S018</a><span class="corpus-label">百人秀歌</span><span class="poet-name">光孝天皇御製</span></th>
+                <td class="poem-text">君がため 春の野に出でて 若菜つむ わが衣手に 雪は降りつつ<small class="poem-note">小倉同歌 <a href="#poem-h015">H015</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-spring">春</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=15">四季（春）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s019" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S019 伊勢 伊勢 難波潟 短き葦の ふしのまも あはで此の世を すぐしてよとや H019">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s019">S019</a><span class="corpus-label">百人秀歌</span><span class="poet-name">伊勢</span></th>
+                <td class="poem-text">難波潟 短き葦の ふしのまも あはで此の世を すぐしてよとや<small class="poem-note">小倉同歌 <a href="#poem-h019">H019</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=19">恋</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s020" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S020 元良親王 元良親王 侘びぬれば 今はた同じ 難波なる 身をつくしても 逢はむとぞ思ふ H020">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s020">S020</a><span class="corpus-label">百人秀歌</span><span class="poet-name">元良親王</span></th>
+                <td class="poem-text">侘びぬれば 今はた同じ 難波なる 身をつくしても 逢はむとぞ思ふ<small class="poem-note">小倉同歌 <a href="#poem-h020">H020</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=20">恋</a><small class="source-note">後撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s021" data-corpus="shuka" data-jev="winter" data-gpt="winter" data-disagreement="false" data-search="S021 源宗于朝臣 源宗于朝臣 山里は 冬ぞ寂しさ まさりける 人目も草も かれぬと思へば H028">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s021">S021</a><span class="corpus-label">百人秀歌</span><span class="poet-name">源宗于朝臣</span></th>
+                <td class="poem-text">山里は 冬ぞ寂しさ まさりける 人目も草も かれぬと思へば<small class="poem-note">小倉同歌 <a href="#poem-h028">H028</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=28">四季（冬）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s022" data-corpus="shuka" data-jev="unspecified" data-gpt="autumn" data-disagreement="true" data-search="S022 素性法師 素性法師 今来むと いひしばかりに 長月の 有明の月を 待ち出でつるかな H021">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s022">S022</a><span class="corpus-label">百人秀歌</span><span class="poet-name">素性法師</span></th>
+                <td class="poem-text">今来むと いひしばかりに 長月の 有明の月を 待ち出でつるかな<small class="poem-note">小倉同歌 <a href="#poem-h021">H021</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-autumn">秋</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=21">恋</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s023" data-corpus="shuka" data-jev="unspecified" data-gpt="autumn" data-disagreement="true" data-search="S023 菅家 菅家 此の度は 幣もとりあへず 手向山 紅葉の錦 神のまにまに H024">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s023">S023</a><span class="corpus-label">百人秀歌</span><span class="poet-name">菅家</span></th>
+                <td class="poem-text">此の度は 幣もとりあへず 手向山 紅葉の錦 神のまにまに<small class="poem-note">小倉同歌 <a href="#poem-h024">H024</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-autumn">秋</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=24">羈旅</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s024" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S024 壬生忠岑 壬生忠岑 有明の つれなく見えし 別れより 暁ばかり 憂きものはなし H030">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s024">S024</a><span class="corpus-label">百人秀歌</span><span class="poet-name">壬生忠岑</span></th>
+                <td class="poem-text">有明の つれなく見えし 別れより 暁ばかり 憂きものはなし<small class="poem-note">小倉同歌 <a href="#poem-h030">H030</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=30">恋</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s025" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S025 凡河内躬恒 凡河内躬恒 心あてに 折らばや折らむ 初霜の 置きまどはせる 白菊の花 H029">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s025">S025</a><span class="corpus-label">百人秀歌</span><span class="poet-name">凡河内躬恒</span></th>
+                <td class="poem-text">心あてに 折らばや折らむ 初霜の 置きまどはせる 白菊の花<small class="poem-note">小倉同歌 <a href="#poem-h029">H029</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=29">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s026" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S026 紀友則 紀友則 久方の 光のどけき 春の日に しづごころなく 花の散るらむ H033">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s026">S026</a><span class="corpus-label">百人秀歌</span><span class="poet-name">紀友則</span></th>
+                <td class="poem-text">久方の 光のどけき 春の日に しづごころなく 花の散るらむ<small class="poem-note">小倉同歌 <a href="#poem-h033">H033</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=33">四季（春）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s027" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S027 文屋康秀 文屋康秀 吹くからに 秋の草木の しをるれば むべ山風を あらしといふらむ H022">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s027">S027</a><span class="corpus-label">百人秀歌</span><span class="poet-name">文屋康秀</span></th>
+                <td class="poem-text">吹くからに 秋の草木の しをるれば むべ山風を あらしといふらむ<small class="poem-note">小倉同歌 <a href="#poem-h022">H022</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=22">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s028" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S028 紀貫之 紀貫之 人はいさ 心もしらず ふるさとは 花ぞ昔の 香ににほひける H035">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s028">S028</a><span class="corpus-label">百人秀歌</span><span class="poet-name">紀貫之</span></th>
+                <td class="poem-text">人はいさ 心もしらず ふるさとは 花ぞ昔の 香ににほひける<small class="poem-note">小倉同歌 <a href="#poem-h035">H035</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=35">四季（春）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s029" data-corpus="shuka" data-jev="winter" data-gpt="winter" data-disagreement="false" data-search="S029 坂上是則 坂上是則 朝ぼらけ 有明の月と 見るまでに 吉野の里に 降れる白雪 H031">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s029">S029</a><span class="corpus-label">百人秀歌</span><span class="poet-name">坂上是則</span></th>
+                <td class="poem-text">朝ぼらけ 有明の月と 見るまでに 吉野の里に 降れる白雪<small class="poem-note">小倉同歌 <a href="#poem-h031">H031</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=31">四季（冬）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s030" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S030 大江千里 大江千里 月見れば 千々に物こそ 悲しけれ わが身ひとつの 秋にはあらねど H023">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s030">S030</a><span class="corpus-label">百人秀歌</span><span class="poet-name">大江千里</span></th>
+                <td class="poem-text">月見れば 千々に物こそ 悲しけれ わが身ひとつの 秋にはあらねど<small class="poem-note">小倉同歌 <a href="#poem-h023">H023</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=23">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s031" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S031 藤原興風 藤原興風 誰をかも 知る人にせむ 高砂の 松も昔の 友ならなくに H034">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s031">S031</a><span class="corpus-label">百人秀歌</span><span class="poet-name">藤原興風</span></th>
+                <td class="poem-text">誰をかも 知る人にせむ 高砂の 松も昔の 友ならなくに<small class="poem-note">小倉同歌 <a href="#poem-h034">H034</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=34">雑</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s032" data-corpus="shuka" data-jev="unspecified" data-gpt="autumn" data-disagreement="true" data-search="S032 春道列樹 春道列樹 山がはに 風のかけたる しがらみは 流れもあへぬ 紅葉なりけり H032">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s032">S032</a><span class="corpus-label">百人秀歌</span><span class="poet-name">春道列樹</span></th>
+                <td class="poem-text">山がはに 風のかけたる しがらみは 流れもあへぬ 紅葉なりけり<small class="poem-note">小倉同歌 <a href="#poem-h032">H032</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-autumn">秋</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=32">四季（秋）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s033" data-corpus="shuka" data-jev="summer" data-gpt="summer" data-disagreement="false" data-search="S033 清原深養父 清原深養父 夏の夜は まだ宵ながら あけぬるを 雲のいづこに 月宿るらむ H036">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s033">S033</a><span class="corpus-label">百人秀歌</span><span class="poet-name">清原深養父</span></th>
+                <td class="poem-text">夏の夜は まだ宵ながら あけぬるを 雲のいづこに 月宿るらむ<small class="poem-note">小倉同歌 <a href="#poem-h036">H036</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=36">四季（夏）</a><small class="source-note">古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s034" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S034 貞信公 貞信公 小倉山 峯のもみぢ葉 心あらば 今ひとたびの みゆき待たなむ H026">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s034">S034</a><span class="corpus-label">百人秀歌</span><span class="poet-name">貞信公</span></th>
+                <td class="poem-text">小倉山 峯のもみぢ葉 心あらば 今ひとたびの みゆき待たなむ<small class="poem-note">小倉同歌 <a href="#poem-h026">H026</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=26">雑（秋）</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s035" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S035 三条右大臣 三条右大臣 名にしおはば 逢坂山の さねかづら 人にしられで くるよしもがな H025">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s035">S035</a><span class="corpus-label">百人秀歌</span><span class="poet-name">三条右大臣</span></th>
+                <td class="poem-text">名にしおはば 逢坂山の さねかづら 人にしられで くるよしもがな<small class="poem-note">小倉同歌 <a href="#poem-h025">H025</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=25">恋</a><small class="source-note">後撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s036" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S036 中納言兼輔 中納言兼輔 みかの原 わきて流るる 泉川 いつみきとてか 戀しかるらむ H027">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s036">S036</a><span class="corpus-label">百人秀歌</span><span class="poet-name">中納言兼輔</span></th>
+                <td class="poem-text">みかの原 わきて流るる 泉川 いつみきとてか 戀しかるらむ<small class="poem-note">小倉同歌 <a href="#poem-h027">H027</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=27">恋</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s037" data-corpus="shuka" data-jev="autumn" data-gpt="unspecified" data-disagreement="true" data-search="S037 参議等 参議等 浅茅生の 小野の篠原 しのぶれど あまりてなどか 人の戀しき H039">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s037">S037</a><span class="corpus-label">百人秀歌</span><span class="poet-name">参議等</span></th>
+                <td class="poem-text">浅茅生の 小野の篠原 しのぶれど あまりてなどか 人の戀しき<small class="poem-note">小倉同歌 <a href="#poem-h039">H039</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=39">恋</a><small class="source-note">後撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s038" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S038 文屋朝康 文屋朝康 白露に 風の吹きしく 秋の野は つらぬきとめぬ 玉ぞ散りける H037">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s038">S038</a><span class="corpus-label">百人秀歌</span><span class="poet-name">文屋朝康</span></th>
+                <td class="poem-text">白露に 風の吹きしく 秋の野は つらぬきとめぬ 玉ぞ散りける<small class="poem-note">小倉同歌 <a href="#poem-h037">H037</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=37">四季（秋）</a><small class="source-note">後撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s039" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S039 右近 右近 忘らるる 身をば思はず 誓ひてし 人の命の 惜しくもあるかな H038">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s039">S039</a><span class="corpus-label">百人秀歌</span><span class="poet-name">右近</span></th>
+                <td class="poem-text">忘らるる 身をば思はず 誓ひてし 人の命の 惜しくもあるかな<small class="poem-note">小倉同歌 <a href="#poem-h038">H038</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=38">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s040" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S040 中納言敦忠 中納言敦忠 逢ひみての 後の心に くらぶれば 昔はものを 思はざりけり H043">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s040">S040</a><span class="corpus-label">百人秀歌</span><span class="poet-name">中納言敦忠</span></th>
+                <td class="poem-text">逢ひみての 後の心に くらぶれば 昔はものを 思はざりけり<small class="poem-note">小倉同歌 <a href="#poem-h043">H043</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=43">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s041" data-corpus="shuka" data-jev="autumn" data-gpt="unspecified" data-disagreement="true" data-search="S041 平兼盛 平兼盛 忍ぶれど 色に出にけり 我が戀は ものや思ふと 人の問ふまで H040">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s041">S041</a><span class="corpus-label">百人秀歌</span><span class="poet-name">平兼盛</span></th>
+                <td class="poem-text">忍ぶれど 色に出にけり 我が戀は ものや思ふと 人の問ふまで<small class="poem-note">小倉同歌 <a href="#poem-h040">H040</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=40">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s042" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S042 壬生忠見 壬生忠見 戀すてふ わが名はまだき 立ちにけり 人知れずこそ 思ひそめしか H041">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s042">S042</a><span class="corpus-label">百人秀歌</span><span class="poet-name">壬生忠見</span></th>
+                <td class="poem-text">戀すてふ わが名はまだき 立ちにけり 人知れずこそ 思ひそめしか<small class="poem-note">小倉同歌 <a href="#poem-h041">H041</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=41">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s043" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S043 謙徳公 謙徳公 哀れとも いふべき人は おもほえで 身のいたづらに なりぬべきかな H045">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s043">S043</a><span class="corpus-label">百人秀歌</span><span class="poet-name">謙徳公</span></th>
+                <td class="poem-text">哀れとも いふべき人は おもほえで 身のいたづらに なりぬべきかな<small class="poem-note">小倉同歌 <a href="#poem-h045">H045</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=45">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s044" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S044 中納言朝忠 中納言朝忠 逢ふことの 絶えてしなくば なかなかに 人をも身をも 恨みざらまし H044">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s044">S044</a><span class="corpus-label">百人秀歌</span><span class="poet-name">中納言朝忠</span></th>
+                <td class="poem-text">逢ふことの 絶えてしなくば なかなかに 人をも身をも 恨みざらまし<small class="poem-note">小倉同歌 <a href="#poem-h044">H044</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=44">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s045" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S045 清原元輔 清原元輔 契りきな かたみに袖を しぼりつつ 末の松山 浪こさじとは H042">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s045">S045</a><span class="corpus-label">百人秀歌</span><span class="poet-name">清原元輔</span></th>
+                <td class="poem-text">契りきな かたみに袖を しぼりつつ 末の松山 浪こさじとは<small class="poem-note">小倉同歌 <a href="#poem-h042">H042</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=42">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s046" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S046 源重之 源重之 風をいたみ 岩うつ浪の おのれのみ 砕けてものを 思ふ頃かな H048">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s046">S046</a><span class="corpus-label">百人秀歌</span><span class="poet-name">源重之</span></th>
+                <td class="poem-text">風をいたみ 岩うつ浪の おのれのみ 砕けてものを 思ふ頃かな<small class="poem-note">小倉同歌 <a href="#poem-h048">H048</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=48">恋</a><small class="source-note">詞花集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s047" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S047 曽祢好忠 曽祢好忠 由良の戸を わたる舟人 楫をたえ 行方もしらぬ 戀の道かな H046">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s047">S047</a><span class="corpus-label">百人秀歌</span><span class="poet-name">曽祢好忠</span></th>
+                <td class="poem-text">由良の戸を わたる舟人 楫をたえ 行方もしらぬ 戀の道かな<small class="poem-note">小倉同歌 <a href="#poem-h046">H046</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=46">恋</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s048" data-corpus="shuka" data-jev="summer" data-gpt="unspecified" data-disagreement="true" data-search="S048 大中臣能宣朝臣 大中臣能宣朝臣 御垣守 衛士のたく火の 夜はもえ 晝は消えつつ ものをこそ思へ H049">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s048">S048</a><span class="corpus-label">百人秀歌</span><span class="poet-name">大中臣能宣朝臣</span></th>
+                <td class="poem-text">御垣守 衛士のたく火の 夜はもえ 晝は消えつつ ものをこそ思へ<small class="poem-note">小倉同歌 <a href="#poem-h049">H049</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=49">恋</a><small class="source-note">詞花集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s049" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S049 藤原義孝 藤原義孝 君がため 惜しからざりし 命さへ 長くもがなと 思ひけるかな H050">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s049">S049</a><span class="corpus-label">百人秀歌</span><span class="poet-name">藤原義孝</span></th>
+                <td class="poem-text">君がため 惜しからざりし 命さへ 長くもがなと 思ひけるかな<small class="poem-note">小倉同歌 <a href="#poem-h050">H050</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=50">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s050" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S050 藤原實方朝臣 藤原實方朝臣 かくとだに えやはいぶきの さしも草 さしも知らじな もゆる思ひを H051">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s050">S050</a><span class="corpus-label">百人秀歌</span><span class="poet-name">藤原實方朝臣</span></th>
+                <td class="poem-text">かくとだに えやはいぶきの さしも草 さしも知らじな もゆる思ひを<small class="poem-note">小倉同歌 <a href="#poem-h051">H051</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=51">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s051" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S051 藤原道信朝臣 藤原道信朝臣 明けぬれば くるるものとは 知りながら なほ恨めしき 朝ぼらけかな H052">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s051">S051</a><span class="corpus-label">百人秀歌</span><span class="poet-name">藤原道信朝臣</span></th>
+                <td class="poem-text">明けぬれば くるるものとは 知りながら なほ恨めしき 朝ぼらけかな<small class="poem-note">小倉同歌 <a href="#poem-h052">H052</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=52">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s052" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S052 恵慶法師 恵慶法師 八重葎 しげれる宿の さびしきに 人こそ見えね 秋はきにけり H047">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s052">S052</a><span class="corpus-label">百人秀歌</span><span class="poet-name">恵慶法師</span></th>
+                <td class="poem-text">八重葎 しげれる宿の さびしきに 人こそ見えね 秋はきにけり<small class="poem-note">小倉同歌 <a href="#poem-h047">H047</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=47">四季（秋）</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s053" data-corpus="shuka" data-jev="spring" data-gpt="unspecified" data-disagreement="true" data-search="S053 一条院皇后宮 一条院皇后宮 よもすからちきりしことをわすれすはこひんなみたのいろそゆかしき ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s053">S053</a><span class="corpus-label">百人秀歌</span><span class="poet-name">一条院皇后宮</span></th>
+                <td class="poem-text">よもすからちきりしことをわすれすはこひんなみたのいろそゆかしき</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://lapis.nichibun.ac.jp/waka/waka_i004.html">哀傷</a><small class="source-note">後拾遺集 00536番</small><small class="source-note">出典歌の部立。</small></td>
+              </tr>
+              <tr id="poem-s054" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S054 三条院御製 三条院御製 心にも あらで憂世に ながらへば 戀しかるべき 夜半の月かな H068">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s054">S054</a><span class="corpus-label">百人秀歌</span><span class="poet-name">三条院御製</span></th>
+                <td class="poem-text">心にも あらで憂世に ながらへば 戀しかるべき 夜半の月かな<small class="poem-note">小倉同歌 <a href="#poem-h068">H068</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=68">雑</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s055" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S055 儀同三司母 儀同三司母 忘れじの 行末までは 難ければ 今日を限りの 命ともがな H054">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s055">S055</a><span class="corpus-label">百人秀歌</span><span class="poet-name">儀同三司母</span></th>
+                <td class="poem-text">忘れじの 行末までは 難ければ 今日を限りの 命ともがな<small class="poem-note">小倉同歌 <a href="#poem-h054">H054</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=54">恋</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s056" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S056 右大将道綱母 右大将道綱母 嘆きつつ 獨りぬる夜の 明くる間は いかに久しき ものとかは知る H053">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s056">S056</a><span class="corpus-label">百人秀歌</span><span class="poet-name">右大将道綱母</span></th>
+                <td class="poem-text">嘆きつつ 獨りぬる夜の 明くる間は いかに久しき ものとかは知る<small class="poem-note">小倉同歌 <a href="#poem-h053">H053</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=53">恋</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s057" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S057 能因法師 能因法師 嵐ふく 三室の山の もみぢ葉は 龍田の川の 錦なりけり H069">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s057">S057</a><span class="corpus-label">百人秀歌</span><span class="poet-name">能因法師</span></th>
+                <td class="poem-text">嵐ふく 三室の山の もみぢ葉は 龍田の川の 錦なりけり<small class="poem-note">小倉同歌 <a href="#poem-h069">H069</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=69">四季（秋）</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s058" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S058 良暹法師 良暹法師 寂しさに 宿を立ち出でて 眺むれば いづくも同じ 秋の夕暮 H070">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s058">S058</a><span class="corpus-label">百人秀歌</span><span class="poet-name">良暹法師</span></th>
+                <td class="poem-text">寂しさに 宿を立ち出でて 眺むれば いづくも同じ 秋の夕暮<small class="poem-note">小倉同歌 <a href="#poem-h070">H070</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=70">四季（秋）</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s059" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S059 大納言公任 大納言公任 瀧の音は たえて久しく なりぬれど 名こそ流れて なほ聞えけれ H055">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s059">S059</a><span class="corpus-label">百人秀歌</span><span class="poet-name">大納言公任</span></th>
+                <td class="poem-text">瀧の音は たえて久しく なりぬれど 名こそ流れて なほ聞えけれ<small class="poem-note">小倉同歌 <a href="#poem-h055">H055</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=55">雑</a><small class="source-note">拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s060" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S060 清少納言 清少納言 夜をこめて 鳥のそら音は はかるとも 世に逢坂の 関はゆるさじ H062">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s060">S060</a><span class="corpus-label">百人秀歌</span><span class="poet-name">清少納言</span></th>
+                <td class="poem-text">夜をこめて 鳥のそら音は はかるとも 世に逢坂の 関はゆるさじ<small class="poem-note">小倉同歌 <a href="#poem-h062">H062</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=62">雑</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s061" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S061 和泉式部 和泉式部 あらざらむ 此の世のほかの 思ひ出に 今一たびの 逢ふこともがな H056">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s061">S061</a><span class="corpus-label">百人秀歌</span><span class="poet-name">和泉式部</span></th>
+                <td class="poem-text">あらざらむ 此の世のほかの 思ひ出に 今一たびの 逢ふこともがな<small class="poem-note">小倉同歌 <a href="#poem-h056">H056</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=56">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s062" data-corpus="shuka" data-jev="autumn" data-gpt="unspecified" data-disagreement="true" data-search="S062 大貳三位 大貳三位 有馬山 ゐなのささ原 風吹けば いでそよ人を 忘れやはする H058">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s062">S062</a><span class="corpus-label">百人秀歌</span><span class="poet-name">大貳三位</span></th>
+                <td class="poem-text">有馬山 ゐなのささ原 風吹けば いでそよ人を 忘れやはする<small class="poem-note">小倉同歌 <a href="#poem-h058">H058</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=58">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s063" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S063 赤染右衛門 赤染右衛門 やすらはで 寝なましものを 小夜更けて 傾くまでの 月を見しかな H059">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s063">S063</a><span class="corpus-label">百人秀歌</span><span class="poet-name">赤染右衛門</span></th>
+                <td class="poem-text">やすらはで 寝なましものを 小夜更けて 傾くまでの 月を見しかな<small class="poem-note">小倉同歌 <a href="#poem-h059">H059</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=59">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s064" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S064 紫式部 紫式部 廻り逢ひて 見しやそれとも わかぬまに 雲がくれにし 夜半の月かな H057">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s064">S064</a><span class="corpus-label">百人秀歌</span><span class="poet-name">紫式部</span></th>
+                <td class="poem-text">廻り逢ひて 見しやそれとも わかぬまに 雲がくれにし 夜半の月かな<small class="poem-note">小倉同歌 <a href="#poem-h057">H057</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=57">雑</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s065" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S065 伊勢大輔 伊勢大輔 古への 奈良の都の 八重ざくら 今日九重に 匂ひぬるかな H061">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s065">S065</a><span class="corpus-label">百人秀歌</span><span class="poet-name">伊勢大輔</span></th>
+                <td class="poem-text">古への 奈良の都の 八重ざくら 今日九重に 匂ひぬるかな<small class="poem-note">小倉同歌 <a href="#poem-h061">H061</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=61">四季（春）</a><small class="source-note">詞花集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s066" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S066 小式部内侍 小式部内侍 大江山 いくのの道の 遠ければ まだふみも見ず 天の橋立 H060">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s066">S066</a><span class="corpus-label">百人秀歌</span><span class="poet-name">小式部内侍</span></th>
+                <td class="poem-text">大江山 いくのの道の 遠ければ まだふみも見ず 天の橋立<small class="poem-note">小倉同歌 <a href="#poem-h060">H060</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=60">雑</a><small class="source-note">金葉集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s067" data-corpus="shuka" data-jev="spring" data-gpt="winter" data-disagreement="true" data-search="S067 権中納言定頼 権中納言定頼 朝ぼらけ 宇治の川霧 絶えだえに あらはれ渡る 瀬々の網代木 H064">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s067">S067</a><span class="corpus-label">百人秀歌</span><span class="poet-name">権中納言定頼</span></th>
+                <td class="poem-text">朝ぼらけ 宇治の川霧 絶えだえに あらはれ渡る 瀬々の網代木<small class="poem-note">小倉同歌 <a href="#poem-h064">H064</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-winter">冬</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=64">四季（冬）</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s068" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S068 左京大夫道雅 左京大夫道雅 今はただ 思ひ絶えなむ とばかりを 人づてならで 言ふよしもがな H063">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s068">S068</a><span class="corpus-label">百人秀歌</span><span class="poet-name">左京大夫道雅</span></th>
+                <td class="poem-text">今はただ 思ひ絶えなむ とばかりを 人づてならで 言ふよしもがな<small class="poem-note">小倉同歌 <a href="#poem-h063">H063</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=63">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s069" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S069 周防内侍 周防内侍 春の夜の 夢ばかりなる 手枕に かひなく立たむ 名こそ惜しけれ H067">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s069">S069</a><span class="corpus-label">百人秀歌</span><span class="poet-name">周防内侍</span></th>
+                <td class="poem-text">春の夜の 夢ばかりなる 手枕に かひなく立たむ 名こそ惜しけれ<small class="poem-note">小倉同歌 <a href="#poem-h067">H067</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=67">雑</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s070" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S070 大納言経信 大納言経信 夕されば 門田の稲葉 おとづれて あしのまろやに 秋風ぞ吹く H071">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s070">S070</a><span class="corpus-label">百人秀歌</span><span class="poet-name">大納言経信</span></th>
+                <td class="poem-text">夕されば 門田の稲葉 おとづれて あしのまろやに 秋風ぞ吹く<small class="poem-note">小倉同歌 <a href="#poem-h071">H071</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=71">四季（秋）</a><small class="source-note">金葉集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s071" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S071 前大僧正行尊 前大僧正行尊 諸共に あはれと思へ 山ざくら 花よりほかに 知る人もなし H066">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s071">S071</a><span class="corpus-label">百人秀歌</span><span class="poet-name">前大僧正行尊</span></th>
+                <td class="poem-text">諸共に あはれと思へ 山ざくら 花よりほかに 知る人もなし<small class="poem-note">小倉同歌 <a href="#poem-h066">H066</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=66">雑</a><small class="source-note">金葉集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s072" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S072 前中納言匡房 前中納言匡房 高砂の 尾の上の桜 咲きにけり 外山の霞 立たずもあらなむ H073">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s072">S072</a><span class="corpus-label">百人秀歌</span><span class="poet-name">前中納言匡房</span></th>
+                <td class="poem-text">高砂の 尾の上の桜 咲きにけり 外山の霞 立たずもあらなむ<small class="poem-note">小倉同歌 <a href="#poem-h073">H073</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=73">四季（春）</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s073" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S073 権中納言国信 権中納言国信 かすかのゝしたもえわたるくさのうへにつれなくみゆるはるのあはゆき ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s073">S073</a><span class="corpus-label">百人秀歌</span><span class="poet-name">権中納言国信</span></th>
+                <td class="poem-text">かすかのゝしたもえわたるくさのうへにつれなくみゆるはるのあはゆき</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://lapis.nichibun.ac.jp/waka/waka_i010.html">春上</a><small class="source-note">新古今集 00010番</small><small class="source-note">出典歌の部立。</small></td>
+              </tr>
+              <tr id="poem-s074" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S074 祐子内親王家紀伊 祐子内親王家紀伊 音に聞く 高師の濱の あだ浪は かけじや袖の ぬれもこそすれ H072">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s074">S074</a><span class="corpus-label">百人秀歌</span><span class="poet-name">祐子内親王家紀伊</span></th>
+                <td class="poem-text">音に聞く 高師の濱の あだ浪は かけじや袖の ぬれもこそすれ<small class="poem-note">小倉同歌 <a href="#poem-h072">H072</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=72">恋</a><small class="source-note">金葉集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s075" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S075 相模 相模 恨み侘び ほさぬ袖だに あるものを 戀に朽ちなむ 名こそ惜しけれ H065">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s075">S075</a><span class="corpus-label">百人秀歌</span><span class="poet-name">相模</span></th>
+                <td class="poem-text">恨み侘び ほさぬ袖だに あるものを 戀に朽ちなむ 名こそ惜しけれ<small class="poem-note">小倉同歌 <a href="#poem-h065">H065</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=65">恋</a><small class="source-note">後拾遺集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s076" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S076 源俊頼朝臣 源俊頼朝臣 山さくらさきそめしよりひさかたのくもゐにみゆるたきの白いと ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s076">S076</a><span class="corpus-label">百人秀歌</span><span class="poet-name">源俊頼朝臣</span></th>
+                <td class="poem-text">山さくらさきそめしよりひさかたのくもゐにみゆるたきの白いと</td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://lapis.nichibun.ac.jp/waka/waka_i006.html">春</a><small class="source-note">金葉集（二度本） 00050番</small><small class="source-note">出典歌の部立。</small></td>
+              </tr>
+              <tr id="poem-s077" data-corpus="shuka" data-jev="spring" data-gpt="unspecified" data-disagreement="true" data-search="S077 崇徳院御製 崇徳院御製 瀬を早み 岩にせかるる 瀧川の われても末に 逢はむとぞ思ふ H077">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s077">S077</a><span class="corpus-label">百人秀歌</span><span class="poet-name">崇徳院御製</span></th>
+                <td class="poem-text">瀬を早み 岩にせかるる 瀧川の われても末に 逢はむとぞ思ふ<small class="poem-note">小倉同歌 <a href="#poem-h077">H077</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=77">恋</a><small class="source-note">詞花集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s078" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S078 待賢門院堀川 待賢門院堀川 ながからむ 心も知らず 黒髪の みだれて今朝は ものをこそ思へ H080">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s078">S078</a><span class="corpus-label">百人秀歌</span><span class="poet-name">待賢門院堀川</span></th>
+                <td class="poem-text">ながからむ 心も知らず 黒髪の みだれて今朝は ものをこそ思へ<small class="poem-note">小倉同歌 <a href="#poem-h080">H080</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=80">恋</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s079" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S079 法性寺入道前関白太政大臣 法性寺入道前関白太政大臣 わたの原 漕ぎ出でて見れば 久方の 雲居にまがふ 沖つ白浪 H076">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s079">S079</a><span class="corpus-label">百人秀歌</span><span class="poet-name">法性寺入道前関白太政大臣</span></th>
+                <td class="poem-text">わたの原 漕ぎ出でて見れば 久方の 雲居にまがふ 沖つ白浪<small class="poem-note">小倉同歌 <a href="#poem-h076">H076</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=76">雑</a><small class="source-note">詞花集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s080" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S080 左京大夫顕輔 左京大夫顕輔 秋風に たなびく雲の 絶間より もれ出づる月の 影のさやけさ H079">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s080">S080</a><span class="corpus-label">百人秀歌</span><span class="poet-name">左京大夫顕輔</span></th>
+                <td class="poem-text">秋風に たなびく雲の 絶間より もれ出づる月の 影のさやけさ<small class="poem-note">小倉同歌 <a href="#poem-h079">H079</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=79">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s081" data-corpus="shuka" data-jev="autumn" data-gpt="winter" data-disagreement="true" data-search="S081 源兼昌 源兼昌 淡路島 かよふ千鳥の 鳴く声に いくよ寝覚めぬ 須磨の関守 H078">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s081">S081</a><span class="corpus-label">百人秀歌</span><span class="poet-name">源兼昌</span></th>
+                <td class="poem-text">淡路島 かよふ千鳥の 鳴く声に いくよ寝覚めぬ 須磨の関守<small class="poem-note">小倉同歌 <a href="#poem-h078">H078</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-winter">冬</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=78">四季（冬）</a><small class="source-note">金葉集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s082" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S082 藤原基俊 藤原基俊 契りおきし させもが露を 命にて あはれ今年の 秋も去ぬめり H075">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s082">S082</a><span class="corpus-label">百人秀歌</span><span class="poet-name">藤原基俊</span></th>
+                <td class="poem-text">契りおきし させもが露を 命にて あはれ今年の 秋も去ぬめり<small class="poem-note">小倉同歌 <a href="#poem-h075">H075</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=75">雑</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s083" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S083 道因法師 道因法師 思ひわび さても命は あるものを 憂きに堪へぬは 涙なりけり H082">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s083">S083</a><span class="corpus-label">百人秀歌</span><span class="poet-name">道因法師</span></th>
+                <td class="poem-text">思ひわび さても命は あるものを 憂きに堪へぬは 涙なりけり<small class="poem-note">小倉同歌 <a href="#poem-h082">H082</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=82">恋</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s084" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S084 藤原清輔朝臣 藤原清輔朝臣 ながらへば また此の頃や しのばれむ 憂しと見し世ぞ 今は戀しき H084">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s084">S084</a><span class="corpus-label">百人秀歌</span><span class="poet-name">藤原清輔朝臣</span></th>
+                <td class="poem-text">ながらへば また此の頃や しのばれむ 憂しと見し世ぞ 今は戀しき<small class="poem-note">小倉同歌 <a href="#poem-h084">H084</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=84">雑</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s085" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S085 俊恵法師 俊恵法師 夜もすがら もの思ふ頃は 明けやらで ねやのひまさへ つれなかりけり H085">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s085">S085</a><span class="corpus-label">百人秀歌</span><span class="poet-name">俊恵法師</span></th>
+                <td class="poem-text">夜もすがら もの思ふ頃は 明けやらで ねやのひまさへ つれなかりけり<small class="poem-note">小倉同歌 <a href="#poem-h085">H085</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=85">恋</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s086" data-corpus="shuka" data-jev="autumn" data-gpt="summer" data-disagreement="true" data-search="S086 後徳大寺左大臣 後徳大寺左大臣 ほととぎす 鳴きつる方を 眺むれば ただ有明の 月ぞ残れる H081">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s086">S086</a><span class="corpus-label">百人秀歌</span><span class="poet-name">後徳大寺左大臣</span></th>
+                <td class="poem-text">ほととぎす 鳴きつる方を 眺むれば ただ有明の 月ぞ残れる<small class="poem-note">小倉同歌 <a href="#poem-h081">H081</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-summer">夏</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=81">四季（夏）</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s087" data-corpus="shuka" data-jev="unspecified" data-gpt="autumn" data-disagreement="true" data-search="S087 皇太后宮大夫俊成 皇太后宮大夫俊成 世の中よ 道こそなけれ 思ひ入る 山の奥にも 鹿ぞなくなる H083">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s087">S087</a><span class="corpus-label">百人秀歌</span><span class="poet-name">皇太后宮大夫俊成</span></th>
+                <td class="poem-text">世の中よ 道こそなけれ 思ひ入る 山の奥にも 鹿ぞなくなる<small class="poem-note">小倉同歌 <a href="#poem-h083">H083</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-autumn">秋</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=83">雑</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s088" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S088 西行法師 西行法師 嘆けとて 月やはものを 思はする かこち顔なる わが涙かな H086">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s088">S088</a><span class="corpus-label">百人秀歌</span><span class="poet-name">西行法師</span></th>
+                <td class="poem-text">嘆けとて 月やはものを 思はする かこち顔なる わが涙かな<small class="poem-note">小倉同歌 <a href="#poem-h086">H086</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=86">恋</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s089" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S089 皇嘉門院別当 皇嘉門院別当 難波江の あしのかりねの 一夜ゆゑ みをつくしてや 戀ひわたるべき H088">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s089">S089</a><span class="corpus-label">百人秀歌</span><span class="poet-name">皇嘉門院別当</span></th>
+                <td class="poem-text">難波江の あしのかりねの 一夜ゆゑ みをつくしてや 戀ひわたるべき<small class="poem-note">小倉同歌 <a href="#poem-h088">H088</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=88">恋</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s090" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S090 権中納言長方 権中納言長方 きのくにのゆらのみさきにひろふてふたまさかにたにあひみてしがな ">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s090">S090</a><span class="corpus-label">百人秀歌</span><span class="poet-name">権中納言長方</span></th>
+                <td class="poem-text">きのくにのゆらのみさきにひろふてふたまさかにたにあひみてしがな</td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://lapis.nichibun.ac.jp/waka/waka_i010.html">恋一</a><small class="source-note">新古今集 01075番</small><small class="source-note">出典歌の部立（異同あり）。</small></td>
+              </tr>
+              <tr id="poem-s091" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S091 殷富門院大輔 殷富門院大輔 見せばやな 雄島のあまの 袖だにも 濡れにぞ濡れし 色はかはらず H090">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s091">S091</a><span class="corpus-label">百人秀歌</span><span class="poet-name">殷富門院大輔</span></th>
+                <td class="poem-text">見せばやな 雄島のあまの 袖だにも 濡れにぞ濡れし 色はかはらず<small class="poem-note">小倉同歌 <a href="#poem-h090">H090</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=90">恋</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s092" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S092 式子内親王 式子内親王 玉の緒よ たえなば絶えね ながらへば 忍ぶることの 弱りもぞする H089">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s092">S092</a><span class="corpus-label">百人秀歌</span><span class="poet-name">式子内親王</span></th>
+                <td class="poem-text">玉の緒よ たえなば絶えね ながらへば 忍ぶることの 弱りもぞする<small class="poem-note">小倉同歌 <a href="#poem-h089">H089</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=89">恋</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s093" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S093 寂蓮法師 寂蓮法師 村雨の 露もまだひぬ 槙の葉に 霧立ちのぼる 秋の夕暮 H087">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s093">S093</a><span class="corpus-label">百人秀歌</span><span class="poet-name">寂蓮法師</span></th>
+                <td class="poem-text">村雨の 露もまだひぬ 槙の葉に 霧立ちのぼる 秋の夕暮<small class="poem-note">小倉同歌 <a href="#poem-h087">H087</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=87">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s094" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S094 二条院讃岐 二条院讃岐 わが袖は 汐干に見えぬ 沖の石の 人こそ知らね 乾く間もなし H092">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s094">S094</a><span class="corpus-label">百人秀歌</span><span class="poet-name">二条院讃岐</span></th>
+                <td class="poem-text">わが袖は 汐干に見えぬ 沖の石の 人こそ知らね 乾く間もなし<small class="poem-note">小倉同歌 <a href="#poem-h092">H092</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=92">恋</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s095" data-corpus="shuka" data-jev="winter" data-gpt="autumn" data-disagreement="true" data-search="S095 後京極摂政前太政大臣 後京極摂政前太政大臣 きりぎりす なくや霜夜の さむしろに 衣かたしき 獨りかも寝む H091">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s095">S095</a><span class="corpus-label">百人秀歌</span><span class="poet-name">後京極摂政前太政大臣</span></th>
+                <td class="poem-text">きりぎりす なくや霜夜の さむしろに 衣かたしき 獨りかも寝む<small class="poem-note">小倉同歌 <a href="#poem-h091">H091</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-winter">冬</span></td>
+                <td><span class="season-badge season-autumn">秋</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=91">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s096" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S096 前大僧正慈圓 前大僧正慈圓 おほけなく うき世の民に おほふかな 我が立つ杣に 墨染の袖 H095">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s096">S096</a><span class="corpus-label">百人秀歌</span><span class="poet-name">前大僧正慈圓</span></th>
+                <td class="poem-text">おほけなく うき世の民に おほふかな 我が立つ杣に 墨染の袖<small class="poem-note">小倉同歌 <a href="#poem-h095">H095</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=95">雑</a><small class="source-note">千載集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s097" data-corpus="shuka" data-jev="autumn" data-gpt="autumn" data-disagreement="false" data-search="S097 参議雅経 参議雅経 みよし野の 山の秋風 小夜更けて 故郷寒く 衣うつなり H094">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s097">S097</a><span class="corpus-label">百人秀歌</span><span class="poet-name">参議雅経</span></th>
+                <td class="poem-text">みよし野の 山の秋風 小夜更けて 故郷寒く 衣うつなり<small class="poem-note">小倉同歌 <a href="#poem-h094">H094</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=94">四季（秋）</a><small class="source-note">新古今集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s098" data-corpus="shuka" data-jev="unspecified" data-gpt="unspecified" data-disagreement="false" data-search="S098 鎌倉右大臣 鎌倉右大臣 世の中は 常にもがもな 渚こぐ 海士の小舟の 綱手かなしも H093">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s098">S098</a><span class="corpus-label">百人秀歌</span><span class="poet-name">鎌倉右大臣</span></th>
+                <td class="poem-text">世の中は 常にもがもな 渚こぐ 海士の小舟の 綱手かなしも<small class="poem-note">小倉同歌 <a href="#poem-h093">H093</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=93">羈旅</a><small class="source-note">新勅撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s099" data-corpus="shuka" data-jev="summer" data-gpt="summer" data-disagreement="false" data-search="S099 正三位家隆 正三位家隆 風そよぐ 楢の小川の 夕ぐれは みそぎぞ夏の しるしなりける H098">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s099">S099</a><span class="corpus-label">百人秀歌</span><span class="poet-name">正三位家隆</span></th>
+                <td class="poem-text">風そよぐ 楢の小川の 夕ぐれは みそぎぞ夏の しるしなりける<small class="poem-note">小倉同歌 <a href="#poem-h098">H098</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td><span class="season-badge season-summer">夏</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=98">四季（夏）</a><small class="source-note">新勅撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s100" data-corpus="shuka" data-jev="autumn" data-gpt="unspecified" data-disagreement="true" data-search="S100 権中納言定家 権中納言定家 来ぬ人を 松帆の浦の 夕なぎに 焼くや藻塩の 身もこがれつつ H097">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s100">S100</a><span class="corpus-label">百人秀歌</span><span class="poet-name">権中納言定家</span></th>
+                <td class="poem-text">来ぬ人を 松帆の浦の 夕なぎに 焼くや藻塩の 身もこがれつつ<small class="poem-note">小倉同歌 <a href="#poem-h097">H097</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-autumn">秋</span></td>
+                <td><span class="season-badge season-unspecified">季節不特定</span><small class="disagreement-label">Jevと異なる</small></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=97">恋</a><small class="source-note">新勅撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+              <tr id="poem-s101" data-corpus="shuka" data-jev="spring" data-gpt="spring" data-disagreement="false" data-search="S101 入道前太政大臣 入道前太政大臣 花さそふ あらしの庭の 雪ならで ふりゆくものは 我が身なりけり H096">
+                <th scope="row"><a class="poem-id" href="../../../references/#id-s101">S101</a><span class="corpus-label">百人秀歌</span><span class="poet-name">入道前太政大臣</span></th>
+                <td class="poem-text">花さそふ あらしの庭の 雪ならで ふりゆくものは 我が身なりけり<small class="poem-note">小倉同歌 <a href="#poem-h096">H096</a> の本文。秀歌の判定入力とは表記が異なる。</small></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td><span class="season-badge season-spring">春</span></td>
+                <td class="literature-cell"><a href="https://www.samac.jp/search/poems_detail.php?id=96">雑</a><small class="source-note">新勅撰集</small><small class="source-note">小倉同歌の参考。秀歌の異文は未判定。</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="no-results" class="no-results" hidden>条件に合う歌はありません。季節や検索語を変えてください。</p>
+        <noscript><p class="note">JavaScriptを無効にしているため、絞り込みは表示していません。全201首はこの表で読めます。</p></noscript>
+        <p class="catalogue-footer"><a href="../../../season-comparison.json">本文を含まない判定一覧JSON</a> ／ <a href="../">季節比較の説明へ戻る</a></p>
+      </section>
+    </main>
+  </body>
+</html>

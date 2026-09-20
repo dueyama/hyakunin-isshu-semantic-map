@@ -1,0 +1,4714 @@
+{
+  "meta": {
+    "jev_model": "jev-1.13.0",
+    "gpt_model": "gpt-5.6-luna",
+    "gpt_reasoning_effort": "medium",
+    "gpt_max_output_tokens": 4096,
+    "gpt_structured_output": "Single season enum; no generated confidence or rationale",
+    "principal_question_sha256": "fad9a23e8753130cb9d9c0aec823ca4f73c60db37ffdc4a967a99511e5953c1a",
+    "same_text_and_principal_criteria": true,
+    "jev_questions_per_poem": 7,
+    "gpt_questions_per_poem": 1,
+    "gpt_completed": 201,
+    "total_poems": 201,
+    "gpt_usage": {
+      "input_tokens": 67539,
+      "output_tokens": 17854,
+      "total_tokens": 85393
+    },
+    "gpt_first_request_at": "2026-09-20T07:38:02.490744+00:00",
+    "gpt_last_request_at": "2026-09-20T07:50:12.726820+00:00",
+    "reference_checked_date": "2026-09-20",
+    "note": "Single-run experimental observations; agreement is not literary accuracy."
+  },
+  "corpora": {
+    "ogura": {
+      "n": 100,
+      "models": {
+        "jev": {
+          "completed": 100,
+          "season_counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 61,
+            "winter": 5,
+            "spring": 9
+          },
+          "reference_seasonal": {
+            "n": 33,
+            "agree_n": 31,
+            "difference_ids": [
+              "H064",
+              "H078"
+            ]
+          },
+          "reference_strict_four_seasons": {
+            "n": 32,
+            "agree_n": 30
+          }
+        },
+        "gpt": {
+          "completed": 100,
+          "season_counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 60,
+            "winter": 6,
+            "spring": 9
+          },
+          "reference_seasonal": {
+            "n": 33,
+            "agree_n": 33,
+            "difference_ids": []
+          },
+          "reference_strict_four_seasons": {
+            "n": 32,
+            "agree_n": 32
+          }
+        }
+      },
+      "model_agreement": {
+        "n": 100,
+        "agree_n": 95,
+        "difference_ids": [
+          "H016",
+          "H039",
+          "H064",
+          "H078",
+          "H083"
+        ]
+      },
+      "confusion_jev_rows_gpt_columns": {
+        "spring": {
+          "spring": 9,
+          "summer": 0,
+          "autumn": 0,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 0,
+          "uncertain": 0
+        },
+        "summer": {
+          "spring": 0,
+          "summer": 4,
+          "autumn": 0,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 0,
+          "uncertain": 0
+        },
+        "autumn": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 20,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 1,
+          "uncertain": 0
+        },
+        "winter": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 0,
+          "winter": 4,
+          "mixed": 0,
+          "unspecified": 1,
+          "uncertain": 0
+        },
+        "mixed": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 0,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 0,
+          "uncertain": 0
+        },
+        "unspecified": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 1,
+          "winter": 2,
+          "mixed": 0,
+          "unspecified": 58,
+          "uncertain": 0
+        },
+        "uncertain": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 0,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 0,
+          "uncertain": 0
+        }
+      }
+    },
+    "shuka": {
+      "n": 101,
+      "models": {
+        "jev": {
+          "completed": 101,
+          "season_counts": {
+            "autumn": 23,
+            "spring": 14,
+            "unspecified": 56,
+            "winter": 5,
+            "summer": 3
+          },
+          "reference_seasonal": {
+            "n": 35,
+            "agree_n": 27,
+            "difference_ids": [
+              "S002",
+              "S005",
+              "S018",
+              "S032",
+              "S067",
+              "S081",
+              "S086",
+              "S095"
+            ]
+          },
+          "reference_strict_four_seasons": {
+            "n": 34,
+            "agree_n": 26
+          }
+        },
+        "gpt": {
+          "completed": 101,
+          "season_counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 59,
+            "winter": 6,
+            "spring": 11
+          },
+          "reference_seasonal": {
+            "n": 35,
+            "agree_n": 35,
+            "difference_ids": []
+          },
+          "reference_strict_four_seasons": {
+            "n": 34,
+            "agree_n": 34
+          }
+        }
+      },
+      "model_agreement": {
+        "n": 101,
+        "agree_n": 82,
+        "difference_ids": [
+          "S002",
+          "S005",
+          "S009",
+          "S018",
+          "S022",
+          "S023",
+          "S032",
+          "S037",
+          "S041",
+          "S048",
+          "S053",
+          "S062",
+          "S067",
+          "S077",
+          "S081",
+          "S086",
+          "S087",
+          "S095",
+          "S100"
+        ]
+      },
+      "confusion_jev_rows_gpt_columns": {
+        "spring": {
+          "spring": 10,
+          "summer": 1,
+          "autumn": 0,
+          "winter": 1,
+          "mixed": 0,
+          "unspecified": 2,
+          "uncertain": 0
+        },
+        "summer": {
+          "spring": 0,
+          "summer": 2,
+          "autumn": 0,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 1,
+          "uncertain": 0
+        },
+        "autumn": {
+          "spring": 0,
+          "summer": 1,
+          "autumn": 16,
+          "winter": 1,
+          "mixed": 0,
+          "unspecified": 5,
+          "uncertain": 0
+        },
+        "winter": {
+          "spring": 1,
+          "summer": 0,
+          "autumn": 1,
+          "winter": 3,
+          "mixed": 0,
+          "unspecified": 0,
+          "uncertain": 0
+        },
+        "mixed": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 0,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 0,
+          "uncertain": 0
+        },
+        "unspecified": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 4,
+          "winter": 1,
+          "mixed": 0,
+          "unspecified": 51,
+          "uncertain": 0
+        },
+        "uncertain": {
+          "spring": 0,
+          "summer": 0,
+          "autumn": 0,
+          "winter": 0,
+          "mixed": 0,
+          "unspecified": 0,
+          "uncertain": 0
+        }
+      }
+    }
+  },
+  "shared": {
+    "jev": {
+      "n": 97,
+      "agree_n": 81,
+      "difference_ids": [
+        "S002",
+        "S005",
+        "S009",
+        "S018",
+        "S022",
+        "S023",
+        "S032",
+        "S041",
+        "S048",
+        "S062",
+        "S067",
+        "S077",
+        "S081",
+        "S086",
+        "S095",
+        "S100"
+      ]
+    },
+    "gpt": {
+      "n": 97,
+      "agree_n": 97,
+      "difference_ids": []
+    }
+  },
+  "spaces": {
+    "ogura_small": {
+      "same_population_all_labels": {
+        "jev": {
+          "n": 98,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 59,
+            "winter": 5,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.6081632653061224,
+          "random_expectation": 0.41510624868504103,
+          "null_mean": 0.4153291836734694,
+          "null_95_percent_interval": [
+            0.363265306122449,
+            0.4673469387755102
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.41136057425093736,
+          "different_label_cosine": 0.4050529945133377,
+          "cosine_gap": 0.006307579737599656,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 98,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 58,
+            "winter": 6,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.6061224489795919,
+          "random_expectation": 0.4039553965916263,
+          "null_mean": 0.4040665306122449,
+          "null_95_percent_interval": [
+            0.35306122448979593,
+            0.45510204081632655
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.41257992120600245,
+          "different_label_cosine": 0.4043446131410708,
+          "cosine_gap": 0.008235308064931668,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      },
+      "both_models_four_seasons": {
+        "ids": [
+          "H001",
+          "H002",
+          "H004",
+          "H005",
+          "H006",
+          "H009",
+          "H015",
+          "H017",
+          "H021",
+          "H022",
+          "H023",
+          "H024",
+          "H026",
+          "H028",
+          "H029",
+          "H031",
+          "H032",
+          "H033",
+          "H035",
+          "H036",
+          "H037",
+          "H047",
+          "H061",
+          "H066",
+          "H067",
+          "H069",
+          "H070",
+          "H071",
+          "H073",
+          "H075",
+          "H079",
+          "H081",
+          "H087",
+          "H091",
+          "H094",
+          "H096",
+          "H098"
+        ],
+        "jev": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 20,
+            "summer": 4,
+            "winter": 4,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.5675675675675675,
+          "random_expectation": 0.35735735735735735,
+          "null_mean": 0.35745297297297296,
+          "null_95_percent_interval": [
+            0.2810810810810811,
+            0.43783783783783786
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4915780943873021,
+          "different_label_cosine": 0.4541080705822475,
+          "cosine_gap": 0.0374700238050546,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 20,
+            "summer": 4,
+            "winter": 4,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.5675675675675675,
+          "random_expectation": 0.35735735735735735,
+          "null_mean": 0.35745297297297296,
+          "null_95_percent_interval": [
+            0.2810810810810811,
+            0.43783783783783786
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4915780943873021,
+          "different_label_cosine": 0.4541080705822475,
+          "cosine_gap": 0.0374700238050546,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      }
+    },
+    "ogura_large": {
+      "same_population_all_labels": {
+        "jev": {
+          "n": 98,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 59,
+            "winter": 5,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.6265306122448979,
+          "random_expectation": 0.41510624868504103,
+          "null_mean": 0.41554387755102046,
+          "null_95_percent_interval": [
+            0.3673469387755102,
+            0.46530612244897956
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4114702015579863,
+          "different_label_cosine": 0.40246284561100465,
+          "cosine_gap": 0.009007355946981654,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 98,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 58,
+            "winter": 6,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.6285714285714286,
+          "random_expectation": 0.4039553965916263,
+          "null_mean": 0.40433591836734695,
+          "null_95_percent_interval": [
+            0.3551020408163265,
+            0.45510204081632655
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.41225115708151183,
+          "different_label_cosine": 0.40210208149523374,
+          "cosine_gap": 0.010149075586278089,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      },
+      "both_models_four_seasons": {
+        "ids": [
+          "H001",
+          "H002",
+          "H004",
+          "H005",
+          "H006",
+          "H009",
+          "H015",
+          "H017",
+          "H021",
+          "H022",
+          "H023",
+          "H024",
+          "H026",
+          "H028",
+          "H029",
+          "H031",
+          "H032",
+          "H033",
+          "H035",
+          "H036",
+          "H037",
+          "H047",
+          "H061",
+          "H066",
+          "H067",
+          "H069",
+          "H070",
+          "H071",
+          "H073",
+          "H075",
+          "H079",
+          "H081",
+          "H087",
+          "H091",
+          "H094",
+          "H096",
+          "H098"
+        ],
+        "jev": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 20,
+            "summer": 4,
+            "winter": 4,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.5945945945945946,
+          "random_expectation": 0.35735735735735735,
+          "null_mean": 0.3573810810810811,
+          "null_95_percent_interval": [
+            0.2810810810810811,
+            0.43783783783783786
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4713067851806456,
+          "different_label_cosine": 0.4418616567845523,
+          "cosine_gap": 0.029445128396093312,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 20,
+            "summer": 4,
+            "winter": 4,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.5945945945945946,
+          "random_expectation": 0.35735735735735735,
+          "null_mean": 0.3573810810810811,
+          "null_95_percent_interval": [
+            0.2810810810810811,
+            0.43783783783783786
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4713067851806456,
+          "different_label_cosine": 0.4418616567845523,
+          "cosine_gap": 0.029445128396093312,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      }
+    },
+    "ogura_original": {
+      "same_population_all_labels": {
+        "jev": {
+          "n": 98,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 59,
+            "winter": 5,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.6265306122448979,
+          "random_expectation": 0.41510624868504103,
+          "null_mean": 0.4154357142857143,
+          "null_95_percent_interval": [
+            0.3653061224489796,
+            0.4673469387755102
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.37133926768598596,
+          "different_label_cosine": 0.36040271874135205,
+          "cosine_gap": 0.010936548944633917,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 98,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 58,
+            "winter": 6,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.6265306122448979,
+          "random_expectation": 0.4039553965916263,
+          "null_mean": 0.40421285714285715,
+          "null_95_percent_interval": [
+            0.3551020408163265,
+            0.45510204081632655
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.37373539139254286,
+          "different_label_cosine": 0.358983403378654,
+          "cosine_gap": 0.014751988013888884,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      },
+      "both_models_four_seasons": {
+        "ids": [
+          "H001",
+          "H002",
+          "H004",
+          "H005",
+          "H006",
+          "H009",
+          "H015",
+          "H017",
+          "H021",
+          "H022",
+          "H023",
+          "H024",
+          "H026",
+          "H028",
+          "H029",
+          "H031",
+          "H032",
+          "H033",
+          "H035",
+          "H036",
+          "H037",
+          "H047",
+          "H061",
+          "H066",
+          "H067",
+          "H069",
+          "H070",
+          "H071",
+          "H073",
+          "H075",
+          "H079",
+          "H081",
+          "H087",
+          "H091",
+          "H094",
+          "H096",
+          "H098"
+        ],
+        "jev": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 20,
+            "summer": 4,
+            "winter": 4,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.5675675675675675,
+          "random_expectation": 0.35735735735735735,
+          "null_mean": 0.3571427027027027,
+          "null_95_percent_interval": [
+            0.2810810810810811,
+            0.43783783783783786
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4543045190222943,
+          "different_label_cosine": 0.4145365776125552,
+          "cosine_gap": 0.039767941409739105,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 20,
+            "summer": 4,
+            "winter": 4,
+            "spring": 9
+          },
+          "same_label_neighbor_rate": 0.5675675675675675,
+          "random_expectation": 0.35735735735735735,
+          "null_mean": 0.3571427027027027,
+          "null_95_percent_interval": [
+            0.2810810810810811,
+            0.43783783783783786
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4543045190222943,
+          "different_label_cosine": 0.4145365776125552,
+          "cosine_gap": 0.039767941409739105,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      }
+    },
+    "shuka_small": {
+      "same_population_all_labels": {
+        "jev": {
+          "n": 101,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 23,
+            "spring": 14,
+            "unspecified": 56,
+            "winter": 5,
+            "summer": 3
+          },
+          "same_label_neighbor_rate": 0.4752475247524752,
+          "random_expectation": 0.37564356435643564,
+          "null_mean": 0.37543207920792077,
+          "null_95_percent_interval": [
+            0.32475247524752476,
+            0.4297029702970297
+          ],
+          "permutation_p_one_sided": 0.00029997000299970003,
+          "same_label_cosine": 0.4710512438992481,
+          "different_label_cosine": 0.4532950587255282,
+          "cosine_gap": 0.01775618517371985,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 101,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 21,
+            "summer": 4,
+            "unspecified": 59,
+            "winter": 6,
+            "spring": 11
+          },
+          "same_label_neighbor_rate": 0.5346534653465347,
+          "random_expectation": 0.39544554455445546,
+          "null_mean": 0.39541306930693065,
+          "null_95_percent_interval": [
+            0.3425742574257426,
+            0.4495049504950495
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.4706402236952826,
+          "different_label_cosine": 0.4529823135011414,
+          "cosine_gap": 0.017657910194141202,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      },
+      "both_models_four_seasons": {
+        "ids": [
+          "S001",
+          "S002",
+          "S004",
+          "S008",
+          "S010",
+          "S013",
+          "S018",
+          "S021",
+          "S025",
+          "S026",
+          "S027",
+          "S028",
+          "S029",
+          "S030",
+          "S033",
+          "S034",
+          "S038",
+          "S052",
+          "S057",
+          "S058",
+          "S065",
+          "S067",
+          "S069",
+          "S070",
+          "S071",
+          "S072",
+          "S073",
+          "S076",
+          "S080",
+          "S081",
+          "S082",
+          "S086",
+          "S093",
+          "S095",
+          "S097",
+          "S099",
+          "S101"
+        ],
+        "jev": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 18,
+            "spring": 12,
+            "winter": 5,
+            "summer": 2
+          },
+          "same_label_neighbor_rate": 0.5297297297297298,
+          "random_expectation": 0.34534534534534533,
+          "null_mean": 0.3456713513513514,
+          "null_95_percent_interval": [
+            0.2702702702702703,
+            0.43243243243243246
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.5028521780876788,
+          "different_label_cosine": 0.464572386757859,
+          "cosine_gap": 0.03827979132981979,
+          "trials": 10000,
+          "seed": 20260920
+        },
+        "gpt": {
+          "n": 37,
+          "available": true,
+          "k": 5,
+          "counts": {
+            "autumn": 17,
+            "summer": 4,
+            "winter": 5,
+            "spring": 11
+          },
+          "same_label_neighbor_rate": 0.518918918918919,
+          "random_expectation": 0.3108108108108108,
+          "null_mean": 0.31077405405405406,
+          "null_95_percent_interval": [
+            0.23783783783783785,
+            0.3945945945945946
+          ],
+          "permutation_p_one_sided": 9.999000099990002e-05,
+          "same_label_cosine": 0.5024961176423667,
+          "different_label_cosine": 0.46665112251551794,
+          "cosine_gap": 0.035844995126848744,
+          "trials": 10000,
+          "seed": 20260920
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "H001",
+      "corpus": "ogura",
+      "order": 1,
+      "poet": "天智天皇",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=1",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H001",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H002",
+      "corpus": "ogura",
+      "order": 2,
+      "poet": "持統天皇",
+      "jev": "summer",
+      "gpt": "summer",
+      "legacy_season": "夏",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=2",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H002",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H003",
+      "corpus": "ogura",
+      "order": 3,
+      "poet": "柿本人麿",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=3",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H003",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H004",
+      "corpus": "ogura",
+      "order": 4,
+      "poet": "山部赤人",
+      "jev": "winter",
+      "gpt": "winter",
+      "legacy_season": "冬",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=4",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H004",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H005",
+      "corpus": "ogura",
+      "order": 5,
+      "poet": "猿丸太夫",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=5",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H005",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H006",
+      "corpus": "ogura",
+      "order": 6,
+      "poet": "中納言家持",
+      "jev": "winter",
+      "gpt": "winter",
+      "legacy_season": "冬",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=6",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H006",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H007",
+      "corpus": "ogura",
+      "order": 7,
+      "poet": "阿倍仲麻呂",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=7",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H007",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H008",
+      "corpus": "ogura",
+      "order": 8,
+      "poet": "喜撰法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=8",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H008",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H009",
+      "corpus": "ogura",
+      "order": 9,
+      "poet": "小野小町",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "春",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=9",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H009",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H010",
+      "corpus": "ogura",
+      "order": 10,
+      "poet": "蝉丸",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=10",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H010",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H011",
+      "corpus": "ogura",
+      "order": 11,
+      "poet": "参議篁",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=11",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H011",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H012",
+      "corpus": "ogura",
+      "order": 12,
+      "poet": "僧正遍昭",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=12",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H012",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H013",
+      "corpus": "ogura",
+      "order": 13,
+      "poet": "陽成院",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=13",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H013",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H014",
+      "corpus": "ogura",
+      "order": 14,
+      "poet": "河原左大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=14",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H014",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H015",
+      "corpus": "ogura",
+      "order": 15,
+      "poet": "光孝天皇",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "春",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=15",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H015",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H016",
+      "corpus": "ogura",
+      "order": 16,
+      "poet": "中納言行平",
+      "jev": "winter",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "離別",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=16",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H016",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H017",
+      "corpus": "ogura",
+      "order": 17,
+      "poet": "在原業平朝臣",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=17",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H017",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H018",
+      "corpus": "ogura",
+      "order": 18,
+      "poet": "藤原敏行朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=18",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H018",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H019",
+      "corpus": "ogura",
+      "order": 19,
+      "poet": "伊勢",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=19",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H019",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H020",
+      "corpus": "ogura",
+      "order": 20,
+      "poet": "元良親王",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=20",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H020",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H021",
+      "corpus": "ogura",
+      "order": 21,
+      "poet": "素性法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=21",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H021",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H022",
+      "corpus": "ogura",
+      "order": 22,
+      "poet": "文屋康秀",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=22",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H022",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H023",
+      "corpus": "ogura",
+      "order": 23,
+      "poet": "大江千里",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=23",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H023",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H024",
+      "corpus": "ogura",
+      "order": 24,
+      "poet": "菅家",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=24",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H024",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H025",
+      "corpus": "ogura",
+      "order": 25,
+      "poet": "三条右大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=25",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H025",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H026",
+      "corpus": "ogura",
+      "order": 26,
+      "poet": "貞信公",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "雑（秋）",
+        "season": "秋",
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=26",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H026",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H027",
+      "corpus": "ogura",
+      "order": 27,
+      "poet": "中納言兼輔",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=27",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H027",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H028",
+      "corpus": "ogura",
+      "order": 28,
+      "poet": "源宗行朝臣",
+      "jev": "winter",
+      "gpt": "winter",
+      "legacy_season": "冬",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=28",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H028",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H029",
+      "corpus": "ogura",
+      "order": 29,
+      "poet": "凡河内躬恒",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=29",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H029",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H030",
+      "corpus": "ogura",
+      "order": 30,
+      "poet": "壬生忠岑",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=30",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H030",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H031",
+      "corpus": "ogura",
+      "order": 31,
+      "poet": "坂上是則",
+      "jev": "winter",
+      "gpt": "winter",
+      "legacy_season": "冬",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=31",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H031",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H032",
+      "corpus": "ogura",
+      "order": 32,
+      "poet": "春道列樹",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=32",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H032",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H033",
+      "corpus": "ogura",
+      "order": 33,
+      "poet": "紀友則",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "春",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=33",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H033",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H034",
+      "corpus": "ogura",
+      "order": 34,
+      "poet": "藤原興風",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=34",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H034",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H035",
+      "corpus": "ogura",
+      "order": 35,
+      "poet": "紀貫之",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "春",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=35",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H035",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H036",
+      "corpus": "ogura",
+      "order": 36,
+      "poet": "清原深養父",
+      "jev": "summer",
+      "gpt": "summer",
+      "legacy_season": "夏",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=36",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H036",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H037",
+      "corpus": "ogura",
+      "order": 37,
+      "poet": "文屋朝康",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=37",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H037",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H038",
+      "corpus": "ogura",
+      "order": 38,
+      "poet": "右近",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=38",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H038",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H039",
+      "corpus": "ogura",
+      "order": 39,
+      "poet": "参議等",
+      "jev": "autumn",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=39",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H039",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H040",
+      "corpus": "ogura",
+      "order": 40,
+      "poet": "平兼盛",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=40",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H040",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H041",
+      "corpus": "ogura",
+      "order": 41,
+      "poet": "壬生忠見",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=41",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H041",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H042",
+      "corpus": "ogura",
+      "order": 42,
+      "poet": "清原元輔",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=42",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H042",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H043",
+      "corpus": "ogura",
+      "order": 43,
+      "poet": "権中納言敦忠",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=43",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H043",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H044",
+      "corpus": "ogura",
+      "order": 44,
+      "poet": "中納言朝忠",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=44",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H044",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H045",
+      "corpus": "ogura",
+      "order": 45,
+      "poet": "謙徳公",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=45",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H045",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H046",
+      "corpus": "ogura",
+      "order": 46,
+      "poet": "曽根好忠",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=46",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H046",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H047",
+      "corpus": "ogura",
+      "order": 47,
+      "poet": "恵慶法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=47",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H047",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H048",
+      "corpus": "ogura",
+      "order": 48,
+      "poet": "源重之",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=48",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H048",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H049",
+      "corpus": "ogura",
+      "order": 49,
+      "poet": "大中臣能宣朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=49",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H049",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H050",
+      "corpus": "ogura",
+      "order": 50,
+      "poet": "藤原義孝",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=50",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H050",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H051",
+      "corpus": "ogura",
+      "order": 51,
+      "poet": "藤原実方朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=51",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H051",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H052",
+      "corpus": "ogura",
+      "order": 52,
+      "poet": "藤原道信朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=52",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H052",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H053",
+      "corpus": "ogura",
+      "order": 53,
+      "poet": "右大将道綱母",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=53",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H053",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H054",
+      "corpus": "ogura",
+      "order": 54,
+      "poet": "儀同三司母",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=54",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H054",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H055",
+      "corpus": "ogura",
+      "order": 55,
+      "poet": "大納言公任",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=55",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H055",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H056",
+      "corpus": "ogura",
+      "order": 56,
+      "poet": "和泉式部",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=56",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H056",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H057",
+      "corpus": "ogura",
+      "order": 57,
+      "poet": "紫式部",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=57",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H057",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H058",
+      "corpus": "ogura",
+      "order": 58,
+      "poet": "大貮三位",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=58",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H058",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H059",
+      "corpus": "ogura",
+      "order": 59,
+      "poet": "赤染衛門",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=59",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H059",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H060",
+      "corpus": "ogura",
+      "order": 60,
+      "poet": "小式部内侍",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=60",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H060",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H061",
+      "corpus": "ogura",
+      "order": 61,
+      "poet": "伊勢大輔",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "春",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=61",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H061",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H062",
+      "corpus": "ogura",
+      "order": 62,
+      "poet": "清少納言",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=62",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H062",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H063",
+      "corpus": "ogura",
+      "order": 63,
+      "poet": "左京大夫道雅",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=63",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H063",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H064",
+      "corpus": "ogura",
+      "order": 64,
+      "poet": "権中納言定頼",
+      "jev": "unspecified",
+      "gpt": "winter",
+      "legacy_season": "冬",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=64",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H064",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H065",
+      "corpus": "ogura",
+      "order": 65,
+      "poet": "相模",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=65",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H065",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H066",
+      "corpus": "ogura",
+      "order": 66,
+      "poet": "大僧正行尊",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=66",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H066",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H067",
+      "corpus": "ogura",
+      "order": 67,
+      "poet": "周防内侍",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=67",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H067",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H068",
+      "corpus": "ogura",
+      "order": 68,
+      "poet": "三条院",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=68",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H068",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H069",
+      "corpus": "ogura",
+      "order": 69,
+      "poet": "能因法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=69",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H069",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H070",
+      "corpus": "ogura",
+      "order": 70,
+      "poet": "良暹法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=70",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H070",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H071",
+      "corpus": "ogura",
+      "order": 71,
+      "poet": "大納言経信",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=71",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H071",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H072",
+      "corpus": "ogura",
+      "order": 72,
+      "poet": "祐子内親王家紀伊",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=72",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H072",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H073",
+      "corpus": "ogura",
+      "order": 73,
+      "poet": "権中納言匡房",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "春",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=73",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H073",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H074",
+      "corpus": "ogura",
+      "order": 74,
+      "poet": "源俊頼朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=74",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H074",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H075",
+      "corpus": "ogura",
+      "order": 75,
+      "poet": "藤原基俊",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=75",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H075",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H076",
+      "corpus": "ogura",
+      "order": 76,
+      "poet": "法性寺入道前関白太政大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=76",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H076",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H077",
+      "corpus": "ogura",
+      "order": 77,
+      "poet": "崇徳院",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=77",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H077",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H078",
+      "corpus": "ogura",
+      "order": 78,
+      "poet": "源兼昌",
+      "jev": "unspecified",
+      "gpt": "winter",
+      "legacy_season": "冬",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=78",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H078",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H079",
+      "corpus": "ogura",
+      "order": 79,
+      "poet": "左京大夫顕輔",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=79",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H079",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H080",
+      "corpus": "ogura",
+      "order": 80,
+      "poet": "待賢門院堀河",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=80",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H080",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H081",
+      "corpus": "ogura",
+      "order": 81,
+      "poet": "後徳大寺左大臣",
+      "jev": "summer",
+      "gpt": "summer",
+      "legacy_season": "夏",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=81",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H081",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H082",
+      "corpus": "ogura",
+      "order": 82,
+      "poet": "道因法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=82",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H082",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H083",
+      "corpus": "ogura",
+      "order": 83,
+      "poet": "皇太后宮大夫俊成",
+      "jev": "unspecified",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=83",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H083",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H084",
+      "corpus": "ogura",
+      "order": 84,
+      "poet": "藤原清輔朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=84",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H084",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H085",
+      "corpus": "ogura",
+      "order": 85,
+      "poet": "俊恵法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=85",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H085",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H086",
+      "corpus": "ogura",
+      "order": 86,
+      "poet": "西行法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=86",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H086",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H087",
+      "corpus": "ogura",
+      "order": 87,
+      "poet": "寂蓮法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=87",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H087",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H088",
+      "corpus": "ogura",
+      "order": 88,
+      "poet": "皇嘉門院別当",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=88",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H088",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H089",
+      "corpus": "ogura",
+      "order": 89,
+      "poet": "式子内親王",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=89",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H089",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H090",
+      "corpus": "ogura",
+      "order": 90,
+      "poet": "殷富門院大輔",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=90",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H090",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H091",
+      "corpus": "ogura",
+      "order": 91,
+      "poet": "後京極摂政前太政大臣",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=91",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H091",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H092",
+      "corpus": "ogura",
+      "order": 92,
+      "poet": "二条院讃岐",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=92",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H092",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H093",
+      "corpus": "ogura",
+      "order": 93,
+      "poet": "鎌倉右大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=93",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H093",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H094",
+      "corpus": "ogura",
+      "order": 94,
+      "poet": "参議雅経",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "秋",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=94",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H094",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H095",
+      "corpus": "ogura",
+      "order": 95,
+      "poet": "前大僧正慈圓",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=95",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H095",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H096",
+      "corpus": "ogura",
+      "order": 96,
+      "poet": "入道前太政大臣",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=96",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H096",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H097",
+      "corpus": "ogura",
+      "order": 97,
+      "poet": "権中納言定家",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=97",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H097",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H098",
+      "corpus": "ogura",
+      "order": 98,
+      "poet": "従二位家隆",
+      "jev": "summer",
+      "gpt": "summer",
+      "legacy_season": "夏",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=98",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H098",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H099",
+      "corpus": "ogura",
+      "order": 99,
+      "poet": "後鳥羽院",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=99",
+        "source_anthology": "続後撰集",
+        "source_number": null,
+        "ogura_id": "H099",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "H100",
+      "corpus": "ogura",
+      "order": 100,
+      "poet": "順徳院",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=100",
+        "source_anthology": "続後撰集",
+        "source_number": null,
+        "ogura_id": "H100",
+        "scope": "direct"
+      }
+    },
+    {
+      "id": "S001",
+      "corpus": "shuka",
+      "order": 1,
+      "poet": "天智天皇御製",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=1",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H001",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S002",
+      "corpus": "shuka",
+      "order": 2,
+      "poet": "持統天皇御製",
+      "jev": "spring",
+      "gpt": "summer",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=2",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H002",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S003",
+      "corpus": "shuka",
+      "order": 3,
+      "poet": "柿本人麿",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=3",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H003",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S004",
+      "corpus": "shuka",
+      "order": 4,
+      "poet": "山邊赤人",
+      "jev": "winter",
+      "gpt": "winter",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=4",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H004",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S005",
+      "corpus": "shuka",
+      "order": 5,
+      "poet": "中納言家持",
+      "jev": "unspecified",
+      "gpt": "winter",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=6",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H006",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S006",
+      "corpus": "shuka",
+      "order": 6,
+      "poet": "安倍仲丸",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=7",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H007",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S007",
+      "corpus": "shuka",
+      "order": 7,
+      "poet": "参議篁",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=11",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H011",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S008",
+      "corpus": "shuka",
+      "order": 8,
+      "poet": "猿丸大夫",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=5",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H005",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S009",
+      "corpus": "shuka",
+      "order": 9,
+      "poet": "中納言行平",
+      "jev": "autumn",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "離別",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=16",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H016",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S010",
+      "corpus": "shuka",
+      "order": 10,
+      "poet": "在原業平朝臣",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=17",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H017",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S011",
+      "corpus": "shuka",
+      "order": 11,
+      "poet": "藤原敏行朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=18",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H018",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S012",
+      "corpus": "shuka",
+      "order": 12,
+      "poet": "陽成院御製",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=13",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H013",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S013",
+      "corpus": "shuka",
+      "order": 13,
+      "poet": "小野小町",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=9",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H009",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S014",
+      "corpus": "shuka",
+      "order": 14,
+      "poet": "喜撰法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=8",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H008",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S015",
+      "corpus": "shuka",
+      "order": 15,
+      "poet": "僧正遍昭",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=12",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H012",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S016",
+      "corpus": "shuka",
+      "order": 16,
+      "poet": "蝉丸",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=10",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H010",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S017",
+      "corpus": "shuka",
+      "order": 17,
+      "poet": "河原左大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=14",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H014",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S018",
+      "corpus": "shuka",
+      "order": 18,
+      "poet": "光孝天皇御製",
+      "jev": "winter",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=15",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H015",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S019",
+      "corpus": "shuka",
+      "order": 19,
+      "poet": "伊勢",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=19",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H019",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S020",
+      "corpus": "shuka",
+      "order": 20,
+      "poet": "元良親王",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=20",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H020",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S021",
+      "corpus": "shuka",
+      "order": 21,
+      "poet": "源宗于朝臣",
+      "jev": "winter",
+      "gpt": "winter",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=28",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H028",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S022",
+      "corpus": "shuka",
+      "order": 22,
+      "poet": "素性法師",
+      "jev": "unspecified",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=21",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H021",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S023",
+      "corpus": "shuka",
+      "order": 23,
+      "poet": "菅家",
+      "jev": "unspecified",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=24",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H024",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S024",
+      "corpus": "shuka",
+      "order": 24,
+      "poet": "壬生忠岑",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=30",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H030",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S025",
+      "corpus": "shuka",
+      "order": 25,
+      "poet": "凡河内躬恒",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=29",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H029",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S026",
+      "corpus": "shuka",
+      "order": 26,
+      "poet": "紀友則",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=33",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H033",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S027",
+      "corpus": "shuka",
+      "order": 27,
+      "poet": "文屋康秀",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=22",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H022",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S028",
+      "corpus": "shuka",
+      "order": 28,
+      "poet": "紀貫之",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=35",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H035",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S029",
+      "corpus": "shuka",
+      "order": 29,
+      "poet": "坂上是則",
+      "jev": "winter",
+      "gpt": "winter",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=31",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H031",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S030",
+      "corpus": "shuka",
+      "order": 30,
+      "poet": "大江千里",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=23",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H023",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S031",
+      "corpus": "shuka",
+      "order": 31,
+      "poet": "藤原興風",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=34",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H034",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S032",
+      "corpus": "shuka",
+      "order": 32,
+      "poet": "春道列樹",
+      "jev": "unspecified",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=32",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H032",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S033",
+      "corpus": "shuka",
+      "order": 33,
+      "poet": "清原深養父",
+      "jev": "summer",
+      "gpt": "summer",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=36",
+        "source_anthology": "古今集",
+        "source_number": null,
+        "ogura_id": "H036",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S034",
+      "corpus": "shuka",
+      "order": 34,
+      "poet": "貞信公",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑（秋）",
+        "season": "秋",
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=26",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H026",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S035",
+      "corpus": "shuka",
+      "order": 35,
+      "poet": "三条右大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=25",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H025",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S036",
+      "corpus": "shuka",
+      "order": 36,
+      "poet": "中納言兼輔",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=27",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H027",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S037",
+      "corpus": "shuka",
+      "order": 37,
+      "poet": "参議等",
+      "jev": "autumn",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=39",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H039",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S038",
+      "corpus": "shuka",
+      "order": 38,
+      "poet": "文屋朝康",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=37",
+        "source_anthology": "後撰集",
+        "source_number": null,
+        "ogura_id": "H037",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S039",
+      "corpus": "shuka",
+      "order": 39,
+      "poet": "右近",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=38",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H038",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S040",
+      "corpus": "shuka",
+      "order": 40,
+      "poet": "中納言敦忠",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=43",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H043",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S041",
+      "corpus": "shuka",
+      "order": 41,
+      "poet": "平兼盛",
+      "jev": "autumn",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=40",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H040",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S042",
+      "corpus": "shuka",
+      "order": 42,
+      "poet": "壬生忠見",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=41",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H041",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S043",
+      "corpus": "shuka",
+      "order": 43,
+      "poet": "謙徳公",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=45",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H045",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S044",
+      "corpus": "shuka",
+      "order": 44,
+      "poet": "中納言朝忠",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=44",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H044",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S045",
+      "corpus": "shuka",
+      "order": 45,
+      "poet": "清原元輔",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=42",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H042",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S046",
+      "corpus": "shuka",
+      "order": 46,
+      "poet": "源重之",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=48",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H048",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S047",
+      "corpus": "shuka",
+      "order": 47,
+      "poet": "曽祢好忠",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=46",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H046",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S048",
+      "corpus": "shuka",
+      "order": 48,
+      "poet": "大中臣能宣朝臣",
+      "jev": "summer",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=49",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H049",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S049",
+      "corpus": "shuka",
+      "order": 49,
+      "poet": "藤原義孝",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=50",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H050",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S050",
+      "corpus": "shuka",
+      "order": 50,
+      "poet": "藤原實方朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=51",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H051",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S051",
+      "corpus": "shuka",
+      "order": 51,
+      "poet": "藤原道信朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=52",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H052",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S052",
+      "corpus": "shuka",
+      "order": 52,
+      "poet": "恵慶法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=47",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H047",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S053",
+      "corpus": "shuka",
+      "order": 53,
+      "poet": "一条院皇后宮",
+      "jev": "spring",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "哀傷",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i004.html",
+        "source_anthology": "後拾遺集",
+        "source_number": "00536",
+        "ogura_id": null,
+        "scope": "source_poem"
+      }
+    },
+    {
+      "id": "S054",
+      "corpus": "shuka",
+      "order": 54,
+      "poet": "三条院御製",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=68",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H068",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S055",
+      "corpus": "shuka",
+      "order": 55,
+      "poet": "儀同三司母",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=54",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H054",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S056",
+      "corpus": "shuka",
+      "order": 56,
+      "poet": "右大将道綱母",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=53",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H053",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S057",
+      "corpus": "shuka",
+      "order": 57,
+      "poet": "能因法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=69",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H069",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S058",
+      "corpus": "shuka",
+      "order": 58,
+      "poet": "良暹法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=70",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H070",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S059",
+      "corpus": "shuka",
+      "order": 59,
+      "poet": "大納言公任",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=55",
+        "source_anthology": "拾遺集",
+        "source_number": null,
+        "ogura_id": "H055",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S060",
+      "corpus": "shuka",
+      "order": 60,
+      "poet": "清少納言",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=62",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H062",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S061",
+      "corpus": "shuka",
+      "order": 61,
+      "poet": "和泉式部",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=56",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H056",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S062",
+      "corpus": "shuka",
+      "order": 62,
+      "poet": "大貳三位",
+      "jev": "autumn",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=58",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H058",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S063",
+      "corpus": "shuka",
+      "order": 63,
+      "poet": "赤染右衛門",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=59",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H059",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S064",
+      "corpus": "shuka",
+      "order": 64,
+      "poet": "紫式部",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=57",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H057",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S065",
+      "corpus": "shuka",
+      "order": 65,
+      "poet": "伊勢大輔",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=61",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H061",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S066",
+      "corpus": "shuka",
+      "order": 66,
+      "poet": "小式部内侍",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=60",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H060",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S067",
+      "corpus": "shuka",
+      "order": 67,
+      "poet": "権中納言定頼",
+      "jev": "spring",
+      "gpt": "winter",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=64",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H064",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S068",
+      "corpus": "shuka",
+      "order": 68,
+      "poet": "左京大夫道雅",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=63",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H063",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S069",
+      "corpus": "shuka",
+      "order": 69,
+      "poet": "周防内侍",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=67",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H067",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S070",
+      "corpus": "shuka",
+      "order": 70,
+      "poet": "大納言経信",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=71",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H071",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S071",
+      "corpus": "shuka",
+      "order": 71,
+      "poet": "前大僧正行尊",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=66",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H066",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S072",
+      "corpus": "shuka",
+      "order": 72,
+      "poet": "前中納言匡房",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（春）",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=73",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H073",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S073",
+      "corpus": "shuka",
+      "order": 73,
+      "poet": "権中納言国信",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "春上",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i010.html",
+        "source_anthology": "新古今集",
+        "source_number": "00010",
+        "ogura_id": null,
+        "scope": "source_poem"
+      }
+    },
+    {
+      "id": "S074",
+      "corpus": "shuka",
+      "order": 74,
+      "poet": "祐子内親王家紀伊",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=72",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H072",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S075",
+      "corpus": "shuka",
+      "order": 75,
+      "poet": "相模",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=65",
+        "source_anthology": "後拾遺集",
+        "source_number": null,
+        "ogura_id": "H065",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S076",
+      "corpus": "shuka",
+      "order": 76,
+      "poet": "源俊頼朝臣",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "春",
+        "season": "春",
+        "strict_season": "春",
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i006.html",
+        "source_anthology": "金葉集（二度本）",
+        "source_number": "00050",
+        "ogura_id": null,
+        "scope": "source_poem"
+      }
+    },
+    {
+      "id": "S077",
+      "corpus": "shuka",
+      "order": 77,
+      "poet": "崇徳院御製",
+      "jev": "spring",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=77",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H077",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S078",
+      "corpus": "shuka",
+      "order": 78,
+      "poet": "待賢門院堀川",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=80",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H080",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S079",
+      "corpus": "shuka",
+      "order": 79,
+      "poet": "法性寺入道前関白太政大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=76",
+        "source_anthology": "詞花集",
+        "source_number": null,
+        "ogura_id": "H076",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S080",
+      "corpus": "shuka",
+      "order": 80,
+      "poet": "左京大夫顕輔",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=79",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H079",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S081",
+      "corpus": "shuka",
+      "order": 81,
+      "poet": "源兼昌",
+      "jev": "autumn",
+      "gpt": "winter",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（冬）",
+        "season": "冬",
+        "strict_season": "冬",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=78",
+        "source_anthology": "金葉集",
+        "source_number": null,
+        "ogura_id": "H078",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S082",
+      "corpus": "shuka",
+      "order": 82,
+      "poet": "藤原基俊",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=75",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H075",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S083",
+      "corpus": "shuka",
+      "order": 83,
+      "poet": "道因法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=82",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H082",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S084",
+      "corpus": "shuka",
+      "order": 84,
+      "poet": "藤原清輔朝臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=84",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H084",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S085",
+      "corpus": "shuka",
+      "order": 85,
+      "poet": "俊恵法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=85",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H085",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S086",
+      "corpus": "shuka",
+      "order": 86,
+      "poet": "後徳大寺左大臣",
+      "jev": "autumn",
+      "gpt": "summer",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=81",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H081",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S087",
+      "corpus": "shuka",
+      "order": 87,
+      "poet": "皇太后宮大夫俊成",
+      "jev": "unspecified",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=83",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H083",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S088",
+      "corpus": "shuka",
+      "order": 88,
+      "poet": "西行法師",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=86",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H086",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S089",
+      "corpus": "shuka",
+      "order": 89,
+      "poet": "皇嘉門院別当",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=88",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H088",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S090",
+      "corpus": "shuka",
+      "order": 90,
+      "poet": "権中納言長方",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋一",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://lapis.nichibun.ac.jp/waka/waka_i010.html",
+        "source_anthology": "新古今集",
+        "source_number": "01075",
+        "ogura_id": null,
+        "scope": "related_version"
+      }
+    },
+    {
+      "id": "S091",
+      "corpus": "shuka",
+      "order": 91,
+      "poet": "殷富門院大輔",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=90",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H090",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S092",
+      "corpus": "shuka",
+      "order": 92,
+      "poet": "式子内親王",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=89",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H089",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S093",
+      "corpus": "shuka",
+      "order": 93,
+      "poet": "寂蓮法師",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=87",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H087",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S094",
+      "corpus": "shuka",
+      "order": 94,
+      "poet": "二条院讃岐",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=92",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H092",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S095",
+      "corpus": "shuka",
+      "order": 95,
+      "poet": "後京極摂政前太政大臣",
+      "jev": "winter",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=91",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H091",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S096",
+      "corpus": "shuka",
+      "order": 96,
+      "poet": "前大僧正慈圓",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=95",
+        "source_anthology": "千載集",
+        "source_number": null,
+        "ogura_id": "H095",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S097",
+      "corpus": "shuka",
+      "order": 97,
+      "poet": "参議雅経",
+      "jev": "autumn",
+      "gpt": "autumn",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（秋）",
+        "season": "秋",
+        "strict_season": "秋",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=94",
+        "source_anthology": "新古今集",
+        "source_number": null,
+        "ogura_id": "H094",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S098",
+      "corpus": "shuka",
+      "order": 98,
+      "poet": "鎌倉右大臣",
+      "jev": "unspecified",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "羈旅",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=93",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H093",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S099",
+      "corpus": "shuka",
+      "order": 99,
+      "poet": "正三位家隆",
+      "jev": "summer",
+      "gpt": "summer",
+      "legacy_season": "",
+      "reference": {
+        "division": "四季（夏）",
+        "season": "夏",
+        "strict_season": "夏",
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=98",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H098",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S100",
+      "corpus": "shuka",
+      "order": 100,
+      "poet": "権中納言定家",
+      "jev": "autumn",
+      "gpt": "unspecified",
+      "legacy_season": "",
+      "reference": {
+        "division": "恋",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=97",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H097",
+        "scope": "shared_poem"
+      }
+    },
+    {
+      "id": "S101",
+      "corpus": "shuka",
+      "order": 101,
+      "poet": "入道前太政大臣",
+      "jev": "spring",
+      "gpt": "spring",
+      "legacy_season": "",
+      "reference": {
+        "division": "雑",
+        "season": null,
+        "strict_season": null,
+        "source_url": "https://www.samac.jp/search/poems_detail.php?id=96",
+        "source_anthology": "新勅撰集",
+        "source_number": null,
+        "ogura_id": "H096",
+        "scope": "shared_poem"
+      }
+    }
+  ]
+}

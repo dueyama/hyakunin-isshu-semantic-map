@@ -1,0 +1,406 @@
+{
+  "meta": {
+    "jev_model": "jev-1.13.0",
+    "questions_sha256": "67777194a0fc751bbe5bb6bf62249b4c120ebba3f7951383234c4c2dcaa23ef5",
+    "seed": 20260920,
+    "trials": 10000,
+    "prompt_language": "English",
+    "text_language": "Japanese",
+    "input_tokens": 239351,
+    "output_tokens": 35654,
+    "first_request_at": "2026-09-20T06:55:35.095775+00:00",
+    "last_request_at": "2026-09-20T07:00:25.977329+00:00",
+    "median_request_seconds": 0.6213070415105904,
+    "validated_responses": 201,
+    "validation_recoveries": [
+      "S053"
+    ],
+    "usage_scope": "Retained, validated responses only; excludes the first failed S053 response, whose usage was not retained.",
+    "note": "Exploratory model comparison, not validated classical-literature accuracy."
+  },
+  "corpora": {
+    "ogura": {
+      "n": 100,
+      "season_counts": {
+        "autumn": 21,
+        "summer": 4,
+        "unspecified": 61,
+        "winter": 5,
+        "spring": 9
+      },
+      "low_confidence_count_below_0_6": 10,
+      "median_confidence": 0.94,
+      "love_at_least_0_5": 46,
+      "nature_at_least_0_5": 32
+    },
+    "shuka": {
+      "n": 101,
+      "season_counts": {
+        "autumn": 23,
+        "spring": 14,
+        "unspecified": 56,
+        "winter": 5,
+        "summer": 3
+      },
+      "low_confidence_count_below_0_6": 51,
+      "median_confidence": 0.59,
+      "love_at_least_0_5": 32,
+      "nature_at_least_0_5": 40
+    }
+  },
+  "reference_comparison": {
+    "tagged_n": 33,
+    "agree_n": 31,
+    "difference_ids": [
+      "H064",
+      "H078"
+    ],
+    "blank_n": 67,
+    "blank_with_four_season_choice_ids": [
+      "H016",
+      "H021",
+      "H024",
+      "H039",
+      "H066",
+      "H067",
+      "H075",
+      "H096"
+    ],
+    "legacy_love_n": 43,
+    "legacy_love_and_jev_love_n": 36,
+    "legacy_season_and_jev_nature_n": 28,
+    "note": "Initial source-derived tags are provisional references; blanks are missing labels, not negative labels."
+  },
+  "spaces": {
+    "ogura_small": {
+      "embedding_model": "text-embedding-3-small",
+      "input_mode": "original_kana",
+      "dimensions": 1536,
+      "hash_mismatch_ids": [
+        "H010",
+        "H053"
+      ],
+      "four_seasons": {
+        "n": 39,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 21,
+          "summer": 4,
+          "winter": 5,
+          "spring": 9
+        },
+        "same_label_neighbor_rate": 0.5435897435897435,
+        "random_expectation": 0.3535762483130904,
+        "null_mean": 0.3541502564102564,
+        "null_95_percent_interval": [
+          0.28205128205128205,
+          0.4358974358974359
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.4828263109684941,
+        "different_label_cosine": 0.4507709952729382,
+        "cosine_gap": 0.03205531569555592,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "four_seasons_confidence_0_6": {
+        "n": 36,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 20,
+          "summer": 4,
+          "winter": 4,
+          "spring": 8
+        },
+        "same_label_neighbor_rate": 0.5444444444444444,
+        "random_expectation": 0.36507936507936506,
+        "null_mean": 0.3654155555555556,
+        "null_95_percent_interval": [
+          0.28888888888888886,
+          0.45555555555555555
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.491080369203231,
+        "different_label_cosine": 0.45387706456004656,
+        "cosine_gap": 0.03720330464318444,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "all_labels": {
+        "n": 98,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 21,
+          "summer": 4,
+          "unspecified": 59,
+          "winter": 5,
+          "spring": 9
+        },
+        "same_label_neighbor_rate": 0.6081632653061224,
+        "random_expectation": 0.41510624868504103,
+        "null_mean": 0.4153291836734694,
+        "null_95_percent_interval": [
+          0.363265306122449,
+          0.4673469387755102
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.41136057425093736,
+        "different_label_cosine": 0.4050529945133377,
+        "cosine_gap": 0.006307579737599656,
+        "trials": 10000,
+        "seed": 20260920
+      }
+    },
+    "ogura_large": {
+      "embedding_model": "text-embedding-3-large",
+      "input_mode": "original_kana",
+      "dimensions": 3072,
+      "hash_mismatch_ids": [
+        "H010",
+        "H053"
+      ],
+      "four_seasons": {
+        "n": 39,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 21,
+          "summer": 4,
+          "winter": 5,
+          "spring": 9
+        },
+        "same_label_neighbor_rate": 0.558974358974359,
+        "random_expectation": 0.3535762483130904,
+        "null_mean": 0.35337641025641026,
+        "null_95_percent_interval": [
+          0.28205128205128205,
+          0.4307692307692308
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.4656100107558584,
+        "different_label_cosine": 0.44056542672048205,
+        "cosine_gap": 0.02504458403537635,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "four_seasons_confidence_0_6": {
+        "n": 36,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 20,
+          "summer": 4,
+          "winter": 4,
+          "spring": 8
+        },
+        "same_label_neighbor_rate": 0.5944444444444444,
+        "random_expectation": 0.36507936507936506,
+        "null_mean": 0.36569388888888893,
+        "null_95_percent_interval": [
+          0.28888888888888886,
+          0.4444444444444444
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.4693561898791554,
+        "different_label_cosine": 0.44039006932765856,
+        "cosine_gap": 0.028966120551496832,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "all_labels": {
+        "n": 98,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 21,
+          "summer": 4,
+          "unspecified": 59,
+          "winter": 5,
+          "spring": 9
+        },
+        "same_label_neighbor_rate": 0.6265306122448979,
+        "random_expectation": 0.41510624868504103,
+        "null_mean": 0.41554387755102046,
+        "null_95_percent_interval": [
+          0.3673469387755102,
+          0.46530612244897956
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.4114702015579863,
+        "different_label_cosine": 0.40246284561100465,
+        "cosine_gap": 0.009007355946981654,
+        "trials": 10000,
+        "seed": 20260920
+      }
+    },
+    "ogura_original": {
+      "embedding_model": "text-embedding-3-small",
+      "input_mode": "original",
+      "dimensions": 1536,
+      "hash_mismatch_ids": [
+        "H010",
+        "H053"
+      ],
+      "four_seasons": {
+        "n": 39,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 21,
+          "summer": 4,
+          "winter": 5,
+          "spring": 9
+        },
+        "same_label_neighbor_rate": 0.5435897435897435,
+        "random_expectation": 0.3535762483130904,
+        "null_mean": 0.353631282051282,
+        "null_95_percent_interval": [
+          0.28205128205128205,
+          0.4358974358974359
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.444268256193292,
+        "different_label_cosine": 0.41148355484994964,
+        "cosine_gap": 0.03278470134334238,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "four_seasons_confidence_0_6": {
+        "n": 36,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 20,
+          "summer": 4,
+          "winter": 4,
+          "spring": 8
+        },
+        "same_label_neighbor_rate": 0.5388888888888889,
+        "random_expectation": 0.36507936507936506,
+        "null_mean": 0.3653116666666667,
+        "null_95_percent_interval": [
+          0.29444444444444445,
+          0.4444444444444444
+        ],
+        "permutation_p_one_sided": 0.00019998000199980003,
+        "same_label_cosine": 0.4536851643450188,
+        "different_label_cosine": 0.41437971333511103,
+        "cosine_gap": 0.03930545100990779,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "all_labels": {
+        "n": 98,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 21,
+          "summer": 4,
+          "unspecified": 59,
+          "winter": 5,
+          "spring": 9
+        },
+        "same_label_neighbor_rate": 0.6265306122448979,
+        "random_expectation": 0.41510624868504103,
+        "null_mean": 0.4154357142857143,
+        "null_95_percent_interval": [
+          0.3653061224489796,
+          0.4673469387755102
+        ],
+        "permutation_p_one_sided": 9.999000099990002e-05,
+        "same_label_cosine": 0.37133926768598596,
+        "different_label_cosine": 0.36040271874135205,
+        "cosine_gap": 0.010936548944633917,
+        "trials": 10000,
+        "seed": 20260920
+      }
+    },
+    "shuka_small": {
+      "embedding_model": "text-embedding-3-small",
+      "input_mode": "original",
+      "dimensions": 1536,
+      "hash_mismatch_ids": [],
+      "four_seasons": {
+        "n": 45,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 23,
+          "spring": 14,
+          "winter": 5,
+          "summer": 3
+        },
+        "same_label_neighbor_rate": 0.5066666666666667,
+        "random_expectation": 0.3606060606060606,
+        "null_mean": 0.36116844444444446,
+        "null_95_percent_interval": [
+          0.28877777777777786,
+          0.4444444444444444
+        ],
+        "permutation_p_one_sided": 0.0005999400059994001,
+        "same_label_cosine": 0.4804112297138954,
+        "different_label_cosine": 0.4545192605330102,
+        "cosine_gap": 0.025891969180885155,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "four_seasons_confidence_0_6": {
+        "n": 25,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 13,
+          "winter": 4,
+          "spring": 7,
+          "summer": 1
+        },
+        "same_label_neighbor_rate": 0.56,
+        "random_expectation": 0.35,
+        "null_mean": 0.349576,
+        "null_95_percent_interval": [
+          0.256,
+          0.448
+        ],
+        "permutation_p_one_sided": 0.00019998000199980003,
+        "same_label_cosine": 0.5331397518437033,
+        "different_label_cosine": 0.4692792292186217,
+        "cosine_gap": 0.06386052262508163,
+        "trials": 10000,
+        "seed": 20260920
+      },
+      "all_labels": {
+        "n": 101,
+        "available": true,
+        "k": 5,
+        "counts": {
+          "autumn": 23,
+          "spring": 14,
+          "unspecified": 56,
+          "winter": 5,
+          "summer": 3
+        },
+        "same_label_neighbor_rate": 0.4752475247524752,
+        "random_expectation": 0.37564356435643564,
+        "null_mean": 0.37543207920792077,
+        "null_95_percent_interval": [
+          0.32475247524752476,
+          0.4297029702970297
+        ],
+        "permutation_p_one_sided": 0.00029997000299970003,
+        "same_label_cosine": 0.4710512438992481,
+        "different_label_cosine": 0.4532950587255282,
+        "cosine_gap": 0.01775618517371985,
+        "trials": 10000,
+        "seed": 20260920
+      }
+    }
+  },
+  "shared": {
+    "n": 97,
+    "agree_n": 81,
+    "note": "Shared poems are not independent replications. Wording and kana-input conditions also differ."
+  }
+}

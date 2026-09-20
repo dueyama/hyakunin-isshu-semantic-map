@@ -50,6 +50,11 @@
 - Chapter 2 HTML essay: `docs/paper/2/index.html`
 - Chapter 3 HTML essay: `docs/paper/3/index.html`
 - Final chapter HTML essay: `docs/paper/final/index.html`
+- Season comparison supplement (Jev / GPT-5.6-Luna / literature / existing embeddings): `docs/paper/seasons/index.html`
+- Per-poem seasonal catalogue: `docs/paper/seasons/list/index.html` (rebuild with `python3 scripts/build_season_catalogue.py`)
+- Separate Luna condition with short evidence and explanations: `docs/paper/seasons/luna-reasons/index.html`, `docs/luna-reasoned-comparison.json` (rebuild with `python3 scripts/build_luna_reasoned_page.py`)
+- Public labels and literature references (no API input texts): `docs/season-comparison.json`, `docs/season-references.json`
+- Jev comparison method and aggregate results: `docs/jev_season_method.md`, `docs/jev-season-summary.json`
 - Update summary page: `docs/updates/index.html`
 - Data source and license notes: `docs/data_sources.md`
 - Method notes: `docs/method.md`

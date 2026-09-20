@@ -19,6 +19,11 @@
 - `docs/paper/2/index.html`
 - `docs/paper/3/index.html`
 - `docs/paper/final/index.html`
+- `docs/paper/seasons/index.html`
+- `docs/paper/seasons/list/index.html`: 全201首の判定・部立一覧。表示本文は既公開の参照資料ページを再利用。
+- `docs/paper/seasons/luna-reasons/index.html`, `docs/luna-reasoned-comparison.json`: Luna根拠付き条件の判定、短い根拠語句、生成説明、前回との比較。入力全文・生応答は含めない。
+- `docs/season-comparison.json`, `docs/season-references.json`: 本文・生応答を含まない判定ラベルと参照情報。
+- `docs/jev_season_method.md`, `docs/jev-season-summary.json`: 季節比較の方法と本文・ベクトルを含まない集計。
 - `docs/references/index.html`
 - `docs/glossary/index.html`
 - `docs/updates/index.html`
@@ -48,6 +53,7 @@
 - `data/raw/` に置いた取得元確認中データ
 - embedding cache
 - embedding vector
+- Jev・GPTへの入力本文、リクエスト・応答キャッシュ、一首ずつの非公開レビューCSV
 - `data/embeddings/`
 - `_private/`
 - `docs/viewer/`

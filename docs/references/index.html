@@ -25,6 +25,7 @@
         <a href="../paper/2/">第2章</a>
         <a href="../paper/3/">第3章</a>
         <a href="../paper/final/">終章</a>
+        <a href="../paper/seasons/">季節比較</a>
         <a href="../glossary/">用語集</a>
         <a href="./" aria-current="page">参照資料</a>
         <a href="../updates/">更新履歴</a>
@@ -1514,12 +1515,15 @@
           <p class="ref-item" id="ref-g-4"><span class="ref-label">[D-4]</span><a href="https://shoryobu.kunaicho.go.jp/Toshoryo/Detail/1000029900000">宮内庁書陵部所蔵資料目録・画像公開システム「百人秀歌（一巻・百人一首異本）」</a>。宮内庁書陵部所蔵本の確認候補。</p>
           <p class="ref-item" id="ref-g-5"><span class="ref-label">[D-5]</span><a href="https://www.asahi-net.or.jp/~sg2h-ymst/yamatouta/sennin/100i/100s.html">水垣久「百人秀歌」</a>。百人秀歌本文・小倉番号対応を確認するための解析用参照資料。二首一対の歌合形式という概説も参照した。図表ID対応表では読者がS番号を追える範囲を示すが、解析用の完全CSVや埋め込みベクトルは公開しない。</p>
           <p class="ref-item" id="ref-g-6"><span class="ref-label">[D-6]</span><a href="https://jti.lib.virginia.edu/japanese/hyakunin/macauley.html">University of Virginia Japanese Text Initiative「MacCauley's Translation」</a>。Clay MacCauley, <i>Hyakunin-Isshu</i>, 1917 に基づく英訳ページ。UVA版の英訳方針は <a href="https://jti.lib.virginia.edu/japanese/hyakunin/english.html">A Note on the English Translation</a> も参照。英訳本文は公開ページに再掲せず、集計値だけを扱う。</p>
+          <p class="ref-item" id="ref-g-7"><span class="ref-label">[D-7]</span><a href="https://www.samac.jp/search/poems_detail.php?id=1">嵯峨嵐山文華館「小倉百人一首の全首を見る」</a>。2026-09-20に各首の公開ページ100件の歌番号・部立・出典を照合し、<a href="../paper/seasons/list/">季節一覧</a>の参照に用いた。参考文献として『カラー小倉百人一首 二訂版』（京都書房）、『もっと知りたい京都小倉百人一首』（京都新聞出版センター）が掲げられている。今回は公開解説を参照し、書籍自体は未閲覧。四季部立32首にH026「雑（秋）」を加えると季節の明示は33首。四季以外の部立を無季とみなさない。</p>
+          <p class="ref-item" id="ref-g-8"><span class="ref-label">[D-8]</span>国際日本文化研究センター「和歌データベース」。秀歌のみ4首の出典歌を、<a href="https://lapis.nichibun.ac.jp/waka/waka_i004.html">後拾遺集</a>536番（S053、哀傷）、<a href="https://lapis.nichibun.ac.jp/waka/waka_i010.html">新古今集</a>10番（S073、春上）・1075番（S090、恋一）、<a href="https://lapis.nichibun.ac.jp/waka/waka_i006.html">金葉集二度本</a>50番（S076、春）で確認。S090は語句に異同がある対応歌として参照。2026-09-20確認。詞書・本文・訳の全文をデータセットとして転載せず、部立・出典番号・URLを記録した。</p>
         </div>
       </section>
 
       <section class="references">
         <h2>方法・モデル</h2>
         <div class="ref-list">
+          <p class="ref-item" id="ref-g-13"><span class="ref-label">[M-4]</span><a href="https://docs.typesafe.ai/api">TypeSafe API</a>と<a href="https://docs.typesafe.ai/models">モデル仕様</a>。補章では<code>jev-1.13.0</code>のChoice・Noulを使用。<a href="https://developers.openai.com/api/docs/models/gpt-5.6-luna">OpenAI GPT-5.6-Luna</a>を同じ主季節の質問と七択で比較し、Responses APIの<a href="https://developers.openai.com/api/docs/guides/structured-outputs">構造化出力</a>を使用した。</p>
           <p class="ref-item" id="ref-g-10"><span class="ref-label">[M-1]</span><a href="https://developers.openai.com/api/docs/guides/embeddings">OpenAI Embeddings guide</a>。<code>text-embedding-3-large</code> と <code>text-embedding-3-small</code> による埋め込み実行、正規化、類似度計算の参照。</p>
           <p class="ref-item" id="ref-g-11"><span class="ref-label">[M-2]</span><a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a>。費用を書く場合に再確認する参照ページ。</p>
           <p class="ref-item" id="ref-g-12"><span class="ref-label">[M-3]</span>モデル条件。第1章の主要条件は、入力 <code>original_kana</code>、主モデル <code>text-embedding-3-small</code>、PCA投影、ランダム順10,000回比較である。<code>text-embedding-3-large</code> は感度確認として使う。第1章の二首一組・百人秀歌順検査では、百人秀歌101首と小倉100首を比較用に同じ本文のみ条件でかけ直した集計も用いる。第2章・第3章の10×10検査では、百人秀歌側と小倉側をそろえるため、作業用本文表記 <code>original</code> 条件の <code>text-embedding-3-small</code> も使う。ランダム基準は、同じ100首を10×10のセルへ無作為に置き直す操作を10,000回行い、端・角を含む同じ隣接関係で平均を比べる。seedは <code>20260710</code> である。そのため、第1章の隣接表と第2・第3章の10×10表では、同じペアでも小数値が一致しない場合がある。本文中で必要な歌は掲げるが、解析用の完全本文データセットと埋め込みベクトルは公開ページに含めない。</p>

@@ -1,0 +1,266 @@
+.season-catalogue .article-hero {
+  min-height: 300px;
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.season-catalogue .article-hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+}
+
+body.season-catalogue > main > .catalogue-results {
+  max-width: 1200px;
+}
+
+.catalogue-notes {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 22px;
+}
+
+.catalogue-notes summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.catalogue-filters {
+  align-items: end;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 22px;
+}
+
+.season-catalogue [hidden] {
+  display: none !important;
+}
+
+.filter-field label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 650;
+  margin-bottom: 5px;
+}
+
+.filter-field select,
+.filter-field input,
+.reset-filters {
+  background: #fffefa;
+  border: 1px solid #ada99f;
+  border-radius: 7px;
+  color: var(--ink);
+  font: inherit;
+  font-size: .94rem;
+  min-height: 44px;
+  padding: 9px 12px;
+}
+
+.filter-field select,
+.filter-field input {
+  width: 100%;
+}
+
+.search-field {
+  grid-column: 1 / -1;
+}
+
+.checkbox-field {
+  align-items: center;
+  display: flex;
+  font-size: .9rem;
+  gap: 9px;
+  grid-column: span 2;
+  min-height: 44px;
+}
+
+.checkbox-field input {
+  accent-color: var(--indigo);
+  height: 19px;
+  width: 19px;
+}
+
+.reset-filters {
+  cursor: pointer;
+  justify-self: end;
+}
+
+.reset-filters:hover {
+  background: var(--wash);
+}
+
+.season-catalogue :focus-visible {
+  outline: 3px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+.result-count {
+  color: var(--indigo);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  margin-bottom: 4px;
+}
+
+.table-scroll-hint {
+  color: var(--soft-ink);
+  font-size: .84rem;
+  margin-top: 0;
+}
+
+.season-table-wrap {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.season-catalogue .season-table {
+  background: rgba(255, 254, 249, .55);
+  font-size: .89rem;
+  margin: 0;
+  min-width: 960px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.season-table caption {
+  caption-side: top;
+  padding: 15px 18px;
+  text-align: left;
+}
+
+.season-table thead th {
+  background: #e9ece9;
+}
+
+.season-table th,
+.season-table td {
+  padding: 17px 13px;
+  vertical-align: top;
+}
+
+.season-table th:nth-child(1) { width: 16%; }
+.season-table th:nth-child(2) { width: 35%; }
+.season-table th:nth-child(3) { width: 13%; }
+.season-table th:nth-child(4) { width: 16%; }
+.season-table th:nth-child(5) { width: 20%; }
+
+.season-table tbody th {
+  background: transparent;
+  font-weight: normal;
+  text-align: left;
+}
+
+.season-table tbody tr:nth-child(even) {
+  background: rgba(236, 239, 240, .5);
+}
+
+.season-table tbody tr:target {
+  background: #fff3d6;
+  box-shadow: inset 4px 0 var(--gold);
+}
+
+.poem-id {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.corpus-label,
+.poet-name,
+.poem-note,
+.source-note,
+.disagreement-label {
+  display: block;
+}
+
+.corpus-label {
+  color: var(--soft-ink);
+  font-size: .72rem;
+}
+
+.poet-name {
+  margin-top: 5px;
+}
+
+.poem-text {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.poem-note,
+.source-note {
+  color: var(--soft-ink);
+  font-family: var(--sans);
+  font-size: .72rem;
+  line-height: 1.65;
+  margin-top: 8px;
+}
+
+.season-badge {
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: .85rem;
+  font-weight: 650;
+  line-height: 1.5;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.season-spring { background: #e8f2e4; color: #286536; }
+.season-summer { background: #e0f3f3; color: #006b73; }
+.season-autumn { background: #faecd9; color: #834314; }
+.season-winter { background: #e5eef9; color: #284e7e; }
+.season-mixed { background: #f0e7f7; color: #67447c; }
+.season-unspecified { background: #eeece8; color: #535047; }
+.season-uncertain { background: #f3e9e7; color: #704b42; }
+.season-not-run { background: transparent; border-style: dashed; color: #535047; }
+
+.disagreement-label {
+  color: #834314;
+  font-size: .71rem;
+  margin-top: 7px;
+}
+
+.unverified {
+  color: var(--soft-ink);
+}
+
+.no-results {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  text-align: center;
+}
+
+.catalogue-footer {
+  font-size: .9rem;
+}
+
+@media (max-width: 620px) {
+  .season-catalogue .article-hero {
+    min-height: 0;
+    padding: 50px 24px;
+  }
+
+  .catalogue-filters {
+    gap: 13px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 17px;
+  }
+
+  .checkbox-field,
+  .search-field {
+    grid-column: auto;
+  }
+
+  .reset-filters {
+    justify-self: stretch;
+  }
+}
